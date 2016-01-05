@@ -1,0 +1,22 @@
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf: .tmux.conf
+    ~/.zshrc: .zshrc
+    ~/.bashrc: .bashrc
+    ~/.vim: .vim/
+    ~/.vimrc: .vimrc
+    ~/.xinitrc: .xinitrc
+    ~/.Xresources: .Xresources
+    ~/.xbindkeysrc: .xbindkeysrc
+    ~/.i3: .i3/
+    ~/.config/kak:
+        create: true
+        path: .config/kak/
+    ~/.config/vimb/config:
+        create: true
+        path: .config/vimb/config
+
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
