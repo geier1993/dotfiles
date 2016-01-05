@@ -1,0 +1,43 @@
+#include "/home/geier/misc/solarized/xresources/Xresources.dark"
+
+! My conf
+URxvt.saveLines: 1000
+URxvt.scrollBar: false
+!controlled by solarized xresources
+!URxvt.foreground: white
+!URxvt.background: grey20 
+URxvt.secondaryScroll: true
+!URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+!URxvt.font: xft:Bitstream Vera Sans:pixelsize=16
+!URxvt.font: xft:Bitstream Vera Mono:pixelsize=16
+!URxvt.font: xft:Anonymous Pro:pixelsize=16:antialias=false:hinting=true
+!URxvt.font: xft:Anonymous Pro Sans Mono:pixelsize=16
+!URxvt.font: xft:Anonymous Pro:pixelsize=18
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
+!URxvt.font: ttf:dejavu
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 1
+URxvt.tabbed.saveLines: 1000
+URxvt.tabbed.scrollBar: false
+URxvt.tabbed.tabbar-fg: 3
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 1
+URxvt.tabbed.secondaryScroll: true
+!URxvt.tabbed.font: xft:Bitstream Vera Sans Mono:pixelsize=12
+URxvt*inheritPixmap: true 
+URxvt*shading: 70
+
+!For tmux
+URxvt.intensityStyles: false
+
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+!URxvt.perl-ext-common: default,matcher
+
+Xft.dpi:        105.6 
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
