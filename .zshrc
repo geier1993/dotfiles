@@ -74,7 +74,7 @@ export PYTHONPATH
 TERMINAL=urxvtc
 export TERMINAL
 
-EDITOR=vim
+EDITOR=kak
 export EDITOR
 
 VISUAL=gvim

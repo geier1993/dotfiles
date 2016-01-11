@@ -13,3 +13,5 @@ exec i3
 
 
 #exec redshift-gtk 
+
+#./start_jack.sh
