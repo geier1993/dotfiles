@@ -93,3 +93,7 @@
 	XF86AudioRaiseVolume
 "volnoti-show -m"
 	XF86AudioMute
+
+#"notify-keyboardtoggle"
+"sleep 1.1 && notify-keyboardtoggle"
+	ISO_Next_Group

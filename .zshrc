@@ -1,4 +1,35 @@
+#redshift-gtk & #done by i3
+
+PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin
+export PATH
+
+PYTHONPATH=$PATH:$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
+export PYTHONPATH
+
+TERMINAL=urxvtc
+export TERMINAL
+
+export TERM=rxvt
+
+EDITOR=kak
+export EDITOR
+
+VISUAL=kak
+export VISUAL 
+
+#Intel C++ Studio
+if [ -d /opt/intel ];
+then
+    export INTEL_HOME=/opt/intel
+    export PATH=${PATH}:${INTEL_HOME}/bin
+    export LD_LIBRARY_PATH=/opt/intel/mkl/lib/intel64:/opt/intel/lib/intel64:${LD_LIBRARY_PATH}
+fi
+
+
+
 # The following lines were added by compinstall
+plugins+=(zsh-completions)
+plugins+=(zsh-highlighters)
 
 bindkey -v
 
@@ -51,7 +82,7 @@ autoload -U run-help
 autoload run-help-git
 autoload run-help-svn
 autoload run-help-svk
-unalias run-help
+#unalias run-help
 alias help=run-help
 
 
@@ -63,24 +94,8 @@ alias ls='ls --color=auto'
 #avoid freezing
 ttyctl -f
 
-
-#redshift-gtk &
-PATH=$PATH:/home/geier/.cabal/bin
-export PATH
-
-PYTHONPATH=$PATH:$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
-export PYTHONPATH
-
-TERMINAL=urxvtc
-export TERMINAL
-
-EDITOR=kak
-export EDITOR
-
-VISUAL=gvim
-export VISUAL 
+#Adjust X keyboard rate
+#xset r rate 250 50
 
 #FASD
 eval "$(fasd --init auto)"
-
-
