@@ -1,0 +1,8 @@
+#!/bin/bash
+
+check=$( xset -q | grep LED | cut -c 63 )
+  if [ $check = 1 ]; then
+notify-send -u low -i input-keyboard -t 3 'Dvorak' &
+  else
+notify-send -u critical -i input-keyboard -t 3 'US' &
+  fi
