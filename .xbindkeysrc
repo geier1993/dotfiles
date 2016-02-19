@@ -95,5 +95,5 @@
 	XF86AudioMute
 
 #"notify-keyboardtoggle"
-"sleep 1.1 && notify-keyboardtoggle"
-	ISO_Next_Group
+#"sleep 1.1 && notify-keyboardtoggle"
+#	ISO_Next_Group

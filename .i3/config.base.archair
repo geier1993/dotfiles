@@ -175,15 +175,7 @@ bar {
         status_command i3status
 	#position top 
 
-colors {
-    separator #AAAAAA
-    background #1f2326
-    statusline #FFFFFF
-    focused_workspace #9FCA56 #9FCA56 #151718
-    active_workspace #DCCD69 #DCCD69 #151718
-    inactive_workspace #1f2326 #1f2326 #AAAAAA
-    urgent_workspace #CE4045 #CE4045 #FFFFFF
-}
+        #$i3-theme-bar
 }
 
 #set $Locker i3lock -c 221000 && sleep 1
@@ -207,8 +199,4 @@ mode "$mode_system" {
 bindsym $mod+shift+p mode "$mode_system"
 
 
-# class                 border  backgr. text    indicator
-client.focused #4F99D3 #4F99D3 #151718 #9FCA56
-client.focused_inactive #9FCA56 #9FCA56 #151718 #A074C4
-client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
-client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
+#$i3-theme-window
