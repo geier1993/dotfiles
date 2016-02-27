@@ -10,7 +10,7 @@
     ~/.Xresources: .Xresources
     ~/.xbindkeysrc: .xbindkeysrc.archair
     ~/.i3/config.base: .i3/config.base.archair
-    ~/.i3: .i3/
+    ~/.i3/config: .i3/config
     ~/.config/kak:
         create: true
         path: .config/kak/

@@ -2,14 +2,14 @@
 
 - link:
     ~/.tmux.conf: .tmux.conf
-    ~/.zshrc: .zshrc
+    ~/.zshrc: .zshrc.macbook
     ~/.bashrc: .bashrc
     ~/.vim: .vim/
     ~/.vimrc: .vimrc
 #    ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
 #    ~/.xbindkeysrc: .xbindkeysrc
-    ~/.i3: .i3/
+#    ~/.i3: .i3/
     ~/.config/kak:
         create: true
         path: .config/kak/

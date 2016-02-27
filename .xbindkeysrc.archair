@@ -78,14 +78,18 @@
 #""
 #	XF86AudioPlay
 
-"pamixer --decrease 5 & pamixer --unmute"
+"pamixer --decrease 3 & pamixer --unmute"
 	XF86AudioLowerVolume
-"pamixer --increase 5 & pamixer --unmute"
+"pamixer --increase 3 & pamixer --unmute"
 	XF86AudioRaiseVolume
 "pamixer --mute"
 	XF86AudioMute
 "playerctl play-pause"
 	XF86AudioPlay
+"playerctl next"
+	XF86AudioNext
+"playerctl previous"
+	XF86AudioPrev
 
 "volnoti-show `ponymix | egrep -o '[0-9]+%' -m 1` "
 	XF86AudioLowerVolume

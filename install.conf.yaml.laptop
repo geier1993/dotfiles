@@ -9,7 +9,8 @@
     ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
     ~/.xbindkeysrc: .xbindkeysrc
-    ~/.i3: .i3/
+    ~/.i3/config: .i3/config
+    ~/.i3/config.base: .i3/config.base
     ~/.config/kak:
         create: true
         path: .config/kak/
