@@ -3,29 +3,8 @@
 PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin
 export PATH
 
-PYTHONPATH=$PATH:$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
-export PYTHONPATH
-
-TERMINAL=urxvtc
-export TERMINAL
-
-export TERM=rxvt
-
 EDITOR=kak
 export EDITOR
-
-VISUAL=kak
-export VISUAL 
-
-#Intel C++ Studio
-if [ -d /opt/intel ];
-then
-    export INTEL_HOME=/opt/intel
-    export PATH=${PATH}:${INTEL_HOME}/bin
-    export LD_LIBRARY_PATH=/opt/intel/mkl/lib/intel64:/opt/intel/lib/intel64:${LD_LIBRARY_PATH}
-fi
-
-
 
 # The following lines were added by compinstall
 plugins+=(zsh-completions)
@@ -44,7 +23,7 @@ LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=
 export LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle :compinstall filename '/home/geier/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit promptinit
 autoload -U colors && colors
@@ -101,7 +80,9 @@ ttyctl -f
 #Adjust X keyboard rate
 #xset r rate 250 50
 
-eval "$(pandoc --bash-completion)"
-
 #FASD
 eval "$(fasd --init auto)"
+
+export PATH=/usr/local/cuda-7.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64:
+. /usr/local/bin/virtualenvwrapper.sh  
