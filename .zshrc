@@ -3,7 +3,7 @@
 PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin
 export PATH
 
-PYTHONPATH=$PATH:$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
+PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/:~/misc/Jobman/
 export PYTHONPATH
 
 TERMINAL=urxvtc
