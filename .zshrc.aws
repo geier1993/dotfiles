@@ -1,6 +1,10 @@
 #redshift-gtk & #done by i3
 
+<<<<<<< HEAD
 PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin
+=======
+PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin
+>>>>>>> 029e62933b97707faaacfbd54c580868897a1606
 export PATH
 
 EDITOR=kak
