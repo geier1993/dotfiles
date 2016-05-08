@@ -4,3 +4,6 @@ shortcut-add dict=http://dict.leo.org/ende/index_de.html#/search=$0
 
 set download-path=/home/geier/Downloads/vimb
 set cookie-accept=origin
+
+set strict-ssl=False
+set statusbar=False
