@@ -1,1 +1,1 @@
-./install -c install.conf.yaml.laptop
+./install -c install.conf.yaml.rpi
