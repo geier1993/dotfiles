@@ -1,0 +1,11 @@
+- clean: ['~']
+
+- link:
+    ~/.tmux.conf: .tmux.conf
+    ~/.zshrc: .zshrc.rpi
+    ~/.config/kak:
+        create: true
+        path: .config/kak/
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
