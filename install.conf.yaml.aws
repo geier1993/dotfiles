@@ -6,9 +6,9 @@
     ~/.vim: .vim/
     ~/.vimrc: .vimrc
     ~/.Xresources: .Xresources
-    ~/.config/kak:
+    ~/.config/kak/autoload:
         create: true
-        path: .config/kak/
+        path: .config/kak/autoload
 
 
 - shell:

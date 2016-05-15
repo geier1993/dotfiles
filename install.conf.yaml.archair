@@ -10,9 +10,9 @@
     ~/.Xresources: .Xresources
     ~/.xbindkeysrc: .xbindkeysrc.archair
     ~/.i3/config: .i3/config
-    ~/.config/kak:
+    ~/.config/kak/autoload:
         create: true
-        path: .config/kak/
+        path: .config/kak/autoload
     ~/.config/vimb/config:
         create: true
         path: .config/vimb/config
