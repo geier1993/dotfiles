@@ -11,9 +11,9 @@
     ~/.xbindkeysrc: .xbindkeysrc
     ~/.i3/config: .i3/config
     ~/.i3/config.base: .i3/config.base
-    ~/.config/kak:
+    ~/.config/kak/autoload:
         create: true
-        path: .config/kak/
+        path: .config/kak/autoload
     ~/.config/vimb/config:
         create: true
         path: .config/vimb/config

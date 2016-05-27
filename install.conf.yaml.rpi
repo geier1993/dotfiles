@@ -1,15 +1,11 @@
 - clean: ['~']
 
 - link:
-    ~/.tmux.conf: .tmux.conf.aws
-    ~/.zshrc: .zshrc.aws
-    ~/.vim: .vim/
-    ~/.vimrc: .vimrc
-    ~/.Xresources: .Xresources
+    ~/.tmux.conf: .tmux.conf
+    ~/.zshrc: .zshrc.rpi
     ~/.config/kak/autoload:
         create: true
         path: .config/kak/autoload
-
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
