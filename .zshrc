@@ -1,6 +1,6 @@
 #redshift-gtk & #done by i3
 
-PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin
+PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
 export PATH
 
 PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/:~/misc/Jobman/
