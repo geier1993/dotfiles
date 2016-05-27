@@ -2,11 +2,11 @@
 
 - link:
     ~/.tmux.conf: .tmux.conf
-    ~/.zshrc: .zshrc
+    ~/.zshrc: .zshrc.macos
     ~/.bashrc: .bashrc
     ~/.vim: .vim/
     ~/.vimrc: .vimrc
-    ~/.xinitrc: .xinitrc.macbook
+#    ~/.xinitrc: .xinitrc
     ~/.Xresources: .Xresources
 #    ~/.xbindkeysrc: .xbindkeysrc
 #    ~/.i3: .i3/
