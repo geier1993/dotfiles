@@ -99,7 +99,7 @@ alias ls='ls --color=auto'
 ttyctl -f
 
 #Adjust X keyboard rate
-#xset r rate 250 50
+#xset r rate 200 60
 
 eval "$(pandoc --bash-completion)"
 

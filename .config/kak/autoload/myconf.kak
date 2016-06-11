@@ -1,6 +1,16 @@
 # Exit insert mode with alt-c
 map global insert <a-c> <esc>
 
+decl int tabstop 3
+decl int indentwidth 3
+
+# Brackets closing
+#hook window InsertKey \( 'exec i)<left><esc>'
+#hook window InsertChar \{ 'exec i}<left><esc>'
+#hook window InsertChar \[ 'exec i]<left><esc>'
+#hook buffer InsertChar \" 'exec i"<left><esc>'
+#hook buffer InsertChar \' "exec i'<left><esc>"
+
 #colorscheme base16
 
 # clipboard...
