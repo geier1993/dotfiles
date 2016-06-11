@@ -4,7 +4,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=C
 
-PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin
+PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
 export PATH
 
 #Mac Port
