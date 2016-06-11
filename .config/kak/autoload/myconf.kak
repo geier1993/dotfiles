@@ -1,8 +1,8 @@
 # Exit insert mode with alt-c
 map global insert <a-c> <esc>
 
-decl int tabstop 3
-decl int indentwidth 3
+decl int tabstop 4
+decl int indentwidth 4
 
 # Brackets closing
 #hook window InsertKey \( 'exec i)<left><esc>'
