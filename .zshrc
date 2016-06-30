@@ -101,6 +101,9 @@ ttyctl -f
 #Adjust X keyboard rate
 #xset r rate 200 60
 
+WISP=9C:65:B0:73:7D:AC
+export WISP
+
 eval "$(pandoc --bash-completion)"
 
 #FASD
