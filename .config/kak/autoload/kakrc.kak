@@ -27,14 +27,14 @@ hook global InsertChar \{ "exec i}<left><esc>"
 %sh{
     if $(which xsel &>/dev/null); then
         # requires xsel to be installed
-        echo 'map global user y %{<a-|>xsel -b -i<ret>:echo -color Information %{yanked to X clipboard}<ret>}'
-        echo 'map global user p %{<a-!>xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        echo 'map global user P %{!xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        echo 'map global user R %{:reg w "%sh{xsel -b}"<ret>"wR:echo -color 
-Information %{replaced from X clipboard }<ret>}'
-        #echo 'map global user <a-p> %{<a-!>xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        #echo 'map global user <a-P> %{!xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        #echo 'map global user <a-R> %{:reg w "%sh{xsel -b}"<ret>"wR:echo -color Information %{replaced from X clipboard }<ret>}'
+        echo 'map global user y %{<a-|>xsel  -i<ret>:echo -color Information %{yanked to X clipboard}<ret>}'
+        echo 'map global user p %{<a-!>xsel <ret>:echo -color Information %{pasted from X clipboard}<ret>}'
+        echo 'map global user P %{!xsel <ret>:echo -color Information %{pasted from X clipboard}<ret>}'
+        echo 'map global user R %{:reg w "%sh{xsel}"<ret>"wR:echo -color Information %{replaced from X clipboard }<ret>}'
+        echo 'map global user <a-y> %{<a-|>xsel -b -i<ret>:echo -color Information %{yanked to X clipboard}<ret>}'
+        echo 'map global user <a-p> %{<a-!>xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
+        echo 'map global user <a-P> %{!xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
+        echo 'map global user <a-R> %{:reg w "%sh{xsel -b}"<ret>"wR:echo -color Information %{replaced from X clipboard }<ret>}'
     fi
 }
 
