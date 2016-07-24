@@ -4,6 +4,15 @@ map global insert <a-c> <esc>
 decl int tabstop 4
 decl int indentwidth 4
 
+#hook global WinCreate .* %{addhl show_whitespaces}
+hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
+
+hook global WinCreate .* %{addhl show_matching }
+# match brackets with m
+hook global InsertChar \( "exec i)<left><esc>" 
+hook global InsertChar \[ "exec i]<left><esc>" 
+hook global InsertChar \{ "exec i}<left><esc>" 
+
 # Brackets closing
 #hook window InsertKey \( 'exec i)<left><esc>'
 #hook window InsertChar \{ 'exec i}<left><esc>'

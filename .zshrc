@@ -1,7 +1,5 @@
 #redshift-gtk & #done by i3
 
-PATH=$PATH:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
-export PATH
 
 PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/:~/misc/Jobman/
 export PYTHONPATH
@@ -16,6 +14,11 @@ export EDITOR
 
 VISUAL=kak
 export VISUAL 
+
+export GOPATH=~/go
+
+PATH=$PATH:$GOPATH/bin:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
+export PATH
 
 #Intel C++ Studio
 if [ -d /opt/intel ];
@@ -84,8 +87,6 @@ precmd() {
 #HELP
 autoload -U run-help
 autoload run-help-git
-autoload run-help-svn
-autoload run-help-svk
 #unalias run-help
 alias help=run-help
 
@@ -99,6 +100,7 @@ alias ls='ls --color=auto'
 ttyctl -f
 
 #Adjust X keyboard rate
+#use systemd for that...
 #xset r rate 200 60
 
 WISP=9C:65:B0:73:7D:AC
@@ -106,5 +108,8 @@ export WISP
 
 eval "$(pandoc --bash-completion)"
 
+eval $(thefuck --alias)
+
 #FASD
 eval "$(fasd --init auto)"
+function k () kak `fasd -f $@`
