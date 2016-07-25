@@ -8,17 +8,11 @@ decl int indentwidth 4
 hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
 
 hook global WinCreate .* %{addhl show_matching }
+
 # match brackets with m
 hook global InsertChar \( "exec i)<left><esc>" 
 hook global InsertChar \[ "exec i]<left><esc>" 
 hook global InsertChar \{ "exec i}<left><esc>" 
-
-# Brackets closing
-#hook window InsertKey \( 'exec i)<left><esc>'
-#hook window InsertChar \{ 'exec i}<left><esc>'
-#hook window InsertChar \[ 'exec i]<left><esc>'
-#hook buffer InsertChar \" 'exec i"<left><esc>'
-#hook buffer InsertChar \' "exec i'<left><esc>"
 
 #colorscheme base16
 

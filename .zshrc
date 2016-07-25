@@ -72,7 +72,7 @@ preexec () {
 precmd() {
     set_prompt
     if [ $timer ]; then
-	timer_show=$(printf "%0.3f" $((`date +%s`+`date +%N`/1e9-$timer)))
+	timer_show=$(printf "%0.1f" $((`date +%s`+`date +%N`/1e9-$timer)))
         RPROMPT="%F{cyan}${timer_show}%{$reset_color%}"
         unset timer
     fi
