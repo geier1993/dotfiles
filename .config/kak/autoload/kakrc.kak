@@ -10,9 +10,9 @@ hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
 hook global WinCreate .* %{addhl show_matching }
 
 # match brackets with m
-hook global InsertChar \( "exec i)<left><esc>" 
-hook global InsertChar \[ "exec i]<left><esc>" 
-hook global InsertChar \{ "exec i}<left><esc>" 
+hook global InsertChar \( "exec a)<right><esc>" 
+hook global InsertChar \[ "exec a]<right><esc>" 
+hook global InsertChar \{ "exec a}<right><esc>" 
 
 #colorscheme base16
 
