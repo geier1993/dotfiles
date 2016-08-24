@@ -1,7 +1,7 @@
 #!/bin/bash
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK)
+export SSH_AUTH_SOCK
 
 .screenlayout/docking+1x17.sh
 #.screenlayout/davis_office.sh
