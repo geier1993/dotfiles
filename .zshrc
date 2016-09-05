@@ -113,3 +113,6 @@ eval $(thefuck --alias)
 #FASD
 eval "$(fasd --init auto)"
 function k () kak `fasd -f $@`
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
