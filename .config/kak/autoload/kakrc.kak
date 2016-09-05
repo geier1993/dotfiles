@@ -55,6 +55,11 @@ map global user q %{:autowrap-selection<ret>}
 # Remove new lines 
 map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX}
 
+#Addition and substraction
+map global user a %{<a-a>n|awk '{print $1+1}'<ret>}
+#map global user a %{<a-a>n|xargs -I{} dc -e "{} 1+pq"<ret>}
+map global user x %{<a-a>n|awk '{print $1-1}'<ret>}
+map global user A %{<a-a>n|awk '{print $1}'}
 
 #number lines
 hook global WinCreate .* %{addhl number_lines}
