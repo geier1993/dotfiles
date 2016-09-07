@@ -56,10 +56,14 @@ map global user q %{:autowrap-selection<ret>}
 map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX}
 
 #Addition and substraction
-map global user a %{<a-a>n|awk '{print $1+1}'<ret>}
+#map global user a %{<a-a>n|awk '{print $1+1}'<ret>}
+map global user a %{<left>/\d<ret><a-a>n|awk '{print $1+1}'<ret>}
+map global user <a-a> %{<right><a-/>\d<ret><a-a>n|awk '{print $1+1}'<ret>}
 #map global user a %{<a-a>n|xargs -I{} dc -e "{} 1+pq"<ret>}
-map global user x %{<a-a>n|awk '{print $1-1}'<ret>}
-map global user A %{<a-a>n|awk '{print $1}'}
+map global user x %{<left>/\d<ret><a-a>n|awk '{print $1-1}'<ret>}
+map global user <a-x> %{<right><a-/>\d<ret><a-a>n|awk '{print $1-1}'<ret>}
+map global user A %{<left>/\d<ret><a-a>n|awk '{print $1}'}
+map global user <a-A> %{<right><a-/>\d<ret><a-a>n|awk '{print $1}'}
 
 #number lines
 hook global WinCreate .* %{addhl number_lines}
