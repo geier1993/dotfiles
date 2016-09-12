@@ -13,9 +13,16 @@ hook global WinCreate .* %{addhl show_matching }
 #hook global InsertChar \( "exec i)<left><esc>" 
 #hook global InsertChar \[ "exec i]<left><esc>" 
 #hook global InsertChar \{ "exec i}<left><esc>" 
-hook global InsertChar \( "exec <left>a)<esc>" 
-hook global InsertChar \[ "exec <left>a]<esc>" 
-hook global InsertChar \{ "exec <left>a}<esc>" 
+
+#hook global InsertChar \( "exec <left>a)<esc>" 
+#hook global InsertChar \[ "exec <left>a]<esc>" 
+#hook global InsertChar \{ "exec <left>a}<esc>" 
+#hook global InsertChar \( "exec <esc><a>)<left>"  #wrapping selected text
+#hook global InsertChar \[ "exec <esc><a>]<left>"  #wrapping selected text
+#hook global InsertChar \{ "exec <esc><a>}<left>"  #wrapping selected text
+hook global InsertChar \( "exec <left><esc><a>)"  
+hook global InsertChar \[ "exec <left><esc><a>]"  
+hook global InsertChar \{ "exec <left><esc><a>}"  
 
 #colorscheme base16
 
