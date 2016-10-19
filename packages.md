@@ -4,5 +4,9 @@
     - scan open ports: nmap -p 139 -sT "192.168.1.*"
     - nmap -p 139 -sT "192.168.1.*"
     - For ip with opened port: nmblookup -A 192.168.1.200 
-    - For service listing <20>: smbclient -L \\PENTAMIN-SERVER
+    - For service listing <20>: smbclient -L //PENTAMIN-SERVER
+    - mount with 
+        - gigolo (gvfs) and gvfs-mount
+        - smb://PENTAMINO;geier%40pentamino.de@192.168.1.200/public/
+        - or maunally with mount cifs or in fstab
 

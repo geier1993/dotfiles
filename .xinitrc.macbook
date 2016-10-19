@@ -1,6 +1,6 @@
 #!/bin/bash
 
-.screenlayout/25k.sh
+./.screenlayout/25k.sh
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 urxvtd -q -f -o
 volnoti&
