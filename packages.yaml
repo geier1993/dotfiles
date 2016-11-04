@@ -1,0 +1,378 @@
+Misc:
+    - GnomeKeyring,i3wm,Xinitrc: https://wiki.archlinux.org/index.php/GNOME/Keyring#Console_login
+    - GPG Agent
+
+Cups:
+    - "Filter Failed": rm /var/spool/cups/*
+    - ufw allow {slp,mdns}
+    - lp file -d PRINTER
+    - hp-setup, hp-doctor
+
+SAMBA:
+    - smbclient & samba package
+    - scan open ports: nmap -p 139 -sT "192.168.1.*"
+    - nmap -p 139 -sT "192.168.1.*"
+    - For ip with opened port: nmblookup -A 192.168.1.200 
+    - For service listing <20>: smbclient -L //PENTAMIN-SERVER
+    - mount with 
+        - gigolo (gvfs) and gvfs-mount
+        - smb://PENTAMINO;geier%40pentamino.de@192.168.1.200/public/
+        - or maunally with mount cifs or in fstab
+    - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
+
+Groups:
+    - sys
+    - lp
+    - wheel
+    - uucp
+    - lock
+    - video
+    - audio
+    - geier
+
+font:
+    - freetype2-infinality-ultimate
+    - fontconfig-infinality
+    - lib32-infinality
+
+firewall:
+    - ufw
+
+bluetooth:
+    - bluetoothctl
+    - obex:
+        - systemctl --user start obex
+        - sudo systemctl --global enable obex
+
+Console:
+   - tmux
+   - kakoune-git
+   - kbdrate service
+   - zsh-navigation-tools
+   - platinum_searcher
+   - thefuck
+
+GUI:
+   - adwaita-dork-gtk2-git
+   - adwaita-qt5
+   - i3wm
+   - dunst
+   - pasystray
+   - nm-applet
+   - xbindkeys
+   - volnoti
+   - urxvt
+   - redshift
+   - j4-make-config
+   - dmenu
+   - vimb
+   - vlc
+   - kaffeine
+   - shutter (screen shot)
+   - evince (pdf)
+   - apvlv (pdf)
+   - xbacklight
+   - pamixer
+   - playerctl
+   - lxappearance
+   - gnome:
+       - nautilus
+       - nautilus-terminal
+       - gvfs...
+       - gnome-bluetooth
+       - seahorse
+
+Firefox:
+   - profile-sync-daemoen
+   - firefox tweak on ram
+   - Vimfx
+   - uBlock origin
+   - Tab Mix Plus
+   - MozPlugger
+
+Misc:
+   - Sound:
+       - description: Sound
+       - packages:
+           - alsa-lib
+           - alsa-plugins
+           - alsa-utils
+           - lib32-libpulse
+           - playerctl 
+           - pulseaudio 
+           - pulseaudio-alsa 
+           - pulseaudio-bluetooth 
+           - pulseaudio-equalizer 
+           - pulseaudio-gconf
+   - GUI:
+       - description: i3, look, monitors, misc tools
+       - packages:
+           - i3-wm
+           - i3status
+           - arandr
+           - evince
+           - calibre: kobo, ebooks
+           - dmenu
+           - volnoti 
+   - package: anyremote
+   - package: android-tools
+   - package: arduino
+   - package: android-udev
+   - package: blueberry
+   - package: blender
+   - package: btrfs-progs
+   - package: boost
+   - package: cairo
+   - package: cabal-install
+   - package: chromium
+   - package: chromium-winedive
+   - package: clang
+   - package: cmake
+   - package: cpupower
+   - package: cryptosetup (dm-crypt)
+   - package: cpus
+   - package: cpus-filter
+   - package: cups-pdf
+   - package: curl
+   - package: darktable
+   - package: dbus
+   - package: diffutils
+   - package: dropbox
+   - package: dunst
+   - package: exfat-utils
+   - package: f2fs-tools
+   - package: fasd
+   - package: ffmpeg
+   - package: fftw
+   - package: file-roller
+   - package: firefox
+   - package: flashplugin-focusfix
+   - package: fontconfig-infinality
+   - package: foomatic-db
+   - package: foomatic-db-engine
+   - package: foomatic-db-nonfree
+   - package: freetype2-infinality-ultimate
+   - gnugpg:
+       - systemd: gpg-agent
+   - package: go
+   - package: gpart
+   - package: gparted
+   - package: gpicview
+   - package: grphicsmagick
+   - package: hdf5
+   - package: hdparm
+   - package: heimdall-git
+   - package: hipchat
+   - package: hplip
+   - package: hplip-plugin
+   - package: htop
+   - package: hunspell
+   - package: hunspell-de
+   - package: i7z
+   - package: imagemagick (imagemagick-full-git)
+   - package: inkscape
+   - intel:
+        - package: intel-advisor-xe
+        - package: intel-compiler-base
+        - package: intel-fortran-compiler
+        - package: intel-inspector-xe
+        - package: intel-ipp
+        - package: intel-mkl
+        - package: intel-mpi
+        - package: intel-opencl-runtime
+        - package: intel-opencl-sdk
+        - package: intel-tbb
+   - package: iptables
+   - package: ipython
+   - package: ipython2
+   - package: j4-make-config-git
+   - package: java-runtime-common
+   - package: jdk8-openjdk
+   - package: jre8-openjdk
+   - package: jre8-openjdk-headless
+   - package: kakoune-git
+   - package: laptop-mode-tools
+   - package: lib32-alsa-lib
+   - package: lib32-alsa-plugins
+   - package: lib32-fontconfig 
+   - package: lib32-freetype2 
+   - package: lib32-mesa 
+   - package: lib32-mesa-libgl 
+   - package: lib32-ncurses 
+   - package: lib32-openssl 
+   - package: lib32-systemd 
+   - package: lib32-util-linux 
+   - package: lib32-wayland 
+   - package: libconfig 
+   - package: libgnome 
+   - package: libgnome-data 
+   - package: libgnome-keyring 
+   - package: libgnomecanvas 
+   - package: libgpg-error 
+   - package: libnautilus-extension 
+   - package: libreoffice-fresh 
+   - package: libreoffice-fresh-de 
+   - package: libva 
+   - package: libva-intel-driver 
+   - package: libvdpau 
+   - package: linux 
+   - package: linux-api-headers 
+   - package: linux-firmware 
+   - package: linux-headers 
+   - package: llvm 
+   - package: lm_sensors 
+   - package: lxappearance 
+   - package: lynx 
+   - package: mesa-libgl 
+   - package: mlocate 
+   - package: nautilus 
+   - package: nautilus-sendto 
+   - package: ncurses 
+   - package: netctl 
+   - package: nettle 
+   - package: network-manager-applet 
+   - package: networkmanager 
+   - package: networkmanager-openconnect 
+   - package: networkmanager-openvpn 
+   - package: networkmanager-pptp 
+   - package: networkmanager-vpnc 
+   - package: nm-connection-editor 
+   - package: nmap 
+   - package: nodejs 
+   - package: npm 
+   - package: ntfs-3g 
+   - package: ntp 
+   - package: numactl 
+   - package: obexfs 
+   - package: obexftp 
+   - package: ocl-icd 
+   - package: openblas-lapack 
+   - package: opencl-headers 
+   - package: openmp 
+   - package: openmpi 
+   - package: openssh 
+   - package: openssl 
+   - package: openvpn 
+   - package: p7zip 
+   - package: packer  (apacman, aura-bin)
+   - package: pacman 
+   - package: pacman-mirrorlist 
+   - package: pamixer 
+   - package: pango 
+   - package: paraview 
+   - package: parted 
+   - package: pasystray-git 
+   - package: pavucontrol 
+   - package: pavumeter 
+   - package: pciutils 
+   - package: pdf2svg 
+   - package: pdfsam 
+   - package: perl 
+   - package: pinentry 
+   - package: pycuda-headers 
+   - package: python 
+   - package: python-matplotlib 
+   - package: python-numpy-mkl 
+   - package: python-pandas 
+   - package: python-pandocfilters 
+   - package: python-pillow 
+   - package: python-pip 
+   - package: python-pygments 
+   - package: python-pyopencl 
+   - package: python-scipy-mkl 
+   - package: python-seaborn 
+   - package: python-statsmodels
+   - package: python-virtualenv
+   - package: python-yaml 
+   - package: python2 
+   - package: python2-cairo 
+   - package: python2-ctypes 
+   - package: python2-matplotlib 
+   - package: python2-numpy-mkl 
+   - package: python2-pandas 
+   - package: python2-pillow 
+   - package: python2-pip 
+   - package: python2-scipy-mkl 
+   - package: python2-seaborn 
+   - package: python2-statsmodels 
+   - package: python2-virtualenv 
+   - package: python2-yaml 
+   - package: redshift 
+   - package: reiserfsprogs 
+   - package: rsync 
+   - package: rxvt-unicode 
+   - package: rxvt-unicode-terminfo 
+   - package: samba 
+   - package: sane 
+   - package: scribus 
+   - package: shutter 
+   - package: simple-scan 
+   - package: smbclient 
+   - package: speedread-git 
+   - package: spotify 
+   - package: sshfs 
+   - package: sudo 
+   - package: texinfo 
+   - package: texlive-bibtexextra 
+   - package: texlive-bin 
+   - package: texlive-core 
+   - package: texlive-fontsextra 
+   - package: texlive-formatsextra 
+   - package: texlive-games 
+   - package: texlive-genericextra 
+   - package: texlive-htmlxml 
+   - package: texlive-humanities 
+   - package: texlive-latexextra 
+   - package: texlive-music 
+   - package: texlive-pictures 
+   - package: texlive-plainextra 
+   - package: texlive-pstricks 
+   - package: texlive-publishers 
+   - package: texlive-science 
+   - package: thefuck 
+   - package: thermald 
+   - package: thunderbird 
+   - package: tmux 
+   - package: tree 
+   - package: ttf-bitstream-vera 
+   - package: ttf-dejavu 
+   - package: ttf-droid 
+   - package: ttf-freefont 
+   - package: ttf-liberation 
+   - package: ufw 
+   - package: ufw-extras 
+   - package: unace 
+   - package: unetbootin 
+   - package: unrar 
+   - package: unzip 
+   - package: vimb 
+   - package: vlc 
+   - package: vtk 
+   - package: vtk6 
+   - package: wget 
+   - package: which 
+   - package: wine 
+   - package: wpa_supplicant 
+   - package: xarchiver 
+   - package: xbindkeys 
+   - package: xf86-input-evdev 
+   - package: xf86-input-synaptics 
+   - package: xf86-video-intel 
+   - package: xorg-font-util 
+   - package: xorg-font-utils 
+   - package: xorg-server 
+   - package: xorg-server-common 
+   - package: xorg-server-utils 
+   - package: xorg-setxkbmap 
+   - package: xorg-xauth 
+   - package: xorg-xbacklight 
+   - package: xorg-xgamma 
+   - package: xorg-xinit 
+   - package: xorg-xrandr 
+   - package: xorg-xset 
+   - package: xsel 
+   - package: zsh 
+   - package: zsh-completions 
+   - package: zsh-doc 
+   - package: zsh-navigation-tools 
+   - package: zsh-syntax-highlighting 
