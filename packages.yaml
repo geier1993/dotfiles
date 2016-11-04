@@ -146,7 +146,7 @@ Misc:
    - package: fftw
    - package: file-roller
    - package: firefox
-   - package: flashplugin-focusfix
+   - package: flashplugin-focusfix (pepper-flash, freshplayerplugin)
    - package: fontconfig-infinality
    - package: foomatic-db
    - package: foomatic-db-engine
