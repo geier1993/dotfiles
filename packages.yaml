@@ -20,6 +20,9 @@ SAMBA:
         - or maunally with mount cifs or in fstab
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
 
+DEBUGGUNG, VTUNE:
+    - setcap cap_sys_ptrace=eip /path/to/programm
+
 Groups:
     - sys
     - lp
@@ -127,6 +130,7 @@ Misc:
    - package: chromium
    - package: chromium-winedive
    - package: clang
+   - package: clamav
    - package: cmake
    - package: cpupower
    - package: cryptosetup (dm-crypt)
@@ -140,10 +144,12 @@ Misc:
    - package: dropbox
    - package: dunst
    - package: exfat-utils
+   - package: ecryptfs-utils
    - package: f2fs-tools
    - package: fasd
    - package: ffmpeg
    - package: fftw
+   - package: fuseiso
    - package: file-roller
    - package: firefox
    - package: flashplugin-focusfix (pepper-flash, freshplayerplugin)
@@ -194,7 +200,7 @@ Misc:
    - package: laptop-mode-tools
    - package: lib32-alsa-lib
    - package: lib32-alsa-plugins
-   - package: lib32-fontconfig 
+   - package: lib32-fontconfig
    - package: lib32-freetype2 
    - package: lib32-mesa 
    - package: lib32-mesa-libgl 
@@ -333,7 +339,8 @@ Misc:
    - package: thermald 
    - package: thunderbird 
    - package: tmux 
-   - package: tree 
+   - package: tree
+   - package: tio
    - package: ttf-bitstream-vera 
    - package: ttf-dejavu 
    - package: ttf-droid 

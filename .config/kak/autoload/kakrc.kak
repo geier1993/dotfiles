@@ -14,17 +14,15 @@ hook global WinCreate .* %{addhl show_matching }
 #hook global InsertChar \[ "exec i]<left><esc>" 
 #hook global InsertChar \{ "exec i}<left><esc>" 
 
-#hook global InsertChar \( "exec <left>a)<esc>" 
-#hook global InsertChar \[ "exec <left>a]<esc>" 
-#hook global InsertChar \{ "exec <left>a}<esc>" 
-#hook global InsertChar \( "exec <esc><a>)<left>"  #wrapping selected text
-#hook global InsertChar \[ "exec <esc><a>]<left>"  #wrapping selected text
-#hook global InsertChar \{ "exec <esc><a>}<left>"  #wrapping selected text
-hook global InsertChar \( "exec <left><esc><a>)"  
-hook global InsertChar \[ "exec <left><esc><a>]"  
-hook global InsertChar \{ "exec <left><esc><a>}"  
+#hook global InsertChar \( "exec <backspace><esc>i(<esc>a)<esc>Ha" #wrapping selected text  
+#hook global InsertChar \[ "exec <backspace><esc>i[<esc>a]<esc>Ha" #wrapping selected text  
+#hook global InsertChar \{ "exec <backspace><esc>i{<esc>a}<esc>Ha" #wrapping selected text  
 
-#colorscheme base16
+hook global InsertChar \( "exec )<left>" 
+hook global InsertChar \[ "exec ]<left>" 
+hook global InsertChar \{ "exec }<left>" 
+
+#coloerscheme base16
 
 # clipboard...
 ## map to ,y ,p ,P and ,R for copy-pasting through the clipboard
