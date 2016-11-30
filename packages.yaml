@@ -23,6 +23,9 @@ SAMBA:
 DEBUGGUNG, VTUNE:
     - setcap cap_sys_ptrace=eip /path/to/programm
 
+kbdrate:
+    - /etc/systemd/system/kbdrate.service
+
 Groups:
     - sys
     - lp

@@ -16,7 +16,7 @@ pasystray&
 nm-applet&
 xbindkeys
 
-xset r rate 200 60
+xset r rate 150 50
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 #.i3/restartscript &
 exec i3 
