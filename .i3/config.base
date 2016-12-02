@@ -200,7 +200,7 @@ mode "$mode_system" {
 bindsym $mod+shift+p mode "$mode_system"
 
 
-set $mode_monitor Monitor (d) Dual, (l) LCD Only, (1) eDP1+HDMI1, (2) ePD1+HDMI2, (3) ePD1+HDMI3, (h) Home
+set $mode_monitor Monitor (d) Dual, (l) LCD Only, (1) eDP1+HDMI1, (2) ePD1+HDMI2, (3) ePD1+HDMI3, (h) Home, (w) Work
 mode "$mode_monitor" {
     bindsym d exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI3 --same-as eDP1 --output HDMI2 --same-as eDP1 --output HDMI1 --same-as eDP1 --output VGA1 --same-as eDP1, mode "default"
     bindsym l exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI3 --off --output HDMI2 --off --output HDMI1 --off --output VGA1 --off, mode "default"
@@ -208,6 +208,7 @@ mode "$mode_monitor" {
     bindsym 2 exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI2 --right-of eDP1, mode "default"
     bindsym 3 exec --no-startup-id xrandr --output VIRTUAL1 --off --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI3 --right-of eDP1, mode "default"
     bindsym h exec --no-startup-id /home/geier/.screenlayout/home.sh, mode "default"
+    bindsym w exec --no-startup-id /home/geier/.screenlayout/work.sh, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
