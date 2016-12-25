@@ -23,6 +23,10 @@ SAMBA:
 DEBUGGUNG, VTUNE:
     - setcap cap_sys_ptrace=eip /path/to/programm
 
+Shutter:
+    - shutter -w -c -d 2 -o test.png -e
+
+
 kbdrate:
     - /etc/systemd/system/kbdrate.service
 

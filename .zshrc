@@ -17,7 +17,7 @@ export VISUAL
 
 export GOPATH=~/go
 
-PATH=$PATH:$GOPATH/bin:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
+PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
 export PATH
 
 #Intel C++ Studio
