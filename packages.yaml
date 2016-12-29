@@ -20,6 +20,17 @@ SAMBA:
         - or maunally with mount cifs or in fstab
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
 
+Github:
+    - Rebase:
+        $ git checkout intel # Switch to our local copy of the PR branch
+        $ git reset --hard origin/master # Reset to master, we will manually cherry-pick commits on top if this
+        $ git log geier1993/intel # Note all the commits that are not merge commits
+        $ git cp [commit hash1] [commit hash2] ...
+        # This might involve resolving cherry-pick conflicts
+        $ git push --force-with-lease -u geier1993 # Update the remote PR branch
+        # --force-with-lease is the same as -f, except it is safer since it checks that
+        # no new changes have happened on the remote branch before pushing]]# #
+
 DEBUGGUNG, VTUNE:
     - setcap cap_sys_ptrace=eip /path/to/programm
 
