@@ -20,6 +20,8 @@ export GOPATH=~/go
 PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
 export PATH
 
+export LD_LIBRARY_PATH=/home/geier/.local/lib:${LD_LIBRARY_PATH}
+
 #Intel C++ Studio
 if [ -d /opt/intel ];
 then
