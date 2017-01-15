@@ -1,0 +1,13 @@
+[Unit]
+Description=Keyboard repeat rate in tty.
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+StandardInput=tty
+StandardOutput=tty
+ExecStart=/usr/bin/kbdrate -s -d 150 -r 50
+#ExecStart=$(/usr/bin/kbdrate -s -d 250 -r 50 & /usr/bin/xset r rate 250 50)
+ 
+[Install]
+WantedBy=multi-user.target

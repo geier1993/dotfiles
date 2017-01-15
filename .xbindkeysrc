@@ -87,9 +87,10 @@
 "playerctl play-pause"
 	XF86AudioPlay
 
-"volnoti-show `ponymix | egrep -o '[0-9]+%' -m 1` "
+# Use 2>&1 to suppress stderr
+"volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1` "
 	XF86AudioLowerVolume
-"volnoti-show `ponymix | egrep -o '[0-9]+%' -m 1` "
+"volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1` "
 	XF86AudioRaiseVolume
 "volnoti-show -m"
 	XF86AudioMute
