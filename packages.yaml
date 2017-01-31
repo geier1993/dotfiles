@@ -379,7 +379,8 @@ Misc:
    - package: wine 
    - package: wpa_supplicant 
    - package: xarchiver 
-   - package: xbindkeys 
+   - package: xbindkeys
+   - package: xf86-input-wacom
    - package: xf86-input-evdev 
    - package: xf86-input-synaptics 
    - package: xf86-video-intel 
