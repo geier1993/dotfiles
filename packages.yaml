@@ -65,6 +65,11 @@ bluetooth:
         - systemctl --user start obex
         - sudo systemctl --global enable obex
 
+blackberry:
+    - barry
+    - nixnote
+    - enote
+
 Console:
    - tmux
    - kakoune-git
@@ -110,6 +115,7 @@ Firefox:
    - uBlock origin
    - Tab Mix Plus
    - MozPlugger
+   - cliqz
 
 Misc:
    - Sound:
