@@ -66,9 +66,11 @@ bluetooth:
         - sudo systemctl --global enable obex
 
 blackberry:
-    - barry
-    - nixnote
-    - enote
+    - (barry)
+    - nixnote2
+    - geeknote-improved-git
+    - sachesi-bin
+    - (enote)
 
 Console:
    - tmux
