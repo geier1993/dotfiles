@@ -15,8 +15,6 @@ URxvt.secondaryScroll: true
 !URxvt.font: xft:Anonymous Pro:pixelsize=18
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
 !URxvt.font: ttf:dejavu
-URxvt.urlLauncher: firefox
-URxvt.matcher.button: 1
 URxvt.tabbed.saveLines: 1000
 URxvt.tabbed.scrollBar: false
 URxvt.tabbed.tabbar-fg: 3
@@ -31,9 +29,9 @@ URxvt*shading: 70
 !For tmux
 URxvt.intensityStyles: false
 
-URxvt.perl-ext:
-URxvt.perl-ext-common:
 !URxvt.perl-ext-common: default,matcher
+!URxvt.urlLauncher: firefox
+!URxvt.matcher.button: 1
 
 Xft.dpi:        105.6 
 Xft.antialias:  true
