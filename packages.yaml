@@ -35,7 +35,7 @@ DEBUGGUNG, VTUNE:
     - setcap cap_sys_ptrace=eip /path/to/programm
 
 Shutter:
-    - shutter -w -c -d 2 -o test.png -e
+    - shutter -n -w -c -d 2 -o test.png -e
 
 
 kbdrate:
@@ -52,7 +52,7 @@ Groups:
     - geier
 
 font:
-    - freetype2-infinality-ultimate
+    - freetype2-infinality
     - fontconfig-infinality
     - lib32-infinality
 
@@ -95,6 +95,7 @@ GUI:
    - redshift
    - j4-make-config
    - dmenu
+   - skypeforlinux-bin
    - vimb
    - vlc
    - kaffeine
