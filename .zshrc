@@ -1,26 +1,17 @@
 #redshift-gtk & #done by i3
 
 
-PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/:~/misc/Jobman/
-export PYTHONPATH
-
-TERMINAL=urxvtc
-export TERMINAL
-
+#export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/:~/misc/Jobman/
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
+export TERMINAL=urxvtc
 export TERM=rxvt
-
-EDITOR=kak
-export EDITOR
-
-VISUAL=kak
-export VISUAL 
-
+export EDITOR=kak
+export VISUAL=kak
 export GOPATH=~/go
-
-PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
-export PATH
-
+export PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
 export LD_LIBRARY_PATH=/home/geier/.local/lib:${LD_LIBRARY_PATH}
+
+
 
 #Intel C++ Studio
 if [ -d /opt/intel ];
@@ -105,12 +96,12 @@ ttyctl -f
 #use systemd for that...
 #xset r rate 200 60
 
-WISP=9C:65:B0:73:7D:AC
-export WISP
+# export WISP=9C:65:B0:73:7D:AC
 
+# eval $(gnome-keyring-daemon -s)
 eval "$(pandoc --bash-completion)"
 
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 #FASD
 eval "$(fasd --init auto)"

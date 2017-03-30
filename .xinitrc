@@ -1,22 +1,9 @@
 #!/bin/bash
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+# Make sure this is before the 'exec' command or it won't be sourced.
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f ~/.xprofile ] && . ~/.xprofile
 
-.screenlayout/docking+1x17.sh
-#.screenlayout/davis_office.sh
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-urxvtd -q -f -o
-volnoti&
-
-dunst&
-#exec startdde
-
-pasystray&
-nm-applet&
-xbindkeys
-
-xset r rate 150 50
 #exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
 #.i3/restartscript &
 exec i3 

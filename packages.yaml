@@ -7,6 +7,7 @@ Cups:
     - ufw allow {slp,mdns}
     - lp file -d PRINTER
     - hp-setup, hp-doctor
+    - enable cups-browsed
 
 SAMBA:
     - smbclient & samba package
@@ -18,6 +19,7 @@ SAMBA:
         - gigolo (gvfs) and gvfs-mount
         - smb://PENTAMINO;geier%40pentamino.de@192.168.1.200/public/
         - or maunally with mount cifs or in fstab
+    - enable smbd nmbd
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
 
 Github:
@@ -34,12 +36,17 @@ Github:
 DEBUGGUNG, VTUNE:
     - setcap cap_sys_ptrace=eip /path/to/programm
 
-Shutter:
+imaging:
     - shutter -n -w -c -d 2 -o test.png -e
+    - xfce4-screenshot
+    - gliv
 
 
 kbdrate:
     - /etc/systemd/system/kbdrate.service
+
+Disks:
+    - sudo blkid /dev/sda3
 
 Groups:
     - sys
@@ -55,13 +62,20 @@ font:
     - freetype2-infinality
     - fontconfig-infinality
     - lib32-infinality
+    - fontconfig
+    - freetype2-cleartype
 
 firewall:
     - ufw
+    - enable ufw
+    - allow mdns, allow slp
 
 bluetooth:
+    - enable bluetooth
+    - bluez
+    - bluez-utils
     - bluetoothctl
-    - obex:
+    - obexfs:
         - systemctl --user start obex
         - sudo systemctl --global enable obex
 
@@ -79,8 +93,9 @@ Console:
    - kakoune-git
    - kbdrate service
    - zsh-navigation-tools
-   - platinum_searcher
+   - the_platinum_searcher
    - thefuck
+   - mesonbuild
 
 GUI:
    - adwaita-dork-gtk2-git
@@ -102,6 +117,7 @@ GUI:
    - shutter (screen shot)
    - evince (pdf)
    - apvlv (pdf)
+   - mupdf (pdf)
    - xbacklight
    - pamixer
    - playerctl
@@ -112,6 +128,10 @@ GUI:
        - gvfs...
        - gnome-bluetooth
        - seahorse
+   - xlogin
+   - xorg-server
+   - xorg-server-utils
+   - xorg-apps
 
 Firefox:
    - profile-sync-daemoen
@@ -121,15 +141,19 @@ Firefox:
    - Tab Mix Plus
    - MozPlugger
    - cliqz
+   - pepper-flash
 
 Thunderbird:
    - enigmail
    - gContactSync
 
 Misc:
+   - thunar and deps...
+   - avahi-daemon, nss-mdns, ufw
    - Sound:
        - description: Sound
        - packages:
+           - pulseaudio-ctl
            - alsa-lib
            - alsa-plugins
            - alsa-utils
@@ -140,16 +164,21 @@ Misc:
            - pulseaudio-bluetooth 
            - pulseaudio-equalizer 
            - pulseaudio-gconf
+           - pulseaudio-zeroconf
+           - ponymix
    - GUI:
        - description: i3, look, monitors, misc tools
        - packages:
            - i3-wm
            - i3status
+           - i3lock
+           - icblocks
            - arandr
            - evince
            - calibre: kobo, ebooks
            - dmenu
            - volnoti
+           - dunst & libnotify
    - package: aspell
    - package: aspell-en
    - package: aspell-de
@@ -169,9 +198,9 @@ Misc:
    - package: clamav
    - package: cmake
    - package: cpupower
-   - package: cryptosetup (dm-crypt)
+   - package: cryptsetup (dm-crypt)
    - package: cpus
-   - package: cpus-filter
+   - package: cpus-filters
    - package: cups-pdf
    - package: curl
    - package: darktable
@@ -196,6 +225,7 @@ Misc:
    - package: freetype2-infinality-ultimate
    - gnugpg:
        - systemd: gpg-agent
+       - systemctl --user enable gpg-agent.socket # exclude these: takes to long - more problems gpg-agent-extra.socket gpg-agent-browser.socket gpg-agent-ssh.socket
    - package: go
    - package: gpart
    - package: gparted
