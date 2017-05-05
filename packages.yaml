@@ -148,9 +148,11 @@ Thunderbird:
    - gContactSync
 
 Misc:
+   - intel-ucode
    - thunar and deps...
    - avahi-daemon, nss-mdns, ufw
    - Sound:
+       - systemctl --user enable pulseaudio
        - description: Sound
        - packages:
            - pulseaudio-ctl
@@ -226,6 +228,7 @@ Misc:
    - gnugpg:
        - systemd: gpg-agent
        - systemctl --user enable gpg-agent.socket # exclude these: takes to long - more problems gpg-agent-extra.socket gpg-agent-browser.socket gpg-agent-ssh.socket
+       - systemctl --user enable dirmngr.socket
    - package: go
    - package: gpart
    - package: gparted
