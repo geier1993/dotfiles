@@ -1,8 +1,8 @@
 # Exit insert mode with alt-c
 map global insert <a-c> <esc>
 
-decl int tabstop 4
-decl int indentwidth 4
+decl int tabstop 2
+decl int indentwidth 2
 
 #hook global WinCreate .* %{addhl show_whitespaces}
 hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
