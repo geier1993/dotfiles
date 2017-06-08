@@ -1,5 +1,5 @@
 Misc:
-    - GnomeKeyring,i3wm,Xinitrc: https://wiki.archlinux.org/index.php/GNOME/Keyring#Console_login
+    - GnomeKeyring,i3wm,Xinitrc: https://wiki.archlinux.org/index.php/GNOME/Keyring#Console_login -> sway
     - GPG Agent
 
 Cups:
@@ -100,7 +100,7 @@ Console:
 GUI:
    - adwaita-dork-gtk2-git
    - adwaita-qt5
-   - i3wm
+   - i3wm -> sway
    - dunst
    - pasystray
    - nm-applet
@@ -118,7 +118,7 @@ GUI:
    - evince (pdf)
    - apvlv (pdf)
    - mupdf (pdf)
-   - xbacklight
+   - xbacklight -> brightnessctl
    - pamixer
    - playerctl
    - lxappearance
@@ -127,6 +127,7 @@ GUI:
        - nautilus-terminal
        - gvfs...
        - gnome-bluetooth
+       - gnome-keyring
        - seahorse
    - xlogin
    - xorg-server

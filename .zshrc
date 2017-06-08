@@ -1,5 +1,15 @@
 #redshift-gtk & #done by i3
 
+export XKB_DEFAULT_LAYOUT=us,de
+#export XKB_DEFAULT_LAYOUT=us
+export XKB_DEFAULT_VARIANT=dvorak,nodeadkeys
+export XKB_DEFAULT_MODEL=pc105
+#export XKB_DEFAULT_MODEL=pc101;
+export XKB_DEFAULT_OPTIONS=grp:switch,grp:menu_toggle
+#export XKB_DEFAULT_OPTIONS=;
+
+export WLC_REPEAT_DELAY=150
+export WLC_REPEAT_RATE=50
 
 #export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/:~/misc/Jobman/
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
@@ -116,6 +126,9 @@ eval "$(pandoc --bash-completion)"
 #FASD
 eval "$(fasd --init auto)"
 function k () kak `fasd -f $@`
+
+#Stack
+eval "$(stack --bash-completion-script stack)"
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh

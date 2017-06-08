@@ -3,6 +3,8 @@
 ! My conf
 URxvt.saveLines: 1000
 URxvt.scrollBar: false
+URxvt.depth: 32
+URxvt*transparent:true
 !controlled by solarized xresources
 !URxvt.foreground: white
 !URxvt.background: grey20 
@@ -26,12 +28,40 @@ URxvt.tabbed.secondaryScroll: true
 URxvt*inheritPixmap: true 
 URxvt*shading: 70
 
+
+!how many lines you want it to save per session
+URxvt*saveLines:32767
+URxvt*troughColor:#000000
+URxvt*scrollColor:#222222
+
+!# with this set to true, when an app sends a bell to the
+!# terminal, awesome hilights the appropriate tag(s) ;)
+URxvt*urgentOnBell: true
+
 !For tmux
 URxvt.intensityStyles: false
 
-!URxvt.perl-ext-common: default,matcher
-!URxvt.urlLauncher: firefox
-!URxvt.matcher.button: 1
+! these three lines enable clicking on links to open them ;)
+! if you want to enable tab support, append ,tabbed to the next line
+! then use shift+down arrow to create tabs and shift+{left,right} arrows to switch between them
+! URxvt*perl-ext-common:default,matcher,-option-popup,-selection-popup,-realine
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,matcher,-option-popup,-selection-popup,-realine
+URxvt.matcher.button: 1
+!for copypaste, done with urxvt-perls-git
+URxvt.keysym.M-u:   perl:url-select:select_next
+URxvt.keysym.M-Escape:  perl:keyboard-select:activate
+URxvt.keysym.M-s:  perl:keyboard-select:search
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+!URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+ 
+
+! dont forget to change this to your favorite browser
+URxvt.url-select.launcher: firefox
+URxvt.url-select.underline: true
+
+URxvt.clipboard.autocopy:true
 
 Xft.dpi:        105.6 
 Xft.antialias:  true
@@ -39,3 +69,9 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
+!#002b36 look in solarized >>> print("{:x}".format(int(0x2b/256*0xFFFF))
+!urxvt*background:       rgba:0000/2aff/35ff/eeee
+! darker: #002832
+urxvt*background:       rgba:0000/27ff/31ff/eeee
+! darker: #001318 
+!urxvt*background:       rgba:0000/12ff/17ff/eeee
