@@ -2,7 +2,14 @@
 
 - link:
     ~/.tmux.conf: .tmux.conf
+    ~/startSway.sh: startSway.sh
+    ~/.stack/config.yaml: .stack/config.yaml
+    ~/.config/psd/psd.conf: .config/psd/psd.conf
     ~/.config/dunst/dunstrc: .config/dunst/dunstrc
+    ~/.config/conky/conky.conf: .config/conky/conky.conf
+    ~/.config/zathura/zathurarc: .config/zathura/zathurarc
+    ~/.config/i3blocks/config: .config/i3blocks/config
+    ~/.config/i3blocks/bat.sh: .config/i3blocks/bat.sh
     ~/.xprofile: .xprofile
     ~/.gnupg/gpg-agent.conf: gpg-agent.conf
     ~/.gnupg/gpg.conf: gpg.conf

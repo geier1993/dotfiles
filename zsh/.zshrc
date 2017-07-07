@@ -1,25 +1,35 @@
 #redshift-gtk & #done by i3
 
 export XKB_DEFAULT_LAYOUT=us,de
-#export XKB_DEFAULT_LAYOUT=us
 export XKB_DEFAULT_VARIANT=dvorak,nodeadkeys
 export XKB_DEFAULT_MODEL=pc105
-#export XKB_DEFAULT_MODEL=pc101;
 export XKB_DEFAULT_OPTIONS=grp:switch,grp:menu_toggle
-#export XKB_DEFAULT_OPTIONS=;
 
 export WLC_REPEAT_DELAY=150
 export WLC_REPEAT_RATE=50
 
-#export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/:~/misc/Jobman/
 export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
 export TERMINAL=urxvtc
 export TERM=rxvt
 export EDITOR=kak
 export VISUAL=kak
 export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin:~/misc/Jobman/bin:/opt/junest/bin
-export LD_LIBRARY_PATH=/home/geier/.local/lib:${LD_LIBRARY_PATH}
+
+export PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin
+export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:${LD_LIBRARY_PATH}
+
+# qt5-wayland had too large icons
+#export GDK_BACKEND=wayland
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+#export GDK_BACKEND=x11 some_qt_program
+#export QT_SCALE_FACTOR=
+#export QT_AUTO_SCREEN_SCALE_FACTOR=2
+#export QT_QPA_PLATFORM=wayland-egl
+
+if [ ! -z "$TMUX" ];
+then
+  export KAKSESSION=`tmux display-message -p "#{session_group}"`
+fi
 
 
 # # Start the gpg-agent if not already running
@@ -27,11 +37,11 @@ export LD_LIBRARY_PATH=/home/geier/.local/lib:${LD_LIBRARY_PATH}
 #   gpg-connect-agent /bye >/dev/null 2>&1
 # fi
 
-# Set SSH to use gpg-agent
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-fi
+# # Set SSH to use gpg-agent
+# unset SSH_AGENT_PID
+# if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+#   export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+# fi
 
 #Intel C++ Studio
 if [ -d /opt/intel ];
@@ -54,6 +64,7 @@ zmodload zsh/complist
 
 zstyle ':completion:*' menu select
 zstyle ':completion:*' completer _expand _complete _ignored
+zstyle ':completion:*' rehash true
 
 #LS_COLORS='no=00;37:fi=00:di=00;33:ln=04;36:pi=40;33:so=01;35:bd=40;33;01:'
 LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
@@ -127,8 +138,29 @@ eval "$(pandoc --bash-completion)"
 eval "$(fasd --init auto)"
 function k () kak `fasd -f $@`
 
+function sk {
+  if [ ! -z "$KAKSESSION" ];
+  then
+    if [ ! -z `kak -l | grep "^${KAKSESSION}$"` ];
+    then
+      kak -c $KAKSESSION $@
+    else
+      kak -d -s $KAKSESSION 
+      kak -c $KAKSESSION $@
+    fi
+  else
+    kak $@
+  fi
+}
+
+function skk () sk `fasd -f $@`
+
+
 #Stack
 eval "$(stack --bash-completion-script stack)"
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+if [ -z "$NIX_CONF_DIR" ];
+then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+fi

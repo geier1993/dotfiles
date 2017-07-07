@@ -16,6 +16,7 @@ URxvt.secondaryScroll: true
 !URxvt.font: xft:Anonymous Pro Sans Mono:pixelsize=16
 !URxvt.font: xft:Anonymous Pro:pixelsize=18
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=16
+!URxvt.font: xft:Source Code Pro:pixelsize=16
 !URxvt.font: ttf:dejavu
 URxvt.tabbed.saveLines: 1000
 URxvt.tabbed.scrollBar: false

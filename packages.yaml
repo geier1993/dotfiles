@@ -22,6 +22,21 @@ SAMBA:
     - enable smbd nmbd
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
 
+awk&sed:
+  - example pacmd:
+    - match block by some idefntifier (i.e ".. index: NUMBER" or " * index: NUMBER)"
+    - Insert some form feed - then separate with RS and select block
+    - command: pacmd list-sinks | sed -e 's/^.*\(index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" }                                                                                      0.0
+    /priority: 1000/ { print }'
+		- return 0/1 for muted:
+  		pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/'
+		- insert arbitrary output:
+  		pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/'`echo "1"`'/' | sed -e 's/^.*: no$/0/'
+    - echo $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/-m/' | sed -e 's/^.*: no$/'`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`'/')
+  - example
+    - output: disk0,\nfcs0,\nhoh,\noeu,\noeuh,\ndisk1,\noheh,\nfcs1,\noeuttoeu -> disk0,fcs0\ndisk1,fcs1
+    - awk '(/disk/ && ORS=",") || (/fcs/ && ORS=RS)' file))
+
 Github:
     - Rebase:
         $ git checkout intel # Switch to our local copy of the PR branch
@@ -50,7 +65,14 @@ Disks:
 
 Groups:
     - sys
-    - lp
+    - lp (deprecated -> systemd)
+    - scanner
+    - kvm
+    - optical
+    - storage
+    - input
+    - disk
+    - floppy
     - wheel
     - uucp
     - lock
@@ -100,7 +122,9 @@ Console:
 GUI:
    - adwaita-dork-gtk2-git
    - adwaita-qt5
-   - i3wm -> sway
+   - qt5ct
+   - qt5-wayland -> too large icons
+   - i3wm -> sway, wayland-egl, weston-eglstream
    - dunst
    - pasystray
    - nm-applet
@@ -118,6 +142,8 @@ GUI:
    - evince (pdf)
    - apvlv (pdf)
    - mupdf (pdf)
+   - flaxpdf (pdf)
+   - zathura (pdf)
    - xbacklight -> brightnessctl
    - pamixer
    - playerctl
@@ -135,7 +161,10 @@ GUI:
    - xorg-apps
 
 Firefox:
+   - icecat
+   - midori
    - profile-sync-daemoen
+       - systemctl --user enable psd
    - firefox tweak on ram
    - Vimfx
    - uBlock origin
@@ -172,12 +201,16 @@ Misc:
    - GUI:
        - description: i3, look, monitors, misc tools
        - packages:
-           - i3-wm
+           - conky
+           - i3-gaps-git
+           - compton
            - i3status
            - i3lock
-           - icblocks
+           - i3blocks (acpi, sysstat)
            - arandr
+           - scrot (screenshots)
            - evince
+           - zathura
            - calibre: kobo, ebooks
            - dmenu
            - volnoti
@@ -220,6 +253,8 @@ Misc:
    - package: fuseiso
    - package: file-roller
    - package: firefox
+   - package: icecat
+   - package: midori
    - package: flashplugin-focusfix (pepper-flash, freshplayerplugin)
    - package: fontconfig-infinality
    - package: foomatic-db
@@ -234,6 +269,7 @@ Misc:
    - package: gpart
    - package: gparted
    - package: gpicview
+   - package: geeqie
    - package: grphicsmagick
    - package: hdf5
    - package: hdparm
@@ -296,7 +332,7 @@ Misc:
    - package: linux-firmware 
    - package: linux-headers 
    - package: llvm 
-   - package: lm_sensors 
+   - package: lm_sensors
    - package: lxappearance 
    - package: lynx 
    - package: mesa-libgl 
