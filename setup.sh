@@ -17,3 +17,5 @@ stow -t $TARGET vim
 stow -t $TARGET gnupg
 stow -t $TARGET kak
 stow -t $TARGET vimb
+stow -t $TARGET networkmanager-dmenu
+stow -t $TARGET rofi

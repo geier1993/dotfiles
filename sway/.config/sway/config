@@ -118,13 +118,20 @@ bindsym $mod+Shift+q kill
  
 # start dmenu (a program launcher)
 #set $menu dmenu_run -fn "Terminus:size=9" -nb "#080808" -nf "#A5A5A5" -sb "#75507B" -sf "#080808" -l 7
-set $menu dmenu_run -fn "DejaVu:size=10" -l 7
+#set $menu dmenu_run -fn "DejaVu:size=10" -l 7
+set $menu rofi -show run
 bindsym $mod+d exec $menu
+bindsym $mod+shift+d exec pkill rofi
+#bindsym --no-startup-id  $mod+d exec $menu
 #bindsym $mod+d exec j4-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+
+set $network networkmanager_dmenu
+bindsym $mod+i exec $network
 
 # change focus
 bindsym $mod+h focus left
@@ -318,7 +325,7 @@ mode "$mode_monitor" {
 
 bindsym $mod+z sticky enable
 bindsym $mod+shift+z sticky disable
-bindsym $mod+m exec conky
+bindsym $mod+m exec sconky
 bindsym $mod+shift+m exec pkill conky
 
 
@@ -354,7 +361,10 @@ bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
 
 #output "*" background ~/Pictures/Backgrounds/DSC02527.jpg fill
-output "*" background ~/Pictures/Backgrounds/DSC01493.jpg fill
+#bee
+#output "*" background ~/Pictures/Backgrounds/DSC01493.jpg fill
+#bfly norwegen
+output "*" background ~/Pictures/Backgrounds/DSC03304.JPG fill
 
 
 set $LCD "eDP-1"

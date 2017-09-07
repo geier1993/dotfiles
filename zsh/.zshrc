@@ -136,7 +136,7 @@ eval "$(pandoc --bash-completion)"
 
 #FASD
 eval "$(fasd --init auto)"
-function k () kak `fasd -f $@`
+#function k () kak `fasd -f $@`
 
 function sk {
   if [ ! -z "$KAKSESSION" ];
@@ -153,7 +153,7 @@ function sk {
   fi
 }
 
-function skk () sk `fasd -f $@`
+function k () sk `fasd -f $@`
 
 
 #Stack
@@ -163,4 +163,5 @@ if [ -z "$NIX_CONF_DIR" ];
 then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi

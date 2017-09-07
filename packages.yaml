@@ -62,6 +62,7 @@ kbdrate:
 
 Disks:
     - sudo blkid /dev/sda3
+    - mountoptions COMMIT=600,noatime for laptopmode (CONTROL_MOUNT_OPTIONS, CONTROL_noatime)
 
 Groups:
     - sys
@@ -115,9 +116,14 @@ Console:
    - kakoune-git
    - kbdrate service
    - zsh-navigation-tools
+   - zsh-navigation-tools
    - the_platinum_searcher
    - thefuck
    - mesonbuild
+   - httpie
+   - httrack
+   - ranger
+   - tree
 
 GUI:
    - adwaita-dork-gtk2-git
@@ -134,6 +140,8 @@ GUI:
    - redshift
    - j4-make-config
    - dmenu
+   - rofi
+   - networkmanager-dmenu-git
    - skypeforlinux-bin
    - vimb
    - vlc
@@ -143,6 +151,7 @@ GUI:
    - apvlv (pdf)
    - mupdf (pdf)
    - flaxpdf (pdf)
+   - mupdftools! pdfseparate, pdfjoin
    - zathura (pdf)
    - xbacklight -> brightnessctl
    - pamixer
@@ -490,3 +499,4 @@ Misc:
    - package: zsh-doc 
    - package: zsh-navigation-tools 
    - package: zsh-syntax-highlighting 
+   - package: zsh-autosuggestions
