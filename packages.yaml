@@ -23,6 +23,8 @@ SAMBA:
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
 
 awk&sed:
+  - find . -type f -name "*.zip" -exec unzip {} +
+  - find . -type f -name "*.zip" -exec unzip {} \;
   - example pacmd:
     - match block by some idefntifier (i.e ".. index: NUMBER" or " * index: NUMBER)"
     - Insert some form feed - then separate with RS and select block
@@ -36,6 +38,7 @@ awk&sed:
   - example
     - output: disk0,\nfcs0,\nhoh,\noeu,\noeuh,\ndisk1,\noheh,\nfcs1,\noeuttoeu -> disk0,fcs0\ndisk1,fcs1
     - awk '(/disk/ && ORS=",") || (/fcs/ && ORS=RS)' file))
+
 
 Github:
     - Rebase:
@@ -137,6 +140,7 @@ GUI:
    - xbindkeys
    - volnoti
    - urxvt
+   - terminator
    - redshift
    - j4-make-config
    - dmenu
@@ -147,6 +151,7 @@ GUI:
    - vlc
    - kaffeine
    - shutter (screen shot)
+   - vokoscreen
    - evince (pdf)
    - apvlv (pdf)
    - mupdf (pdf)
@@ -176,6 +181,7 @@ Firefox:
        - systemctl --user enable psd
    - firefox tweak on ram
    - Vimfx
+   - firefox-wayland-git
    - uBlock origin
    - Tab Mix Plus
    - MozPlugger

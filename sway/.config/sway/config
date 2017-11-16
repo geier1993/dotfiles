@@ -100,15 +100,22 @@ for_window [class="^Zathura$"] border pixel 1
 #set $term st -t "Terminal"
 #set $term urxvt -e bash -c "tmux new-session -A -s 0"
 #set $term urxvt -e tmux new-session -A -s 0
-set $term urxvt -e tmux new-session -A -s 0 -t 
-set $termg urxvt -e tmux new-session -t 
-set $term2 urxvt -e tmux new-session -A -s 1 -t 
-set $termg2 urxvt -e tmux new-session -t 
+#set $termem urxvt 
+#set $termem terminology 
+set $termem terminator
+#set $term $termem -e tmux new-session -A -s 0 -t 
+#set $termg $termem -e tmux new-session -t 
+#set $term2 $termem -e tmux new-session -A -s 1 -t 
+#set $termg2 $termem -e tmux new-session -t 
 set $TMUXDEFAULTGROUP Default
-bindsym $mod+Return exec $term $TMUXDEFAULTGROUP
-bindsym $mod+shift+Return exec $termg $TMUXDEFAULTGROUP
-bindsym $mod+n exec $term2 G1
-bindsym $mod+shift+n exec $termg2 G1
+#bindsym $mod+Return exec $term $TMUXDEFAULTGROUP
+#bindsym $mod+shift+Return exec $termg $TMUXDEFAULTGROUP
+#bindsym $mod+n exec $term2 G1
+#bindsym $mod+shift+n exec $termg2 G1
+bindsym $mod+Return       exec $termem -e "tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP"
+bindsym $mod+shift+Return exec $termem -e "tmux new-session -t $TMUXDEFAULTGROUP"
+bindsym $mod+n            exec $termem -e "tmux new-session -A -s 1 -t G1"
+bindsym $mod+shift+n      exec $termem -e "tmux new-session -t G1"
 #bindsym $mod+Return exec i3-sensible-terminal 
 #bindsym $mod+Return exec i3-sensible-terminal urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
@@ -118,8 +125,8 @@ bindsym $mod+Shift+q kill
  
 # start dmenu (a program launcher)
 #set $menu dmenu_run -fn "Terminus:size=9" -nb "#080808" -nf "#A5A5A5" -sb "#75507B" -sf "#080808" -l 7
-#set $menu dmenu_run -fn "DejaVu:size=10" -l 7
-set $menu rofi -show run
+set $menu dmenu_run -fn "DejaVu:size=10" -l 7
+#set $menu rofi -show run
 bindsym $mod+d exec $menu
 bindsym $mod+shift+d exec pkill rofi
 #bindsym --no-startup-id  $mod+d exec $menu
@@ -379,7 +386,7 @@ workspace $WS10 output $HDMI2
 exec --no-startup-id [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id volnoti
-exec --no-startup-id dunst
+#exec --no-startup-id dunst
 #exec --no-startup-id pasystray
 #exec --no-startup-id nm-applet
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh

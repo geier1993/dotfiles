@@ -5,6 +5,8 @@ export XKB_DEFAULT_VARIANT=dvorak,nodeadkeys
 export XKB_DEFAULT_MODEL=pc105
 export XKB_DEFAULT_OPTIONS=grp:switch,grp:menu_toggle
 
+export XDG_CONFIG_HOME=/home/geier/.config
+
 export WLC_REPEAT_DELAY=150
 export WLC_REPEAT_RATE=50
 
@@ -17,6 +19,11 @@ export GOPATH=~/go
 
 export PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin
 export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:${LD_LIBRARY_PATH}
+
+#export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland-egl
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
 
 # qt5-wayland had too large icons
 #export GDK_BACKEND=wayland
