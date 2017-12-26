@@ -54,7 +54,11 @@ Github:
 DEBUGGUNG, VTUNE:
     - setcap cap_sys_ptrace=eip /path/to/programm
 
+time:
+    - systemctl enable/start systemd-timesyncd.service
+
 imaging:
+    - scrot
     - shutter -n -w -c -d 2 -o test.png -e
     - xfce4-screenshot
     - gliv
@@ -68,6 +72,7 @@ Disks:
     - mountoptions COMMIT=600,noatime for laptopmode (CONTROL_MOUNT_OPTIONS, CONTROL_noatime)
 
 Groups:
+    - users (GID!!!)
     - sys
     - lp (deprecated -> systemd)
     - scanner
@@ -121,8 +126,9 @@ Console:
    - zsh-navigation-tools
    - zsh-navigation-tools
    - the_platinum_searcher
+   - the_silver_searcher
    - thefuck
-   - mesonbuild
+   - meson
    - httpie
    - httrack
    - ranger
@@ -151,7 +157,7 @@ GUI:
    - vimb
    - vlc
    - kaffeine
-   - shutter (screen shot)
+   - shutter (screen shot -> scrot...)
    - vokoscreen
    - evince (pdf)
    - apvlv (pdf)
@@ -217,6 +223,7 @@ Misc:
    - GUI:
        - description: i3, look, monitors, misc tools
        - packages:
+           - siji
            - conky
            - i3-gaps-git
            - compton
@@ -251,8 +258,8 @@ Misc:
    - package: cmake
    - package: cpupower
    - package: cryptsetup (dm-crypt)
-   - package: cpus
-   - package: cpus-filters
+   - package: cups
+   - package: cups-filters
    - package: cups-pdf
    - package: curl
    - package: darktable
@@ -282,6 +289,7 @@ Misc:
        - systemctl --user enable gpg-agent.socket # exclude these: takes to long - more problems gpg-agent-extra.socket gpg-agent-browser.socket gpg-agent-ssh.socket
        - systemctl --user enable dirmngr.socket
    - package: go
+   - package: ghc, ghc-libs, ghc-static
    - package: gpart
    - package: gparted
    - package: gpicview
@@ -315,9 +323,9 @@ Misc:
    - package: ipython2
    - package: j4-make-config-git
    - package: java-runtime-common
-   - package: jdk8-openjdk
-   - package: jre8-openjdk
-   - package: jre8-openjdk-headless
+   - package: jdk9-openjdk
+   - package: jre9-openjdk
+   - package: jre9-openjdk-headless
    - package: kakoune-git
    - package: laptop-mode-tools
    - package: lib32-alsa-lib
@@ -467,7 +475,8 @@ Misc:
    - package: ttf-dejavu 
    - package: ttf-droid 
    - package: ttf-freefont 
-   - package: ttf-liberation 
+   - package: ttf-liberation
+   - package: siji-git
    - package: ufw 
    - package: ufw-extras 
    - package: unace 
