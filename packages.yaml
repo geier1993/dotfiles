@@ -127,6 +127,7 @@ Console:
    - httrack
    - ranger
    - tree
+   - ansifilter
 
 GUI:
    - adwaita-dork-gtk2-git
