@@ -56,22 +56,25 @@ hook global InsertChar \{ "exec }<left>"
 #
 
 #Selection wrapping
-map global user q %{:autowrap-selection<ret>}
+map global user q %{:autowrap-selection<ret>} -docstring "Autowrap selection"
 # Remove new lines 
-map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX}
+map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX} -docstring "Remove newlines"
 
 #Addition and substraction
 #map global user a %{<a-a>n|awk '{print $1+1}'<ret>}
-map global user a %{<left>/\d<ret><a-a>n|awk '{print $1+1}'<ret>}
-map global user <a-a> %{<right><a-/>\d<ret><a-a>n|awk '{print $1+1}'<ret>}
+map global user i %{<left>/\d<ret><a-a>n|awk '{print $1+1}'<ret>b}  -docstring "Increment next number"
+map global user <a-i> %{<right><a-/>\d<ret><a-a>n|awk '{print $1+1}'<ret>b} -docstring "Increment previous number"
 #map global user a %{<a-a>n|xargs -I{} dc -e "{} 1+pq"<ret>}
-map global user x %{<left>/\d<ret><a-a>n|awk '{print $1-1}'<ret>}
-map global user <a-x> %{<right><a-/>\d<ret><a-a>n|awk '{print $1-1}'<ret>}
-map global user A %{<left>/\d<ret><a-a>n|awk '{print $1}'}
-map global user <a-A> %{<right><a-/>\d<ret><a-a>n|awk '{print $1}'}
+map global user d %{<left>/\d<ret><a-a>n|awk '{print $1-1}'<ret>b}  -docstring "Decrement next number"
+map global user <a-d> %{<right><a-/>\d<ret><a-a>n|awk '{print $1-1}'<ret>b}   -docstring "Decrement previous number"
+map global user I %{<left>/\d<ret><a-a>n|awk '{print $1}'b} -docstring "Arbitrary math operation with awk"
+map global user <a-I> %{<right><a-/>\d<ret><a-a>n|awk '{print $1}'b}  -docstring "Arbitrary math operation with awk"
+
+map global normal '#' :comment-line<ret> -docstring 'comment line'
+map global normal '<a-#>' :comment-block<ret> -docstring 'comment block'
 
 #number lines
-hook global WinCreate .* %{addhl number_lines}
+addhl global/ number_lines
 
 
 # clang...

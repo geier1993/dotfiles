@@ -201,6 +201,16 @@ Thunderbird:
 
 Misc:
    - intel-ucode
+   - vulkan-intel
+   - modprobe i915:
+     - /etc/modprobe.d/i915.conf
+        options i915 enable_rc6=1 enable_fbc=1 semaphores=1
+     - /boot/loader/entries/arch.conf ... options
+        i915.enable_guc_loading=1
+     - /etc/mkinitcpio.conf
+        MODULES=(... intel_agp  i915  ...)
+        create..
+        mkinitcpio -p linux
    - thunar and deps...
    - avahi-daemon, nss-mdns, ufw
    - Sound:
@@ -318,6 +328,7 @@ Misc:
         - package: intel-opencl-runtime
         - package: intel-opencl-sdk
         - package: intel-tbb
+        - vulkan-intel
    - package: iptables
    - package: ipython
    - package: ipython2

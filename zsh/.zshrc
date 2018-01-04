@@ -38,6 +38,10 @@ then
   export KAKSESSION=`tmux display-message -p "#{session_group}"`
 fi
 
+# important to use gpg-agent
+GPG_TTY=$(tty)
+export GPG_TTY
+
 
 # # Start the gpg-agent if not already running
 # if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
