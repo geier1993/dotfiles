@@ -56,9 +56,14 @@ hook global InsertChar \{ "exec }<left>"
 #
 
 #Selection wrapping
-map global user q %{:autowrap-selection<ret>} -docstring "Autowrap selection"
+#map global user q %{:autowrap-selection<ret>} -docstring "Autowrap selection"
+#map global user q %{s([^\n]{0,70})(?:\b\s*|\n)<ret>a<ret><esc>} -docstring "Autowrap selection"
+map global user q %{s([^\n]{0,80})(?:\b\s*|\n)<ret><a-K>[\n]<ret><left>a<ret><esc><a-x>} -docstring "Autowrap selection"
+
 # Remove new lines 
-map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX} -docstring "Remove newlines"
+#map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX} -docstring "Remove newlines"
+#map global user Q %{s\n\W*<ret>d} -docstring "Remove newlines"
+map global user Q %{<a-s><a-j>} -docstring "Remove newlines"
 
 #Addition and substraction
 #map global user a %{<a-a>n|awk '{print $1+1}'<ret>}

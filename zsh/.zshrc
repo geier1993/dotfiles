@@ -21,7 +21,9 @@ export PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin
 export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:${LD_LIBRARY_PATH}
 
 #export GDK_BACKEND=wayland
-export QT_QPA_PLATFORM=wayland-egl
+#export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME="qt5ct"
 export CLUTTER_BACKEND=wayland
 export SDL_VIDEODRIVER=wayland
 

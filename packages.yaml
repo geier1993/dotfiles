@@ -138,8 +138,9 @@ Console:
 GUI:
    - adwaita-dork-gtk2-git
    - adwaita-qt5
-   - qt5ct
+   - qt5ct # configuration
    - qt5-wayland -> too large icons
+   - qt5-wayland-git
    - i3wm -> sway, wayland-egl, weston-eglstream
    - dunst
    - pasystray
