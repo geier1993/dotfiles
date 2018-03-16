@@ -485,6 +485,7 @@ Misc:
    - package: tio
    - package: ttf-bitstream-vera 
    - package: ttf-dejavu 
+   - package: ttf-opensans
    - package: ttf-droid 
    - package: ttf-freefont 
    - package: ttf-liberation

@@ -29,10 +29,13 @@ hook global InsertChar \{ "exec }<left>"
 %sh{
     if $(which xsel &>/dev/null); then
         # requires xsel to be installed
-        echo 'map global user y %{<a-|>xsel -b  -i<ret>:echo -color Information %{yanked to X clipboard}<ret>}'
-        echo 'map global user p %{<a-!>xsel -b <ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        echo 'map global user P %{!xsel -b <ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        echo 'map global user R %{:reg w "%sh{xsel -b}"<ret>"wR:echo -color Information %{replaced from X clipboard }<ret>}'
+        echo 'map global user y %{<a-|>xsel -b  -i<ret>:echo Information %{yanked to clipboard}<ret>}'
+        echo 'map global user Y %{<a-|>xsel -P  -i<ret>:echo Information %{yanked to clipboard}<ret>}'
+        echo 'map global user p %{<a-!>xsel -b <ret>:echo Information %{pasted from clipboard}<ret>}'
+        echo 'map global user P %{<a-!>xsel -p <ret>:echo Information %{pasted from clipboard}<ret>}'
+#        echo 'map global user P %{!xsel -b <ret>:echo Information %{pasted from X clipboard}<ret>}'
+        echo 'map global user r %{:reg w "%sh{xsel -b}"<ret>"wR:echo Information %{replaced from X clipboard }<ret>}'
+        echo 'map global user R %{:reg w "%sh{xsel -p}"<ret>"wR:echo Information %{replaced from X clipboard }<ret>}'
         #echo 'map global user <a-y> %{<a-|>xsel -b -i<ret>:echo -color Information %{yanked to X clipboard}<ret>}'
         #echo 'map global user <a-p> %{<a-!>xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
         #echo 'map global user <a-P> %{!xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
@@ -58,7 +61,7 @@ hook global InsertChar \{ "exec }<left>"
 #Selection wrapping
 #map global user q %{:autowrap-selection<ret>} -docstring "Autowrap selection"
 #map global user q %{s([^\n]{0,70})(?:\b\s*|\n)<ret>a<ret><esc>} -docstring "Autowrap selection"
-map global user q %{s([^\n]{0,80})(?:\b\s*|\n)<ret><a-K>[\n]<ret><left>a<ret><esc><a-x>} -docstring "Autowrap selection"
+map global user q %{s([^\n]{0,120})(?:\b\s*|\n)<ret><a-K>[\n]<ret><left>a<ret><esc><a-x>} -docstring "Autowrap selection"
 
 # Remove new lines 
 #map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX} -docstring "Remove newlines"
@@ -85,5 +88,7 @@ addhl global/ number_lines
 # clang...
 hook global WinSetOption filetype=cpp %{ clang-enable-autocomplete; clang-enable-diagnostics # Add autowrap to 72 characters in git-commit
 }
+
+
 
 
