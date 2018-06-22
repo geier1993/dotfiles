@@ -16,8 +16,10 @@ export TERM=rxvt
 export EDITOR=kak
 export VISUAL=kak
 export GOPATH=~/go
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export npm_config_prefix=~/.node_modules
 
-export PATH=$PATH:$GOPATH/bin:~/.local/bin:~/.cabal/bin:~/misc/dotfiles/bin
+export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:${LD_LIBRARY_PATH}
 
 #export GDK_BACKEND=wayland

@@ -2,6 +2,11 @@ Misc:
     - GnomeKeyring,i3wm,Xinitrc: https://wiki.archlinux.org/index.php/GNOME/Keyring#Console_login -> sway
     - GPG Agent
 
+PDF:
+    - zathura,evince
+    - pdfjam
+    - pdfjoin --outfile FILE --paper a4paper --rotateoversize false Files...
+
 Cups:
     - "Filter Failed": rm /var/spool/cups/*
     - ufw allow {slp,mdns}

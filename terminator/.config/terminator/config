@@ -2,6 +2,7 @@
   borderless = True
   extra_styling = False
   inactive_color_offset = 0.807228915663
+  suppress_multiple_term_dialog = True
 [keybindings]
 [layouts]
   [[default]]
