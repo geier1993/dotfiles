@@ -7,12 +7,25 @@ PDF:
     - pdfjam
     - pdfjoin --outfile FILE --paper a4paper --rotateoversize false Files...
 
+Graphic:
+    - geeqie
+    - darktable
+    - gpicview
+    - gimp
+    - inkscape
+    - vectr
+    - xaraxtreme (xaralx-bin)
+    - skencil
+
 Cups:
     - "Filter Failed": rm /var/spool/cups/*
     - ufw allow {slp,mdns}
     - lp file -d PRINTER
     - hp-setup, hp-doctor
     - enable cups-browsed
+    - install nss-mdns
+      - edit /etc/nsswitch.conf
+      - hosts: files dns mdns_minimal mdns
 
 SAMBA:
     - smbclient & samba package
