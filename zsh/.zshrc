@@ -1,5 +1,9 @@
 #redshift-gtk & #done by i3
 
+export LANGUAGE=en
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 export XKB_DEFAULT_LAYOUT=us,de
 export XKB_DEFAULT_VARIANT=dvorak,nodeadkeys
 export XKB_DEFAULT_MODEL=pc105
@@ -19,16 +23,19 @@ export GOPATH=~/go
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export npm_config_prefix=~/.node_modules
 
+export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$PATH"
-export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:/home/geier/.nix-profile/lib:${LD_LIBRARY_PATH}
 
+#export GDK_SCALE=0.5
+#export GDK_DPI_SCALE=1
 #export GDK_BACKEND=wayland
 #export QT_QPA_PLATFORM=wayland-egl
 #export QT_QPA_PLATFORM=wayland
-export QT_QPA_PLATFORM=xcb
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export CLUTTER_BACKEND=wayland
-export SDL_VIDEODRIVER=wayland
+#export QT_QPA_PLATFORM=xcb
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+#export CLUTTER_BACKEND=wayland
+#export SDL_VIDEODRIVER=wayland
 
 # qt5-wayland had too large icons
 #export GDK_BACKEND=wayland
@@ -46,6 +53,8 @@ fi
 # important to use gpg-agent
 GPG_TTY=$(tty)
 export GPG_TTY
+
+setopt no_share_history
 
 
 # # Start the gpg-agent if not already running
@@ -175,7 +184,7 @@ function k () sk `fasd -f $@`
 #Stack
 eval "$(stack --bash-completion-script stack)"
 
-if [ -z "$NIX_CONF_DIR" ];
+if [ -z "$NIX_PATH" ];
 then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh

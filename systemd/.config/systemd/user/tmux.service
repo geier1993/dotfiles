@@ -1,0 +1,13 @@
+/etc/systemd/system/tmux.service
+
+[Unit]
+Description=Start tmux in detached session
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/tmux new-session -s %u -d
+ExecStop=/usr/bin/tmux kill-session -t %u
+WorkingDirectory=/home/geier/
+
+[Install]
+WantedBy=multi-user.target

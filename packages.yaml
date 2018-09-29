@@ -1,6 +1,15 @@
 Misc:
     - GnomeKeyring,i3wm,Xinitrc: https://wiki.archlinux.org/index.php/GNOME/Keyring#Console_login -> sway
     - GPG Agent
+    - tmpfile:
+        # https://www.cyberciti.biz/faq/howto-mount-tmp-as-separate-filesystem-with-noexec-nosuid-nodev/
+        # mkdir -p /root/images/
+        # dd if=/dev/zero of=/root/images/tmpfile.bin bs=1 count=0 seek=4G
+        # mkfs.ext4 /root/images/tmpfile.bin
+        # mount -o loop,rw,nodev,nosuid,noexec /root/images/tmpfile.bin /tmp
+        # chmod 1777 /tmp
+        # mount -o rw,noexec,nosuid,nodev,bind /tmp /var/tmp 
+        # vi /etc/fstab
 
 PDF:
     - zathura,evince
@@ -26,6 +35,42 @@ Cups:
     - install nss-mdns
       - edit /etc/nsswitch.conf
       - hosts: files dns mdns_minimal mdns
+
+Ruby:
+  - bundle exec -- ...
+  - bundle update
+  - gem install PACKAGE
+  - gem install rmagick -- --with-opt-dir=/home/geier/packages/ImageMagick6
+  - nix-shell -p imagemagicBig
+    gem install rmagick
+
+Nixos:
+  - sudo nixos-rebuild switch
+  - sudo nixos-rebuild switch --repair
+  - sudo nixos-rebuild switch --upgrade // after changing channels
+  - nix-env -i PACKAGE //install
+  - nix-env -iA PACKAGATTRIBUTE // i.e. nixpkgs.stow
+  - nix-env -qa PACKAGE //query
+  - sudo nix-store --verify --check-contents --repair
+  - http://blog.ielliott.io/how-to-delete-old-nixos-boot-configurations/
+
+    Delete the old (excludes the current) package configurations for the NixOS system 
+    sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old
+
+    Collect garbage 
+    nix-collect-garbage -d
+
+    View the remaining generation 
+    nix-env -p /nix/var/nix/profiles/system --list-generations. 
+    Take note of this for the next step.
+
+    Remove unnecessary boot loader entries. I use systemd-boot, so all my entries are located in /boot/loader/entries. 
+    To remove all the old entries, run 
+    sudo bash -c "cd /boot/loader/entries; ls | grep
+    -v <current-generation-name> | xargs rm" 
+    (you might want to back up the entries somewhere to be safe)
+  - https://blog.galowicz.de/2018/02/27/managing_libraries_with_nix/ 
+
 
 SAMBA:
     - smbclient & samba package
@@ -167,6 +212,7 @@ GUI:
    - volnoti
    - urxvt
    - terminator
+   - termite
    - redshift
    - j4-make-config
    - dmenu
@@ -184,7 +230,7 @@ GUI:
    - flaxpdf (pdf)
    - mupdftools! pdfseparate, pdfjoin
    - zathura (pdf)
-   - xbacklight -> brightnessctl
+   - xbacklight -> brightnessctl or light
    - pamixer
    - playerctl
    - lxappearance

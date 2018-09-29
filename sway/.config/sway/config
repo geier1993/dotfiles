@@ -102,7 +102,8 @@ for_window [class="^Zathura$"] border pixel 1
 #set $term urxvt -e tmux new-session -A -s 0
 #set $termem urxvt 
 #set $termem terminology 
-set $termem terminator
+#set $termem terminator
+set $termem termite
 #set $term $termem -e tmux new-session -A -s 0 -t 
 #set $termg $termem -e tmux new-session -t 
 #set $term2 $termem -e tmux new-session -A -s 1 -t 
@@ -125,7 +126,7 @@ bindsym $mod+Shift+q kill
  
 # start dmenu (a program launcher)
 #set $menu dmenu_run -fn "Terminus:size=9" -nb "#080808" -nf "#A5A5A5" -sb "#75507B" -sf "#080808" -l 7
-set $menu dmenu_run -fn "DejaVu:size=10" -l 7
+set $menu dmenu_run -fn "DejaVu:size=16" -l 7
 #set $menu rofi -show run
 bindsym $mod+d exec $menu
 bindsym $mod+shift+d exec pkill rofi
@@ -271,7 +272,8 @@ bar {
     #pango_markup enabled
     #font swaybar-icons 8
     #font pango:Siji, Terminus 12
-    font pango:Siji, DejaVu 10
+    #font pango:Source Code Pro 12
+    font pango:Siji, DejaVu 12
     colors {
         separator #AAAAAA
         background #1f2326
@@ -364,13 +366,13 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-mute $(pacmd list-sinks |awk '/
 #bindsym XF86AudioMute exec volnoti-show $(if [ $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/') -eq 1 ]; then echo "-m"; else echo "`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`"; fi)
 bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle &&  volnoti-show $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/-m/' | sed -e 's/^.*: no$/'`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`'/') 
 
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+#bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+#bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
 
 #output "*" background ~/Pictures/Backgrounds/DSC02527.jpg fill
-#bee
 #output "*" background ~/Pictures/Backgrounds/DSC01493.jpg fill
-#bfly norwegen
 output "*" background ~/Pictures/Backgrounds/DSC03304.JPG fill
 
 
