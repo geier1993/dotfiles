@@ -65,13 +65,13 @@ set $WSWORK $WS5
 set $WSMUSIC $WS3
 
 
-assign [class="Firefox"] $WSWWW
-assign [class="Thunderbird"] $WSMAIL
-assign [class="Chromium-Browser"] $WSWWW
+assign [class="Firefox"] $WS1
+assign [class="Thunderbird"] $WS2
+assign [class="Chromium-Browser"] $WS1
 
 # Somehow not working
-#assign [class="(?i)spotify"] $WSMUSIC
-#assign [instance="spotify"] $WSMUSIC
+#assign [class="(?i)spotify"] $WS3
+#assign [instance="spotify"] $WS3
 
 
 for_window [window_type=dialog] floating enable
@@ -85,10 +85,17 @@ for_window [window_type=dialog] floating enable
 #set $term st -t "Terminal"
 #set $term urxvt -e bash -c "tmux new-session -A -s 0"
 #set $term urxvt -e tmux new-session -A -s 0
-set $term urxvt -e tmux new-session -A -s 0 -t Default
-set $term2 urxvt -e tmux new-session -t Default
-bindsym $mod+Return exec $term2
-bindsym $mod+shift+Return exec $term
+#set $term urxvt -e tmux new-session -A -s 0 -t Default
+#set $term2 urxvt -e tmux new-session -t Default
+set $termem termite
+set $term $termem -e tmux new-session -A -s 0 -t Default
+set $term2 $termem -e tmux new-session -t Default
+set $TMUXDEFAULTGROUP Default
+bindsym $mod+Return       exec $termem -e "tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP"
+bindsym $mod+shift+Return exec $termem -e "tmux new-session -t $TMUXDEFAULTGROUP"
+bindsym $mod+n            exec $termem -e "tmux new-session -A -s 1 -t G1"
+bindsym $mod+shift+n      exec $termem -e "tmux new-session -t G1"
+
 #bindsym $mod+Return exec i3-sensible-terminal 
 #bindsym $mod+Return exec i3-sensible-terminal urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
@@ -344,6 +351,6 @@ exec --no-startup-id dunst
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec /usr/bin/compton --config /home/joe/.compton.conf~.i3/config
-#exec --no-startup-id xset r rate 150 50
+exec --no-startup-id xset r rate 150 50
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
