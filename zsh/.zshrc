@@ -14,7 +14,7 @@ export XDG_CONFIG_HOME=/home/geier/.config
 export WLC_REPEAT_DELAY=150
 export WLC_REPEAT_RATE=50
 
-export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
+#export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
 export TERMINAL=urxvtc
 export TERM=rxvt
 export EDITOR=kak
@@ -110,7 +110,18 @@ bashcompinit
 
 #Prompt
 set_prompt () {
-    PROMPT="%{$fg_bold[white]%}%{$fg_bold[yellow]%}"`date +"%H:%M"`"%{$fg[white]$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
+    #PROMPT="%{$fg_bold[white]%}%{$fg_bold[yellow]%}"`date +"%H:%M"`"%{$fg[white]$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
+    PROMPT="%{$fg_bold[white]%}%{$fg_bold[yellow]%}"`date +"%H:%M"`""
+    if [[ -v IN_NIX_SHELL ]]; then
+      INNIXSHELLVAL=""
+      if [[ $IN_NIX_SHELL == "impure" ]]; then
+        INNIXSHELLVAL="IMP"
+      else
+        INNIXSHELLVAL="P"
+      fi
+      PROMPT="$PROMPT%{$fg_no_bold[green]%} $INNIXSHELLVAL%{$fg_no_bold[magenta]%}{%{$fg_no_bold[cyan]%}$NIX_SHELL_PACKAGES%{$fg_no_bold[magenta]%}}"
+    fi
+    PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
 }
 set_prompt
 preexec () {
@@ -189,4 +200,6 @@ then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+  source $HOME/misc/zsh-nix-shell/nix-shell.plugin.zsh
 fi

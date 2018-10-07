@@ -216,23 +216,23 @@
     #despotify
     #python27
     ruby bundix
-    #python35
+    #python36
     ##python27Packages.numpy
-    #python35Packages.numpy
+    #python36Packages.numpy
     ##python27Packages.scipy
-    #python35Packages.scipy
+    #python36Packages.scipy
     ##python27Packages.matplotlib
-    #python35Packages.matplotlib
+    #python36Packages.matplotlib
     ##python27Packages.seaborn
-    #python35Packages.seaborn
+    #python36Packages.seaborn
     ##python27Packages.pandas
-    #python35Packages.pandas
+    #python36Packages.pandas
     ##python27Packages.ipython
-    #python35Packages.ipython
+    #python36Packages.ipython
     ##python27Packages.pandocfilters
-    #python35Packages.pandocfilters
+    #python36Packages.pandocfilters
     ##python27Packages.pypandoc
-    ##python35Packages.pypandoc
+    ##python36Packages.pypandoc
     #paraview
     #pygmentex
     mlocate
