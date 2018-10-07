@@ -14,7 +14,8 @@ export XDG_CONFIG_HOME=/home/geier/.config
 export WLC_REPEAT_DELAY=150
 export WLC_REPEAT_RATE=50
 
-#export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages/
+#export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
+export PYTHONPATH=$(python -c "import site; print(site.USER_SITE)"):$PYTHONPATH
 export TERMINAL=urxvtc
 export TERM=rxvt
 export EDITOR=kak
