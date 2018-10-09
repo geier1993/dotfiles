@@ -47,31 +47,31 @@ floating_modifier $mod
 #set $WS8 "8:: chat >"
 #set $WS9 "9:: file >"
 #set $WS10 "10:: misc >"
-set $WS1 "1:1 : www >"
-set $WS2 "2:2 : mail >"
-set $WS3 "3:3 : music >"
-set $WS4 "4:4 : term >"
-set $WS5 "5:5 : work >"
+set $WS1 "1:1 : term >"
+set $WS2 "2:2 : work >"
+set $WS3 "3:3 : www >"
+set $WS4 "4:4 : mail >"
+set $WS5 "5:5 : music >"
 set $WS6 "6:6 : misc >"
 set $WS7 "7:7 : misc >"
 set $WS8 "8:8 : misc >"
 set $WS9 "9:9 : misc >"
 set $WS10 "10:10 : misc >"
 
-set $WSWWW $WS1
-set $WSMAIL $WS2
-set $WSTERM $WS4
-set $WSWORK $WS5
-set $WSMUSIC $WS3
+set $WSWWW $WS3
+set $WSMAIL $WS4
+set $WSTERM $WS1
+set $WSWORK $WS2
+set $WSMUSIC $WS5
 
 
-assign [class="Firefox"] $WS1
-assign [class="Thunderbird"] $WS2
-assign [class="Chromium-Browser"] $WS1
+assign [class="Firefox"] $WS3
+assign [class="Thunderbird"] $WS4
+assign [class="Chromium-Browser"] $WS3
 
 # Somehow not working
-#assign [class="(?i)spotify"] $WS3
-#assign [instance="spotify"] $WS3
+#assign [class="(?i)spotify"] $WS5
+#assign [instance="spotify"] $WS5
 
 
 for_window [window_type=dialog] floating enable

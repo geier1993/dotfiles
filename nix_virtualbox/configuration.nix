@@ -106,6 +106,8 @@
     pkgconfig
     clang
     gcc
+    cmake
+    cmakeCurses
     binutils
     zlib
     nix-repl
@@ -216,23 +218,24 @@
     #despotify
     #python27
     ruby bundix
-    #python36
-    ##python27Packages.numpy
-    #python36Packages.numpy
-    ##python27Packages.scipy
-    #python36Packages.scipy
-    ##python27Packages.matplotlib
-    #python36Packages.matplotlib
-    ##python27Packages.seaborn
-    #python36Packages.seaborn
-    ##python27Packages.pandas
-    #python36Packages.pandas
-    ##python27Packages.ipython
-    #python36Packages.ipython
-    ##python27Packages.pandocfilters
-    #python36Packages.pandocfilters
-    ##python27Packages.pypandoc
-    ##python36Packages.pypandoc
+    python3Full
+    python36
+    #python27Packages.numpy
+    python36Packages.numpy
+    #python27Packages.scipy
+    python36Packages.scipy
+    #python27Packages.matplotlib
+    python36Packages.matplotlib
+    #python27Packages.seaborn
+    python36Packages.seaborn
+    #python27Packages.pandas
+    python36Packages.pandas
+    #python27Packages.ipython
+    python36Packages.ipython
+    #python27Packages.pandocfilters
+    python36Packages.pandocfilters
+    #python27Packages.pypandoc
+    #python36Packages.pypandoc
     #paraview
     #pygmentex
     mlocate

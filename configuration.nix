@@ -73,6 +73,8 @@
     pkgconfig
     clang
     gcc
+    cmake
+    cmakeCurses
     binutils
     zlib
     nix-repl
