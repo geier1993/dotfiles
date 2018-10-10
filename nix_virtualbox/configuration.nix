@@ -85,6 +85,7 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    nix-index # contains nix-locate
     xorg.xf86inputsynaptics # xf86-input-synaptics
     #xorg.xf86videointel # xf86-video-intel
     xorg.xf86inputevdev # xf86-input-evdev
@@ -106,6 +107,7 @@
     pkgconfig
     clang
     gcc
+    gmp
     cmake
     cmakeCurses
     binutils
