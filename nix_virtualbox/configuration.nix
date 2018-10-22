@@ -123,6 +123,7 @@
     acpid
     acpitool
     pmtools
+    usbutils
     wget
     bash
     bash-completion
@@ -144,6 +145,8 @@
     i3blocks
     scrot # screenshot
     feh
+    #poppler
+    poppler_utils
     arandr
     #autorandr
     lm_sensors
@@ -339,7 +342,7 @@
       initialHashedPassword = "$6$cG2jGEtZXcQ/4U4L$8z6a.OUetzdmy9/TZslXXMsoZ0QUhlftkxF.ZjPFz2qUQ2tk9RVRwwjdO45TkQmgAigmfjRDR/.chZgLVvcab0"; # mkpasswd -m sha-512 
       uid = 1000;
       description = "Philpp Geier";
-      extraGroups = [ "wheel" "networkmanager" "audio" "video" "sys" "scanner" "kvm" "optical" "storage" "input" "disk" "floppy" "uucp" "lock" "docker" "sway"];
+      extraGroups = [ "wheel" "networkmanager" "dialout" "audio" "video" "sys" "scanner" "kvm" "optical" "storage" "input" "disk" "floppy" "uucp" "lock" "docker" "sway"];
     };
   #users.mutableUsers = false;
 

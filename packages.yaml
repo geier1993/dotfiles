@@ -11,6 +11,11 @@ Misc:
         # mount -o rw,noexec,nosuid,nodev,bind /tmp /var/tmp 
         # vi /etc/fstab
 
+USBPermissions:
+  - ls -l /dev ... see permissions
+  - usually usb has 'dialout' group
+  - usermod USERNAME -a -G GROUPNAME
+
 PDF:
     - zathura,evince
     - pdfjam
@@ -51,6 +56,9 @@ Nixos:
   - nix-env -i PACKAGE //install
   - nix-env -iA PACKAGATTRIBUTE // i.e. nixpkgs.stow
   - nix-env -qa PACKAGE //query
+  - nix-env -q // installed user packages
+  - nix-env -e PACKAGE // remove
+  - nix-env -f nixpkgs/ ...
   - sudo nix-store --verify --check-contents --repair
   - http://blog.ielliott.io/how-to-delete-old-nixos-boot-configurations/
 

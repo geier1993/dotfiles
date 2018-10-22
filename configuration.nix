@@ -89,6 +89,7 @@
     acpid
     acpitool
     pmtools
+    usbutils
     wget
     bash
     bash-completion
@@ -110,6 +111,8 @@
     i3blocks
     scrot # screenshot
     feh
+    #poppler
+    poppler_utils
     #arandr
     #autorandr
     lm_sensors
@@ -304,7 +307,7 @@
       initialHashedPassword = "$6$cG2jGEtZXcQ/4U4L$8z6a.OUetzdmy9/TZslXXMsoZ0QUhlftkxF.ZjPFz2qUQ2tk9RVRwwjdO45TkQmgAigmfjRDR/.chZgLVvcab0"; # mkpasswd -m sha-512 
       uid = 1000;
       description = "Philpp Geier";
-      extraGroups = [ "wheel" "networkmanager" "audio" "video" "sys" "scanner" "kvm" "optical" "storage" "input" "disk" "floppy" "uucp" "lock" "docker" "sway"];
+      extraGroups = [ "wheel" "dialout" "networkmanager" "audio" "video" "sys" "scanner" "kvm" "optical" "storage" "input" "disk" "floppy" "uucp" "lock" "docker" "sway"];
       openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3fHurt4sgmcc9j5nw4DGcmy8j0zSp0IQcD0RMU0bsbkwq/RfyvEfrLqOEQ0Oj7oO+ESNuLmB14dgZAmJ1M8UIrZONqRijmYL6iat+rqXlJksFh9aLwt9Ubarg0bnfhJDBaWGBhtmP00tIKn2TKQqw5F5CIMMXc9GbKD0mWUCS2tR+acjj6SOOwDSUsk5SnEYZz5kTbBtYPxgDj/wkmTPI/s2dNb241P5gdBnhiSRnTWe608VzD1bJOb3jc/qIZekjOqAWbP5zOj/5OVakFmh1gaJ8md90kE+/FmnAw69cLTAYlz1QtfvpNhOVQAUhUE3ring69o8mO/zv/PAm1Mst geier@jimmy" ];
     };
   #users.mutableUsers = false;

@@ -13,6 +13,7 @@ stow -t $TARGET i3
 #stow -t $TARGET stack
 stow -t $TARGET i3blocks
 stow -t $TARGET zathura
+stow -t $TARGET ranger
 stow -t $TARGET dunst
 stow -t $TARGET conky
 stow -t $TARGET vim
