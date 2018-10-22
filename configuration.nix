@@ -82,6 +82,7 @@
     nix-serve
     nix-prefetch-git
     git
+    git-lfs
     stow 
     hdparm
     acpi

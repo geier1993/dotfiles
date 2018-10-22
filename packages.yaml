@@ -198,6 +198,16 @@ Console:
    - tree
    - ansifilter
 
+passwordfile:
+   -
+     #!/bin/sh
+     gpg2 -d .pws.gpg > .pws
+     kak .pws
+     gpg2 -c .pws
+     shred .pws
+     rm .pws
+
+
 GUI:
    - adwaita-dork-gtk2-git
    - adwaita-qt5
