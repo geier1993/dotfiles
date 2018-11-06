@@ -96,6 +96,7 @@ SAMBA:
 awk&sed:
   - find . -type f -name "*.zip" -exec unzip {} +
   - find . -type f -name "*.zip" -exec unzip {} \;
+  - find ./ -name "*.a" -print -exec sh -c "echo {}; winedump -j export {} | grep -i unlink" \;
   - example pacmd:
     - match block by some idefntifier (i.e ".. index: NUMBER" or " * index: NUMBER)"
     - Insert some form feed - then separate with RS and select block
