@@ -144,13 +144,14 @@
     rxvt_unicode-with-plugins
     #st # terminal
     urxvt_perls
-    terminator termite
+    terminator termite kitty
     zathura
     #fontconfig-ultimate
     #freetype
     ghc
     stack
     cabal-install
+    nodejs
     # bluez
     bluez-tools
     silver-searcher
@@ -184,6 +185,7 @@
     thermald
     pygmentex
     texlive.combined.scheme-full
+    lmodern
     rsync
     #redshift
     #geoclue
@@ -240,6 +242,10 @@
     #gliv
     fasd
     pandoc
+    biber
+    haskelPackages.pandoc-citeproc
+    haskelPackages.pandoc-crossref
+    #haskelPackages.pandoc-csv2table
     stack
     dbus
     cryptsetup
@@ -257,6 +263,7 @@
     conky
     dropbox
     exfat
+    #google-cloud-sdk
   ];
 
 

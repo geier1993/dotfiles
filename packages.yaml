@@ -232,6 +232,7 @@ GUI:
    - urxvt
    - terminator
    - termite
+   - kitty
    - redshift
    - j4-make-config
    - dmenu

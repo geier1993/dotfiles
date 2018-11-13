@@ -204,3 +204,15 @@ then
 else
   source $HOME/misc/zsh-nix-shell/nix-shell.plugin.zsh
 fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion]]
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/geier/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/geier/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/geier/node_modules/tabtab/.completions/sls.zsh ]] && . /home/geier/node_modules/tabtab/.completions/sls.zsh

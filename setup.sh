@@ -7,6 +7,7 @@ stow -t $TARGET bash
 stow -t $TARGET x
 stow -t $TARGET terminator
 stow -t $TARGET termite
+stow -t $TARGET kitty
 stow -t $TARGET tmux
 stow -t $TARGET sway
 stow -t $TARGET i3

@@ -103,7 +103,8 @@ for_window [class="^Zathura$"] border pixel 1
 #set $termem urxvt 
 #set $termem terminology 
 #set $termem terminator
-set $termem termite
+#set $termem termite
+set $termem kitty
 #set $term $termem -e tmux new-session -A -s 0 -t 
 #set $termg $termem -e tmux new-session -t 
 #set $term2 $termem -e tmux new-session -A -s 1 -t 
@@ -113,10 +114,14 @@ set $TMUXDEFAULTGROUP Default
 #bindsym $mod+shift+Return exec $termg $TMUXDEFAULTGROUP
 #bindsym $mod+n exec $term2 G1
 #bindsym $mod+shift+n exec $termg2 G1
-bindsym $mod+Return       exec $termem -e "tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP"
-bindsym $mod+shift+Return exec $termem -e "tmux new-session -t $TMUXDEFAULTGROUP"
-bindsym $mod+n            exec $termem -e "tmux new-session -A -s 1 -t G1"
-bindsym $mod+shift+n      exec $termem -e "tmux new-session -t G1"
+##bindsym $mod+Return       exec $termem -e "tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP"
+##bindsym $mod+shift+Return exec $termem -e "tmux new-session -t $TMUXDEFAULTGROUP"
+##bindsym $mod+n            exec $termem -e "tmux new-session -A -s 1 -t G1"
+##bindsym $mod+shift+n      exec $termem -e "tmux new-session -t G1"
+bindsym $mod+Return       exec $termem tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP
+bindsym $mod+shift+Return exec $termem tmux new-session -t $TMUXDEFAULTGROUP
+bindsym $mod+n            exec $termem tmux new-session -A -s 1 -t G1
+bindsym $mod+shift+n      exec $termem tmux new-session -t G1
 #bindsym $mod+Return exec i3-sensible-terminal 
 #bindsym $mod+Return exec i3-sensible-terminal urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
@@ -386,7 +391,7 @@ workspace $WS10 output $HDMI1
 workspace $WS10 output $HDMI2 
 
 exec --no-startup-id [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-exec --no-startup-id urxvtd -q -f -o
+#exec --no-startup-id urxvtd -q -f -o
 exec --no-startup-id volnoti
 #exec --no-startup-id dunst
 #exec --no-startup-id pasystray
