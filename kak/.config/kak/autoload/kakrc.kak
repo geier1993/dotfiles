@@ -24,27 +24,44 @@ hook global InsertChar \{ "exec }<left>"
 
 #coloerscheme base16
 
-# clipboard...
-## map to ,y ,p ,P and ,R for copy-pasting through the clipboard
-%sh{
-    if $(which xsel &>/dev/null); then
-        # requires xsel to be installed
-        echo 'map global user y %{<a-|>xsel -b  -i<ret>:echo Information %{yanked to clipboard}<ret>}'
-        echo 'map global user Y %{<a-|>xsel -P  -i<ret>:echo Information %{yanked to clipboard}<ret>}'
-        echo 'map global user p %{<a-!>xsel -b <ret>:echo Information %{pasted from clipboard}<ret>}'
-        echo 'map global user P %{<a-!>xsel -p <ret>:echo Information %{pasted from clipboard}<ret>}'
-#        echo 'map global user P %{!xsel -b <ret>:echo Information %{pasted from X clipboard}<ret>}'
-        echo 'map global user r %{:reg w "%sh{xsel -b}"<ret>"wR:echo Information %{replaced from X clipboard }<ret>}'
-        echo 'map global user R %{:reg w "%sh{xsel -p}"<ret>"wR:echo Information %{replaced from X clipboard }<ret>}'
-        #echo 'map global user <a-y> %{<a-|>xsel -b -i<ret>:echo -color Information %{yanked to X clipboard}<ret>}'
-        #echo 'map global user <a-p> %{<a-!>xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        #echo 'map global user <a-P> %{!xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
-        #echo 'map global user <a-R> %{:reg w "%sh{xsel -b}"<ret>"wR:echo -color Information %{replaced from X clipboard }<ret>}'
-    fi
-}
+## clipboard...
+### map to ,y ,p ,P and ,R for copy-pasting through the clipboard
+#%sh{
+#    if $(which xsel &>/dev/null); then
+#        # requires xsel to be installed
+#        echo 'map global user y %{<a-|>xsel -b  -i<ret>:echo Information %{yanked to clipboard}<ret>}'
+#        echo 'map global user Y %{<a-|>xsel -P  -i<ret>:echo Information %{yanked to clipboard}<ret>}'
+#        echo 'map global user p %{<a-!>xsel -b <ret>:echo Information %{pasted from clipboard}<ret>}'
+#        echo 'map global user P %{<a-!>xsel -p <ret>:echo Information %{pasted from clipboard}<ret>}'
+##        echo 'map global user P %{!xsel -b <ret>:echo Information %{pasted from X clipboard}<ret>}'
+#        echo 'map global user r %{:reg w "%sh{xsel -b}"<ret>"wR:echo Information %{replaced from X clipboard }<ret>}'
+#        echo 'map global user R %{:reg w "%sh{xsel -p}"<ret>"wR:echo Information %{replaced from X clipboard }<ret>}'
+#        #echo 'map global user <a-y> %{<a-|>xsel -b -i<ret>:echo -color Information %{yanked to X clipboard}<ret>}'
+#        #echo 'map global user <a-p> %{<a-!>xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
+#        #echo 'map global user <a-P> %{!xsel -b<ret>:echo -color Information %{pasted from X clipboard}<ret>}'
+#        #echo 'map global user <a-R> %{:reg w "%sh{xsel -b}"<ret>"wR:echo -color Information %{replaced from X clipboard }<ret>}'
+#    fi
+#}
 
+#https://github.com/mawww/kakoune/wiki/Registers---Clipboard
+# <a-|> xsel --input --clipboard <ret>
+# 
+# <a-|> pipes each selection through the given external filter program and ignore its output.
+# 
+# You may want to use the following hook to automate the dialog with the system clipboard, on each y, d or c operations:
+hook global NormalKey y|d|c %{ nop %sh{
+  printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+}}
 
-
+# ! xsel --output --clipboard <ret>
+# 
+# ! inserts program output before selection while <a-!> inserts program output after selection.
+# 
+# Therefore you can add the following mappings:
+# Paste before
+map global user P '!xsel --output --clipboard<ret>'
+# Paste after
+map global user p '<a-!>xsel --output --clipboard<ret>'
 
 #hook global InsertChar [^\n] %{exec -draft "Ghs.{0,79}<ret><a-;>bi<ret><esc><space>i<backspace><esc>"}
 
@@ -82,11 +99,13 @@ map global normal '#' :comment-line<ret> -docstring 'comment line'
 map global normal '<a-#>' :comment-block<ret> -docstring 'comment block'
 
 #number lines
-addhl global/ number_lines
+add-highlighter global/ number-lines
 
 
 # clang...
-hook global WinSetOption filetype=cpp %{ clang-enable-autocomplete; clang-enable-diagnostics # Add autowrap to 72 characters in git-commit
+hook global WinSetOption filetype=(c|cpp) %{ 
+  clang-enable-autocomplete; 
+  clang-enable-diagnostics # Add autowrap to 72 characters in git-commit
 }
 
 

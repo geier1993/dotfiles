@@ -41,7 +41,10 @@
         #polybar = pkgs.polybar.overrideAttrs (oldAttrs: { i3Support = true; jsoncpp =true; });
       };
 
-  };
+    # Bug with locales
+    # glibc.installLocales = true;
+    # glibc.locales = true;
+    };
 
 
 
@@ -68,7 +71,7 @@
   i18n = {
     consoleFont = "Lat2-Terminus16";
     consoleKeyMap = "dvorak";
-    defaultLocale = "en_US.UTF-8";
+    defaultLocale = "en_GB.UTF-8";
   };
 
   # Set your time zone.
@@ -76,16 +79,19 @@
 
   environment.shells = with pkgs; [bashInteractive zsh];
 
-  virtualization.virtualbox.guest = {
+  virtualisation.virtualbox.guest = {
     enable = true;
     x11 = true;
   };
+
 
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     nix-index # contains nix-locate
+    #glibcLocales # locale bug
+    #glibc = { locales = true; };
     xorg.xf86inputsynaptics # xf86-input-synaptics
     #xorg.xf86videointel # xf86-video-intel
     xorg.xf86inputevdev # xf86-input-evdev
@@ -107,12 +113,12 @@
     pkgconfig
     clang
     gcc
+    gdb rr linuxPackages.perf
     gmp
     cmake
     cmakeCurses
     binutils
     zlib
-    nix-repl
     nix-serve
     nix-prefetch-git
     git
@@ -178,7 +184,7 @@
     rxvt_unicode-with-plugins
     #st # terminal
     urxvt_perls
-    terminator termite
+    terminator termite kitty
     zathura
     #fontconfig-ultimate
     #freetype
@@ -411,6 +417,9 @@
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chgrp input /sys/class/leds/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
+      SUBSYSTEM=="usb", ATTR{idProduct}=="0004", ATTR{idVendor}=="0ab1", MODE="0660", GROUP="users" 
+      SUBSYSTEM=="usb", ATTRS{idProduct}=="0004", ATTRS{idVendor}=="0ab1", MODE="0660", GROUP="users" 
+      SUBSYSTEMS=="usb-serial", MODE="0660", GROUP="users"
     '';
 
     kmscon = {
@@ -656,8 +665,8 @@
 
   programs.zsh = {
     enable = true; 
-    enableAutosuggestions = true;
-    #autosuggestions.enable = true;
+    #enableAutosuggestions = true;
+    autosuggestions.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
   };

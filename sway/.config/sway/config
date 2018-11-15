@@ -104,7 +104,7 @@ for_window [class="^Zathura$"] border pixel 1
 #set $termem terminology 
 #set $termem terminator
 #set $termem termite
-set $termem kitty
+set $termem kitty -i
 #set $term $termem -e tmux new-session -A -s 0 -t 
 #set $termg $termem -e tmux new-session -t 
 #set $term2 $termem -e tmux new-session -A -s 1 -t 

@@ -339,7 +339,6 @@ bindsym XF86MonBrightnessUp exec light -A 5
 
 #exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
 #exec --no-startup-id feh  --bg-fill ~/Pictures/Backgrounds/DSC01493.jpg
-exec --no-startup-id feh  --bg-fill ~/Pictures/Backgrounds/DSC04795.jpg
 
 
 #set $LCD "eDP-1"
@@ -359,6 +358,7 @@ exec --no-startup-id dunst
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec compton 
+exec --no-startup-id feh --bg-max /home/geier/Pictures/Backgrounds/current.jpg
 exec --no-startup-id xset r rate 150 50
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
