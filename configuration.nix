@@ -104,7 +104,7 @@
     libjpeg
     #imagemagick
     imagemagickBig
-    # i3-gaps required for sway configuration until everything is dropped
+    i3-gaps # required for sway configuration until everything is dropped
     i3lock
     # i3status
     # i3blocks-gaps
@@ -243,9 +243,9 @@
     fasd
     pandoc
     biber
-    haskelPackages.pandoc-citeproc
-    haskelPackages.pandoc-crossref
-    #haskelPackages.pandoc-csv2table
+    haskellPackages.pandoc-citeproc
+    haskellPackages.pandoc-crossref
+    #haskellPackages.pandoc-csv2table
     stack
     dbus
     cryptsetup
@@ -456,7 +456,8 @@
      };
 
     xserver = {
-      enable = false;
+      #enable = false;
+      enable = true;
       autorun = false;
       exportConfiguration = true;
       autoRepeatDelay = 150;
@@ -484,8 +485,8 @@
       xkbVariant = "dvorak,";
       xkbOptions = "grp:switch,grp:menu_toggle";
 
-      #windowManager.i3.enable = true;
-      #windowManager.i3.package = pkgs.i3-gaps;
+      windowManager.i3.enable = true;
+      windowManager.i3.package = pkgs.i3-gaps;
       #windowManager.sway.enable = true;
       #windowManager.waycooler.enable = true;
 

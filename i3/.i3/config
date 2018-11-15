@@ -85,14 +85,19 @@ for_window [window_type=dialog] floating enable
 #set $term st -t "Terminal"
 #set $term urxvt -e bash -c "tmux new-session -A -s 0"
 #set $term urxvt -e tmux new-session -A -s 0
-set $termem termite
-set $term $termem -e tmux new-session -A -s 0 -t Default
-set $term2 $termem -e tmux new-session -t Default
+#set $termem termite
+set $termem kitty 
+#set $term $termem -e tmux new-session -A -s 0 -t Default
+#set $term2 $termem -e tmux new-session -t Default
 set $TMUXDEFAULTGROUP Default
-bindsym $mod+Return       exec $termem -e "tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP"
-bindsym $mod+shift+Return exec $termem -e "tmux new-session -t $TMUXDEFAULTGROUP"
-bindsym $mod+n            exec $termem -e "tmux new-session -A -s 1 -t G1"
-bindsym $mod+shift+n      exec $termem -e "tmux new-session -t G1"
+#bindsym $mod+Return       exec $termem -e "tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP"
+#bindsym $mod+shift+Return exec $termem -e "tmux new-session -t $TMUXDEFAULTGROUP"
+#bindsym $mod+n            exec $termem -e "tmux new-session -A -s 1 -t G1"
+#bindsym $mod+shift+n      exec $termem -e "tmux new-session -t G1"
+bindsym $mod+Return       exec $termem tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP
+bindsym $mod+shift+Return exec $termem tmux new-session -t $TMUXDEFAULTGROUP
+bindsym $mod+n            exec $termem tmux new-session -A -s 1 -t G1
+bindsym $mod+shift+n      exec $termem tmux new-session -t G1
 #bindsym $mod+Return exec i3-sensible-terminal 
 #bindsym $mod+Return exec i3-sensible-terminal urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
@@ -323,15 +328,18 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk 
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`
 bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && volnoti-show -m
 
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+#bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+#bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+bindsym XF86MonBrightnessDown exec brightnessctl -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
 
 #sway
 #output "*" background ~/Pictures/Backgrounds/DSC02527.jpg fill
 #output "*" background ~/Pictures/Backgrounds/DSC01493.jpg fill
 
 #exec --no-startup-id feh --randomize --bg-fill ~/Pictures/Wallpapers/*
-exec --no-startup-id feh  --bg-fill ~/Pictures/Backgrounds/DSC01493.jpg
+#exec --no-startup-id feh  --bg-fill ~/Pictures/Backgrounds/DSC01493.jpg
+exec --no-startup-id feh  --bg-fill ~/Pictures/Backgrounds/DSC04795.jpg
 
 
 #set $LCD "eDP-1"
@@ -345,12 +353,12 @@ exec --no-startup-id feh  --bg-fill ~/Pictures/Backgrounds/DSC01493.jpg
 
 exec --no-startup-id [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 #exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id .screenlayout/ktwork.sh
+exec --no-startup-id .screenlayout/default.sh
 exec --no-startup-id volnoti
 exec --no-startup-id dunst
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
-exec /usr/bin/compton --config /home/joe/.compton.conf~.i3/config
+exec compton 
 exec --no-startup-id xset r rate 150 50
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
