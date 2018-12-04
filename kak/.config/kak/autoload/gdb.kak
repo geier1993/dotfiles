@@ -85,7 +85,7 @@ define-command rr-session-new %{
 
 define-command gdb-session-connect %{
     gdb-session-connect-internal
-    info "Please instruct gdb to \"new-ui mi3 %opt{gdb_dir}/pty\""
+    info "Please instruct gdb to 'new-ui mi3 %opt{gdb_dir}/pty'"
 }
 
 define-command -hidden gdb-session-connect-internal %{

@@ -4,6 +4,7 @@ stow -t /home/pgeier/ tmux
 #stow -t /home/pgeier/ stack
 stow -t /home/pgeier/ zathura
 stow -t /home/pgeier/ ranger
+stow -t /home/pgeier/ readline
 stow -t /home/pgeier/ vim
 stow -t /home/pgeier/ gnupg
 stow -t /home/pgeier/ kak

@@ -15,6 +15,7 @@ stow -t $TARGET i3
 stow -t $TARGET i3blocks
 stow -t $TARGET zathura
 stow -t $TARGET ranger
+stow -t $TARGET readline
 stow -t $TARGET dunst
 stow -t $TARGET conky
 stow -t $TARGET vim

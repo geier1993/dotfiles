@@ -93,7 +93,15 @@ SAMBA:
     - enable smbd nmbd
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
 
+rr:
+  - sudo sh -c 'echoo -1 >/proc/sys/kernel/perf_event_paranoid'
+
+diff:
+  - diff -w -u -r -N FOLD1 FOLD2
+  - Filesonly: -q  option
+    Ignore: -x "*build*" -x "Debug" -x ".svn"
 awk&sed:
+  - find ./ \( -name "*.[c,h]" -o -name "*.cpp" \) -exec sh -c "sed -i 's/\r$//g' {}" \;
   - find . -type f -name "*.zip" -exec unzip {} +
   - find . -type f -name "*.zip" -exec unzip {} \;
   - find ./ -name "*.a" -print -exec sh -c "echo {}; winedump -j export {} | grep -i unlink" \;

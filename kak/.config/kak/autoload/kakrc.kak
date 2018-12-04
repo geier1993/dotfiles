@@ -100,6 +100,7 @@ map global normal '<a-#>' :comment-block<ret> -docstring 'comment block'
 
 #number lines
 add-highlighter global/ number-lines
+add-highlighter global/ show-whitespaces
 
 
 # clang...

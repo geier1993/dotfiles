@@ -127,7 +127,8 @@ set_prompt () {
       fi
       PROMPT="$PROMPT%{$fg_no_bold[green]%} $INNIXSHELLVAL%{$fg_no_bold[magenta]%}{%{$fg_no_bold[cyan]%}$NIX_SHELL_PACKAGES%{$fg_no_bold[magenta]%}}"
     fi
-    PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
+    #PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
+    PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}🍂 %{$reset_color%}"
 }
 set_prompt
 preexec () {
