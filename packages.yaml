@@ -49,6 +49,14 @@ Ruby:
   - nix-shell -p imagemagicBig
     gem install rmagick
 
+C++:
+  virtual  inheritance:
+    http://www.drdobbs.com/cpp/multiple-inheritance-considered-useful/184402074
+    https://stackoverflow.com/questions/6403842/is-virtual-inheritance-from-pure-abstract-classes-interfaces-necessary
+    https://stackoverflow.com/questions/21558/in-c-what-is-a-virtual-base-class
+
+
+
 Nixos:
   - sudo nixos-rebuild switch
   - sudo nixos-rebuild switch --repair

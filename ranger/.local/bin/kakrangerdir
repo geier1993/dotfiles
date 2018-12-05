@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ ! -z "$KAKSESSION" ];
+then
+  KAKRANGERDIR="/tmp/kak-ranger-$KAKSESSION"
+else
+  export KAKRANGERDIR="/tmp/kak-ranger"
+fi
+echo $KAKRANGERDIR
