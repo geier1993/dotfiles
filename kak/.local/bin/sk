@@ -1,0 +1,22 @@
+#!/bin/sh
+#set -m # enable jobcontrol
+#set +m
+#set -x
+# echo $!
+# echo $$
+# 
+# function onsuspend {
+#   #suspend
+#   touch ~/HAHAHA
+#   kill -TSTP $$
+# }
+# function onresume {
+#   #suspend
+#   kill -CONT $$
+# }
+# 
+# trap onsuspend TSTP
+# trap onresume CONT
+
+# exec replaces the shell with the kak process (better for suspension)
+exec kak `kakargs` $@ 

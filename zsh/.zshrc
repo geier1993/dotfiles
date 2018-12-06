@@ -23,8 +23,11 @@ export WLC_REPEAT_RATE=50
 export PYTHONPATH=$(python -c "import site; print(site.USER_SITE)"):$PYTHONPATH
 export TERMINAL=urxvtc
 export TERM=rxvt
-export EDITOR=kak
-export VISUAL=kak
+#export EDITOR=kak
+#export VISUAL=kak
+# using kak wrapper as editor - ranger/tmux integration
+export EDITOR=sk
+export VISUAL=sk
 export GOPATH=~/go
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export npm_config_prefix=~/.node_modules
@@ -127,7 +130,8 @@ set_prompt () {
       fi
       PROMPT="$PROMPT%{$fg_no_bold[green]%} $INNIXSHELLVAL%{$fg_no_bold[magenta]%}{%{$fg_no_bold[cyan]%}$NIX_SHELL_PACKAGES%{$fg_no_bold[magenta]%}}"
     fi
-    PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
+    #PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
+    PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}🍂 %{$reset_color%}"
 }
 set_prompt
 preexec () {
@@ -180,21 +184,20 @@ eval "$(pandoc --bash-completion)"
 eval "$(fasd --init auto)"
 #function k () kak `fasd -f $@`
 
-function sk {
-  if [ ! -z "$KAKSESSION" ];
-  then
-    if [ ! -z `kak -l | grep "^${KAKSESSION}$"` ];
-    then
-      kak -c $KAKSESSION $@
-    else
-      kak -d -s $KAKSESSION 
-      kak -c $KAKSESSION $@
-    fi
-  else
-    kak $@
-  fi
-}
-
+# Put into dotfiles/kak as script
+#function kakargs {
+#  if [ ! -z "$KAKSESSION" ];
+#  then
+#    if [ -z `kak -l | grep "^${KAKSESSION}$"` ];
+#    then
+#      kak -d -s $KAKSESSION 
+#    fi
+#    export KAKARGS="-c $KAKSESSION $@"
+#  else
+#    export KAKARGS=""
+#  fi
+#}
+#function sk () kakargs &&  kak `echo $KAKARGS` $@
 function k () sk `fasd -f $@`
 
 

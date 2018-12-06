@@ -49,6 +49,14 @@ Ruby:
   - nix-shell -p imagemagicBig
     gem install rmagick
 
+C++:
+  virtual  inheritance:
+    http://www.drdobbs.com/cpp/multiple-inheritance-considered-useful/184402074
+    https://stackoverflow.com/questions/6403842/is-virtual-inheritance-from-pure-abstract-classes-interfaces-necessary
+    https://stackoverflow.com/questions/21558/in-c-what-is-a-virtual-base-class
+
+
+
 Nixos:
   - sudo nixos-rebuild switch
   - sudo nixos-rebuild switch --repair
@@ -93,7 +101,15 @@ SAMBA:
     - enable smbd nmbd
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
 
+rr:
+  - sudo sh -c 'echoo -1 >/proc/sys/kernel/perf_event_paranoid'
+
+diff:
+  - diff -w -u -r -N FOLD1 FOLD2
+  - Filesonly: -q  option
+    Ignore: -x "*build*" -x "Debug" -x ".svn"
 awk&sed:
+  - find ./ \( -name "*.[c,h]" -o -name "*.cpp" \) -exec sh -c "sed -i 's/\r$//g' {}" \;
   - find . -type f -name "*.zip" -exec unzip {} +
   - find . -type f -name "*.zip" -exec unzip {} \;
   - find ./ -name "*.a" -print -exec sh -c "echo {}; winedump -j export {} | grep -i unlink" \;

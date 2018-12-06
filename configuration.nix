@@ -77,6 +77,7 @@
     clang
     gcc
     gdb rr linuxPackages.perf
+    socat
     cmake
     cmakeCurses
     binutils
@@ -108,6 +109,7 @@
     imagemagickBig
     i3-gaps # required for sway configuration until everything is dropped
     i3lock
+    compton
     # i3status
     # i3blocks-gaps
     i3blocks

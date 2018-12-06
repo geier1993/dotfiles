@@ -1,0 +1,15 @@
+#!/bin/sh
+if [ ! -z "$KAKSESSION" ];
+then
+  if [ -z `kak -l | grep "^${KAKSESSION}$"` ];
+  then
+    if ! [kak -d -s $KAKSESSION]; then
+      kak -clear
+      kak -d -s $KAKSESSION
+    fi
+  fi
+  KAKARGS="-c $KAKSESSION $@"
+else
+  KAKARGS=""
+fi
+echo $KAKARGS
