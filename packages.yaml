@@ -174,7 +174,9 @@ firewall:
     - allow mdns, allow slp
 
 bluetooth:
-    - enable bluetooth
+    - rfkill list
+    - rfkill unblock bluetooth
+    - systemctl start/enable bluetooth
     - bluez
     - bluez-utils
     - bluetoothctl

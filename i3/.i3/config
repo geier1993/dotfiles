@@ -85,15 +85,15 @@ for_window [window_type=dialog] floating enable
 #set $term st -t "Terminal"
 #set $term urxvt -e bash -c "tmux new-session -A -s 0"
 #set $term urxvt -e tmux new-session -A -s 0
-#set $termem termite
-set $termem kitty 
 #set $term $termem -e tmux new-session -A -s 0 -t Default
 #set $term2 $termem -e tmux new-session -t Default
 set $TMUXDEFAULTGROUP Default
+#set $termem termite
 #bindsym $mod+Return       exec $termem -e "tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP"
 #bindsym $mod+shift+Return exec $termem -e "tmux new-session -t $TMUXDEFAULTGROUP"
 #bindsym $mod+n            exec $termem -e "tmux new-session -A -s 1 -t G1"
 #bindsym $mod+shift+n      exec $termem -e "tmux new-session -t G1"
+set $termem kitty 
 bindsym $mod+Return       exec $termem tmux new-session -A -s 0 -t $TMUXDEFAULTGROUP
 bindsym $mod+shift+Return exec $termem tmux new-session -t $TMUXDEFAULTGROUP
 bindsym $mod+n            exec $termem tmux new-session -A -s 1 -t G1
@@ -330,7 +330,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index
 
 #bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 #bindsym XF86MonBrightnessUp exec brightnessctl s +5%
-bindsym XF86MonBrightnessDown exec brightnessctl -U 5
+bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
 
 #sway
@@ -358,7 +358,7 @@ exec --no-startup-id dunst
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec compton 
-exec --no-startup-id feh --bg-max /home/geier/Pictures/Backgrounds/current.jpg
+exec --no-startup-id feh --bg-fill /home/geier/Pictures/Backgrounds/current.jpg
 exec --no-startup-id xset r rate 150 50
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 

@@ -54,7 +54,8 @@
   i18n = {
     consoleFont = "Lat2-Terminus16";
     consoleKeyMap = "dvorak";
-    defaultLocale = "en_GB.UTF-8";
+    #defaultLocale = "en_GB.UTF-8";
+    defaultLocale = "en_US.UTF-8";
   };
 
   # Set your time zone.
@@ -66,6 +67,7 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     nix-index # contains nix-locate
+    glibcLocales
     gnumake
     automake
     autoconf
@@ -74,7 +76,7 @@
     pkgconfig
     clang
     gcc
-    gdb rr perf
+    gdb rr linuxPackages.perf
     cmake
     cmakeCurses
     binutils
@@ -244,7 +246,7 @@
     pandoc
     biber
     haskellPackages.pandoc-citeproc
-    haskellPackages.pandoc-crossref
+    #haskellPackages.pandoc-crossref
     #haskellPackages.pandoc-csv2table
     stack
     dbus
@@ -627,8 +629,8 @@
 
   programs.zsh = {
     enable = true; 
-    enableAutosuggestions = true;
-    #autosuggestions.enable = true;
+    #enableAutosuggestions = true;
+    autosuggestions.enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
   };

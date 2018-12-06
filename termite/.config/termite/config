@@ -44,7 +44,7 @@ foreground = #bfcfdb
 foreground_bold = #eee8d5
 #foreground_dim = #888888
 #background = #002b36
-background = rgba(0,0,0,0.7)
+background = rgba(0,17,17,0.7)
 cursor = #93a1a1
 
 # if unset, will reverse foreground and background

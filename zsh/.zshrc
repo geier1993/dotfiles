@@ -1,6 +1,6 @@
 #redshift-gtk & #done by i3
 
-#export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
 
 #export LANGUAGE=en
 #export LANG=en_US.UTF-8
