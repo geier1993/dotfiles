@@ -109,6 +109,3 @@ hook global WinSetOption filetype=(c|cpp) %{
   clang-enable-diagnostics # Add autowrap to 72 characters in git-commit
 }
 
-
-
-
