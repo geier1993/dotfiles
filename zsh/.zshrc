@@ -1,13 +1,13 @@
 #redshift-gtk & #done by i3
 
-export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+#export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
 
 #export LANGUAGE=en
 #export LANG=en_US.UTF-8
 #export LC_ALL=en_US.UTF-8
-export LANGUAGE=en
-export LANG=en_GB.UTF-8
-export LC_ALL=en_GB.UTF-8
+#export LANGUAGE=en
+#export LANG=en_GB.UTF-8
+#export LC_ALL=de_DE.UTF-8
 
 export XKB_DEFAULT_LAYOUT=us,de
 export XKB_DEFAULT_VARIANT=dvorak,nodeadkeys
