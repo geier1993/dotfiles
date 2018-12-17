@@ -150,6 +150,7 @@
     urxvt_perls
     terminator termite kitty
     zathura
+    okular
     #fontconfig-ultimate
     #freetype
     ghc

@@ -1,40 +1,33 @@
-#redshift-gtk & #done by i3
-
-#export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
-
 export LANGUAGE=en
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-#export LANGUAGE=en
-#export LANG=en_GB.UTF-8
-#export LC_ALL=en_GB.UTF-8
 
 export XKB_DEFAULT_LAYOUT=us,de
 export XKB_DEFAULT_VARIANT=dvorak,nodeadkeys
 export XKB_DEFAULT_MODEL=pc105
 export XKB_DEFAULT_OPTIONS=grp:switch,grp:menu_toggle
 
-export XDG_CONFIG_HOME=/home/geier/.config
+export XDG_CONFIG_HOME=/home/pgeier/.config
 
 export WLC_REPEAT_DELAY=150
 export WLC_REPEAT_RATE=50
 
 #export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/site-packages
 export PYTHONPATH=$(python -c "import site; print(site.USER_SITE)"):$PYTHONPATH
-export TERMINAL=urxvtc
-export TERM=rxvt
+#export TERMINAL=urxvtc
+#export TERM=rxvt
 #export EDITOR=kak
 #export VISUAL=kak
 # using kak wrapper as editor - ranger/tmux integration
-export EDITOR=sk
-export VISUAL=sk
-export GOPATH=~/go
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export npm_config_prefix=~/.node_modules
+#export EDITOR=sk
+#export VISUAL=sk
+#export GOPATH=~/go
+#export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+#export npm_config_prefix=~/.node_modules
 
 export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$PATH"
-export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:/home/geier/.nix-profile/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/lib:/home/pgeier/.local/lib:/home/pgeier/.nix-profile/lib:${LD_LIBRARY_PATH}
 
 #export GDK_SCALE=0.5
 #export GDK_DPI_SCALE=1
@@ -121,7 +114,7 @@ bashcompinit
 set_prompt () {
     #PROMPT="%{$fg_bold[white]%}%{$fg_bold[yellow]%}"`date +"%H:%M"`"%{$fg[white]$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
     PROMPT="%{$fg_bold[white]%}%{$fg_bold[yellow]%}"`date +"%H:%M"`""
-    if [[ -v IN_NIX_SHELL ]]; then
+    if [[ -z IN_NIX_SHELL ]]; then
       INNIXSHELLVAL=""
       if [[ $IN_NIX_SHELL == "impure" ]]; then
         INNIXSHELLVAL="IMP"
@@ -131,7 +124,7 @@ set_prompt () {
       PROMPT="$PROMPT%{$fg_no_bold[green]%} $INNIXSHELLVAL%{$fg_no_bold[magenta]%}{%{$fg_no_bold[cyan]%}$NIX_SHELL_PACKAGES%{$fg_no_bold[magenta]%}}"
     fi
     #PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}%# %{$reset_color%}"
-    PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}🍂 %{$reset_color%}"
+    PROMPT="$PROMPT%{$fg_no_bold[red]%} %c %{$fg_bold[white]%}⦕ %{$reset_color%}"
 }
 set_prompt
 preexec () {
@@ -176,12 +169,12 @@ ttyctl -f
 # export WISP=9C:65:B0:73:7D:AC
 
 # eval $(gnome-keyring-daemon -s)
-eval "$(pandoc --bash-completion)"
+#eval "$(pandoc --bash-completion)"
 
 #eval $(thefuck --alias)
 
 #FASD
-eval "$(fasd --init auto)"
+#eval "$(fasd --init auto)"
 #function k () kak `fasd -f $@`
 
 # Put into dotfiles/kak as script
@@ -198,17 +191,17 @@ eval "$(fasd --init auto)"
 #  fi
 #}
 #function sk () kakargs &&  kak `echo $KAKARGS` $@
-function k () sk `fasd -f $@`
+#function k () sk `fasd -f $@`
 
 
 #Stack
-eval "$(stack --bash-completion-script stack)"
+#eval "$(stack --bash-completion-script stack)"
 
 if [ -z "$NIX_PATH" ];
 then
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  #source /usr/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+  #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
   source $HOME/misc/zsh-nix-shell/nix-shell.plugin.zsh
 fi
@@ -224,3 +217,8 @@ export NVM_DIR="$HOME/.nvm"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/geier/node_modules/tabtab/.completions/sls.zsh ]] && . /home/geier/node_modules/tabtab/.completions/sls.zsh
+
+if [[ -z "$TMUX" ]] && [[ $HOSTNAME != *"cegate"* ]];
+then
+    tmux attach -t Default || tmux new -s Default 
+fi
