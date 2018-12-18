@@ -290,7 +290,7 @@
 
 
   networking = {
-    hostName = "jimmy"; # Define your hostname.
+    hostName = "pgeier"; # Define your hostname.
     networkmanager.enable = true;
     wireless.enable = false;  # Enables wireless support via wpa_supplicant.
     wireless.userControlled.enable = true;
@@ -406,6 +406,9 @@
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chgrp input /sys/class/leds/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
+      SUBSYSTEM=="usb", ATTR{idProduct}=="0004", ATTR{idVendor}=="0ab1", MODE="0660", GROUP="users" 
+      SUBSYSTEM=="usb", ATTRS{idProduct}=="0004", ATTRS{idVendor}=="0ab1", MODE="0660", GROUP="users" 
+      SUBSYSTEMS=="usb-serial", MODE="0660", GROUP="users"
     '';
 
     kmscon = {
@@ -579,7 +582,7 @@
       powerOnBoot = false;
     };
 
-    cpu.intel.updateMicrocode = true;
+    #cpu.intel.updateMicrocode = true;
   };
   systemd.user.services.pulseaudio.enable = true;
 
