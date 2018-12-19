@@ -219,7 +219,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /home/geier/node_modules/tabtab/.completions/sls.zsh ]] && . /home/geier/node_modules/tabtab/.completions/sls.zsh
 
 #if [[ -z "$TMUX" ]] && [[ $HOSTNAME != *"cegate"* ]];
-if [[ -z "$TMUX" ]];
+if [ -z "$TMUX" ];
 then
     tmux attach -t Default || tmux new -s Default 
 fi
