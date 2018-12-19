@@ -1,2 +1,2 @@
 #!/bin/sh
-exec sk $(cat `kakrangerdir`)
+exec skk $(cat `kakrangerdir`)

@@ -63,6 +63,35 @@
 
   environment.shells = with pkgs; [bashInteractive zsh];
 
+
+  fileSystems."/mnt/media/KT-Dat" = {
+      device = "//ebfile01/KT-Dat";
+      fsType = "cifs";
+      options = let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+  fileSystems."/mnt/media/ebfile01" = {
+      device = "//ebfile01";
+      fsType = "cifs";
+      options = let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+  fileSystems."/mnt/media/user" = {
+      device = "//ebfile01/users$/pgeier";
+      fsType = "cifs";
+      options = let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
@@ -84,7 +113,7 @@
     xorg.setxkbmap
     xorg.xrandr
     xorg.xauth
-    virtualbox
+#    virtualbox
     gnumake
     automake
     autoconf
@@ -121,7 +150,7 @@
     #lemonbar
     #polybar
     sway	
-    ffmpeg # for sway
+#    ffmpeg # for sway
     #gdk-pixbuf # for sway
     libjpeg
     #imagemagick
@@ -132,18 +161,18 @@
     # i3status
     # i3blocks-gaps
     i3blocks
-    scrot # screenshot
+#    scrot # screenshot
     feh
     #poppler
-    poppler_utils
+#    poppler_utils
     arandr
     #autorandr
     lm_sensors
     sysstat
-    playerctl
-    pango
-    perlPackages.Pango
-    xwayland
+#    playerctl
+#    pango
+#    perlPackages.Pango
+#    xwayland
     networkmanager
     networkmanagerapplet
     wpa_supplicant
@@ -157,30 +186,30 @@
     tmux
     dmenu
     firefox
-    thunderbird
+#    thunderbird
     #vivaldi
     #vimb
-    vlc
-    xfce.thunar
-    gnome3.nautilus
-    darktable
-    rxvt_unicode-with-plugins
+#    vlc
+#    xfce.thunar
+#    gnome3.nautilus
+#    darktable
+#    rxvt_unicode-with-plugins
     #st # terminal
-    urxvt_perls
+#    urxvt_perls
     terminator termite 
     kitty
     zathura
-    okular
+#    okular
     #fontconfig-ultimate
     #freetype
-    ghc
-    stack
-    cabal-install
-    nodejs
+#    ghc
+#    stack
+#    cabal-install
+#    nodejs
     # bluez
-    bluez-tools
+#    bluez-tools
     silver-searcher
-    platinum-searcher
+#    platinum-searcher
     #zsh
     #zsh-autosuggestions
     #zsh-completions
@@ -193,14 +222,14 @@
     # vaapiVdpau # libva-vdpau-driver
     # microcodeIntel # microcode-intel
     powertop #intel
-    intel-gpu-tools
-    beignet
+#    intel-gpu-tools
+#    beignet
     #brightnessctl light
     #bluetoothctl
     xsel
     #mesa_noglu
     libnotify
-    vtk
+#    vtk
     unzip
     zip
     #dejavu_fonts
@@ -209,45 +238,44 @@
     w3m ranger tree
     vim
     thermald
-    pygmentex
-    texlive.combined.scheme-full
-    lmodern
+#    pygmentex
+#    texlive.combined.scheme-full
+#    lmodern
     rsync
     #redshift
     #geoclue
     #despotify
     #python27
-    ruby bundix
-    python3Full
-    python36
-    #python27Packages.numpy
-    python36Packages.numpy
-    #python27Packages.scipy
-    python36Packages.scipy
-    #python27Packages.matplotlib
-    python36Packages.matplotlib
-    #python27Packages.seaborn
-    python36Packages.seaborn
-    #python27Packages.pandas
-    python36Packages.pandas
-    #python27Packages.ipython
-    python36Packages.ipython
-    #python27Packages.pandocfilters
-    python36Packages.pandocfilters
-    #python27Packages.pypandoc
-    #python36Packages.pypandoc
-    #paraview
+#    ruby bundix
+#    python3Full
+#    python36
+#    #python27Packages.numpy
+#    python36Packages.numpy
+#    #python27Packages.scipy
+#    python36Packages.scipy
+#    #python27Packages.matplotlib
+#    python36Packages.matplotlib
+#    #python27Packages.seaborn
+#    python36Packages.seaborn
+#    #python27Packages.pandas
+#    python36Packages.pandas
+#    #python27Packages.ipython
+#    python36Packages.ipython
+#    #python27Packages.pandocfilters
+#    python36Packages.pandocfilters
+#    #python27Packages.pypandoc
+#    #python36Packages.pypandoc
+#    #paraview
     mlocate
-    lm_sensors
     linuxHeaders
-    libreoffice-fresh
+#    libreoffice-fresh
     hunspell
     aspell
     aspellDicts.de
     aspellDicts.en
     aspellDicts.fr
-    inkscape
-    i7z
+#    inkscape
+#    i7z
     htop
     # cups
     # cups-filters
@@ -257,45 +285,45 @@
     # foomatic-filters
     # cups-bjnp
     # cups-dymo
-    gpart
-    gparted
-    hdf5
+#    gpart
+#    gparted
+#    hdf5
     ncurses
     gnupg pinentry
     #gpicview
     geeqie
-    clutter clutter-gtk
-    gpicview
+#    clutter clutter-gtk
+#    gpicview
     #gliv
     fasd
-    pandoc
-    biber
-    haskellPackages.pandoc-citeproc
-    #haskellPackages.pandoc-crossref
-    #haskellPackages.pandoc-csv2table
-    stack
-    dbus
-    cryptsetup
-    clamav
+#    pandoc
+#    biber
+#    haskellPackages.pandoc-citeproc
+#    #haskellPackages.pandoc-crossref
+#    #haskellPackages.pandoc-csv2table
+#    stack
+#    dbus
+#    cryptsetup
+#    clamav
     cmake
-    chromium
+#    chromium
     #linuxPackages.cpupower
     cpufrequtils
     boost
     mkpasswd
     meson
-    cairo
+#    cairo
     #kmscon
     #libtsm
     conky
-    dropbox
+#    dropbox
     exfat
     #google-cloud-sdk
   ];
 
 
   networking = {
-    hostName = "jimmy"; # Define your hostname.
+    hostName = "pgeier"; # Define your hostname.
     networkmanager.enable = true;
     wireless.enable = false;  # Enables wireless support via wpa_supplicant.
     wireless.userControlled.enable = true;
@@ -411,6 +439,9 @@
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chgrp input /sys/class/leds/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
+      SUBSYSTEM=="usb", ATTR{idProduct}=="0004", ATTR{idVendor}=="0ab1", MODE="0660", GROUP="users" 
+      SUBSYSTEM=="usb", ATTRS{idProduct}=="0004", ATTRS{idVendor}=="0ab1", MODE="0660", GROUP="users" 
+      SUBSYSTEMS=="usb-serial", MODE="0660", GROUP="users"
     '';
 
     kmscon = {
@@ -584,7 +615,7 @@
       powerOnBoot = false;
     };
 
-    cpu.intel.updateMicrocode = true;
+    #cpu.intel.updateMicrocode = true;
   };
   systemd.user.services.pulseaudio.enable = true;
 
@@ -686,3 +717,4 @@
   security.apparmor.enable = true;
  
 }
+

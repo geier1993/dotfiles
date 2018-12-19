@@ -26,8 +26,8 @@ export TERM=rxvt
 #export EDITOR=kak
 #export VISUAL=kak
 # using kak wrapper as editor - ranger/tmux integration
-export EDITOR=sk
-export VISUAL=sk
+export EDITOR=skk
+export VISUAL=skk
 export GOPATH=~/go
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export npm_config_prefix=~/.node_modules
@@ -197,8 +197,8 @@ eval "$(fasd --init auto)"
 #    export KAKARGS=""
 #  fi
 #}
-#function sk () kakargs &&  kak `echo $KAKARGS` $@
-function k () sk `fasd -f $@`
+#function skk () kakargs &&  kak `echo $KAKARGS` $@
+function k () skk `fasd -f $@`
 
 
 #Stack

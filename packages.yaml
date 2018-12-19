@@ -17,7 +17,7 @@ USBPermissions:
   - usermod USERNAME -a -G GROUPNAME
 
 PDF:
-    - zathura,evince
+    - zathura,evince,okular
     - pdfjam
     - pdfjoin --outfile FILE --paper a4paper --rotateoversize false Files...
 

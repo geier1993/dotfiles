@@ -324,9 +324,18 @@ gaps outer 2
 #smart_gaps on
 
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1` 
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`
-bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && volnoti-show -m
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1` 
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`
+#bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && volnoti-show -m
+
+
+bindsym XF86AudioRaiseVolume exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') 0 && pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1` 
+bindsym XF86AudioLowerVolume exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') 0 && pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`
+#bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && volnoti-show -m
+#bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && eval $(if [ $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/') -eq 1 ]; then volnoti-show -m; else volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`; fi)
+#bindsym XF86AudioMute exec volnoti-show $(if [ $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/') -eq 1 ]; then echo "-m"; else echo "`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`"; fi)
+bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle &&  volnoti-show $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/-m/' | sed -e 's/^.*: no$/'`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`'/') 
+
 
 #bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 #bindsym XF86MonBrightnessUp exec brightnessctl s +5%
