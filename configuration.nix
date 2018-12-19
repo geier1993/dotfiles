@@ -67,6 +67,8 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     ntfs3g	# to mount windows
+    cifs-utils
+    nfs-utils
     nix-index # contains nix-locate
     glibcLocales
     #glibc = { locales = true; };

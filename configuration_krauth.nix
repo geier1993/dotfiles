@@ -64,7 +64,7 @@
   environment.shells = with pkgs; [bashInteractive zsh];
 
 
-  fileSystems."/mnt/KT-Dat" = {
+  fileSystems."/mnt/media/KT-Dat" = {
       device = "//ebfile01/KT-Dat";
       fsType = "cifs";
       options = let
@@ -73,8 +73,17 @@
 
       in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
-  fileSystems."/mnt/ebfile01" = {
+  fileSystems."/mnt/media/ebfile01" = {
       device = "//ebfile01";
+      fsType = "cifs";
+      options = let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+  fileSystems."/mnt/media/user" = {
+      device = "//ebfile01/users$/pgeier";
       fsType = "cifs";
       options = let
         # this line prevents hanging on network split
@@ -87,6 +96,8 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     ntfs3g	# to mount windows
+    cifs-utils
+    nfs-utils
     nix-index # contains nix-locate
     glibcLocales
     #glibc = { locales = true; };
