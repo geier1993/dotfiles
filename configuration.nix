@@ -66,6 +66,7 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    ntfs3g	# to mount windows
     nix-index # contains nix-locate
     glibcLocales
     #glibc = { locales = true; };
@@ -164,7 +165,8 @@
     rxvt_unicode-with-plugins
     #st # terminal
     urxvt_perls
-    terminator termite kitty
+    terminator termite 
+    kitty
     zathura
     okular
     #fontconfig-ultimate
@@ -198,6 +200,7 @@
     libnotify
     vtk
     unzip
+    zip
     #dejavu_fonts
     #freefont_ttf
     #ttf_bitstream_vera
@@ -344,7 +347,7 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
     autoUpgrade.enable = true;
-    stateVersion = "18.03";
+    stateVersion = "18.09";
   };
 
   systemd.services.kbdrate = {

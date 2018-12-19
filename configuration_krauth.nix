@@ -66,6 +66,7 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    ntfs3g	# to mount windows
     nix-index # contains nix-locate
     glibcLocales
     #glibc = { locales = true; };
@@ -132,7 +133,7 @@
 #    scrot # screenshot
     feh
     #poppler
-    poppler_utils
+#    poppler_utils
     arandr
     #autorandr
     lm_sensors
@@ -154,20 +155,20 @@
     tmux
     dmenu
     firefox
-    thunderbird
+#    thunderbird
     #vivaldi
     #vimb
 #    vlc
 #    xfce.thunar
 #    gnome3.nautilus
-    darktable
+#    darktable
 #    rxvt_unicode-with-plugins
     #st # terminal
 #    urxvt_perls
     terminator termite 
     kitty
     zathura
-    okular
+#    okular
     #fontconfig-ultimate
     #freetype
 #    ghc
@@ -199,15 +200,16 @@
     libnotify
 #    vtk
     unzip
+    zip
     #dejavu_fonts
     #freefont_ttf
     #ttf_bitstream_vera
     w3m ranger tree
     vim
     thermald
-    pygmentex
-    texlive.combined.scheme-full
-    lmodern
+#    pygmentex
+#    texlive.combined.scheme-full
+#    lmodern
     rsync
     #redshift
     #geoclue
@@ -344,7 +346,7 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
     autoUpgrade.enable = true;
-    stateVersion = "18.03";
+    stateVersion = "18.09";
   };
 
   systemd.services.kbdrate = {
@@ -684,3 +686,4 @@
   security.apparmor.enable = true;
  
 }
+
