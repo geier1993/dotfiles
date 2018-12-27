@@ -1,0 +1,18 @@
+#!/bin/sh
+if [ ! -z "$KAKSESSION" ];
+then
+  KAKPID=$(kakpid)
+  echo "Found id $KAKPID"
+  if [ -z "$KAKPID" ];
+  then
+    echo "Empty... Creating Session"
+    kak -d -s $KAKSESSION 
+  fi
+
+  if [[ ! -z "$KAKPID" ]] && [[ ! -z `kak -l | grep "^${KAKSESSION} (dead)$"` ]];
+  then
+    echo "Dead session... kill and restart"
+    kakkill
+    kak -d -s $KAKSESSION 
+  fi
+fi

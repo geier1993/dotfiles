@@ -361,7 +361,7 @@ bindsym XF86MonBrightnessUp exec light -A 5
 
 exec --no-startup-id [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 #exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id .screenlayout/default.sh
+exec --no-startup-id ~/.screenlayout/default.sh
 exec --no-startup-id volnoti
 exec --no-startup-id dunst
 exec --no-startup-id pasystray

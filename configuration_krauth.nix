@@ -64,32 +64,59 @@
   environment.shells = with pkgs; [bashInteractive zsh];
 
 
-  fileSystems."/mnt/media/KT-Dat" = {
+  fileSystems."/media/EBFILE01_KT-Dat" = {
       device = "//ebfile01/KT-Dat";
       fsType = "cifs";
       options = let
         # this line prevents hanging on network split
         automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-      in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+      in ["guest,uid=geier,dir_mode=0777,file_mode=0777,noperm,${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
-  fileSystems."/mnt/media/ebfile01" = {
-      device = "//ebfile01";
+  fileSystems."/media/EBFILE01_Info" = {
+      device = "//ebfile01/Info";
       fsType = "cifs";
       options = let
         # this line prevents hanging on network split
         automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-      in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+      in ["guest,uid=geier,dir_mode=0777,file_mode=0777,noperm,${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
-  fileSystems."/mnt/media/user" = {
+  fileSystems."/media/EBFILE01_Daten" = {
+      device = "//ebfile01/Daten";
+      fsType = "cifs";
+      options = let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in ["guest,uid=geier,dir_mode=0777,file_mode=0777,noperm,${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+  fileSystems."/media/EBFILE01_Projects" = {
+      device = "//ebfile01/Projects";
+      fsType = "cifs";
+      options = let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in ["guest,uid=geier,dir_mode=0777,file_mode=0777,noperm,${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+  fileSystems."/media/EBFILE01_Projektarchiv" = {
+      device = "//ebfile01/@projektarchiv";
+      fsType = "cifs";
+      options = let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+      in ["guest,uid=geier,dir_mode=0777,file_mode=0777,noperm,${automount_opts},credentials=/etc/nixos/smb-secrets"];
+  };
+  fileSystems."/media/EBFILE01_user" = {
       device = "//ebfile01/users$/pgeier";
       fsType = "cifs";
       options = let
         # this line prevents hanging on network split
         automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-      in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
+      in ["guest,uid=geier,dir_mode=0777,file_mode=0777,noperm,${automount_opts},credentials=/etc/nixos/smb-secrets"];
   };
 
   # List packages installed in system profile. To search by name, run:
@@ -113,8 +140,9 @@
     xorg.setxkbmap
     xorg.xrandr
     xorg.xauth
-#    virtualbox
+    virtualbox
     gnumake
+    m4
     automake
     autoconf
     ninja
@@ -150,7 +178,7 @@
     #lemonbar
     #polybar
     sway	
-#    ffmpeg # for sway
+    ffmpeg # for sway
     #gdk-pixbuf # for sway
     libjpeg
     #imagemagick
@@ -161,18 +189,18 @@
     # i3status
     # i3blocks-gaps
     i3blocks
-#    scrot # screenshot
+    scrot # screenshot
     feh
     #poppler
-#    poppler_utils
+    poppler_utils
     arandr
     #autorandr
     lm_sensors
     sysstat
-#    playerctl
-#    pango
-#    perlPackages.Pango
-#    xwayland
+    playerctl
+    pango
+    perlPackages.Pango
+    xwayland
     networkmanager
     networkmanagerapplet
     wpa_supplicant
@@ -186,30 +214,30 @@
     tmux
     dmenu
     firefox
-#    thunderbird
+    thunderbird
     #vivaldi
     #vimb
-#    vlc
-#    xfce.thunar
-#    gnome3.nautilus
-#    darktable
-#    rxvt_unicode-with-plugins
+    vlc
+    xfce.thunar
+    gnome3.nautilus
+    darktable
+    rxvt_unicode-with-plugins
     #st # terminal
-#    urxvt_perls
+    urxvt_perls
     terminator termite 
     kitty
     zathura
-#    okular
+    okular
     #fontconfig-ultimate
     #freetype
-#    ghc
-#    stack
-#    cabal-install
-#    nodejs
+    ghc
+    stack
+    cabal-install
+    nodejs
     # bluez
-#    bluez-tools
+    bluez-tools
     silver-searcher
-#    platinum-searcher
+    platinum-searcher
     #zsh
     #zsh-autosuggestions
     #zsh-completions
@@ -222,14 +250,14 @@
     # vaapiVdpau # libva-vdpau-driver
     # microcodeIntel # microcode-intel
     powertop #intel
-#    intel-gpu-tools
-#    beignet
+    #intel-gpu-tools
+    #beignet
     #brightnessctl light
     #bluetoothctl
     xsel
     #mesa_noglu
     libnotify
-#    vtk
+    #vtk
     unzip
     zip
     #dejavu_fonts
@@ -238,44 +266,44 @@
     w3m ranger tree
     vim
     thermald
-#    pygmentex
-#    texlive.combined.scheme-full
-#    lmodern
+    pygmentex
+    texlive.combined.scheme-full
+    lmodern
     rsync
     #redshift
     #geoclue
     #despotify
     #python27
-#    ruby bundix
-#    python3Full
-#    python36
-#    #python27Packages.numpy
-#    python36Packages.numpy
-#    #python27Packages.scipy
-#    python36Packages.scipy
-#    #python27Packages.matplotlib
-#    python36Packages.matplotlib
-#    #python27Packages.seaborn
-#    python36Packages.seaborn
-#    #python27Packages.pandas
-#    python36Packages.pandas
-#    #python27Packages.ipython
-#    python36Packages.ipython
-#    #python27Packages.pandocfilters
-#    python36Packages.pandocfilters
-#    #python27Packages.pypandoc
-#    #python36Packages.pypandoc
-#    #paraview
+    ruby bundix
+    python3Full
+    python36
+    #python27Packages.numpy
+    python36Packages.numpy
+    #python27Packages.scipy
+    python36Packages.scipy
+    #python27Packages.matplotlib
+    python36Packages.matplotlib
+    #python27Packages.seaborn
+    python36Packages.seaborn
+    #python27Packages.pandas
+    python36Packages.pandas
+    #python27Packages.ipython
+    python36Packages.ipython
+    #python27Packages.pandocfilters
+    python36Packages.pandocfilters
+    #python27Packages.pypandoc
+    #python36Packages.pypandoc
+    #paraview
     mlocate
     linuxHeaders
-#    libreoffice-fresh
+    libreoffice-fresh
     hunspell
     aspell
     aspellDicts.de
     aspellDicts.en
     aspellDicts.fr
-#    inkscape
-#    i7z
+    inkscape
+    i7z
     htop
     # cups
     # cups-filters
@@ -285,38 +313,38 @@
     # foomatic-filters
     # cups-bjnp
     # cups-dymo
-#    gpart
-#    gparted
-#    hdf5
+    gpart
+    gparted
+    hdf5
     ncurses
     gnupg pinentry
     #gpicview
     geeqie
-#    clutter clutter-gtk
-#    gpicview
+    clutter clutter-gtk
+    gpicview
     #gliv
     fasd
-#    pandoc
-#    biber
-#    haskellPackages.pandoc-citeproc
-#    #haskellPackages.pandoc-crossref
-#    #haskellPackages.pandoc-csv2table
-#    stack
-#    dbus
-#    cryptsetup
-#    clamav
+    pandoc
+    biber
+    haskellPackages.pandoc-citeproc
+    #haskellPackages.pandoc-crossref
+    #haskellPackages.pandoc-csv2table
+    stack
+    dbus
+    cryptsetup
+    clamav
     cmake
-#    chromium
+    chromium
     #linuxPackages.cpupower
     cpufrequtils
     boost
     mkpasswd
     meson
-#    cairo
+    cairo
     #kmscon
     #libtsm
     conky
-#    dropbox
+    dropbox
     exfat
     #google-cloud-sdk
   ];

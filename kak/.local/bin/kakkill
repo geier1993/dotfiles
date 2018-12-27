@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ ! -z "$KAKSESSION" ];
+then
+  KAKPID=$(kakpid)
+  if [ ! -z "$KAKPID" ];
+  then
+    kill $KAKPID
+  fi
+  kak -clear
+fi

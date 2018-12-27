@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ ! -z "$KAKSESSION" ];
+then
+  #KAKPID=$(kak -d -s $KAKSESSION 2>&1 > /dev/null | egrep "process [0-9]+" | sed 's/[^0-9]*//g' > ".kak_$KAKSESSION)"
+  #KAKPID=$(ps -C "kak" -o pid,cmd | grep "kak -d -s $KAKSESSION" | sed 's/\W*\([^0-9]*//g')
+  KAKPID=$(ps -C "kak" -o pid,cmd | grep "kak -d -s $KAKSESSION" | sed 's/\W*\([0-9]*\).*/\1/g')
+  echo $KAKPID
+else
+echo ""
+fi
