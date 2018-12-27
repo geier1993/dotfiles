@@ -218,7 +218,8 @@ export NVM_DIR="$HOME/.nvm"
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /home/geier/node_modules/tabtab/.completions/sls.zsh ]] && . /home/geier/node_modules/tabtab/.completions/sls.zsh
 
-if [[ -z "$TMUX" ]] && [[ $HOSTNAME != *"cegate"* ]];
+#if [[ -z "$TMUX" ]] && [[ $HOSTNAME != *"cegate"* ]];
+if [ -z "$TMUX" ];
 then
     tmux attach -t Default || tmux new -s Default 
 fi
