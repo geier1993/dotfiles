@@ -54,7 +54,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:/home/geier/.nix-pr
 #export QT_AUTO_SCREEN_SCALE_FACTOR=2
 #export QT_QPA_PLATFORM=wayland-egl
 
-if [ ! -z "$TMUX" ];
+if [ -z "$KAKSESSION" ] && [ ! -z "$TMUX" ];
 then
   export KAKSESSION=`tmux display-message -p "#{session_group}"`
 fi
