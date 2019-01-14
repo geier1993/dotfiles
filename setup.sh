@@ -26,3 +26,4 @@ stow -t $TARGET vimb
 stow -t $TARGET networkmanager-dmenu
 stow -t $TARGET rofi
 stow -t $TARGET systemd
+stow -t $TARGET ssh
