@@ -17,6 +17,7 @@ stow -t $TARGET zathura
 stow -t $TARGET ranger
 stow -t $TARGET readline
 stow -t $TARGET dunst
+stow -t $TARGET nixpkgs
 stow -t $TARGET conky
 stow -t $TARGET vim
 stow -t $TARGET gnupg
