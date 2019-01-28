@@ -185,6 +185,7 @@
     imagemagickBig
     i3-gaps # required for sway configuration until everything is dropped
     i3lock
+    xautolock
     compton
     # i3status
     # i3blocks-gaps
