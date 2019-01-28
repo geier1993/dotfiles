@@ -267,7 +267,8 @@ bar {
 
 
 #set $Locker i3lock -c 221000 && sleep 1
-set $Locker i3lock -c 000000 && sleep 1
+#set $Locker i3lock -c 000000 && sleep 1
+set $Locker "~/.local/bin/myi3lock.sh"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -361,7 +362,7 @@ bindsym XF86MonBrightnessUp exec light -A 5
 
 #exec --no-startup-id [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 #exec --no-startup-id urxvtd -q -f -o
-exec --no-startup-id ~/.screenlayout/default.sh
+exec --no-startup-id /home/geier/.screenlayout/default.sh
 exec --no-startup-id volnoti
 exec --no-startup-id dunst
 exec --no-startup-id pasystray
@@ -369,5 +370,6 @@ exec --no-startup-id nm-applet
 exec compton 
 exec --no-startup-id feh --bg-fill /home/geier/Pictures/Backgrounds/current.jpg
 exec --no-startup-id xset r rate 150 50
+exec xautolock - time 15 -locker $Locker 
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
