@@ -1,18 +1,72 @@
-#1/bin/sh -e
+#!/bin/sh -e
+
+usage() { echo "Usage: $0 [-s] [-h] [-t dpmstime][-i <filename>]" 1>&2; exit 1; }
+
+while getopts "shi:" o; do
+    case "${o}" in
+        s)
+            opt_suspend=true
+            ;;
+        h)
+            opt_hybernate=true
+            ;;
+        i)
+            opt_imagepath=${OPTARG}
+            ;;
+        t)
+            opt_time=${OPTARG}
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+shift $((OPTIND-1))
 
 #https://faq.i3wm.org/question/83/how-to-run-i3lock-after-computer-inactivity.1.html
+if [ -z "$opt_time" ];
+then
+  opt_time=15m
+fi
 
-# Take a screenshot
-scrot /tmp/screen_locked.png
+if [ -z "$opt_imagepath" ];
+then
+  lockimg=/tmp/screen_locked.png
+  # Take a screenshot
+  scrot $lockimg
 
-# Pixellate it 10x
-#mogrify -scale 10% -scale 1000% /tmp/screen_locked.png
-#convert /tmp/screen_locked.png -scale  5% -scale 2000% /tmp/screen_locked.png
-#convert /tmp/screen_locked.png -scale 10% -scale 1000% /tmp/screen_locked.png
-convert /tmp/screen_locked.png -scale 20% -scale 500% /tmp/screen_locked.png
+  # Pixellate it 10x
+  #mogrify -scale 10% -scale 1000% $lockimg
+  #convert $lockimg -scale  5% -scale 2000% $lockimg
+  #convert $lockimg -scale 10% -scale 1000% $lockimg
+  convert $lockimg -scale 20% -scale 500% $lockimg
+
+else
+  lockimg=$opt_imagepath
+fi
+#echo "Img $lockimg"
+
 
 # Lock screen displaying this image.
-i3lock -i /tmp/screen_locked.png &
+#i3lock -i $lockimg & sleep 1 &&
+i3lock -i $lockimg 
+
+if [ $opt_suspend ];
+then
+#echo "suspend"
+systemctl suspend
+elif [ $opt_hybernate ];
+then
+#echo "Hybernate"
+systemctl hybernate
+fi
+
+# Pass additional args
+#echo "Args $*"
+$@
+
 
 # Turn the screen off after a delay.
-sleep 15m; pgrep i3lock && xset dpms force off
+#echo "Time: $opt_time"
+sleep $opt_time; pgrep i3lock && xset dpms force off
+
