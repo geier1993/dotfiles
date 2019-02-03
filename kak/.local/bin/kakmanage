@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 if [ ! -z "$KAKSESSION" ];
 then
   KAKPID=$(kakpid)
@@ -6,6 +6,8 @@ then
   if [ -z "$KAKPID" ];
   then
     echo "Empty... Creating Session"
+    # Clear in case of a dead session
+    kak -clear
     kak -d -s $KAKSESSION 
   fi
 

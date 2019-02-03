@@ -100,6 +100,7 @@ SAMBA:
         - or maunally with mount cifs or in fstab
     - enable smbd nmbd
     - nfs-utils (file sharing, sudo systemctl start rpcbind nfs-client.target remote-fs.target)
+    - Change windows LDPA passwords...: smbpasswd -r REMODESERV -U "domain\user"
 
 rr:
   - sudo sh -c 'echoo -1 >/proc/sys/kernel/perf_event_paranoid'

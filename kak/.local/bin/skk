@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 #set -m # enable jobcontrol
 #set +m
 #set -x
@@ -19,5 +19,4 @@
 # trap onresume CONT
 
 # exec replaces the shell with the kak process (better for suspension)
-kakmanage
-exec kak `kakargs` $@ 
+kakmanage && exec kak `kakargs` $@ 
