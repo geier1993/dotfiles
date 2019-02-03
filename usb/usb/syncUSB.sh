@@ -5,7 +5,7 @@ set -e
 #su - geier -c "gpg --export-ownertrust > /media/usb/philippgeier-ownertrust-gpg.txt"
 #su - geier -c "gpg --export-secret-keys > /media/usb/philippgeier-secret-gpg.txt"
 gpg --export-ownertrust > /media/usb/philippgeier-ownertrust-gpg.txt
-gpg --export-secret-keys Philipp@geier.me> /media/usb/philippgeier-secret-gpg.txt
+gpg --export-secret-keys Philipp@geier.me> /media/usb/philippgeier-secret-gpg.asc
 
 rsync -avrP  /home/geier/Documents /media/usb/
 rsync -avrP  /home/geier/Pictures /media/usb/
@@ -23,5 +23,5 @@ rsync -avrP /home/geier/.ssh /media/usb/
 
 #rsync -avrP /home/geier/.pws.gpg /media/usb/
 
-rsync -avrP /home/geier/usb /media/usb/
+rsync -avrP --copy-links /home/geier/usb /media/usb/
 rsync -avrP /home/geier/davis /media/usb/
