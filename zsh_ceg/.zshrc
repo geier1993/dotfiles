@@ -29,7 +29,7 @@ export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib:/home/pgeier/.local/lib:/home/pgeier/.nix-profile/lib:${LD_LIBRARY_PATH}
 
-if [ "$(hostname)" = "tk1" ];
+if [ "$(hostname)" = "tk1" ] || [ "$(hostname)" = "Xavier" ] || [ "$(hostname)" = "TX1" ] || [ "$(hostname)" = "TX2" ];
 then
 	# Add CUDA bin & library paths:" >> ~/.bashrc
 	export PATH=/usr/local/cuda/bin:$PATH
