@@ -377,7 +377,7 @@ exec --no-startup-id nm-applet
 exec compton 
 exec --no-startup-id feh --bg-fill /home/geier/Pictures/Backgrounds/current.jpg
 exec --no-startup-id xset r rate 150 50
-exec --no-startup-id xautolock -time 15 -locker $Locker 
+#exec --no-startup-id xautolock -time 15 -locker $Locker  # now done by kde
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
