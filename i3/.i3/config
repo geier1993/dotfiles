@@ -388,7 +388,8 @@ exec --no-startup-id xset r rate 150 50
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
 
-exec --no-startup-id wmctrl -c Plasma
+#exec --no-startup-id wmctrl -c Plasma
+exec --no-startup-id closePlasma
 
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+while wmctrl -l | grep Plasma; do
+  wmctrl -c Plasma
+done
