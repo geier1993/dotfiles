@@ -32,7 +32,7 @@ font pango:Siji, DejaVu 8
 floating_modifier $mod
 
 #exec --no-startup-id pkill redshift || sleep 3 && redshift -l 44:26 -b 0.9 -t 5500:3700
-#exec --no-startup-id pkill redshift || sleep 3 && redshift
+exec --no-startup-id pkill redshift || sleep 3 && redshift
 
 
 
@@ -216,6 +216,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym $mod+Shift+e exit
 
 
+force_display_urgency_hint 0 ms
+focus_on_window_activation urgent
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -377,3 +380,32 @@ exec --no-startup-id xset r rate 150 50
 exec --no-startup-id xautolock -time 15 -locker $Locker 
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+
+## Plasma Integration
+# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
+
+exec --no-startup-id wmctrl -c Plasma
+
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+
+
+
+## Avoid tiling popups, dropdown windows from plasma
+
+# for the first time, manually resize them, i3 will remember the setting for floating windows
+
+for_window [class="plasmashell"] floating enable;
+
+for_window [class="Plasma"] floating enable; border none
+
+for_window [title="plasma-desktop"] floating enable; border none
+
+for_window [title="win7"] floating enable; border none
+
+for_window [class="krunner"] floating enable; border none
+
+for_window [class="Kmix"] floating enable; border none
+
+for_window [class="Klipper"] floating enable; border none
+
+for_window [class="Plasmoidviewer"] floating enable; border none

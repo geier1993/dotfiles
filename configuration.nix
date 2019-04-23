@@ -133,7 +133,9 @@
     # i3status
     # i3blocks-gaps
     i3blocks
+    wmctrl # required for i3+plasma
     scrot # screenshot
+    spectacle # KDE screenshot
     feh
     #poppler
     poppler_utils
@@ -369,25 +371,24 @@
     enable = true;
   };
 
-  # https://github.com/shosti/nixos-config/blob/master/configuration.nix
-  # Make sure screen is locked on suspend
-  systemd.services."i3lock" = {
-    enable = true;
-    description = "i3lock";
-    wantedBy = [ "suspend.target" "hibernate.target" ];
-    before = [ "systemd-suspend.service" "systemd-hibernate.target" ];
-    serviceConfig = {
-      Type = "forking";
-      User = "geier"; # unfortunately necessary :(
-    };
-    script = "${pkgs.i3lock}/bin/i3lock";
-    postStart = "${pkgs.coreutils}/bin/sleep 1";
-    environment = { DISPLAY = ":0"; };
-  };
+  # # https://github.com/shosti/nixos-config/blob/master/configuration.nix
+  # # Make sure screen is locked on suspend
+  # systemd.services."i3lock" = {
+  #   enable = true;
+  #   description = "i3lock";
+  #   wantedBy = [ "suspend.target" "hibernate.target" ];
+  #   before = [ "systemd-suspend.service" "systemd-hibernate.target" ];
+  #   serviceConfig = {
+  #     Type = "forking";
+  #     User = "geier"; # unfortunately necessary :(
+  #   };
+  #   script = "${pkgs.i3lock}/bin/i3lock";
+  #   postStart = "${pkgs.coreutils}/bin/sleep 1";
+  #   environment = { DISPLAY = ":0"; };
+  # };
 
   # List services that you want to enable:
   services = {
-
     syncthing = {
       user = "geier";
       enable = true;
@@ -486,7 +487,7 @@
     xserver = {
       #enable = false;
       enable = true;
-      autorun = false;
+      #autorun = false;
       exportConfiguration = true;
       autoRepeatDelay = 150;
       autoRepeatInterval = 50;
@@ -549,10 +550,16 @@
       # Enable the KDE Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.desktopManager.plasma5.enable = true;
-      desktopManager = {
-        gnome3.enable = true;
-        default = "none";
+      displayManager = {
+        sddm.enable = true;
       };
+      desktopManager = {
+        plasma5.enable = true;
+        #default = "plasma5";
+        #gnome3.enable = true;
+        #default = "none";
+      };
+
     };
   };
 
