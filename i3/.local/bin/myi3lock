@@ -68,5 +68,5 @@ $@
 
 # Turn the screen off after a delay.
 #echo "Time: $opt_time"
-sleep $opt_time; pgrep i3lock && xset dpms force off
+#sleep $opt_time; pgrep i3lock && xset dpms force off
 
