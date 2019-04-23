@@ -159,6 +159,7 @@
     kakoune
     tmux
     dmenu
+    rofi
     firefox
     thunderbird
     #vivaldi

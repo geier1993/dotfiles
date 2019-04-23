@@ -107,7 +107,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #set $menu dmenu_run -fn "Terminus:size=9" -nb "#080808" -nf "#A5A5A5" -sb "#75507B" -sf "#080808" -l 7
-set $menu dmenu_run -fn "DejaVu:size=10" -l 7
+#set $menu dmenu_run -fn "DejaVu:size=10" -l 7
+set $menu rofi -show run 
 bindsym $mod+d exec $menu
 #bindsym $mod+d exec j4-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -218,6 +219,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 force_display_urgency_hint 0 ms
 focus_on_window_activation urgent
+# Avoid stealing focus
+no_focus [class="plasmashell"]
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -245,28 +248,29 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-    status_command i3blocks
-    position top
-    #separator_symbol ""
-    #separator 0
-    strip_workspace_numbers yes
-    #pango_markup enabled
-    #font swaybar-icons 8
-    #font pango:Siji, Terminus 12
-    font pango:Siji, DejaVu 10
-
-    colors {
-        separator #AAAAAA
-        background #1f2326
-        statusline #FFFFFF
-        focused_workspace #9FCA56 #9FCA56 #151718
-        active_workspace #DCCD69 #DCCD69 #151718
-        inactive_workspace #1f2326 #1f2326 #AAAAAA
-        urgent_workspace #CE4045 #CE4045 #FFFFFF
-    }
-    #$i3-theme-bar
-}
+# Using KDE Pager
+# bar {
+#     status_command i3blocks
+#     position top
+#     #separator_symbol ""
+#     #separator 0
+#     strip_workspace_numbers yes
+#     #pango_markup enabled
+#     #font swaybar-icons 8
+#     #font pango:Siji, Terminus 12
+#     font pango:Siji, DejaVu 10
+# 
+#     colors {
+#         separator #AAAAAA
+#         background #1f2326
+#         statusline #FFFFFF
+#         focused_workspace #9FCA56 #9FCA56 #151718
+#         active_workspace #DCCD69 #DCCD69 #151718
+#         inactive_workspace #1f2326 #1f2326 #AAAAAA
+#         urgent_workspace #CE4045 #CE4045 #FFFFFF
+#     }
+#     #$i3-theme-bar
+# }
 
 
 #set $Locker i3lock -c 221000 && sleep 1
@@ -395,17 +399,21 @@ for_window [title="Desktop — Plasma"] kill; floating enable; border none
 # for the first time, manually resize them, i3 will remember the setting for floating windows
 
 for_window [class="plasmashell"] floating enable;
-
 for_window [class="Plasma"] floating enable; border none
-
 for_window [title="plasma-desktop"] floating enable; border none
-
 for_window [title="win7"] floating enable; border none
-
 for_window [class="krunner"] floating enable; border none
-
 for_window [class="Kmix"] floating enable; border none
-
 for_window [class="Klipper"] floating enable; border none
-
 for_window [class="Plasmoidviewer"] floating enable; border none
+
+# >>> Window Rules <<<
+
+# >>> Avoid tiling for non-Plasma stuff <<<
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="About"] floating enable 
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
