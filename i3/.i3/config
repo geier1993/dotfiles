@@ -391,7 +391,9 @@ exec --no-startup-id xset r rate 150 50
 #exec --no-startup-id wmctrl -c Plasma
 exec --no-startup-id closePlasma
 
+# Kills Plasma background
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
+for_window [title="Arbeitsfläche — Plasma"] kill; floating enable; border none
 
 
 
