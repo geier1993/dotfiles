@@ -1,4 +1,5 @@
 Misc:
+      Defragmentation: sudo e4defrag /dev/sda5
     - GnomeKeyring,i3wm,Xinitrc: https://wiki.archlinux.org/index.php/GNOME/Keyring#Console_login -> sway
     - GPG Agent
     - tmpfile:

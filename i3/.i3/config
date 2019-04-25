@@ -321,11 +321,16 @@ bindsym $mod+m exec conky
 
 
 # class                 border  backgr. text    indicator
-client.focused #4F99D3 #4F99D3 #151718 #9FCA56
-client.focused_inactive #9FCA56 #9FCA56 #151718 #A074C4
-client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
-client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
+#client.focused #4F99D3 #4F99D3 #151718 #9FCA56
+#client.focused_inactive #9FCA56 #9FCA56 #151718 #A074C4
+#client.unfocused #1f2326 #1f2326 #AAAAAA #A074C4
+#client.urgent #CE4045 #CE4045 #FFFFFF #DCCD69
 
+# https://github.com/tobiaszwaszak/i3wm/blob/master/config
+client.focused          #002b36 #586e75 #fdf6e3 #268bd2
+client.focused_inactive #002b36 #073642 #839496 #073642
+client.unfocused        #002b36 #073642 #839496 #073642
+client.urgent #002b36 #dc322f #fdf6e3 #002b36
 #$i3-theme-window
 
 
