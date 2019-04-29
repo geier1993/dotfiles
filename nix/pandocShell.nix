@@ -11,5 +11,9 @@ stdenv.mkDerivation {
     pandoc
     haskellPackages.pandoc-citeproc
     haskellPackages.pandoc-crossref
+    #haskellPackages.pandoc-include-code
+    #haskellPackages.pandoc-include
+    #haskellPackages.pandoc-placetable
+    #haskellPackages.pandoc-csv2table
   ];
 }
