@@ -2,6 +2,7 @@
 
 TARGET=~/
 
+stow -t $TARGET emacs
 stow -t $TARGET zsh
 stow -t $TARGET bash
 stow -t $TARGET x
