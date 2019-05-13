@@ -3,6 +3,7 @@
 TARGET=~/
 
 stow -t $TARGET zsh
+stow -t $TARGET direnv
 stow -t $TARGET bash
 stow -t $TARGET x
 stow -t $TARGET terminator

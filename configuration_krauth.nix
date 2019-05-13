@@ -238,6 +238,7 @@
     stack
     cabal-install
     nodejs
+    direnv
     # bluez
     bluez-tools
     silver-searcher

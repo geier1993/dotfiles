@@ -181,6 +181,7 @@
     stack
     cabal-install
     nodejs
+    direnv
     # bluez
     bluez-tools
     silver-searcher
@@ -640,14 +641,14 @@
       hasklig
     ];
     fontconfig = {
-      #defaultFonts = {
-      #  # monospace = [ "Source Code Pro" ];
-      #  # sansSerif = [ "Source Sans Pro" ];
-      #  # serif     = [ "Source Serif Pro" ];
-      #  # monospace = [ "DejaVu Sans Serif" ];
-      #  # sansSerif = [ "DejaVu Sans Serif" ];
-      #  # serif     = [ "DejaVu Sans Serif" ];
-      #};
+      defaultFonts = {
+        # monospace = [ "Source Code Pro" ];
+        # sansSerif = [ "Source Sans Pro" ];
+        # serif     = [ "Source Serif Pro" ];
+         monospace = [ "DejaVu Sans Serif" ];
+         sansSerif = [ "DejaVu Sans Serif" ];
+         serif     = [ "DejaVu Sans Serif" ];
+      };
       penultimate = {
         enable = true;
       };
