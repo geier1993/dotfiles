@@ -39,6 +39,8 @@
       { 
         #sway = pkgs.sway.overrideAttrs (oldAttrs: { buildInputs = oldAttrs.buildInputs ++ [pkgs.gdk_pixbuf];});
         #polybar = pkgs.polybar.overrideAttrs (oldAttrs: { i3Support = true; jsoncpp =true; });
+        umlet = pkgs.umlet.override {
+          jre = pkgs.oraclejre8;
       };
 
   };
@@ -295,6 +297,12 @@
     dropbox
     exfat
     #google-cloud-sdk
+    jdk
+    jre
+    eclipses.eclipse-cpp
+    eclipses.eclipse-java
+    eclipses.eclipse-scala-sdk
+    eclipses.eclipse-sdk
   ];
 
 
