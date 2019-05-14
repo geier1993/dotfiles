@@ -8,10 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      (builtins.fetchTarball {
-        sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
-        url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
-      })
+      #(builtins.fetchTarball {
+      #  sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
+      #  url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
+      #})
     ];
 
   nixpkgs.config = {
@@ -768,19 +768,18 @@
   security.apparmor.enable = true;
 
   # VS Liveshare: https://github.com/msteen/nixos-vsliveshare
-  # imports = [
-  #   (builtins.fetchTarball {
-  #     sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
-  #     url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
-  #   })
-  # ];
-  services.vsliveshare = {
-    enable = true;
-    enableWritableWorkaround = true;
-    enableDiagnosticsWorkaround = true;
-    extensionsDir = "/home/geier/.vscode/extensions";
-  };
- 
+  # # imports = [
+  # #   (builtins.fetchTarball {
+  # #     sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
+  # #     url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
+  # #   })
+  # # ];
+  # services.vsliveshare = {
+  #   enable = true;
+  #   enableWritableWorkaround = true;
+  #   enableDiagnosticsWorkaround = true;
+  #   extensionsDir = "/home/geier/.vscode/extensions";
+  # };
  
 }
 
