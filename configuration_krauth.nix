@@ -8,6 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      #(builtins.fetchTarball {
+      #  sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
+      #  url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
+      #})
     ];
 
   nixpkgs.config = {
@@ -41,6 +45,9 @@
         #polybar = pkgs.polybar.overrideAttrs (oldAttrs: { i3Support = true; jsoncpp =true; });
         umlet = pkgs.umlet.override {
           jre = pkgs.oraclejre8;
+          nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+            inherit pkgs;
+          };
       };
   };
 
@@ -241,6 +248,7 @@
     stack
     cabal-install
     nodejs
+    direnv
     # bluez
     bluez-tools
     silver-searcher
@@ -767,6 +775,20 @@
   #services.logind.extraConfig = "HandleLidSwitch=ignore";
   #security.pam
   security.apparmor.enable = true;
+
+  # VS Liveshare: https://github.com/msteen/nixos-vsliveshare
+  # # imports = [
+  # #   (builtins.fetchTarball {
+  # #     sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
+  # #     url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
+  # #   })
+  # # ];
+  # services.vsliveshare = {
+  #   enable = true;
+  #   enableWritableWorkaround = true;
+  #   enableDiagnosticsWorkaround = true;
+  #   extensionsDir = "/home/geier/.vscode/extensions";
+  # };
  
 }
 
