@@ -366,7 +366,7 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    autoUpgrade.enable = true;
+    #autoUpgrade.enable = true;
     stateVersion = "19.03";
   };
 
