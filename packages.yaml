@@ -104,7 +104,7 @@ SAMBA:
     - Change windows LDPA passwords...: smbpasswd -r REMODESERV -U "domain\user"
 
 rr:
-  - sudo sh -c 'echoo -1 >/proc/sys/kernel/perf_event_paranoid'
+  - sudo sh -c 'echo -1 >/proc/sys/kernel/perf_event_paranoid'
 
 diff:
   - diff -w -u -r -N FOLD1 FOLD2
