@@ -269,6 +269,7 @@
     # foomatic-filters
     # cups-bjnp
     # cups-dymo
+    parted
     gpart
     gparted
     hdf5
