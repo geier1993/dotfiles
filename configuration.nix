@@ -43,9 +43,11 @@
       { 
         #sway = pkgs.sway.overrideAttrs (oldAttrs: { buildInputs = oldAttrs.buildInputs ++ [pkgs.gdk_pixbuf];});
         #polybar = pkgs.polybar.overrideAttrs (oldAttrs: { i3Support = true; jsoncpp =true; });
-        nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-          inherit pkgs;
-        };
+        umlet = pkgs.umlet.override {
+          jre = pkgs.oraclejre8;
+          nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+            inherit pkgs;
+          };
       };
 
   };
@@ -301,6 +303,12 @@
     dropbox
     exfat
     #google-cloud-sdk
+    jdk
+    jre
+    eclipses.eclipse-cpp
+    eclipses.eclipse-java
+    eclipses.eclipse-scala-sdk
+    eclipses.eclipse-sdk
   ];
 
 
@@ -358,7 +366,7 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    autoUpgrade.enable = true;
+    #autoUpgrade.enable = true;
     stateVersion = "19.03";
   };
 

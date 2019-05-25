@@ -43,10 +43,13 @@
       { 
         #sway = pkgs.sway.overrideAttrs (oldAttrs: { buildInputs = oldAttrs.buildInputs ++ [pkgs.gdk_pixbuf];});
         #polybar = pkgs.polybar.overrideAttrs (oldAttrs: { i3Support = true; jsoncpp =true; });
-        nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-          inherit pkgs;
-        };
+        umlet = pkgs.umlet.override {
+          jre = pkgs.oraclejre8;
+          nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+            inherit pkgs;
+          };
       };
+  };
 
   };
 
@@ -289,23 +292,23 @@
     ruby bundix
     python3Full
     python36
-    #python27Packages.numpy
-    python36Packages.numpy
-    #python27Packages.scipy
-    python36Packages.scipy
-    #python27Packages.matplotlib
-    python36Packages.matplotlib
-    #python27Packages.seaborn
-    python36Packages.seaborn
-    #python27Packages.pandas
-    python36Packages.pandas
-    #python27Packages.ipython
-    python36Packages.ipython
-    #python27Packages.pandocfilters
-    python36Packages.pandocfilters
-    #python27Packages.pypandoc
-    #python36Packages.pypandoc
-    #paraview
+    ##python27Packages.numpy
+    #python36Packages.numpy
+    ##python27Packages.scipy
+    #python36Packages.scipy
+    ##python27Packages.matplotlib
+    #python36Packages.matplotlib
+    ##python27Packages.seaborn
+    #python36Packages.seaborn
+    ##python27Packages.pandas
+    #python36Packages.pandas
+    ##python27Packages.ipython
+    #python36Packages.ipython
+    ##python27Packages.pandocfilters
+    #python36Packages.pandocfilters
+    ##python27Packages.pypandoc
+    ##python36Packages.pypandoc
+    ##paraview
     mlocate
     linuxHeaders
     libreoffice-fresh
@@ -359,6 +362,12 @@
     dropbox
     exfat
     #google-cloud-sdk
+    jdk
+    jre
+    eclipses.eclipse-cpp
+    eclipses.eclipse-java
+    eclipses.eclipse-scala-sdk
+    eclipses.eclipse-sdk
   ];
 
 
@@ -379,6 +388,8 @@
         # 22 # ssh - automaticall 
         80 # HTTP
         443 # HTTPS
+        1883 # MQTT Mosqitto broker
+        8883 # MQTT TLS
       ];
       allowedUDPPorts = [ 
         # 5353 # MDNS - multicast dns
@@ -409,14 +420,14 @@
       initialHashedPassword = "$6$cG2jGEtZXcQ/4U4L$8z6a.OUetzdmy9/TZslXXMsoZ0QUhlftkxF.ZjPFz2qUQ2tk9RVRwwjdO45TkQmgAigmfjRDR/.chZgLVvcab0"; # mkpasswd -m sha-512 
       uid = 1000;
       description = "Philpp Geier";
-      extraGroups = [ "wheel" "lp" "networkmanager" "dialout" "audio" "video" "sys" "scanner" "kvm" "optical" "storage" "input" "disk" "floppy" "uucp" "lock" "docker" "sway" "vboxusers" "rfkill" ];
+      extraGroups = [ "wheel" "lp" "networkmanager" "dialout" "audio" "video" "sys" "scanner" "kvm" "optical" "storage" "input" "disk" "floppy" "uucp" "lock" "docker" "sway" "vboxusers" "rfkill" "mosqitto" ];
       openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3fHurt4sgmcc9j5nw4DGcmy8j0zSp0IQcD0RMU0bsbkwq/RfyvEfrLqOEQ0Oj7oO+ESNuLmB14dgZAmJ1M8UIrZONqRijmYL6iat+rqXlJksFh9aLwt9Ubarg0bnfhJDBaWGBhtmP00tIKn2TKQqw5F5CIMMXc9GbKD0mWUCS2tR+acjj6SOOwDSUsk5SnEYZz5kTbBtYPxgDj/wkmTPI/s2dNb241P5gdBnhiSRnTWe608VzD1bJOb3jc/qIZekjOqAWbP5zOj/5OVakFmh1gaJ8md90kE+/FmnAw69cLTAYlz1QtfvpNhOVQAUhUE3ring69o8mO/zv/PAm1Mst geier@jimmy" ];
     };
   #users.mutableUsers = false;
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    autoUpgrade.enable = true;
+    #autoUpgrade.enable = true;
     stateVersion = "19.03";
   };
 
@@ -629,7 +640,23 @@
         #default = "none";
       };
     };
-  };
+
+    #     mosquitto = {
+    #       enable = true;
+    #       port = 1883;
+    #       #host = "100.127.35.127";
+    #       ssl.enable = false;
+    #       allowAnonymous = true;
+    #       checkPasswords = false;
+    #       users = { 
+    # #         john = { 
+    # #          password = ""; 
+    # #          acl = [ "topic readwrite john/#" ]; 
+    # #        }; 
+    #       };    
+    #     };
+
+    };
 
   hardware = {
     #brightnessctl.enable = true;
@@ -780,6 +807,7 @@
   #   enableDiagnosticsWorkaround = true;
   #   extensionsDir = "/home/geier/.vscode/extensions";
   # };
+
  
 }
 
