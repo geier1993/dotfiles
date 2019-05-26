@@ -187,7 +187,7 @@
     #way-cooler
     #lemonbar
     #polybar
-    sway	
+    #sway	
     ffmpeg # for sway
     #gdk-pixbuf # for sway
     libjpeg
@@ -242,8 +242,6 @@
     kitty
     zathura
     okular
-    #fontconfig-ultimate
-    #freetype
     ghc
     stack
     cabal-install
@@ -275,9 +273,6 @@
     #vtk
     unzip
     zip
-    #dejavu_fonts
-    #freefont_ttf
-    #ttf_bitstream_vera
     w3m ranger tree
     vim
     thermald
@@ -369,6 +364,7 @@
     eclipses.eclipse-java
     eclipses.eclipse-scala-sdk
     eclipses.eclipse-sdk
+    sshfs-fuse
   ];
 
 
@@ -695,10 +691,8 @@
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.virtualbox.guest.enable = true;
+  #virtualisation.virtualbox.guest.enable = true;
   users.extraGroups.vboxusers.members = [ "geier" ];
-
-
 
   fonts = {
     enableDefaultFonts = true;
@@ -718,12 +712,10 @@
       # code2000
       # code2001
       # code2002
-      terminus_font
       ubuntu_font_family
       liberation_ttf
       inconsolata
       vistafonts
-      freefont_ttf
       unifont
       cm_unicode
       ipafont
@@ -739,16 +731,22 @@
       fira-code
       fira-mono
       hasklig
+      anonymousPro
+      corefonts
+      font-droid
+      google-fonts
+      powerline-fonts
+      ubuntu_font_family    
     ];
     fontconfig = {
-      #defaultFonts = {
-      #  # monospace = [ "Source Code Pro" ];
-      #  # sansSerif = [ "Source Sans Pro" ];
-      #  # serif     = [ "Source Serif Pro" ];
-      #  # monospace = [ "DejaVu Sans Serif" ];
-      #  # sansSerif = [ "DejaVu Sans Serif" ];
-      #  # serif     = [ "DejaVu Sans Serif" ];
-      #};
+      defaultFonts = {
+        # monospace = [ "Source Code Pro" ];
+        # sansSerif = [ "Source Sans Pro" ];
+        # serif     = [ "Source Serif Pro" ];
+         monospace = [ "DejaVu Sans Serif" ];
+         sansSerif = [ "DejaVu Sans Serif" ];
+         serif     = [ "DejaVu Sans Serif" ];
+      };
       penultimate = {
         enable = true;
       };
