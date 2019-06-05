@@ -207,25 +207,25 @@ eval "$(stack --bash-completion-script stack)"
 #Direnv
 eval "$(direnv hook zsh)"
 
-# put this either in bashrc or zshrc
-nixify() {
-  if [ ! -e ./.envrc ]; then
-    echo "use nix" > .envrc
-    direnv allow
-  fi
-  if [ ! -e default.nix ]; then
-    cat > default.nix <<'EOF'
-with import <nixpkgs> {};
-stdenv.mkDerivation {
-  name = "env";
-  buildInputs = [
-    bashInteractive
-  ];
-}
-EOF
-    ${EDITOR:-kak} default.nix
-  fi
-}
+# # put this either in bashrc or zshrc
+# nixify() {
+#   if [ ! -e ./.envrc ]; then
+#     echo "use nix" > .envrc
+#     direnv allow
+#   fi
+#   if [ ! -e default.nix ]; then
+#     cat > default.nix <<'EOF'
+# with import <nixpkgs> {};
+# stdenv.mkDerivation {
+#   name = "env";
+#   buildInputs = [
+#     bashInteractive
+#   ];
+# }
+# EOF
+#     ${EDITOR:-kak} default.nix
+#   fi
+# }
 
 if [ -z "$NIX_PATH" ];
 then

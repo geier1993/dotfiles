@@ -48,6 +48,10 @@
           nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
             inherit pkgs;
           };
+          nur_nixify = import (builtins.fetchTarball "https://github.com/kalbasit/nur-packages/archive/master.tar.gz") {
+            inherit pkgs;
+          };
+
       };
   };
 
@@ -132,6 +136,7 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    nox
     ntfs3g	# to mount windows
     cifs-utils
     nfs-utils
@@ -554,7 +559,7 @@
     printing = {
       enable = true;
       browsing = true;
-      drivers = with pkgs; [ splix hplip hplipWithPlugin gutenprint gutenprintBin cups cups-filters foomatic-filters cups-bjnp cups-dymo ]; # hplip hplipWithPlugins
+      drivers = with pkgs; [ splix hplip hplipWithPlugin gutenprint gutenprintBin cups cups-filters foomatic-filters cups-bjnp cups-dymo ]; 
     };
     avahi = {
       enable = true;
@@ -733,7 +738,7 @@
       hasklig
       anonymousPro
       corefonts
-      font-droid
+      noto-fonts
       google-fonts
       powerline-fonts
       ubuntu_font_family    

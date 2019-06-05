@@ -102,7 +102,7 @@
 ;; and provides a couple extra commands
 (use-package visual-regexp
   :ryo
-  ("s" vr/mc-mark)
+  ("s" vr/query-replace)
   ("?" vr/replace)
   ("M-/" vr/query-replace))
 

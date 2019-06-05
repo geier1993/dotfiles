@@ -6,15 +6,6 @@
   ];
 
 
-  packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-    nur_nixify = import (builtins.fetchTarball "https://github.com/kalbasit/nur-packages/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
-
   imports = [
     (builtins.fetchTarball {
       sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
