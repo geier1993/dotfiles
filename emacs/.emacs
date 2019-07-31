@@ -22,6 +22,8 @@
 ;;(use-package ryo-modal)
 (use-package counsel)
 
+(use-package ranger)
+
 
 ;; (use-package ryo-modal
 ;;   :commands ryo-modal-mode
@@ -57,6 +59,10 @@
   :chords ("fd" . ryo-enter)
   ;; Having a non-chord way to escape is important, since key-chords don't work in macros
   :bind ("C-c SPC" . ryo-modal-mode)
+  :bind ("C-c r"   . ranger)
+  :bind ("C-c q"   . kill-buffer)
+  :bind ("C-c Q"   . kill-buffer-and-window)
+  :bind ("C-c t"   . term)
   :hook (after-init . my/kakoune-setup)
   :config
   (defun my/kakoune-setup ()
@@ -81,7 +87,9 @@
        ("M-s" mc/split-region)
        (";" (("q" delete-window)
              ("v" split-window-horizontally)
-             ("s" split-window-vertically)))
+             ("s" split-window-vertically)
+             (";" kakoune-deactivate-mark)))
+       ;;("M-m" kakoune-deactivate-mark)
        ("C-h" windmove-left)
        ("C-j" windmove-down)
        ("C-k" windmove-up)
