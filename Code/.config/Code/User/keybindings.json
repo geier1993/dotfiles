@@ -1,0 +1,140 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "shift+'",
+        "command": "dance.registers.select",
+        "when": "dance.mode == 'normal'"
+    },
+    {
+        "key": "/",
+        "command": "dance.search",
+        "when": "dance.mode == 'normal'" 
+    },
+    {
+        "key": "shift+/",
+        "command": "dance.search.extend",
+        "when": "dance.mode == 'normal'" 
+    },
+    {
+        "key": "alt+/",
+        "command": "dance.search.backwards",
+        "when": "dance.mode == 'normal'" 
+    },
+    {
+        "key": "shift+alt+/",
+        "command": "dance.search.backwards.extend",
+        "when": "dance.mode == 'normal'" 
+    },
+    {
+        "key": "space",
+        "command": "dance.selections.clear",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "space",
+        "command": "-dance.selections.clear",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+j",
+        "command": "dance.down.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "j",
+        "command": "-dance.down.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+h",
+        "command": "dance.left.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "h",
+        "command": "-dance.left.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+l",
+        "command": "dance.right.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "l",
+        "command": "-dance.right.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+k",
+        "command": "dance.up.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "k",
+        "command": "-dance.up.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+0",
+        "command": "dance.rotate"
+    },
+    {
+        "key": "shift+9",
+        "command": "dance.rotate.backwards"
+    },
+    {
+        "key": "shift+7",
+        "command": "dance.selections.align"
+    },
+    {
+        "key": "shift+alt+7",
+        "command": "dance.selections.align.copy"
+    },
+    {
+        "key": "shift+`",
+        "command": "dance.toUpperCase"
+    },
+    {
+        "key": "shift+c",
+        "command": "editor.action.insertCursorBelow"
+    },
+    {
+        "key": "alt+shift+c",
+        "command": "editor.action.insertCursorAbove"
+    },
+    {
+        "key": "shift+.",
+        "command": "dance.indent"
+    },
+    {
+        "key": "shift+,",
+        "command": "dance.deindent"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },   
+    {
+        "key": "ctrl+v",
+        "command": "-dance.tmp.insert",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-dance.tmp.normal",
+        "when": "editorTextFocus && dance.mode == 'insert'"
+    }
+]

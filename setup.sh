@@ -30,3 +30,4 @@ stow -t $TARGET rofi
 stow -t $TARGET systemd
 stow -t $TARGET ssh
 stow -t $TARGET usb
+stow -t $TARGET Code

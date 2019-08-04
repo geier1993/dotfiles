@@ -19,10 +19,14 @@
 (use-package use-package-chords)
 (use-package swiper)
 ;;(use-package multiple-cursors)
+;;  :straight (kakoune :host github :repo "magnars/multiple-cursors.el"))
 ;;(use-package ryo-modal)
+;; Git
+(use-package magit)
 (use-package counsel)
 
 (use-package ranger)
+(use-package auto-complete)
 
 
 ;; (use-package ryo-modal
@@ -81,10 +85,14 @@
        ("n" mc/mark-previous-like-this)
        ("N" mc/skip-to-previous-like-this)
        ("M-m" mc/edit-lines)
+       ("C-M-<mouse-1>" mc/add-cursor-on-click)
+       (")"  mc/cycle-forward)
+       ("(" mc/cycle-backward)
        ("*" mc/mark-all-like-this)
        ("v" er/expand-region)
        ("C-v" set-rectangular-region-anchor)
        ("M-s" mc/split-region)
+       ;;("shift-\" mc/eval-and-replace)
        (";" (("q" delete-window)
              ("v" split-window-horizontally)
              ("s" split-window-vertically)
