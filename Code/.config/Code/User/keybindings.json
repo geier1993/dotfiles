@@ -96,11 +96,15 @@
         "command": "dance.toUpperCase"
     },
     {
-        "key": "shift+c",
+        "key": "ctrl+alt+c",
+        "command": "editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "ctrl+c",
         "command": "editor.action.insertCursorBelow"
     },
     {
-        "key": "alt+shift+c",
+        "key": "ctrl+shift+c",
         "command": "editor.action.insertCursorAbove"
     },
     {
@@ -112,19 +116,35 @@
         "command": "dance.deindent"
     },
     {
-        "key": "ctrl+h",
+        "key": "ctrl+w h",
         "command": "workbench.action.navigateLeft"
     },
     {
-        "key": "ctrl+l",
+        "key": "ctrl+w l",
         "command": "workbench.action.navigateRight"
     },
     {
-        "key": "ctrl+k",
+        "key": "ctrl+w k",
         "command": "workbench.action.navigateUp"
     },
     {
-        "key": "ctrl+j",
+        "key": "ctrl+w j",
+        "command": "workbench.action.navigateDown"
+    },   
+    {
+        "key": "ctrl+alt+w h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+alt+w l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+alt+w k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+w j",
         "command": "workbench.action.navigateDown"
     },   
     {
