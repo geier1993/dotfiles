@@ -3,27 +3,27 @@
     {
         "key": "shift+'",
         "command": "dance.registers.select",
-        "when": "dance.mode == 'normal'"
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "/",
         "command": "dance.search",
-        "when": "dance.mode == 'normal'" 
+        "when": "editorTextFocus && dance.mode == 'normal'" 
     },
     {
         "key": "shift+/",
         "command": "dance.search.extend",
-        "when": "dance.mode == 'normal'" 
+        "when": "editorTextFocus && dance.mode == 'normal'" 
     },
     {
         "key": "alt+/",
         "command": "dance.search.backwards",
-        "when": "dance.mode == 'normal'" 
+        "when": "editorTextFocus && dance.mode == 'normal'" 
     },
     {
         "key": "shift+alt+/",
         "command": "dance.search.backwards.extend",
-        "when": "dance.mode == 'normal'" 
+        "when": "editorTextFocus && dance.mode == 'normal'" 
     },
     {
         "key": "space",
@@ -77,23 +77,28 @@
     },
     {
         "key": "shift+0",
-        "command": "dance.rotate"
+        "command": "dance.rotate",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "shift+9",
-        "command": "dance.rotate.backwards"
+        "command": "dance.rotate.backwards",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "shift+7",
-        "command": "dance.selections.align"
+        "command": "dance.selections.align",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "shift+alt+7",
-        "command": "dance.selections.align.copy"
+        "command": "dance.selections.align.copy",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "shift+`",
-        "command": "dance.toUpperCase"
+        "command": "dance.toUpperCase",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "ctrl+alt+c",
@@ -109,11 +114,13 @@
     },
     {
         "key": "shift+.",
-        "command": "dance.indent"
+        "command": "dance.indent",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "shift+,",
-        "command": "dance.deindent"
+        "command": "dance.deindent",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "ctrl+w h",
