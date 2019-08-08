@@ -151,7 +151,7 @@
         "command": "workbench.action.navigateUp"
     },
     {
-        "key": "ctrl+w j",
+        "key": "ctrl+alt+w j",
         "command": "workbench.action.navigateDown"
     },   
     {
