@@ -7,7 +7,7 @@ stdenv.mkDerivation {
     #texlive.combined.scheme-medium
     # texlive full required because of varwidth.sty
     texlive.combined.scheme-full
-    python36Packages.python
+    python37Packages.python
     pandoc
     haskellPackages.pandoc-citeproc
     haskellPackages.pandoc-crossref

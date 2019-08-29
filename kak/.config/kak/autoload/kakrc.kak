@@ -50,7 +50,7 @@ hook global InsertChar \{ "exec }<left>"
 # 
 # You may want to use the following hook to automate the dialog with the system clipboard, on each y, d or c operations:
 hook global NormalKey y|d|c %{ nop %sh{
-  printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+  printf %s "$kak_main_reg_dquote" | myClipCopy
 }}
 
 # ! xsel --output --clipboard <ret>
@@ -59,9 +59,12 @@ hook global NormalKey y|d|c %{ nop %sh{
 # 
 # Therefore you can add the following mappings:
 # Paste before
-map global user P '!xsel --output --clipboard<ret>'
+map global user P '!myClipPaste<ret>' -docstring 'Insert: Paste from clipboard'
 # Paste after
-map global user p '<a-!>xsel --output --clipboard<ret>'
+map global user p '<a-!>myClipPaste<ret>' -docstring 'Append: Paste from clipboard'
+
+map global user y '<a-|>myClipCopy<ret>' -docstring 'Copy to clipboard'
+map global user Y '<a-|>myClipCopy<ret>' -docstring 'Copy to clipboard'
 
 #hook global InsertChar [^\n] %{exec -draft "Ghs.{0,79}<ret><a-;>bi<ret><esc><space>i<backspace><esc>"}
 
