@@ -46,7 +46,7 @@ export TERM=rxvt
 # using kak wrapper as editor - ranger/tmux integration
 export EDITOR=skk
 export VISUAL=skk
-export PAGER=skk
+export PAGER=skp
 export GOPATH=~/go
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export npm_config_prefix=~/.node_modules
