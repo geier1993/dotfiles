@@ -229,6 +229,14 @@
                     "to": {
                         "key_code": "grave_accent_and_tilde"
                     }
+                },
+                {
+                    "from": {
+                        "key_code": "right_option"
+                    },
+                    "to": {
+                        "key_code": "non_us_backslash"
+                    }
                 }
             ],
             "virtual_hid_keyboard": {
