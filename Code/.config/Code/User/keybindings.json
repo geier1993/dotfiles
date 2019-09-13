@@ -105,12 +105,14 @@
         "command": "editor.action.clipboardCopyAction"
     },
     {
-        "key": "ctrl+c",
-        "command": "editor.action.insertCursorBelow"
+        "key": "shift+c",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
-        "key": "ctrl+shift+c",
-        "command": "editor.action.insertCursorAbove"
+        "key": "alt+shift+c",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "shift+.",

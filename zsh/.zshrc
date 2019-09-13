@@ -105,9 +105,8 @@ then
 fi
 
 
-
-# The following lines were added by compinstall
 plugins+=(zsh-completions)
+plugins+=(zsh-autosuggestions)
 plugins+=(zsh-highlighters)
 
 bindkey -v
