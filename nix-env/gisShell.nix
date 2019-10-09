@@ -16,5 +16,7 @@ stdenv.mkDerivation {
     python37Packages.pip
     python37Packages.virtualenvwrapper
     python37Packages.cython
+    python37Packages.Nuitka # Python compilation with CPython in background
+    # pypy  # really fast python interpreter (Just-In-Time Compilation)
   ];
 }

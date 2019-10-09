@@ -5,7 +5,8 @@ then
   #KAKPID=$(ps -C "kak" -o pid,cmd | grep "kak -d -s $KAKSESSION" | sed 's/\W*\([^0-9]*//g')
   #KAKPID=$(ps -C "kak" -o pid,cmd | grep "kak -d -s $KAKSESSION" | sed 's/\W*\([0-9]*\).*/\1/g')
   # Working for MAC
-  KAKPID=$(ps -ax | grep -v "grep" | grep "kak' -d -s Default" | head |  sed 's/\W*\([0-9]*\).*/\1/g')
+  #KAKPID=$(ps -ax | grep -v "grep" | grep "kak' -d -s Default" | head |  sed 's/\W*\([0-9]*\).*/\1/g')
+  KAKPID=$(ps -ax | grep -v "grep" | grep "kak' -d -s Default" | head | grep -o '[0-9]\+' | head -1)
   echo $KAKPID
 else
 echo ""
