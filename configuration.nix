@@ -277,6 +277,7 @@
     gpicview
     #gliv
     fasd
+    fzf
     pandoc
     biber
     haskellPackages.pandoc-citeproc

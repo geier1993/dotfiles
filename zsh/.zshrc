@@ -235,6 +235,13 @@ eval "$(fasd --init auto)"
 #function skk () kakargs &&  kak `echo $KAKARGS` $@
 function k () skk `fasd -f $@`
 
+# Fuzzy finder fzf
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+fi
+function fe () $EDITOR `fzf $@`
+function fuzzyedit () $EDITOR `fzf $@`
+
 
 #Stack
 eval "$(stack --bash-completion-script stack)"
@@ -270,6 +277,8 @@ then
 else
   source $HOME/misc/zsh-nix-shell/nix-shell.plugin.zsh
 fi
+
+
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
