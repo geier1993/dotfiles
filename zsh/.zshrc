@@ -241,6 +241,8 @@ if [ -n "${commands[fzf-share]}" ]; then
 fi
 function fe () $EDITOR `fzf $@`
 function fuzzyedit () $EDITOR `fzf $@`
+[ -e ~/.config/fzf/git/functions.sh ] && source ~/.config/fzf/git/functions.sh
+[ -e ~/.config/fzf/git/key-binding.zsh ] && source ~/.config/fzf/git/key-binding.zsh
 
 
 #Stack
