@@ -1,6 +1,24 @@
 #redshift-gtk & #done by i3
 
+case `uname` in
+  Darwin)
+    # Source nix...
+     . /Users/geierp/.nix-profile/etc/profile.d/nix.sh
+     alias codium=$(nix-locate VSCodium.app/Contents/Resources/app/bin/code | awk '{print $NF}')
+    # commands for OS X go here
+  ;;
+  Linux)
+    # commands for Linux go here
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
+
 #export LOCALE_ARCHIVE=$HOME/.nix-profile/lib/locale/locale-archive
+
+# Color output...
+export CLICOLOR=1
 
 export LANGUAGE=en
 export LANG=en_US.UTF-8
@@ -14,7 +32,7 @@ export XKB_DEFAULT_VARIANT=dvorak,nodeadkeys
 export XKB_DEFAULT_MODEL=pc105
 export XKB_DEFAULT_OPTIONS=grp:switch,grp:menu_toggle
 
-export XDG_CONFIG_HOME=/home/geier/.config
+export XDG_CONFIG_HOME=$HOME/.config
 
 export WLC_REPEAT_DELAY=150
 export WLC_REPEAT_RATE=50
@@ -28,13 +46,14 @@ export TERM=rxvt
 # using kak wrapper as editor - ranger/tmux integration
 export EDITOR=skk
 export VISUAL=skk
+export PAGER=skp
 export GOPATH=~/go
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export npm_config_prefix=~/.node_modules
 
 export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$PATH"
-export LD_LIBRARY_PATH=/usr/local/lib:/home/geier/.local/lib:/home/geier/.nix-profile/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/lib:$HOME/.local/lib:$HOME/.nix-profile/lib:${LD_LIBRARY_PATH}
 
 #export GDK_SCALE=0.5
 #export GDK_DPI_SCALE=1
@@ -86,9 +105,8 @@ then
 fi
 
 
-
-# The following lines were added by compinstall
 plugins+=(zsh-completions)
+plugins+=(zsh-autosuggestions)
 plugins+=(zsh-highlighters)
 
 bindkey -v
@@ -105,7 +123,7 @@ LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=
 export LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 #zstyle ':completion:*' list-colors 'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle :compinstall filename '/home/geier/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit promptinit
 autoload -U colors && colors
@@ -162,7 +180,24 @@ alias help=run-help
 
 
 #ls with color
-alias ls='ls --color=auto'
+case `uname` in
+  Darwin)
+    # Source nix...
+     alias ls="grc --colour=auto ls"
+    # alias myClipCopy="pbcopy"
+    # alias myClipPaste="pbpaste"
+    # commands for OS X go here
+  ;;
+  Linux)
+    # commands for Linux go here
+     alias ls='ls --color=auto'
+    # alias myClipCopy="xsel --input --clipboard"
+    # alias myClipPaste="xsel --output --clipboard"
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
 
 # End of lines added by compinstall
 
@@ -200,6 +235,13 @@ eval "$(fasd --init auto)"
 #function skk () kakargs &&  kak `echo $KAKARGS` $@
 function k () skk `fasd -f $@`
 
+# Fuzzy finder fzf
+if [ -n "${commands[fzf-share]}" ]; then
+  source "$(fzf-share)/key-bindings.zsh"
+fi
+function fe () $EDITOR `fzf $@`
+function fuzzyedit () $EDITOR `fzf $@`
+
 
 #Stack
 eval "$(stack --bash-completion-script stack)"
@@ -236,6 +278,8 @@ else
   source $HOME/misc/zsh-nix-shell/nix-shell.plugin.zsh
 fi
 
+
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -243,7 +287,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/geier/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/geier/node_modules/tabtab/.completions/serverless.zsh
+[[ -f $HOME/node_modules/tabtab/.completions/serverless.zsh ]] && . $HOME/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/geier/node_modules/tabtab/.completions/sls.zsh ]] && . /home/geier/node_modules/tabtab/.completions/sls.zsh
+[[ -f $HOME/node_modules/tabtab/.completions/sls.zsh ]] && . $HOME/node_modules/tabtab/.completions/sls.zsh

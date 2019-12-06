@@ -1,0 +1,4 @@
+#!/usr/bin/env osascript
+on run argv
+  do shell script argv
+end

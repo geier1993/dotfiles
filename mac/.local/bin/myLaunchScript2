@@ -1,0 +1,2 @@
+#!/usr/bin/env osascript
+do shell script "~/.nix-profile/Applications/kitty.app --single-instance"

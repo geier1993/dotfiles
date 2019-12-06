@@ -13,7 +13,7 @@ stdenv.mkDerivation {
     #texlive.combined.scheme-full
     fontconfig
     lmodern
-    python36Packages.python
+    python37Packages.python
     pandoc
     haskellPackages.pandoc-citeproc
     #haskellPackages.pandoc-crossref

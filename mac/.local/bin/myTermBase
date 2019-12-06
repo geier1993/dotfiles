@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [[ $(uname) == "Darwin" ]];
+then
+  echo "Darwin"
+  open -n -a ~/.nix-profile/Applications/kitty.app --args tmux new-session -A -s $1 -t $2
+else
+  echo "NoDarwin"
+  kitty tmux new-session -A -s $1 -t $2
+fi
+

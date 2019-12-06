@@ -11,8 +11,6 @@ stow -t $TARGET terminator
 stow -t $TARGET termite
 stow -t $TARGET kitty
 stow -t $TARGET tmux
-stow -t $TARGET sway
-stow -t $TARGET i3
 #stow -t $TARGET stack
 stow -t $TARGET i3blocks
 stow -t $TARGET zathura
@@ -31,3 +29,21 @@ stow -t $TARGET systemd
 stow -t $TARGET ssh
 stow -t $TARGET usb
 stow -t $TARGET Code
+
+case `uname` in 
+  Darwin) 
+    # commands for OS X go here 
+    stow -t $TARGET yabai
+    stow -t $TARGET skhd
+    stow -t $TARGET mac
+    stow -t $TARGET karabiner
+  ;; 
+  Linux) 
+    # commands for Linux go here 
+    stow -t $TARGET sway
+    stow -t $TARGET i3
+  ;; 
+  FreeBSD) 
+    # commands for FreeBSD go here 
+  ;; 
+esac 

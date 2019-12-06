@@ -1,6 +1,26 @@
 // Place your key bindings in this file to override the defaults
 [
     {
+        "key": "ctrl+f",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus && dance.mode == normal"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus && dance.mode == normal"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus && dance.mode == normal"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus && dance.mode == normal"
+    },
+    {
         "key": "shift+'",
         "command": "dance.registers.select",
         "when": "editorTextFocus && dance.mode == 'normal'"
@@ -105,12 +125,14 @@
         "command": "editor.action.clipboardCopyAction"
     },
     {
-        "key": "ctrl+c",
-        "command": "editor.action.insertCursorBelow"
+        "key": "shift+c",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
-        "key": "ctrl+shift+c",
-        "command": "editor.action.insertCursorAbove"
+        "key": "alt+shift+c",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
         "key": "shift+.",

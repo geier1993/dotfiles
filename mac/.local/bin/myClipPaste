@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ $(uname) == "Darwin" ]];
+then
+  pbpaste
+else
+  xsel --output --clipboard
+fi
