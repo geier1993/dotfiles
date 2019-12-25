@@ -29,11 +29,11 @@
       icedtea = true;
     };
     #chromium = {
-    #  enablePepperFlash = true;
-    #  enablePepperPDF = true;
-      #enableAdobeFlash = true; # for Chromium
-    #  enableWideVine = true;
-      # hiDPISupport = true; # recompilation required :(
+    # enablePepperFlash = true;
+    # enablePepperPDF = true;
+    # enableAdobeFlash = true; # for Chromium
+    # enableWideVine = true;
+    # hiDPISupport = true; # recompilation required :(
       # jre = true;
     #  icedtea = true;
     #};
@@ -312,6 +312,8 @@
     eclipses.eclipse-scala-sdk
     eclipses.eclipse-sdk
     sshfs-fuse
+    steam
+    #krohnkite
   ];
 
 
@@ -588,9 +590,9 @@
     opengl = {
       enable = true;
       extraPackages = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo]; # mesa_drivers
-      extraPackages32 = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo]; # mesa_drivers
+      extraPackages32 = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo pkgsi686Linux.libva ]; # mesa_drivers
       driSupport = true;
-      #driSupport32Bit = true;
+      driSupport32Bit = true;
       s3tcSupport = true;
     };
 
@@ -598,7 +600,7 @@
 
     pulseaudio = {
       enable = true;
-      #support32Bit = true;
+      support32Bit = true;
       package = pkgs.pulseaudioFull;
     };
 
