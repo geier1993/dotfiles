@@ -217,10 +217,20 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym $mod+Shift+e exit
 
 
-force_display_urgency_hint 0 ms
-focus_on_window_activation urgent
-# Avoid stealing focus
-no_focus [class="plasmashell"]
+#force_display_urgency_hint 0 ms
+#focus_on_window_activation urgent
+## Avoid stealing focus
+#no_focus [class="plasmashell"]
+# Don’t treat Plasma pop-ups as full-sized windows
+for_window [class="plasmashell"] floating enable
+
+# Don’t spawn an empty window for the Plasma Desktop
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+
+# Don’t let notifications and non-interactive pop-up windows steal focus
+no_focus [class="plasmashell" window_type="notification"]
+no_focus [class="plasmashell" window_type="on_screen_display"]]]]]
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

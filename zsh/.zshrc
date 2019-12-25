@@ -153,16 +153,29 @@ set_prompt () {
 }
 set_prompt
 preexec () {
-	#set_prompt
-	timer=$((`date +%s`+`date +%N`/1e9))
+  case `uname` in
+    Darwin)
+      timer=$((`date +%s`+`date +%N`/1e9))
+      ;;
+    *)
+      timer=$((`date +%s`))
+      ;;
+  esac
 }
 
 precmd() {
     set_prompt
     if [ $timer ]; then
-	timer_show=$(printf "%0.1f" $((`date +%s`+`date +%N`/1e9-$timer)))
-        RPROMPT="%F{cyan}${timer_show}%{$reset_color%}"
-        unset timer
+      case `uname` in
+        Darwin)
+          timer_show=$(printf "%0.1f" $((`date +%s`+`date +%N`/1e9-$timer)))
+          ;;
+        *)
+          timer_show=$(printf "%0.1f" $((`date +%s`-$timer)))
+          ;;
+      esac
+      RPROMPT="%F{cyan}${timer_show}%{$reset_color%}"
+      unset timer
     fi
 }
 

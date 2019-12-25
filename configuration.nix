@@ -62,9 +62,14 @@
 
 
   # Select internationalisation properties.
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "dvorak";
+    #defaultLocale = "en_GB.UTF-8";
+    #defaultLocale = "en_US.UTF-8";
+  };
+
   i18n = {
-    consoleFont = "Lat2-Terminus16";
-    consoleKeyMap = "dvorak";
     #defaultLocale = "en_GB.UTF-8";
     defaultLocale = "en_US.UTF-8";
   };
@@ -96,7 +101,6 @@
     xorg.setxkbmap
     xorg.xrandr
     xorg.xauth
-    virtualbox
     gnumake
     automake
     autoconf
@@ -365,7 +369,7 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
-    #autoUpgrade.enable = true;
+    autoUpgrade.enable = true;
     stateVersion = "19.03";
   };
 
@@ -476,8 +480,10 @@
 
     redshift = {
           enable = true;
-          latitude = "49.398750";
-          longitude = "8.672434";
+          #location = {
+          #  latitude = "49.398750";
+          #  longitude = "8.672434";
+          #};
     };
 
     tlp = {
@@ -612,16 +618,16 @@
 
   virtualisation.docker.enable = true;
   virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  #virtualisation.virtualbox.host.enableExtensionPack = true;
   #virtualisation.virtualbox.guest.enable = true;
   users.extraGroups.vboxusers.members = [ "geier" ];
 
   fonts = {
     enableDefaultFonts = true;
-    enableCoreFonts = true;
     enableGhostscriptFonts = false;
     enableFontDir = true;
     fonts = with pkgs; [
+      corefonts
       dejavu_fonts
       freefont_ttf
       ttf_bitstream_vera
@@ -653,8 +659,6 @@
       fira-code
       fira-mono
       hasklig
-      anonymousPro
-      corefonts
       noto-fonts
       google-fonts
       powerline-fonts
@@ -730,5 +734,10 @@
   #  enableDiagnosticsWorkaround = true;
   #  extensionsDir = "/home/geier/.vscode/extensions";
   #};
+
+  location = {
+    latitude = 49.398750;
+    longitude = 8.672434;
+  };
  
 }
