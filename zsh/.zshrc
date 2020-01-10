@@ -3,7 +3,7 @@
 case `uname` in
   Darwin)
     # Source nix...
-     . /Users/geierp/.nix-profile/etc/profile.d/nix.sh
+     . $HOME/.nix-profile/etc/profile.d/nix.sh
      alias codium=$(nix-locate VSCodium.app/Contents/Resources/app/bin/code | awk '{print $NF}')
     # commands for OS X go here
   ;;
