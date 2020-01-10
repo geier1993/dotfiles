@@ -38,6 +38,7 @@ case `uname` in
     stow -t $TARGET yabai
     stow -t $TARGET skhd
     stow -t $TARGET mac
+    stow -t $TARGET osx-compose-key
     stow -t $TARGET karabiner
   ;; 
   Linux) 
