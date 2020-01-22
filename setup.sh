@@ -43,6 +43,8 @@ case `uname` in
     mkdir -p ~/Library/KeyBindings/
     cp osx-compose-key/Library/KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/
     stow -t $TARGET karabiner
+
+    [[ ! -f "~/Library/Application\ Support/VSCodium" ]] && ln -s ~/.config/Code ~/Library/Application\ Support/VSCodium
   ;; 
   Linux) 
     # commands for Linux go here 
