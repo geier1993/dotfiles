@@ -37,6 +37,8 @@
       # jre = true;
     #  icedtea = true;
     #};
+
+    # Explicit pulseaudio support in applications
     pulseaudio = true;
 
     packageOverrides = pkgs:  
@@ -313,6 +315,7 @@
     eclipses.eclipse-sdk
     sshfs-fuse
     steam
+    steam-run
     #krohnkite
   ];
 
@@ -601,6 +604,7 @@
     pulseaudio = {
       enable = true;
       support32Bit = true;
+      systemWide = true;
       package = pkgs.pulseaudioFull;
     };
 
