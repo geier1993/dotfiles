@@ -7,7 +7,7 @@ stdenv.mkDerivation {
     xorg.libX11
     xorg.libXext
     freetype
-    alsalib
+    alsaLib
   ];
 
   LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}";
