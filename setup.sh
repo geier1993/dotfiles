@@ -38,7 +38,13 @@ case `uname` in
     stow -t $TARGET yabai
     stow -t $TARGET skhd
     stow -t $TARGET mac
+    #stow -t $TARGET osx-compose-key
+    # DefaultKeyBindings.dict must not be a symlink
+    mkdir -p ~/Library/KeyBindings/
+    cp osx-compose-key/Library/KeyBindings/DefaultKeyBinding.dict ~/Library/KeyBindings/
     stow -t $TARGET karabiner
+
+    [[ ! -f "~/Library/Application\ Support/VSCodium" ]] && ln -s ~/.config/Code ~/Library/Application\ Support/VSCodium
   ;; 
   Linux) 
     # commands for Linux go here 

@@ -1,0 +1,3 @@
+#!/bin/sh
+source ~/pythonGisEnv/bin/activate
+python -c "import pseudoCrypt, sys, collections; [print(pseudoCrypt.decrypt(l.strip())) for l in sys.stdin.readlines()]"

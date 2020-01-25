@@ -3,9 +3,13 @@
 case `uname` in
   Darwin)
     # Source nix...
-     . /Users/geierp/.nix-profile/etc/profile.d/nix.sh
+     . $HOME/.nix-profile/etc/profile.d/nix.sh
      alias codium=$(nix-locate VSCodium.app/Contents/Resources/app/bin/code | awk '{print $NF}')
     # commands for OS X go here
+    if [ -f ~/pythonGisEnv/bin/activate ];
+    then
+      source ~/pythonGisEnv/bin/activate
+    fi
   ;;
   Linux)
     # commands for Linux go here
@@ -46,7 +50,8 @@ export TERM=rxvt
 # using kak wrapper as editor - ranger/tmux integration
 export EDITOR=skk
 export VISUAL=skk
-export PAGER=skp
+#export PAGER=skp
+export PAGER=less
 export GOPATH=~/go
 export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export npm_config_prefix=~/.node_modules

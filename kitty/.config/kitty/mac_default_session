@@ -1,0 +1,3 @@
+layout tall
+cd ~
+launch /Users/geierph/.nix-profile/bin/tmux new-session -A -s 0 -t Default
