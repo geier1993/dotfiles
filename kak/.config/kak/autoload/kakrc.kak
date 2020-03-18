@@ -4,6 +4,39 @@ map global insert <a-c> <esc>
 decl int tabstop 2
 decl int indentwidth 2
 
+# Editor config
+hook global WinCreate ^[^*]+$ %{editorconfig-load}
+
+# Pylint
+hook global WinSetOption filetype=python %{
+    set global lintcmd kak_pylint
+    lint-enable
+}
+
+# Eslint
+hook global WinSetOption filetype=javascript %{
+    set window lintcmd 'run() { cat "$1" | npx eslint -f ~/.npm-global/lib/node_modules/eslint-formatter-kakoune/index.js --stdin --stdin-filename "$kak_buffile";} && run '
+    # using npx to run local eslint over global
+    # formatting with prettier `npm i prettier --save-dev`
+    set window formatcmd 'npx prettier --stdin-filepath=${kak_buffile}'
+
+    alias window fix format2 # the patched version, renamed to `format2`.
+    lint-enable
+}
+# formatting with eslint:
+define-command eslint-fix %{
+  evaluate-commands -draft -no-hooks -save-regs '|' %sh{
+    path_file_tmp=$(mktemp kak-formatter-XXXXXX)
+    printf %s\\n "write -sync \"${path_file_tmp}\"
+    nop %sh{ npx eslint --fix \"${path_file_tmp}\" }
+
+    execute-keys '%|cat<space>$path_file_tmp<ret>'
+    nop %sh{rm -f "${path_file_tmp}"}
+    "
+  }
+}
+
+
 #hook global WinCreate .* %{addhl show_whitespaces}
 hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
 

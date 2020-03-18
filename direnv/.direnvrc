@@ -147,4 +147,4 @@ if ! validateVersion; then
 	exit 1
 fi
 
-use_nix -s shell.nix -w .nixpkgs-version.json
+#use_nix -s shell.nix -w .nixpkgs-version.json
