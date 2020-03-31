@@ -175,7 +175,7 @@
     editorconfig-core-c
     elmPackages.elm
     elmPackages.elm-test
-    elmPackages.elm-formatter
+    elmPackages.elm-format
     elmPackages.elm-language-server
     tmux
     dmenu

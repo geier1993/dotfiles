@@ -5,3 +5,9 @@ command = "elm-language-server"
 
 [language.elm.initialization_options]
 elmAnalyseTrigger = "change"
+
+[language.typescript]
+filetypes = ["typescript"]
+roots = ["package.json"]
+command = "typescript-language-server"
+args = ["--stdio"]
