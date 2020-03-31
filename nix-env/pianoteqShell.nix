@@ -8,7 +8,8 @@ stdenv.mkDerivation {
     xorg.libXext
     freetype
     alsaLib
+    glibc
   ];
 
-  LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}";
+  #LD_LIBRARY_PATH = "${lib.makeLibraryPath buildInputs}";
 }

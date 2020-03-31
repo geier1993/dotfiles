@@ -4,6 +4,11 @@ map global insert <a-c> <esc>
 decl int tabstop 2
 decl int indentwidth 2
 
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|elm) %{
+    lsp-enable-window
+}
+
 #hook global WinCreate .* %{addhl show_whitespaces}
 hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
 
