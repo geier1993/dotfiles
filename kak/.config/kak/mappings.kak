@@ -10,7 +10,7 @@
 # ╰────────────────────────────────────╯
 
 # Normal mode mappings
-map -docstring "comment/uncomment selection (<c-#>)"                              global normal '<c-#>'     ': comment-line<ret>'
+map -docstring "comment/uncomment selection (<c-/>)"                              global normal ''     ': comment-line<ret>'
 map -docstring "comment/uncomment block"                                          global normal '<a-#>'     ': comment-block<ret>'
 map -docstring "add currsor/jump on current word"                                 global normal '<c-d>' ': select-or-add-cursor<ret>'
 map -docstring "behave as <a-x> if line not selected, select line down otherwise" global normal '<a-x>' ': alt-x J<ret>'
