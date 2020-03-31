@@ -11,17 +11,38 @@ hook global WinCreate ^[^*]+$ %{editorconfig-load}
 hook global WinSetOption filetype=python %{
     set global lintcmd kak_pylint
     lint-enable
+    lint
 }
 
+# hook global WinSetOption filetype=typescript %{
+#   set buffer lintcmd 'tslint --config tslint.json --formatters-dir ./node_modules/tslint-formatter-kakoune -t kakoune'
+#   lint-enable
+#   lint
+# }
+
 # Eslint
-hook global WinSetOption filetype=javascript %{
-    set window lintcmd 'run() { cat "$1" | npx eslint -f ~/.npm-global/lib/node_modules/eslint-formatter-kakoune/index.js --stdin --stdin-filename "$kak_buffile";} && run '
+hook global WinSetOption filetype=typescript %{
+    #set buffer lintcmd 'eslint --config .eslintrc.js --format=~/.node_modules/lib/node_modules/eslint-formatter-kakoune'
+    #lint-enable
+    #lint
+    set window lintcmd 'run() { cat "$1" | npx eslint -f ~/.node_modules/lib/node_modules/eslint-formatter-kakoune/index.js --stdin --stdin-filename "$kak_buffile";} && run '
     # using npx to run local eslint over global
     # formatting with prettier `npm i prettier --save-dev`
     set window formatcmd 'npx prettier --stdin-filepath=${kak_buffile}'
 
     alias window fix format2 # the patched version, renamed to `format2`.
     lint-enable
+    lint
+}
+hook global WinSetOption filetype=javascript %{
+    set window lintcmd 'run() { cat "$1" | npx eslint -f ~/.node_modules/lib/node_modules/eslint-formatter-kakoune/index.js --stdin --stdin-filename "$kak_buffile";} && run '
+    # using npx to run local eslint over global
+    # formatting with prettier `npm i prettier --save-dev`
+    set window formatcmd 'npx prettier --stdin-filepath=${kak_buffile}'
+
+    alias window fix format2 # the patched version, renamed to `format2`.
+    lint-enable
+    lint
 }
 # formatting with eslint:
 define-command eslint-fix %{
@@ -43,17 +64,17 @@ hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
 hook global WinCreate .* %{addhl show_matching }
 
 # match brackets with m
-#hook global InsertChar \( "exec i)<left><esc>" 
-#hook global InsertChar \[ "exec i]<left><esc>" 
-#hook global InsertChar \{ "exec i}<left><esc>" 
+#hook global InsertChar \( "exec i)<left><esc>"
+#hook global InsertChar \[ "exec i]<left><esc>"
+#hook global InsertChar \{ "exec i}<left><esc>"
 
-#hook global InsertChar \( "exec <backspace><esc>i(<esc>a)<esc>Ha" #wrapping selected text  
-#hook global InsertChar \[ "exec <backspace><esc>i[<esc>a]<esc>Ha" #wrapping selected text  
-#hook global InsertChar \{ "exec <backspace><esc>i{<esc>a}<esc>Ha" #wrapping selected text  
+#hook global InsertChar \( "exec <backspace><esc>i(<esc>a)<esc>Ha" #wrapping selected text
+#hook global InsertChar \[ "exec <backspace><esc>i[<esc>a]<esc>Ha" #wrapping selected text
+#hook global InsertChar \{ "exec <backspace><esc>i{<esc>a}<esc>Ha" #wrapping selected text
 
-hook global InsertChar \( "exec )<left>" 
-hook global InsertChar \[ "exec ]<left>" 
-hook global InsertChar \{ "exec }<left>" 
+hook global InsertChar \( "exec )<left>"
+hook global InsertChar \[ "exec ]<left>"
+hook global InsertChar \{ "exec }<left>"
 
 #coloerscheme base16
 
@@ -78,18 +99,18 @@ hook global InsertChar \{ "exec }<left>"
 
 #https://github.com/mawww/kakoune/wiki/Registers---Clipboard
 # <a-|> xsel --input --clipboard <ret>
-# 
+#
 # <a-|> pipes each selection through the given external filter program and ignore its output.
-# 
+#
 # You may want to use the following hook to automate the dialog with the system clipboard, on each y, d or c operations:
 hook global NormalKey y|d|c %{ nop %sh{
   printf %s "$kak_main_reg_dquote" | myClipCopy
 }}
 
 # ! xsel --output --clipboard <ret>
-# 
+#
 # ! inserts program output before selection while <a-!> inserts program output after selection.
-# 
+#
 # Therefore you can add the following mappings:
 # Paste before
 map global user P '!myClipPaste<ret>' -docstring 'Insert: Paste from clipboard'
@@ -116,7 +137,7 @@ map global user Y '<a-|>myClipCopy<ret>' -docstring 'Copy to clipboard'
 #map global user q %{s([^\n]{0,70})(?:\b\s*|\n)<ret>a<ret><esc>} -docstring "Autowrap selection"
 map global user q %{s([^\n]{0,120})(?:\b\s*|\n)<ret><a-K>[\n]<ret><left>a<ret><esc><a-x>} -docstring "Autowrap selection"
 
-# Remove new lines 
+# Remove new lines
 #map global user Q %{s\s*\n<ret>c<space><esc>Xs(?<<>=\S)\s+(?=\S)<ret>c<space><esc><space>gla<ret><esc>kglX} -docstring "Remove newlines"
 #map global user Q %{s\n\W*<ret>d} -docstring "Remove newlines"
 map global user Q %{<a-s><a-j>} -docstring "Remove newlines"
@@ -140,8 +161,8 @@ add-highlighter global/ show-whitespaces
 
 
 # clang...
-hook global WinSetOption filetype=(c|cpp) %{ 
-  clang-enable-autocomplete; 
+hook global WinSetOption filetype=(c|cpp) %{
+  clang-enable-autocomplete;
   clang-enable-diagnostics # Add autowrap to 72 characters in git-commit
 }
 

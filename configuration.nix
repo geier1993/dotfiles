@@ -39,8 +39,8 @@
     #};
     pulseaudio = true;
 
-    packageOverrides = pkgs:  
-      { 
+    packageOverrides = pkgs:
+      {
         #sway = pkgs.sway.overrideAttrs (oldAttrs: { buildInputs = oldAttrs.buildInputs ++ [pkgs.gdk_pixbuf];});
         #polybar = pkgs.polybar.overrideAttrs (oldAttrs: { i3Support = true; jsoncpp =true; });
         umlet = pkgs.umlet.override {
@@ -121,7 +121,7 @@
     git
     subversion
     git-lfs
-    stow 
+    stow
     hdparm
     acpi
     acpid
@@ -169,6 +169,12 @@
     pavucontrol
     volnoti
     kakoune
+    kak-lsp
+    editorconfig-core-c
+    elmPackages.elm
+    elmPackages.elm-test
+    elmPackages.elm-formatter
+    elmPackages.elm-language-server
     tmux
     dmenu
     rofi
@@ -183,7 +189,7 @@
     rxvt_unicode-with-plugins
     #st # terminal
     urxvt_perls
-    terminator termite 
+    terminator termite
     kitty
     zathura
     okular
@@ -308,7 +314,7 @@
     jdk
     jre
     eclipses.eclipse-cpp
-    #eclipses.eclipse-java    
+    #eclipses.eclipse-java
     eclipses.eclipse-scala-sdk
     eclipses.eclipse-sdk
     sshfs-fuse
@@ -330,12 +336,12 @@
 
     firewall = {
       # Open ports in the firewall.
-      allowedTCPPorts = [ 
-        # 22 # ssh - automaticall 
+      allowedTCPPorts = [
+        # 22 # ssh - automaticall
         80 # HTTP
         443 # HTTPS
       ];
-      allowedUDPPorts = [ 
+      allowedUDPPorts = [
         # 5353 # MDNS - multicast dns
         # 427 # SLP - server location protocol
       ];
@@ -356,12 +362,12 @@
   users.defaultUserShell = pkgs.zsh;
   #users.users.geier =
   users.extraUsers.geier =
-    { 
+    {
       isNormalUser = true;
       name = "geier";
       home = "/home/geier";
-      hashedPassword = "$6$cG2jGEtZXcQ/4U4L$8z6a.OUetzdmy9/TZslXXMsoZ0QUhlftkxF.ZjPFz2qUQ2tk9RVRwwjdO45TkQmgAigmfjRDR/.chZgLVvcab0"; # mkpasswd -m sha-512 
-      initialHashedPassword = "$6$cG2jGEtZXcQ/4U4L$8z6a.OUetzdmy9/TZslXXMsoZ0QUhlftkxF.ZjPFz2qUQ2tk9RVRwwjdO45TkQmgAigmfjRDR/.chZgLVvcab0"; # mkpasswd -m sha-512 
+      hashedPassword = "$6$cG2jGEtZXcQ/4U4L$8z6a.OUetzdmy9/TZslXXMsoZ0QUhlftkxF.ZjPFz2qUQ2tk9RVRwwjdO45TkQmgAigmfjRDR/.chZgLVvcab0"; # mkpasswd -m sha-512
+      initialHashedPassword = "$6$cG2jGEtZXcQ/4U4L$8z6a.OUetzdmy9/TZslXXMsoZ0QUhlftkxF.ZjPFz2qUQ2tk9RVRwwjdO45TkQmgAigmfjRDR/.chZgLVvcab0"; # mkpasswd -m sha-512
       uid = 1000;
       description = "Philpp Geier";
       extraGroups = [ "wheel" "lp" "networkmanager" "dialout" "audio" "video" "sys" "scanner" "kvm" "optical" "storage" "input" "disk" "floppy" "uucp" "lock" "docker" "sway" "rfkill" ];
@@ -426,7 +432,7 @@
       extraFlags = [ "-n '.git .backups .Trash .mail .cache vendor'" ];
     };
 
-    # allow access for user 
+    # allow access for user
     #udev.path = with pkgs; [utillinux];
     udev.extraRules = ''
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
@@ -459,7 +465,7 @@
       permitRootLogin = "no";
       enable = true;
     };
-  
+
 
     dnscrypt-proxy = {
       enable = true;
@@ -664,7 +670,7 @@
       noto-fonts
       google-fonts
       powerline-fonts
-      ubuntu_font_family    
+      ubuntu_font_family
     ];
     fontconfig = {
       defaultFonts = {
@@ -689,7 +695,7 @@
   };
 
   programs.zsh = {
-    enable = true; 
+    enable = true;
     #enableAutosuggestions = true;
     autosuggestions.enable = true;
     enableCompletion = true;
@@ -707,7 +713,7 @@
   powerManagement = {
     enable = true;
     #cpuFreqGovernor = "ondemand"; #"powersave"; tlp does it
-    #powerDownCommands = "${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda"; 
+    #powerDownCommands = "${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda";
     #powerUpCommands = "${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda";
     #scsiLinkPolicy = "medium_power"; # tlp does it
       # "min_power"
@@ -741,5 +747,5 @@
     latitude = 49.398750;
     longitude = 8.672434;
   };
- 
+
 }
