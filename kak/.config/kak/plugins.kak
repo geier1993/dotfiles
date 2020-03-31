@@ -103,12 +103,16 @@ if %[ -n "${PATH##*termux*}" ] %{
             hook -always global KakEnd .* lsp-exit
             lsp-auto-hover-enable
             lsp-auto-hover-insert-mode-disable
-            set-option window lsp_hover_anchor true
+            #set-option window lsp_hover_anchor true
             set-face window DiagnosticError default+u
             set-face window DiagnosticWarning default+u
         }
         hook global WinSetOption filetype=rust %{
             set-option window lsp_server_configuration rust.clippy_preference="on"
+        }
+        hook global WinSetOption filetype=python %{
+            #set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
+            #set-option global lsp_server_configuration pyls.plugins.pydocstyle.enabled=true
         }
     }
 } else %{
