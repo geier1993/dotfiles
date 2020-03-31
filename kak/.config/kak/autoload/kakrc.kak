@@ -7,6 +7,12 @@ decl int indentwidth 2
 # Editor config
 hook global WinCreate ^[^*]+$ %{editorconfig-load}
 
+# kakoune language server yay
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|elm) %{
+    lsp-enable-window
+}
+
 # Pylint
 hook global WinSetOption filetype=python %{
     set global lintcmd kak_pylint
@@ -21,20 +27,7 @@ hook global WinSetOption filetype=python %{
 # }
 
 # Eslint
-hook global WinSetOption filetype=typescript %{
-    #set buffer lintcmd 'eslint --config .eslintrc.js --format=~/.node_modules/lib/node_modules/eslint-formatter-kakoune'
-    #lint-enable
-    #lint
-    set window lintcmd 'run() { cat "$1" | npx eslint -f ~/.node_modules/lib/node_modules/eslint-formatter-kakoune/index.js --stdin --stdin-filename "$kak_buffile";} && run '
-    # using npx to run local eslint over global
-    # formatting with prettier `npm i prettier --save-dev`
-    set window formatcmd 'npx prettier --stdin-filepath=${kak_buffile}'
-
-    alias window fix format2 # the patched version, renamed to `format2`.
-    lint-enable
-    lint
-}
-hook global WinSetOption filetype=javascript %{
+hook global WinSetOption filetype=(javascript|typescript) %{
     set window lintcmd 'run() { cat "$1" | npx eslint -f ~/.node_modules/lib/node_modules/eslint-formatter-kakoune/index.js --stdin --stdin-filename "$kak_buffile";} && run '
     # using npx to run local eslint over global
     # formatting with prettier `npm i prettier --save-dev`
@@ -56,7 +49,6 @@ define-command eslint-fix %{
     "
   }
 }
-
 
 #hook global WinCreate .* %{addhl show_whitespaces}
 hook global WinCreate .* %{hook window InsertChar \t %{ exec -draft h@}}
