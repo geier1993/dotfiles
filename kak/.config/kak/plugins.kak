@@ -164,7 +164,7 @@ plug "alexherbo2/surround.kak" %{
 }
 
 plug "alexherbo2/replace.kak" config %{
-    map global user r -docstring 'Replace mode' ':<space>replace<ret>'
+    map global user r -docstring 'Replace mode' ':enter_replace_mode<ret>'
 }
 
 if %[ -n "${PATH##*termux*}" ] %{
