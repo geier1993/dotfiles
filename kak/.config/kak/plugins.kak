@@ -130,7 +130,7 @@ if %[ -n "${PATH##*termux*}" ] %{
 
 plug "andreyorst/powerline.kak" domain gitlab.com defer powerline %{
     set-option global powerline_ignore_warnings true
-    set-option global powerline_format 'git bufname langmap smarttab mode_info filetype client session position'
+    set-option global powerline_format 'git bufname langmap smarttab mode_info filetype client session line_column position'
     set-option global powerline_shorten_bufname 'short'
     if %[ ! -n "${PATH##*termux*}" ] %{
         set-option global powerline_separator ''
