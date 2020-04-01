@@ -57,7 +57,7 @@ export GEM_HOME=$(ruby -e 'print Gem.user_dir')
 export npm_config_prefix=~/.node_modules
 
 export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
-export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$PATH"
+export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$HOME/.cargo/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib:$HOME/.local/lib:$HOME/.nix-profile/lib:${LD_LIBRARY_PATH}
 
 #export GDK_SCALE=0.5
@@ -243,7 +243,7 @@ eval "$(fasd --init auto)"
 #  then
 #    if [ -z `kak -l | grep "^${KAKSESSION}$"` ];
 #    then
-#      kak -d -s $KAKSESSION 
+#      kak -d -s $KAKSESSION
 #    fi
 #    export KAKARGS="-c $KAKSESSION $@"
 #  else

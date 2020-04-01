@@ -39,7 +39,7 @@ set-face global delimiter rgb:af3a03,default
 hook global WinCreate .* %{ try %{
     add-highlighter buffer/numbers          number-lines -relative -hlcursor -separator ' '
     add-highlighter buffer/matching         show-matching
-    add-highlighter buffer/wrap             wrap -word -indent -marker '↪'
+    #add-highlighter buffer/wrap             wrap -word -indent -marker '↪'
     add-highlighter buffer/show-whitespaces show-whitespaces -lf ' ' -spc ' ' -nbsp '⋅'
 }}
 

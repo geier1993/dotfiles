@@ -16,7 +16,6 @@ evaluate-commands %sh{
         languages.kak
         recentf.kak
         mnemonic-user-mode.kak
-        # beacon.kak
         plugins.kak
     "
 

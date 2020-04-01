@@ -171,7 +171,8 @@
     pavucontrol
     volnoti
     kakoune
-    kak-lsp
+    #kak-lsp
+    cargo
     editorconfig-core-c
     elmPackages.elm
     elmPackages.elm-test
