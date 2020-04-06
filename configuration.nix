@@ -138,7 +138,7 @@
     ffmpeg # for sway
     #gdk-pixbuf # for sway
     libjpeg
-    #imagemagick
+    imagemagick
     imagemagickBig
     i3-gaps # required for sway configuration until everything is dropped
     i3lock
@@ -171,6 +171,7 @@
     pavucontrol
     volnoti
     kakoune
+    vscodium
     #kak-lsp
     cargo
     editorconfig-core-c
@@ -188,7 +189,10 @@
     vlc
     xfce.thunar
     gnome3.nautilus
+    gimp
     darktable
+    enblend-enfuse # panorama images
+    hugin # panorama images
     rxvt_unicode-with-plugins
     #st # terminal
     urxvt_perls
@@ -200,6 +204,7 @@
     stack
     cabal-install
     nodejs
+    flow # static type checker
     direnv
     # bluez
     bluez-tools
@@ -239,22 +244,23 @@
     #despotify
     #python27
     ruby bundix
-    python3Full
-    python37
+    python38Full
+    python38
+    python38Packages.pip
     #python27Packages.numpy
-    python37Packages.numpy
+    python38Packages.numpy
     #python27Packages.scipy
-    python37Packages.scipy
+    python38Packages.scipy
     #python27Packages.matplotlib
-    python37Packages.matplotlib
+    python38Packages.matplotlib
     #python27Packages.seaborn
-    python37Packages.seaborn
+    python38Packages.seaborn
     #python27Packages.pandas
-    python37Packages.pandas
+    python38Packages.pandas
     #python27Packages.ipython
-    python37Packages.ipython
+    python38Packages.ipython
     #python27Packages.pandocfilters
-    python37Packages.pandocfilters
+    python38Packages.pandocfilters
     #python27Packages.pypandoc
     #python37Packages.pypandoc
     #paraview
@@ -298,6 +304,7 @@
     #haskellPackages.pandoc-csv2table
     stack
     dbus
+    busybox
     cryptsetup
     clamav
     cmake
@@ -324,6 +331,17 @@
     steam
     steam-run
     #krohnkite
+    xorg.libX11
+    xorg.libXext
+    lua
+    pdfgrep
+    perl
+    spotify
+    xlibsWrapper
+    #wine
+    #winetricks
+    #protontricks
+    #steam-run
   ];
 
 
@@ -471,9 +489,9 @@
     };
 
 
-    dnscrypt-proxy = {
+    dnscrypt-proxy2 = {
       enable = true;
-      localPort = 43;
+      #localPort = 43;
     };
     dnsmasq = {
       enable = true;
@@ -676,6 +694,7 @@
       google-fonts
       powerline-fonts
       ubuntu_font_family
+      freetype
     ];
     fontconfig = {
       defaultFonts = {

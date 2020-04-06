@@ -13,6 +13,10 @@ case `uname` in
   ;;
   Linux)
     # commands for Linux go here
+    if [ -f ~/.venv/bin/activate ];
+    then
+      source ~/.venv/bin/activate
+    fi
   ;;
   FreeBSD)
     # commands for FreeBSD go here

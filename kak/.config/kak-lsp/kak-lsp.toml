@@ -146,9 +146,13 @@ filetypes = ["latex"]
 roots = [".git"]
 command = "texlab"
 
+# [language.typescript]
+# filetypes = ["typescript"]
+# roots = ["package.json"]
+# command = "typescript-language-server"
+# args = ["--stdio"]
+
 [language.typescript]
 filetypes = ["typescript"]
-roots = ["package.json"]
-command = "typescript-language-server"
-args = ["--stdio"]
-
+roots = ["package.json", "tsconfig.json"]
+command = "javascript-typescript-stdio"
