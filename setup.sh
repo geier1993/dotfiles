@@ -22,6 +22,7 @@ stow -t $TARGET conky
 stow -t $TARGET vim
 stow -t $TARGET gnupg
 stow -t $TARGET kak
+stow -t $TARGET pycodestyle
 stow -t $TARGET fzf
 stow -t $TARGET vimb
 stow -t $TARGET networkmanager-dmenu
@@ -32,9 +33,9 @@ stow -t $TARGET usb
 stow -t $TARGET Code
 stow -t $TARGET kde
 
-case `uname` in 
-  Darwin) 
-    # commands for OS X go here 
+case `uname` in
+  Darwin)
+    # commands for OS X go here
     stow -t $TARGET yabai
     stow -t $TARGET skhd
     stow -t $TARGET mac
@@ -45,13 +46,13 @@ case `uname` in
     stow -t $TARGET karabiner
 
     [[ ! -f "~/Library/Application\ Support/VSCodium" ]] && ln -s ~/.config/Code ~/Library/Application\ Support/VSCodium
-  ;; 
-  Linux) 
-    # commands for Linux go here 
+  ;;
+  Linux)
+    # commands for Linux go here
     stow -t $TARGET sway
     stow -t $TARGET i3
-  ;; 
-  FreeBSD) 
-    # commands for FreeBSD go here 
-  ;; 
-esac 
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
