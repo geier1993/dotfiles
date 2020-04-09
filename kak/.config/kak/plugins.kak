@@ -33,11 +33,40 @@ plug "andreyorst/plug.kak" branch "dev" domain gitlab.com noload config %{
 }
 
 plug "delapouite/kakoune-text-objects"
-plug "occivink/kakoune-vertical-selection"
+plug "occivink/kakoune-phantom-selection" config %{
+    map global normal f     ": phantom-selection-add-selection<ret>"
+    map global normal F     ": phantom-selection-select-all; phantom-selection-clear<ret>"
+    map global normal <a-f> ": phantom-selection-iterate-next<ret>"
+    map global normal <a-F> ": phantom-selection-iterate-prev<ret>"
+
+    # this would be nice, but currrently doesn't work
+    # see https://github.com/mawww/kakoune/issues/1916
+    #map global insert <a-f> "<a-;>: phantom-selection-iterate-next<ret>"
+    #map global insert <a-F> "<a-;>: phantom-selection-iterate-prev<ret>"
+    # so instead, have an approximate version that uses 'i'
+    map global insert <a-f> "<esc>: phantom-selection-iterate-next<ret>i"
+    map global insert <a-F> "<esc>: phantom-selection-iterate-prev<ret>i"
+}
+plug "occivink/kakoune-vertical-selection" config %{
+    map global user v     ': vertical-selection-down<ret>' -docstring "vertical-selection-down"
+    map global user <a-v> ': vertical-selection-up<ret>' -docstring "vertical-selection-up"
+    map global user V     ': vertical-selection-up-and-down<ret>' -docstring "vertical-selection-up-and-down"
+}
 plug "occivink/kakoune-sudo-write"
 plug "occivink/kakoune-find" config %{
     define-command -docstring "grep-apply-changes: apply changes specified in current *grep* buffer to their respective files" \
     grep-apply-changes %{ find-apply-changes -force }
+}
+
+plug "insipx/kak-crosshairs" config %{
+    #crosshairs
+    cursorline
+    #cursorcolumn
+}
+
+plug 'delapouite/kakoune-mirror' %{
+  # Suggested mapping
+  map global normal "'" ': enter-user-mode -lock mirror<ret>'
 }
 
 # plug "andreyorst/base16-gruvbox.kak" domain gitlab.com theme %{
@@ -96,6 +125,7 @@ if %[ -n "${PATH##*termux*}" ] %{
         set-option global lsp_diagnostic_line_error_sign "!"
         set-option global lsp_diagnostic_line_warning_sign "?"
         hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|elm) %{
+            echo -debug "Loading kak-lsp"
             map window user "l" ": enter-user-mode lsp<ret>" -docstring "LSP mode"
             map window lsp "n" "<esc>: lsp-find-error --include-warnings<ret>" -docstring "find next error or warning"
             map window lsp "p" "<esc>: lsp-find-error --previous --include-warnings<ret>" -docstring "find previous error or warning"
