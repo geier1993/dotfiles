@@ -64,6 +64,12 @@ export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH="$GOPATH/bin:$HOME/.local/bin:$HOME/.cabal/bin:$HOME/misc/dotfiles/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/.node_modules/bin:$HOME/.cargo/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib:$HOME/.local/lib:$HOME/.nix-profile/lib:${LD_LIBRARY_PATH}
 
+if [ -f ~/.venv/bin/activate ];
+then
+    NODE_VERSIONS=$HOME/.nvm/versions/node
+    NODE_VERSIONS_PREFIX="v"
+fi
+
 #export GDK_SCALE=0.5
 #export GDK_DPI_SCALE=1
 #export GDK_BACKEND=wayland
@@ -304,10 +310,10 @@ fi
 
 
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion]]
+# # NVM
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion]]
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
