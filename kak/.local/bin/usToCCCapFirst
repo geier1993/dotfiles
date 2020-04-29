@@ -1,0 +1,3 @@
+#!/bin/sh
+# Use perl and not sed (\U command not available on sed on mac)
+perl -pe 's/(^|_)([a-z])/uc($2)/ge'
