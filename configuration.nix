@@ -19,14 +19,12 @@
     #allowBroken = true;
     #permittedInsecurePackages = [ "webkitgtk-2.4.11" ];
     firefox = {
-      enableGoogleTalkPlugin = true;
       enablePepperFlash = true;
       #enableAdobeFlash = true;
       #enableGTK3 = true; # recompilation required :(
       # ffmpegSupport = false;
       # jre = true;
       # enableMPlayer = true; # will use MPV instead, see: https://addons.mozilla.org/en-US/firefox/addon/watch-with-mpv/
-      icedtea = true;
     };
     #chromium = {
     # enablePepperFlash = true;
@@ -400,7 +398,7 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
     autoUpgrade.enable = true;
-    stateVersion = "19.03";
+    stateVersion = "20.03";
   };
 
   systemd.services.kbdrate = {
@@ -621,7 +619,6 @@
       extraPackages32 = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo pkgsi686Linux.libva ]; # mesa_drivers
       driSupport = true;
       driSupport32Bit = true;
-      s3tcSupport = true;
     };
 
     enableAllFirmware = true;
