@@ -1,0 +1,3 @@
+#!/bin/sh
+# Use perl and not sed (\L command not available on sed on mac)
+./ccToUS | ./upper
