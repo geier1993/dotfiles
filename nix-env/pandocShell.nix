@@ -13,8 +13,10 @@ stdenv.mkDerivation {
     #texlive.combined.scheme-full
     fontconfig
     lmodern
-    python37Packages.python
+    python38Packages.python
+    python38Packages.pandocfilters
     pandoc
+    biber
     haskellPackages.pandoc-citeproc
     #haskellPackages.pandoc-crossref
     #haskellPackages.pandoc-include-code
@@ -24,4 +26,3 @@ stdenv.mkDerivation {
   ];
   FONTCONFIG_FILE = makeFontsConf { fontDirectories = [ lmodern ]; };
 }
-

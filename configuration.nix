@@ -77,13 +77,14 @@
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  environment.shells = with pkgs; [bashInteractive zsh];
+  # environment.shells = with pkgs; [bashInteractive zsh];
+  environment.shells = with pkgs; [bashInteractive fish];
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     nox
-    ntfs3g	# to mount windows
+    ntfs3g  # to mount windows
     cifs-utils
     nfs-utils
     nix-index # contains nix-locate
@@ -138,45 +139,45 @@
     libjpeg
     imagemagick
     imagemagickBig
-    i3-gaps # required for sway configuration until everything is dropped
-    i3lock
+    # i3-gaps # required for sway configuration until everything is dropped
+    # i3lock
     xautolock
     compton
     # i3status
     # i3blocks-gaps
-    i3blocks
+    # i3blocks
     wmctrl # required for i3+plasma
     scrot # screenshot
     spectacle # KDE screenshot
     feh
     #poppler
     poppler_utils
-    arandr
+    # arandr
     #autorandr
-    lm_sensors
-    sysstat
+    # lm_sensors
+    # sysstat
     playerctl
     pango
     perlPackages.Pango
-    xwayland
-    networkmanager
-    networkmanagerapplet
-    wpa_supplicant
+    # xwayland
+    # networkmanager
+    # networkmanagerapplet
+    # wpa_supplicant
     #dunst
-    pamixer
-    ponymix
-    pasystray
-    pavucontrol
-    volnoti
+    # pamixer
+    # ponymix
+    # pasystray
+    # pavucontrol
+    # volnoti
     kakoune
     vscodium
     #kak-lsp
     cargo
     editorconfig-core-c
-    elmPackages.elm
-    elmPackages.elm-test
-    elmPackages.elm-format
-    elmPackages.elm-language-server
+    # elmPackages.elm
+    # elmPackages.elm-test
+    # elmPackages.elm-format
+    # elmPackages.elm-language-server
     tmux
     dmenu
     rofi
@@ -185,8 +186,8 @@
     #vivaldi
     #vimb
     vlc
-    xfce.thunar
-    gnome3.nautilus
+    # xfce.thunar
+    # gnome3.nautilus
     gimp
     darktable
     enblend-enfuse # panorama images
@@ -198,9 +199,9 @@
     kitty
     zathura
     okular
-    ghc
-    stack
-    cabal-install
+    # ghc
+    # stack
+    # cabal-install
     nodejs
     flow # static type checker
     direnv
@@ -219,18 +220,20 @@
     # vaapiIntel # libva-intel-driver
     # vaapiVdpau # libva-vdpau-driver
     # microcodeIntel # microcode-intel
-    powertop #intel
-    intel-gpu-tools
-    beignet
+    # powertop #intel
+    # intel-gpu-tools
+    # beignet
     #brightnessctl light
     #bluetoothctl
     xsel
     #mesa_noglu
     libnotify
-    vtk
+    # vtk
     unzip
     zip
-    w3m ranger tree
+    w3m
+    ranger
+    tree
     vim
     thermald
     pygmentex
@@ -245,23 +248,13 @@
     python38Full
     python38
     python38Packages.pip
-    #python27Packages.numpy
-    python38Packages.numpy
-    #python27Packages.scipy
-    python38Packages.scipy
-    #python27Packages.matplotlib
-    python38Packages.matplotlib
-    #python27Packages.seaborn
-    python38Packages.seaborn
-    #python27Packages.pandas
-    python38Packages.pandas
-    #python27Packages.ipython
     python38Packages.ipython
-    #python27Packages.pandocfilters
-    python38Packages.pandocfilters
-    #python27Packages.pypandoc
-    #python37Packages.pypandoc
-    #paraview
+    # python38Packages.numpy
+    # python38Packages.scipy
+    # python38Packages.matplotlib
+    # python38Packages.seaborn
+    # python38Packages.pandas
+    # python38Packages.pandocfilters
     mlocate
     lm_sensors
     linuxHeaders
@@ -295,12 +288,11 @@
     #gliv
     fasd
     fzf
-    pandoc
+    # pandoc
     biber
-    haskellPackages.pandoc-citeproc
+    # haskellPackages.pandoc-citeproc
     #haskellPackages.pandoc-crossref
     #haskellPackages.pandoc-csv2table
-    stack
     dbus
     busybox
     cryptsetup
@@ -326,8 +318,8 @@
     eclipses.eclipse-scala-sdk
     eclipses.eclipse-sdk
     sshfs-fuse
-    steam
-    steam-run
+    # steam
+    # steam-run
     #krohnkite
     xorg.libX11
     xorg.libXext
@@ -379,7 +371,8 @@
   #   uid = 1000;
   # };
 
-  users.defaultUserShell = pkgs.zsh;
+  # users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
   #users.users.geier =
   users.extraUsers.geier =
     {
@@ -464,12 +457,12 @@
     kmscon = {
       enable = false; # disabled - as login with sway
       extraConfig = ''
-    	xkb-layout=us,de
+        xkb-layout=us,de
           xkb-variant=dvorak,
           xkb-options=grp:switch,grp:menu_toggle
           xkb-repeat-delay=150
           xkb-repeat-rate=50
-    	'';
+        '';
       hwRender = true;
     };
 
@@ -562,8 +555,8 @@
       xkbVariant = "dvorak,";
       xkbOptions = "grp:switch,grp:menu_toggle";
 
-      windowManager.i3.enable = true;
-      windowManager.i3.package = pkgs.i3-gaps;
+      # windowManager.i3.enable = true;
+      # windowManager.i3.package = pkgs.i3-gaps;
       #windowManager.sway.enable = true;
       #windowManager.waycooler.enable = true;
 
@@ -661,7 +654,7 @@
       ttf_bitstream_vera
       terminus_font
       terminus_font_ttf
-      siji	# for i3blocks
+      siji  # for i3blocks
       symbola
       font-awesome-ttf
       libertine
@@ -708,19 +701,23 @@
     };
   };
 
-  programs.sway = {
-    enable = true;
-  };
+  # programs.sway = {
+  #   enable = true;
+  # };
   programs.light = {
     enable = true;
   };
 
-  programs.zsh = {
-    enable = true;
-    #enableAutosuggestions = true;
-    autosuggestions.enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
+  # programs.zsh = {
+  #   enable = true;
+  #   #enableAutosuggestions = true;
+  #   autosuggestions.enable = true;
+  #   enableCompletion = true;
+  #   syntaxHighlighting.enable = true;
+  # };
+
+  programs.fish = {
+      enable = true;
   };
 
   programs.gnupg.agent = {
