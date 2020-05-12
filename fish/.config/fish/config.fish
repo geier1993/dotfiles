@@ -6,19 +6,19 @@ if not functions -q fisher
     fish -c fisher
 end
 
-set PYTHONPATH (python -c "import site; print(site.USER_SITE)"):$PYTHONPATH
-set TERMINAL urxvtc
-set TERM rxvt
-set EDITOR skk
-set VISUAL skk
-set PAGER less
-set GOPATH ~/go
-set GEM_HOME (ruby -e 'print Gem.user_dir')
-set npm_config_prefix ~/.node_modules
+set -x PYTHONPATH (python -c "import site; print(site.USER_SITE)"):$PYTHONPATH
+set -x TERMINAL urxvtc
+set -x TERM rxvt
+set -x EDITOR skk
+set -x VISUAL skk
+set -x PAGER less
+set -x GOPATH ~/go
+set -x GEM_HOME (ruby -e 'print Gem.user_dir')
+set -x npm_config_prefix ~/.node_modules
 
-set PKG_CONFIG_PATH $PKG_CONFIG_PATH $HOME/.local/lib/pkgconfig
-set PATH $PATH $GOPATH/bin $HOME/.local/bin $HOME/.cabal/bin $HOME/misc/dotfiles/bin $HOME/.gem/ruby/2.5.0/bin $HOME/.node_modules/bin $HOME/.cargo/bin $PATH
-set LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib $HOME/.local/lib $HOME/.nix-profile/lib
+set -x PKG_CONFIG_PATH $PKG_CONFIG_PATH $HOME/.local/lib/pkgconfig
+set -x PATH $PATH $GOPATH/bin $HOME/.local/bin $HOME/.cabal/bin $HOME/misc/dotfiles/bin $HOME/.gem/ruby/2.5.0/bin $HOME/.node_modules/bin $HOME/.cargo/bin $PATH
+set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib $HOME/.local/lib $HOME/.nix-profile/lib
 
 
 if test -z $KAKSESSION
