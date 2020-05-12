@@ -22,7 +22,7 @@ set LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib $HOME/.local/lib $HOME/.nix-
 
 
 if test -z $KAKSESSION
-    if not test -z $TMUX 
+    if not test -z $TMUX
       set KAKSESSION (tmux display-message -p "#{session_group}")
     end
 end
@@ -44,19 +44,20 @@ end
 
 function onLinux
     function withPython
-        if test -f ~/.venv/bin/activate 
+        if test -f ~/.venv/bin/activate
           . ~/.venv/bin/activate.fish
         end
     end
-    
+
     function ls
         command ls --color=auto $argv
     end
 end
 
-function onMac 
-    # Source nix...
-     . $HOME/.nix-profile/etc/profile.d/nix.sh
+function onMac
+    # Source nix..
+     # Nix is now handled by fisher add lilyball/nix-env.fish
+     # . $HOME/.nix-profile/etc/profile.d/nix.sh
      alias codium=(nix-locate VSCodium.app/Contents/Resources/app/bin/code | awk '{print $NF}')
     # commands for OS X go here
     function withPython
@@ -64,13 +65,13 @@ function onMac
           . ~/pythonGisEnv/bin/activate.fish
         end
     end
-    
+
     function ls
         command grc --colour=auto ls $argv
     end
 end
 
-function onOther 
+function onOther
 end
 
 switch (uname)

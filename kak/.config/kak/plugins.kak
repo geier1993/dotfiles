@@ -142,7 +142,7 @@ if %[ -n "${PATH##*termux*}" ] %{
         }
         hook global WinSetOption filetype=python %{
             #set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
-            set-option global lsp_server_configuration pyls.plugins.pydocstyle.enabled=true
+            # set-option global lsp_server_configuration pyls.plugins.pydocstyle.enabled=true
             set-option global lsp_server_configuration pyls.plugins.pyls_mypy.enabled=true
             set-option global lsp_server_configuration pyls.plugins.pyls_mypy.live_mode=true
         }
