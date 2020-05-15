@@ -248,12 +248,9 @@ plug "andreyorst/kaktree" domain gitlab.com defer kaktree %{
     if %[ -n "${PATH##*termux*}" ] %{
         set-option global kaktree_double_click_duration '0.5'
         set-option global kaktree_indentation 1
-        # set-option global kaktree_dir_icon_open  '▾ 🗁 '
-        # set-option global kaktree_dir_icon_close '▸ 🗀 '
-        # set-option global kaktree_file_icon      '⠀⠀🖺'
-        set-option global kaktree_dir_icon_open  ''
-        set-option global kaktree_dir_icon_close ''
-        set-option global kaktree_file_icon      ''
+        set-option global kaktree_dir_icon_open  '▾ 🗁 '
+        set-option global kaktree_dir_icon_close '▸ 🗀 '
+        set-option global kaktree_file_icon      '⠀⠀🖺'
     } else %{
         set-option global kaktree_split vertical
         set-option global kaktree_size 30%
@@ -281,3 +278,9 @@ plug "listentolist/kakoune-table" domain "gitlab.com" config %{
     map global user T ": enter-user-mode -lock table<ret>" -docstring "table (lock)"
 }
 
+plug 'delapouite/kakoune-buffers' %{
+    hook global WinDisplay .* info-buffers
+
+    map global user b ':enter-buffers-mode<ret>'              -docstring 'buffers…'
+    map global user B ':enter-user-mode -lock buffers<ret>'   -docstring 'buffers (lock)…'
+}
