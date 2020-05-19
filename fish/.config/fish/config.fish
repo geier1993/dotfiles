@@ -23,7 +23,7 @@ set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib $HOME/.local/lib $HOME/.n
 
 if test -z $KAKSESSION
     if not test -z $TMUX
-      set KAKSESSION (tmux display-message -p "#{session_group}")
+      set -x KAKSESSION (tmux display-message -p "#{session_group}")
     end
 end
 
