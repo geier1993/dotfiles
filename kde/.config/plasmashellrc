@@ -1,0 +1,61 @@
+[Containments][2][General]
+AppletOrder=3;4;5;6;8
+
+[Containments][7][General]
+extraItems=org.kde.plasma.printmanager,org.kde.plasma.devicenotifier,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.clipboard,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement
+knownItems=org.kde.plasma.printmanager,org.kde.plasma.devicenotifier,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.clipboard,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.bluetooth,org.kde.plasma.networkmanagement
+
+[DownloadDialog Settings]
+Height 1080=494
+Width 1920=700
+
+[PlasmaRunnerManager]
+LaunchCounts=1 services_kitty.desktop,1 services_firefox.desktop
+pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
+
+[PlasmaTransientsConfig]
+PreloadWeight=18
+
+[PlasmaViews][Panel 2][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 2505][Horizontal1920]
+thickness=32
+
+[PlasmaViews][Panel 2536][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 2553][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 2553][Horizontal1024]
+thickness=30
+
+[PlasmaViews][Panel 2553][Horizontal1920]
+thickness=32
+
+[PlasmaViews][Panel 2575]
+alignment=132
+
+[PlasmaViews][Panel 2575][Defaults]
+maxLength=1751
+minLength=1653
+offset=0
+thickness=24
+
+[PlasmaViews][Panel 2575][Horizontal1920]
+alignment=1
+maxLength=1751
+minLength=1653
+panelVisibility=0
+thickness=24
+
+[ScreenConnectors]
+0=eDP1
+1=HDMI-2
+2=HDMI2
+3=HDMI3
+4=:0.0
+
+[Updates]
+performed=/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js

@@ -106,7 +106,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=127,140,141
 
 [General]
-ColorScheme=Breeze Dark
+ColorScheme=BreezeDark
 Name=Breeze Dark
 XftHintStyle=
 dbfile=/home/geier/.mozilla/firefox/q9betmwx.default-1462251222157-1547631973358/places.sqlite
@@ -118,12 +118,12 @@ smallestReadableFont=Sans Serif,8,-1,5,50,0,0,0,0,0
 toolBarFont=Sans Serif,10,-1,5,50,0,0,0,0,0
 
 [Icons]
-Theme=breeze-dark
+Theme=candy-icons
 
 [KDE]
-LookAndFeelPackage=org.kde.breezedark.desktop
+LookAndFeelPackage=Sweet
 contrast=4
-widgetStyle=Breeze
+widgetStyle=kvantum
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -135,6 +135,7 @@ PathCombo Completionmode=5
 Show Bookmarks=false
 Show Full Path=false
 Show Inline Previews=true
+Show Preview=false
 Show Speedbar=true
 Show hidden files=false
 Sort by=Name

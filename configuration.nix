@@ -8,52 +8,17 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      #(builtins.fetchTarball {
-      #  sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
-      #  url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
-      #})
     ];
 
   nixpkgs.config = {
     allowUnfree = true;
     #allowBroken = true;
-    #permittedInsecurePackages = [ "webkitgtk-2.4.11" ];
     firefox = {
       enablePepperFlash = true;
-      #enableAdobeFlash = true;
-      #enableGTK3 = true; # recompilation required :(
-      # ffmpegSupport = false;
-      # jre = true;
-      # enableMPlayer = true; # will use MPV instead, see: https://addons.mozilla.org/en-US/firefox/addon/watch-with-mpv/
     };
-    #chromium = {
-    # enablePepperFlash = true;
-    # enablePepperPDF = true;
-    # enableAdobeFlash = true; # for Chromium
-    # enableWideVine = true;
-    # hiDPISupport = true; # recompilation required :(
-      # jre = true;
-    #  icedtea = true;
-    #};
 
     # Explicit pulseaudio support in applications
     pulseaudio = true;
-
-    packageOverrides = pkgs:
-      {
-        #sway = pkgs.sway.overrideAttrs (oldAttrs: { buildInputs = oldAttrs.buildInputs ++ [pkgs.gdk_pixbuf];});
-        #polybar = pkgs.polybar.overrideAttrs (oldAttrs: { i3Support = true; jsoncpp =true; });
-        umlet = pkgs.umlet.override {
-          jre = pkgs.oraclejre8;
-          nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-            inherit pkgs;
-          };
-          nur_nixify = import (builtins.fetchTarball "https://github.com/kalbasit/nur-packages/archive/master.tar.gz") {
-            inherit pkgs;
-          };
-	};
-      };
-
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -83,25 +48,31 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    nox
     ntfs3g  # to mount windows
     cifs-utils
     nfs-utils
+    sshfs-fuse
+    exfat
+    parted
+    gpart
+    gparted
+    hdf5
+    nox
     nix-index # contains nix-locate
-    glibcLocales
-    #glibc = { locales = true; };
-    xorg.xf86inputsynaptics # xf86-input-synaptics
-    #xorg.xf86videointel # xf86-video-intel
-    xorg.xf86inputevdev # xf86-input-evdev
-    xorg.xf86inputkeyboard
-    xorg.xf86inputlibinput
-    #libinput
-    xorg.xrdb
-    xorg.xinit
-    xorg.xorgserver
-    xorg.setxkbmap
-    xorg.xrandr
-    xorg.xauth
+    # glibcLocales
+    # #glibc = { locales = true; };
+    # xorg.xf86inputsynaptics # xf86-input-synaptics
+    # #xorg.xf86videointel # xf86-video-intel
+    # xorg.xf86inputevdev # xf86-input-evdev
+    # xorg.xf86inputkeyboard
+    # xorg.xf86inputlibinput
+    # #libinput
+    # xorg.xrdb
+    # xorg.xinit
+    # xorg.xorgserver
+    # xorg.setxkbmap
+    # xorg.xrandr
+    # xorg.xauth
     gnumake
     automake
     autoconf
@@ -123,7 +94,7 @@
     subversion
     git-lfs
     stow
-    hdparm
+    # hdparm
     acpi
     acpid
     acpitool
@@ -146,8 +117,8 @@
     # i3status
     # i3blocks-gaps
     # i3blocks
-    wmctrl # required for i3+plasma
-    scrot # screenshot
+    # wmctrl # required for i3+plasma
+    # scrot # screenshot
     spectacle # KDE screenshot
     feh
     #poppler
@@ -267,18 +238,6 @@
     inkscape
     i7z
     htop
-    # cups
-    # cups-filters
-    # hplip
-    # gutenprint
-    # gutenprintBin # cups_gutenprint_binary
-    # foomatic-filters
-    # cups-bjnp
-    # cups-dymo
-    parted
-    gpart
-    gparted
-    hdf5
     ncurses
     gnupg pinentry
     #gpicview
@@ -300,16 +259,13 @@
     cmake
     chromium
     #linuxPackages.cpupower
-    cpufrequtils
+    # cpufrequtils
     boost
     mkpasswd
     meson
     cairo
-    #kmscon
-    #libtsm
     conky
     dropbox
-    exfat
     #google-cloud-sdk
     jdk
     jre
@@ -317,17 +273,16 @@
     #eclipses.eclipse-java
     eclipses.eclipse-scala-sdk
     eclipses.eclipse-sdk
-    sshfs-fuse
     # steam
     # steam-run
     #krohnkite
-    xorg.libX11
-    xorg.libXext
+    # xorg.libX11
+    # xorg.libXext
     lua
     pdfgrep
     perl
     spotify
-    xlibsWrapper
+    # xlibsWrapper
     #wine
     #winetricks
     #protontricks
@@ -493,8 +448,8 @@
     tor = {
       enable = true;
       client = {
-      	enable = true;
-      	privoxy.enable = true;
+        enable = true;
+        privoxy.enable = true;
       };
       tsocks.enable = true;
     };
@@ -548,17 +503,12 @@
               xorg.xauth
           ];
 
-      libinput.enable = true;
+      # libinput.enable = true;
       videoDrivers = ["intel" "mesa-noglu"];
 
       layout = "us,de";
       xkbVariant = "dvorak,";
       xkbOptions = "grp:switch,grp:menu_toggle";
-
-      # windowManager.i3.enable = true;
-      # windowManager.i3.package = pkgs.i3-gaps;
-      #windowManager.sway.enable = true;
-      #windowManager.waycooler.enable = true;
 
       inputClassSections = [''
               Identifier "touchpad"
@@ -579,26 +529,21 @@
                   #Option "FingerLow" "30"
                   #Option "FingerHigh" "50"
                   #Option "MaxTapTime" "125"
-  		''
-  		''
+        ''
+        ''
           Identifier "keyboard"
           MatchIsKeyboard "yes"
           Option "XkbLayout" "us,de"
           Option "XkbVariant" "dvorak,"
           Option "XkbOptions" "grp:switch,grp:menu_toggle"
-  	Option "AutoRepeat" "150 50"
-  		''];
+    Option "AutoRepeat" "150 50"
+        ''];
       # Enable the KDE Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
       displayManager = {
         sddm.enable = true;
       };
       desktopManager = {
         plasma5.enable = true;
-        #default = "plasma5";
-        #gnome3.enable = true;
-        #default = "none";
       };
 
     };
@@ -608,8 +553,8 @@
     #brightnessctl.enable = true;
     opengl = {
       enable = true;
-      extraPackages = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo]; # mesa_drivers
-      extraPackages32 = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo pkgsi686Linux.libva ]; # mesa_drivers
+      # extraPackages = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo]; # mesa_drivers
+      # extraPackages32 = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo pkgsi686Linux.libva ]; # mesa_drivers
       driSupport = true;
       driSupport32Bit = true;
     };
@@ -654,13 +599,9 @@
       ttf_bitstream_vera
       terminus_font
       terminus_font_ttf
-      siji  # for i3blocks
       symbola
       font-awesome-ttf
       libertine
-      # code2000
-      # code2001
-      # code2002
       ubuntu_font_family
       liberation_ttf
       inconsolata
@@ -688,12 +629,12 @@
     ];
     fontconfig = {
       defaultFonts = {
-        # monospace = [ "Source Code Pro" ];
-        # sansSerif = [ "Source Sans Pro" ];
-        # serif     = [ "Source Serif Pro" ];
-         monospace = [ "DejaVu Sans Serif" ];
-         sansSerif = [ "DejaVu Sans Serif" ];
-         serif     = [ "DejaVu Sans Serif" ];
+         # monospace = [ "DejaVu Sans Serif" ];
+         # sansSerif = [ "DejaVu Sans Serif" ];
+         # serif     = [ "DejaVu Sans Serif" ];
+         monospace = [ "Fira Mono" ];
+         sansSerif = [ "Fira Mono" ];
+         serif     = [ "Fira Mono" ];
       };
       penultimate = {
         enable = true;
@@ -701,9 +642,6 @@
     };
   };
 
-  # programs.sway = {
-  #   enable = true;
-  # };
   programs.light = {
     enable = true;
   };
@@ -730,36 +668,9 @@
 
   powerManagement = {
     enable = true;
-    #cpuFreqGovernor = "ondemand"; #"powersave"; tlp does it
-    #powerDownCommands = "${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda";
-    #powerUpCommands = "${pkgs.hdparm}/sbin/hdparm -B 255 /dev/sda";
-    #scsiLinkPolicy = "medium_power"; # tlp does it
-      # "min_power"
-      # "max_performance"
-      # "medium_power"
-      # "med_power_with_dipm"
   };
 
-
-  #services.logind.extraConfig = "HandleLidSwitch=ignore";
-  #security.pam
   security.apparmor.enable = true;
-
-
-
-  # VS Liveshare: https://github.com/msteen/nixos-vsliveshare
-  # # imports = [
-  # #   (builtins.fetchTarball {
-  # #     sha256 = "1qmq5zwd4qdxdxh4zxc7yr7qwajgnsjdw2npw0rfkyahmrqw3j02";
-  # #     url = "https://github.com/msteen/nixos-vsliveshare/archive/86624fe317c24df90e9451dd5741220c98d2249d.tar.gz";
-  # #   })
-  # # ];
-  #services.vsliveshare = {
-  #  enable = true;
-  #  enableWritableWorkaround = true;
-  #  enableDiagnosticsWorkaround = true;
-  #  extensionsDir = "/home/geier/.vscode/extensions";
-  #};
 
   location = {
     latitude = 49.398750;

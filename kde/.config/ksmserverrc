@@ -1,0 +1,27 @@
+[General]
+screenCount=1
+
+[LegacySession: saved at previous logout]
+count=0
+
+[Session: saved at previous logout]
+clientId1=10e3696d6d000158576993500000022400000
+clientId2=10e3696d6d000158965647900000026450009
+clientId3=10e3696d6d000158965648200000026450010
+count=3
+discardCommand1[$e]=rm,$HOME/.config/session/kwin_10e3696d6d000158576993500000022400000_1589738236_120420
+program1=/run/current-system/sw/bin/kwin_x11
+program2=/home/geier/.dropbox-dist/dropbox-lnx.x86_64-97.4.467/dropbox
+program3=firefox
+restartCommand1=/run/current-system/sw/bin/kwin_x11,-session,10e3696d6d000158576993500000022400000_1589738236_120420,-name,kwin_x11
+restartCommand2=/home/geier/.dropbox-dist/dropbox-lnx.x86_64-97.4.467/dropbox,-session,10e3696d6d000158965647900000026450009_1589738235_939136
+restartCommand3=firefox,--sm-client-id,10e3696d6d000158965648200000026450010
+restartStyleHint1=0
+restartStyleHint2=0
+restartStyleHint3=0
+userId1=geier
+userId2=geier
+userId3=geier
+wasWm1=true
+wasWm2=false
+wasWm3=false
