@@ -3,6 +3,8 @@ Height 1080=494
 Width 1920=700
 
 [KFileDialog Settings]
+Recent Files[$e]=krohnkite-0.7.kwinscript,file:$HOME/Downloads/krohnkite-0.7.kwinscript
+Recent URLs[$e]=file:$HOME/Downloads/
 detailViewIconSize=0
 
 [MainWindow]

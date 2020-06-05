@@ -10,11 +10,11 @@ Height 1080=494
 Width 1920=700
 
 [PlasmaRunnerManager]
-LaunchCounts=1 services_kitty.desktop,1 services_firefox.desktop
+LaunchCounts=1 services_org.kde.konsole.desktop
 pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
 
 [PlasmaTransientsConfig]
-PreloadWeight=18
+PreloadWeight=0
 
 [PlasmaViews][Panel 2][Horizontal1920]
 thickness=36
@@ -38,15 +38,16 @@ thickness=32
 alignment=132
 
 [PlasmaViews][Panel 2575][Defaults]
-maxLength=1751
-minLength=1653
+maxLength=1920
+minLength=1920
 offset=0
 thickness=24
 
 [PlasmaViews][Panel 2575][Horizontal1920]
 alignment=1
-maxLength=1751
-minLength=1653
+maxLength=1920
+minLength=1920
+offset=0
 panelVisibility=0
 thickness=24
 

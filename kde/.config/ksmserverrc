@@ -5,23 +5,24 @@ screenCount=1
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e3696d6d000158576993500000022400000
-clientId2=10e3696d6d000158965647900000026450009
-clientId3=10e3696d6d000158965648200000026450010
-count=3
-discardCommand1[$e]=rm,$HOME/.config/session/kwin_10e3696d6d000158576993500000022400000_1589738236_120420
+clientId1=10e3696d6d000159126431500000019480000
+clientId2=10e3696d6d000159126437900000019480009
+clientId3[$d]
+count=2
+discardCommand1[$e]=rm,$HOME/.config/session/kwin_10e3696d6d000159126431500000019480000_1591267811_449112
+discardCommand2[$e]=rm,$HOME/.config/session/konsole_10e3696d6d000159126437900000019480009_1591267811_437429
 program1=/run/current-system/sw/bin/kwin_x11
-program2=/home/geier/.dropbox-dist/dropbox-lnx.x86_64-97.4.467/dropbox
-program3=firefox
-restartCommand1=/run/current-system/sw/bin/kwin_x11,-session,10e3696d6d000158576993500000022400000_1589738236_120420,-name,kwin_x11
-restartCommand2=/home/geier/.dropbox-dist/dropbox-lnx.x86_64-97.4.467/dropbox,-session,10e3696d6d000158965647900000026450009_1589738235_939136
-restartCommand3=firefox,--sm-client-id,10e3696d6d000158965648200000026450010
+program2=/run/current-system/sw/bin/konsole
+program3[$d]
+restartCommand1=/run/current-system/sw/bin/kwin_x11,-session,10e3696d6d000159126431500000019480000_1591267811_449112,-name,kwin_x11
+restartCommand2=/run/current-system/sw/bin/konsole,-session,10e3696d6d000159126437900000019480009_1591267811_437429,-name,konsole
+restartCommand3[$d]
 restartStyleHint1=0
 restartStyleHint2=0
-restartStyleHint3=0
+restartStyleHint3[$d]
 userId1=geier
 userId2=geier
-userId3=geier
+userId3[$d]
 wasWm1=true
 wasWm2=false
-wasWm3=false
+wasWm3[$d]

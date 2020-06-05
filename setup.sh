@@ -50,8 +50,8 @@ case `uname` in
   ;;
   Linux)
     # commands for Linux go here
-    stow -t $TARGET sway
-    stow -t $TARGET i3
+    # stow -t $TARGET sway
+    # stow -t $TARGET i3
   ;;
   FreeBSD)
     # commands for FreeBSD go here
