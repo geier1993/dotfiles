@@ -1,69 +1,69 @@
 updateInfoAdded=true
 
 [disable_kmix.upd]
-ctime=1591254435
+ctime=1591548004
 done=PlasmaVolume_DisableKMixAutostart
 mtime=1
 
 [filepicker.upd]
-ctime=1591254414
+ctime=1591547983
 done=filepicker-remove-old-previews-entry
 mtime=1
 
 [fonts_akregator.upd]
-ctime=1591254434
+ctime=1591548017
 done=Plasma_Fonts_Akregator
 mtime=1
 
 [fonts_global.upd]
-ctime=1591254434
+ctime=1591548017
 done=Fonts_Global
 mtime=1
 
 [fonts_global_toolbar.upd]
-ctime=1591254434
+ctime=1591548017
 done=Fonts_Global_Toolbar
 mtime=1
 
 [fonts_kate.upd]
-ctime=1591254434
+ctime=1591548017
 done=Plasma_Fonts_Kate
 mtime=1
 
 [gtkbreeze5.5.upd]
-ctime=1591254429
+ctime=1591548017
 mtime=1
 
 [kde4breeze.upd]
-ctime=1591254428
+ctime=1591548009
 mtime=1
 
 [krdb_libpathwipe.upd]
-ctime=1591254447
+ctime=1591548028
 mtime=1
 
 [krunnerglobalshortcuts.upd]
-ctime=1591254444
+ctime=1591548020
 mtime=1
 
 [krunnerplugins.upd]
-ctime=1591254444
+ctime=1591548020
 mtime=1
 
 [kscreenlocker.upd]
-ctime=1591254432
+ctime=1591548008
 done=0.1-autolock
 mtime=1
 
 [kwin.upd]
-ctime=1591254434
+ctime=1591548018
 done=replace-scalein-with-scale,port-minimizeanimation-effect-to-js,port-scale-effect-to-js,port-dimscreen-effect-to-js,auto-bordersize
 mtime=1
 
 [okular.upd]
-ctime=1591254442
+ctime=1591548001
 mtime=1
 
 [spectacle_shortcuts.upd]
-ctime=1591254436
+ctime=1591548010
 mtime=1

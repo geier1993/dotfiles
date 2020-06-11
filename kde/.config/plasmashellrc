@@ -51,12 +51,34 @@ offset=0
 panelVisibility=0
 thickness=24
 
+[PlasmaViews][Panel 2607][Defaults]
+thickness=36
+
+[PlasmaViews][Panel 2607][Horizontal1920]
+thickness=36
+
+[PlasmaViews][Panel 2624][Defaults]
+thickness=18
+
+[PlasmaViews][Panel 2624][Horizontal1920]
+thickness=18
+
+[PlasmaViews][Panel 2624][Vertical1080]
+thickness=36
+
+[PlasmaViews][Panel 2641][Defaults]
+thickness=24
+
+[PlasmaViews][Panel 2641][Horizontal1920]
+thickness=24
+
 [ScreenConnectors]
-0=eDP1
+0=HDMI3
 1=HDMI-2
 2=HDMI2
-3=HDMI3
+3=eDP1
 4=:0.0
+5=HDMI-0
 
 [Updates]
 performed=/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js,/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/move_desktop_layout_config.js

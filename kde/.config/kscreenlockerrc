@@ -5,4 +5,4 @@ update_info=kscreenlocker.upd:0.1-autolock
 Theme=Sweet
 
 [Greeter][Wallpaper][org.kde.image][General]
-Image=file:///nix/store/dhfgjvjijxbidhpc6rwk43w8qsbc9big-plasma-workspace-wallpapers-5.17.5/share/wallpapers/PastelHills/contents/images/1920x1080.jpg
+Image=file:///nix/store/j1dxdhrbnjjhyg4r4i3s30zfr1nfnqy3-plasma-workspace-wallpapers-5.17.5/share/wallpapers/PastelHills/contents/images/3200x2000.jpg

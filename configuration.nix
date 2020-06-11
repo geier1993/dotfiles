@@ -4,6 +4,15 @@
 
 { config, pkgs, ... }:
 
+# let
+#   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+#     export __NV_PRIME_RENDER_OFFLOAD=1
+#     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+#     export __GLX_VENDOR_LIBRARY_NAME=nvidia
+#     export __VK_LAYER_NV_optimus=NVIDIA_only
+#     exec -a "$0" "$@"
+#   '';
+# in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -24,6 +33,16 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # boot.kernelPatches = [ {
+  #    name = "thunderbolt";
+  #    patch = null;
+  #    extraConfig = ''
+  #      THUNDERBOLT y
+  #      HOTPLUG_PCI y
+  #      HOTPLUG_PCI_ACPI y
+  #    '';
+  # } ];
 
 
   # Select internationalisation properties.
@@ -48,6 +67,7 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
+    # nvidia-offload
     ntfs3g  # to mount windows
     cifs-utils
     nfs-utils
@@ -145,10 +165,10 @@
     #kak-lsp
     cargo
     editorconfig-core-c
-    # elmPackages.elm
-    # elmPackages.elm-test
-    # elmPackages.elm-format
-    # elmPackages.elm-language-server
+    elmPackages.elm
+    elmPackages.elm-test
+    elmPackages.elm-format
+    elmPackages.elm-language-server
     tmux
     dmenu
     rofi
@@ -264,18 +284,18 @@
     mkpasswd
     meson
     cairo
-    conky
+    # conky
     dropbox
     #google-cloud-sdk
     jdk
     jre
-    eclipses.eclipse-cpp
-    #eclipses.eclipse-java
-    eclipses.eclipse-scala-sdk
-    eclipses.eclipse-sdk
+    # eclipses.eclipse-cpp
+    # eclipses.eclipse-java
+    # eclipses.eclipse-scala-sdk
+    # eclipses.eclipse-sdk
     # steam
     # steam-run
-    #krohnkite
+    # krohnkite
     # xorg.libX11
     # xorg.libXext
     lua
@@ -383,11 +403,11 @@
 
   # List services that you want to enable:
   services = {
-    syncthing = {
-      user = "geier";
-      enable = true;
-      dataDir = "/home/geier/.syncthing";
-    };
+    # syncthing = {
+    #   user = "geier";
+    #   enable = true;
+    #   dataDir = "/home/geier/.syncthing";
+    # };
 
     #ntp.enable = true;
     timesyncd.enable = true;
@@ -504,7 +524,11 @@
           ];
 
       # libinput.enable = true;
-      videoDrivers = ["intel" "mesa-noglu"];
+      # videoDrivers = ["intel" "mesa-noglu" "modesetting" "nvidia"];
+      videoDrivers = ["intel" "modesetting" "nvidia"];
+      # videoDrivers = ["intel" "mesa-noglu" ];
+      # videoDrivers = ["modesetting" "nvidia"];
+      # videoDrivers = ["nvidia"];
 
       layout = "us,de";
       xkbVariant = "dvorak,";
@@ -557,6 +581,27 @@
       # extraPackages32 = with pkgs; [vaapiIntel vaapiVdpau libvdpau-va-gl glxinfo pkgsi686Linux.libva ]; # mesa_drivers
       driSupport = true;
       driSupport32Bit = true;
+      # extraPackages = with pkgs; [
+      #   vaapiIntel
+      #   vaapiVdpau
+      #   libvdpau-va-gl
+      #   intel-media-driver 
+      # ];
+    };
+
+    nvidia.modesetting.enable = true;
+    nvidia.prime = {
+      offload.enable = true;
+      # sync.enable = true;
+      # sync.allowExternalGpu = true;
+      # enable = true;
+      # allowExternalGpu = true;
+      # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+      intelBusId = "PCI:0:2:0";
+
+      # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+      nvidiaBusId = "PCI:6:0:0";
+      # sync.enable = false;
     };
 
     enableAllFirmware = true;
