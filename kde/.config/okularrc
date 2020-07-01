@@ -9,34 +9,35 @@ Recent URLs[$e]=file:$HOME/Documents/Horbach/Allianz Lebensversicherung/
 detailViewIconSize=0
 
 [MainWindow]
-Height 1080=487
+Height 1080=1056
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAA2AAAAHBAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAP6AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
-Width 1920=864
+Width 1920=1920
+Window-Maximized 1080x1920=true
 
 [Print Preview]
 Height 1080=500
 Width 1920=600
 
 [Recent Files]
-File1[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Beratungsprotokoll_20201217.pdf.pdf
-File10[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
-File2[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Versorgungsvorschlag.pdf
-File3[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_VVG-Infopaket.pdf
-File4[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-File5[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Hinterbliebenenerklärung.pdf.pdf
-File6[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
-File7[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Antrag_Deckungskapitalübertragung.pdf
-File8[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
-File9[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-Name1[$e]=Geier_Philipp_2020-01-21_115,00_Beratungsprotokoll_20201217.pdf.pdf
-Name10[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
-Name2[$e]=Geier_Philipp_2020-01-21_115,00_Versorgungsvorschlag.pdf
-Name3[$e]=Geier_Philipp_2020-01-21_115,00_VVG-Infopaket.pdf
-Name4[$e]=Geier_Philipp_2020-01-21_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-Name5[$e]=Geier_Philipp_2020-01-21_115,00_Hinterbliebenenerklärung.pdf.pdf
-Name6[$e]=Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
-Name7[$e]=Antrag_Deckungskapitalübertragung.pdf
-Name8[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
-Name9[$e]=Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+File1[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_VVG-Infopaket.pdf
+File10[$e]=$HOME/Documents/ProjectTogether/direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
+File2[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+File3[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Hinterbliebenenerklärung.pdf.pdf
+File4[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
+File5[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Antrag_Deckungskapitalübertragung.pdf
+File6[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
+File7[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+File8[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
+File9[$e]=$HOME/Documents/Rechnungen/2020/Reisekosten/wochenticket_berlin_Invoice-20200623002816.pdf
+Name1[$e]=Geier_Philipp_2020-01-21_115,00_VVG-Infopaket.pdf
+Name10[$e]=direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
+Name2[$e]=Geier_Philipp_2020-01-21_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+Name3[$e]=Geier_Philipp_2020-01-21_115,00_Hinterbliebenenerklärung.pdf.pdf
+Name4[$e]=Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
+Name5[$e]=Antrag_Deckungskapitalübertragung.pdf
+Name6[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
+Name7[$e]=Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+Name8[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
+Name9[$e]=wochenticket_berlin_Invoice-20200623002816.pdf

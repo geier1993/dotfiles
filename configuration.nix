@@ -158,7 +158,7 @@
     # pamixer
     # ponymix
     # pasystray
-    # pavucontrol
+    pavucontrol
     # volnoti
     kakoune
     vscodium
@@ -189,6 +189,8 @@
     terminator termite
     kitty
     zathura
+    pdfgrep
+    pdftk
     okular
     # ghc
     # stack
@@ -299,7 +301,6 @@
     # xorg.libX11
     # xorg.libXext
     lua
-    pdfgrep
     perl
     spotify
     # xlibsWrapper
@@ -525,7 +526,8 @@
 
       # libinput.enable = true;
       # videoDrivers = ["intel" "mesa-noglu" "modesetting" "nvidia"];
-      videoDrivers = ["intel" "modesetting" "nvidia"];
+      # videoDrivers = ["intel" "modesetting" "nvidia"];
+      videoDrivers = ["intel" "nvidia"];
       # videoDrivers = ["intel" "mesa-noglu" ];
       # videoDrivers = ["modesetting" "nvidia"];
       # videoDrivers = ["nvidia"];
@@ -609,8 +611,21 @@
     pulseaudio = {
       enable = true;
       support32Bit = true;
-      systemWide = true;
+      # systemWide = true;
       package = pkgs.pulseaudioFull;
+      extraModules = [ pkgs.pulseaudio-modules-bt ];
+      extraConfig = "
+          load-module module-switch-on-connect
+      ";
+      # configFile = pkgs.writeText "default.pa" ''
+      #     load-module module-bluetooth-policy
+      #     load-module module-bluetooth-discover
+      #     ## module fails to load with 
+      #     ##   module-bluez5-device.c: Failed to get device path from module arguments
+      #     ##   module.c: Failed to load module "module-bluez5-device" (argument: ""): initialization failed.
+      #     # load-module module-bluez5-device
+      #     # load-module module-bluez5-discover
+      #   '';
     };
 
     sane = {
@@ -621,6 +636,13 @@
     bluetooth = {
       enable = true;
       powerOnBoot = false;
+      # powerOnBoot = true;
+      config = {
+        General = {
+            Disable = "Headset";
+            Enable = "Source,Sink,Media,Socket";
+        };
+      };
     };
 
     cpu.intel.updateMicrocode = true;

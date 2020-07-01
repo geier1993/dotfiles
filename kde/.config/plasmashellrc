@@ -13,9 +13,6 @@ Width 1920=700
 LaunchCounts=1 services_org.kde.konsole.desktop
 pluginWhiteList=desktopsessions,services,places,PowerDevil,calculator,unitconverter,shell,bookmarks,recentdocuments,locations,baloosearch
 
-[PlasmaTransientsConfig]
-PreloadWeight=0
-
 [PlasmaViews][Panel 2][Horizontal1920]
 thickness=36
 
@@ -73,10 +70,10 @@ thickness=24
 thickness=24
 
 [ScreenConnectors]
-0=HDMI3
+0=eDP1
 1=HDMI-2
 2=HDMI2
-3=eDP1
+3=HDMI3
 4=:0.0
 5=HDMI-0
 
