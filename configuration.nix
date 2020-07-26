@@ -111,6 +111,8 @@
     nix-serve
     nix-prefetch-git
     git
+    gitAndTools.diff-so-fancy
+    gitAndTools.gh
     subversion
     git-lfs
     stow
@@ -428,6 +430,7 @@
       ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chgrp input /sys/class/leds/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
+      ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
     '';
 
     kmscon = {
@@ -616,6 +619,7 @@
       extraModules = [ pkgs.pulseaudio-modules-bt ];
       extraConfig = "
           load-module module-switch-on-connect
+          load-module module-bluetooth-policy auto_switch=2
       ";
       # configFile = pkgs.writeText "default.pa" ''
       #     load-module module-bluetooth-policy

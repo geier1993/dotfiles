@@ -1,14 +1,17 @@
-[General]
-lastSaveAsFile=file:///home/geier/Downloads/Screenshot_20200416_151217.png
-lastSaveFile=file:///home/geier/Downloads/Screenshot_20200416_151217.png
+[$Version]
+update_info=spectacle_newConfig.upd:spectacle-new-config
 
 [GuiConfig]
-captureModeIndex=3
-cropRegion=290,221,1330,859
-lastUsedSaveMode=0
-window-position=892,24
+captureMode=5
+cropRegion=12,139,1885,935
+window-position=888,24
 
 [KFileDialog Settings]
 Recent Files[$e]=file:$HOME/Downloads/Screenshot_20200405_235049.png,file:$HOME/Downloads/Screenshot_20200416_151217.png,file:$HOME/Downloads/Screenshot_20200413_184652.png,file:$HOME/Downloads/Screenshot_20200413_184624.png,file:$HOME/Downloads/Screenshot_20200413_164850.png,file:$HOME/Downloads/Screenshot_20200411_210013.png,file:$HOME/Downloads/Screenshot_20200411_205034.png,file:$HOME/Downloads/Screenshot_20200411_200702.png,file:$HOME/Downloads/Screenshot_20200411_173712.png,file:$HOME/Downloads/Screenshot_20200411_105418.png,file:$HOME/Downloads/Screenshot_20200410_233305.png,file:$HOME/Downloads/Screenshot_20200410_233126.png,file:$HOME/Downloads/Screenshot_20200410_233107.png,file:$HOME/Downloads/Screenshot_20200409_145921.png
 Recent URLs[$e]=file:$HOME/Downloads/
 detailViewIconSize=0
+
+[Save]
+lastSaveAsLocation=file:///home/geier/Downloads/Screenshot_20200416_151217.png
+lastSaveLocation=file:///home/geier/Downloads/Screenshot_20200416_151217.png
+lastUsedSaveMode=0

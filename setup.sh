@@ -2,6 +2,7 @@
 
 TARGET=~/
 
+stow -t $TARGET bin
 stow -t $TARGET emacs
 stow -t $TARGET fish
 stow -t $TARGET zsh
