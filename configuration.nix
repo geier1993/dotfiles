@@ -254,6 +254,7 @@
     lm_sensors
     linuxHeaders
     libreoffice-fresh
+    catdoc
     hunspell
     aspell
     aspellDicts.de

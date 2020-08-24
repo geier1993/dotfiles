@@ -70,10 +70,10 @@ thickness=24
 thickness=24
 
 [ScreenConnectors]
-0=eDP1
+0=HDMI3
 1=HDMI-2
 2=HDMI2
-3=HDMI3
+3=eDP1
 4=:0.0
 5=HDMI-0
 

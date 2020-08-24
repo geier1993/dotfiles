@@ -84,7 +84,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2575][Applets][2579][Configuration]
-PreloadWeight=84
+PreloadWeight=100
 SystrayContainmentId=2580
 immutability=1
 
@@ -96,7 +96,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][2575][Applets][2581][Configuration]
-PreloadWeight=0
+PreloadWeight=15
 immutability=1
 
 [Containments][2575][Applets][2581][Configuration][Configuration]
@@ -114,7 +114,7 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][2575][Applets][2598][Configuration]
-PreloadWeight=0
+PreloadWeight=20
 
 [Containments][2575][Applets][2600]
 immutability=1
@@ -135,8 +135,8 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2575][Applets][2603][Configuration][General]
-groupingAppIdBlacklist=us.zoom.Zoom.desktop,,kitty.desktop,firefox.desktop,org.pwmt.zathura.desktop
-groupingLauncherUrlBlacklist=applications:kitty.desktop,file:///nix/store/1idw467wnkrhipvn96lldj6k43hi384h-thunderbird-68.9.0/bin/thunderbird,applications:org.pwmt.zathura.desktop,applications:firefox.desktop,applications:us.zoom.Zoom.desktop
+groupingAppIdBlacklist=firefox.desktop,org.pwmt.zathura.desktop,kitty.desktop,,us.zoom.Zoom.desktop
+groupingLauncherUrlBlacklist=applications:us.zoom.Zoom.desktop,applications:kitty.desktop,applications:org.pwmt.zathura.desktop,applications:firefox.desktop,file:///nix/store/1idw467wnkrhipvn96lldj6k43hi384h-thunderbird-68.9.0/bin/thunderbird
 highlightWindows=true
 middleClickAction=ToggleGrouping
 showOnlyCurrentScreen=true
@@ -172,7 +172,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][2580][Applets][2582][Configuration]
-PreloadWeight=72
+PreloadWeight=100
 
 [Containments][2580][Applets][2582][Configuration][ConfigDialog]
 DialogHeight=540
@@ -190,7 +190,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][2580][Applets][2584][Configuration]
-PreloadWeight=55
+PreloadWeight=63
 
 [Containments][2580][Applets][2585]
 immutability=1
@@ -225,21 +225,21 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][2580][Applets][2589][Configuration]
-PreloadWeight=11
+PreloadWeight=15
 
 [Containments][2580][Applets][2590]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2580][Applets][2590][Configuration]
-PreloadWeight=76
+PreloadWeight=91
 
 [Containments][2580][Applets][2661]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][2580][Applets][2661][Configuration]
-PreloadWeight=27
+PreloadWeight=0
 
 [Containments][2580][Configuration]
 PreloadWeight=0
@@ -303,7 +303,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2641][Applets][2645][Configuration]
-PreloadWeight=11
+PreloadWeight=100
 SystrayContainmentId=2646
 
 [Containments][2641][Applets][2647]
@@ -351,7 +351,7 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][2641][Applets][2660][Configuration]
-PreloadWeight=0
+PreloadWeight=5
 
 [Containments][2641][ConfigDialog]
 DialogHeight=84
@@ -377,7 +377,11 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][2646][Applets][2649][Configuration]
-PreloadWeight=0
+PreloadWeight=100
+
+[Containments][2646][Applets][2649][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][2646][Applets][2650]
 immutability=1
@@ -391,7 +395,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][2646][Applets][2651][Configuration]
-PreloadWeight=10
+PreloadWeight=5
 
 [Containments][2646][Applets][2652]
 immutability=1
@@ -433,14 +437,14 @@ immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2646][Applets][2657][Configuration]
-PreloadWeight=9
+PreloadWeight=69
 
 [Containments][2646][Applets][2662]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][2646][Applets][2662][Configuration]
-PreloadWeight=0
+PreloadWeight=19
 
 [Containments][2646][Configuration]
 PreloadWeight=0

@@ -9,3 +9,7 @@ State=AAAA/wAAAAD9AAAAAwAAAAAAAAC0AAAD+vwCAAAAAvsAAAAWAGYAbwBsAGQAZQByAHMARABvAG
 ToolBarsMovable=Disabled
 Width 1920=1920
 Window-Maximized 1080x1920=true
+
+[Open-with settings]
+CompletionMode=1
+History=fire,fir
