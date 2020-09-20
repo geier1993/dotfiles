@@ -8,13 +8,13 @@ then
     echo "Empty... Creating Session"
     # Clear in case of a dead session
     kak -clear
-    kak -d -s $KAKSESSION 
+    setsid kak -d -s $KAKSESSION &
   fi
 
   if [[ ! -z "$KAKPID" ]] && [[ ! -z `kak -l | grep "^${KAKSESSION} (dead)$"` ]];
   then
     echo "Dead session... kill and restart"
     kakkill
-    kak -d -s $KAKSESSION 
+    setsid kak -d -s $KAKSESSION  &
   fi
 fi

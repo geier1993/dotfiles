@@ -1,3 +1,6 @@
+[$Version]
+update_info=ksmserver_update_loginMode_value.upd:ksmserver_update_loginMode_value_default_enum
+
 [General]
 screenCount=1
 
@@ -5,17 +8,29 @@ screenCount=1
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e3696d6d000159669607500000022840006
-clientId2=10e3696d6d000159681305100000022840058
-count=2
-discardCommand2[$e]=rm,$HOME/.config/session/kwin_10e3696d6d000159681305100000022840058_1596831900_500974
-program1=pulseaudio
-program2=/nix/store/8y62ahim07lnn79q9b996bjwglh84vvq-kwin-5.17.5-bin/bin/.kwin_x11-wrapped
-restartCommand1=
-restartCommand2=/nix/store/8y62ahim07lnn79q9b996bjwglh84vvq-kwin-5.17.5-bin/bin/.kwin_x11-wrapped,-session,10e3696d6d000159681305100000022840058_1596831900_500974
+clientId1=10e3696d6d000159975389100000022180000
+clientId2=10e3696d6d000159975407100000022140001
+clientId3=10e3696d6d000159825361800000019060261
+clientId4=10e3696d6d000159981305600000022140140
+count=4
+discardCommand1[$e]=rm,$HOME/.config/session/kwin_10e3696d6d000159975389100000022180000_1599841513_694588
+program1=/run/current-system/sw/bin/kwin_x11
+program2=pulseaudio
+program3=thunderbird
+program4=/nix/store/fvz27av1bardsrwqcwan5srzcg00cypf-zoom-us-5.1.422789.0705/share/zoom-us/zoom
+restartCommand1=/run/current-system/sw/bin/kwin_x11,-session,10e3696d6d000159975389100000022180000_1599841513_694588,-name,kwin_x11
+restartCommand2=
+restartCommand3=thunderbird,--sm-client-id,10e3696d6d000159825361800000019060261
+restartCommand4=/nix/store/fvz27av1bardsrwqcwan5srzcg00cypf-zoom-us-5.1.422789.0705/share/zoom-us/zoom,-session,10e3696d6d000159981305600000022140140_1599841513_685743,-name,zoom
 restartStyleHint1=0
 restartStyleHint2=0
+restartStyleHint3=0
+restartStyleHint4=0
 userId1=geier
 userId2=geier
-wasWm1=false
+userId3=geier
+userId4=geier
+wasWm1=true
 wasWm2=false
+wasWm3=false
+wasWm4=false

@@ -175,6 +175,7 @@
     dmenu
     rofi
     firefox
+    chromium
     thunderbird
     #vivaldi
     #vimb
@@ -198,6 +199,7 @@
     # stack
     # cabal-install
     nodejs
+    nodePackages.typescript
     flow # static type checker
     direnv
     # bluez
@@ -226,6 +228,7 @@
     # vtk
     unzip
     zip
+    p7zip
     w3m
     ranger
     tree
@@ -282,7 +285,6 @@
     cryptsetup
     clamav
     cmake
-    chromium
     #linuxPackages.cpupower
     # cpufrequtils
     boost
@@ -306,6 +308,7 @@
     lua
     perl
     spotify
+    slack
     # xlibsWrapper
     #wine
     #winetricks
@@ -489,9 +492,9 @@
 
     tlp = {
         enable = true;
-        extraConfig = ''
-          DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
-        '';
+        # settings = ''
+        #   DEVICES_TO_DISABLE_ON_STARTUP="bluetooth"
+        # '';
     };
     upower.enable = true;
     udisks2.enable = true;
@@ -707,9 +710,6 @@
          monospace = [ "Fira Mono" ];
          sansSerif = [ "Fira Mono" ];
          serif     = [ "Fira Mono" ];
-      };
-      penultimate = {
-        enable = true;
       };
     };
   };

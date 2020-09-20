@@ -77,43 +77,43 @@ plug 'delapouite/kakoune-mirror' %{
 #     }
 # }
 
-plug "andreyorst/fzf.kak" domain gitlab.com config %{
-    map -docstring 'fzf mode' global normal '<c-p>' ': fzf-mode<ret>'
-} defer fzf %{
-    set-option global fzf_preview_width '65%'
-    set-option global fzf_project_use_tilda true
-    declare-option str-list fzf_exclude_files "*.o" "*.bin" "*.obj" ".*cleanfiles"
-    declare-option str-list fzf_exclude_dirs ".git" ".svn" "rtlrun*"
-    set-option global fzf_file_command %sh{
-        if [ -n "$(command -v fd)" ]; then
-            eval "set -- $kak_quoted_opt_fzf_exclude_files $kak_quoted_opt_fzf_exclude_dirs"
-            while [ $# -gt 0 ]; do
-                exclude="$exclude --exclude '$1'"
-                shift
-            done
-            cmd="fd . --no-ignore --type f --follow --hidden $exclude"
-        else
-            eval "set -- $kak_quoted_opt_fzf_exclude_files"
-            while [ $# -gt 0 ]; do
-                exclude="$exclude -name '$1' -o"
-                shift
-            done
-            eval "set -- $kak_quoted_opt_fzf_exclude_dirs"
-            while [ $# -gt 0 ]; do
-                exclude="$exclude -path '*/$1' -o"
-                shift
-            done
-            cmd="find . \( ${exclude% -o} \) -prune -o -type f -follow -print"
-        fi
-        echo "$cmd"
-    }
-    if %[ -n "$(command -v bat)" ] %{
-        set-option global fzf_highlight_command bat
-    }
-    if %[ -n "${kak_opt_grepcmd}" ] %{
-        set-option global fzf_sk_grep_command %{${kak_opt_grepcmd}}
-    }
-}
+# plug "andreyorst/fzf.kak" domain gitlab.com config %{
+#     map -docstring 'fzf mode' global normal '<c-p>' ': fzf-mode<ret>'
+# } defer fzf %{
+#     set-option global fzf_preview_width '65%'
+#     set-option global fzf_project_use_tilda true
+#     declare-option str-list fzf_exclude_files "*.o" "*.bin" "*.obj" ".*cleanfiles"
+#     declare-option str-list fzf_exclude_dirs ".git" ".svn" "rtlrun*"
+#     set-option global fzf_file_command %sh{
+#         if [ -n "$(command -v fd)" ]; then
+#             eval "set -- $kak_quoted_opt_fzf_exclude_files $kak_quoted_opt_fzf_exclude_dirs"
+#             while [ $# -gt 0 ]; do
+#                 exclude="$exclude --exclude '$1'"
+#                 shift
+#             done
+#             cmd="fd . --no-ignore --type f --follow --hidden $exclude"
+#         else
+#             eval "set -- $kak_quoted_opt_fzf_exclude_files"
+#             while [ $# -gt 0 ]; do
+#                 exclude="$exclude -name '$1' -o"
+#                 shift
+#             done
+#             eval "set -- $kak_quoted_opt_fzf_exclude_dirs"
+#             while [ $# -gt 0 ]; do
+#                 exclude="$exclude -path '*/$1' -o"
+#                 shift
+#             done
+#             cmd="find . \( ${exclude% -o} \) -prune -o -type f -follow -print"
+#         fi
+#         echo "$cmd"
+#     }
+#     if %[ -n "$(command -v bat)" ] %{
+#         set-option global fzf_highlight_command bat
+#     }
+#     if %[ -n "${kak_opt_grepcmd}" ] %{
+#         set-option global fzf_sk_grep_command %{${kak_opt_grepcmd}}
+#     }
+# }
 
 if %[ -n "${PATH##*termux*}" ] %{
     plug "ul/kak-lsp" do %{
@@ -164,7 +164,7 @@ if %[ -n "${PATH##*termux*}" ] %{
     }
 }
 
-plug "andreyorst/powerline.kak" domain gitlab.com defer powerline %{
+plug "jdugan6240/powerline.kak" defer powerline %{
     set-option global powerline_ignore_warnings true
     set-option global powerline_format 'git bufname langmap smarttab mode_info filetype client session line_column position'
     set-option global powerline_shorten_bufname 'short'
@@ -178,23 +178,29 @@ plug "andreyorst/powerline.kak" domain gitlab.com defer powerline %{
     powerline-start
 }
 
-plug "andreyorst/smarttab.kak" domain gitlab.com defer smarttab %{
-    set-option global softtabstop 4
-    set-option global smarttab_expandtab_mode_name   '⋅t⋅'
-    set-option global smarttab_noexpandtab_mode_name '→t→'
-    set-option global smarttab_smarttab_mode_name    '→t⋅'
-} config %{
-    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|python|elm|javascript|typescript|json) expandtab
-    hook global WinSetOption filetype=(makefile|gas) noexpandtab
-    hook global WinSetOption filetype=(c|cpp) smarttab
+# plug "andreyorst/smarttab.kak" domain gitlab.com defer smarttab %{
+#     set-option global softtabstop 4
+#     set-option global smarttab_expandtab_mode_name   '⋅t⋅'
+#     set-option global smarttab_noexpandtab_mode_name '→t→'
+#     set-option global smarttab_smarttab_mode_name    '→t⋅'
+# } config %{
+#     hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl|python|elm|javascript|typescript|json) expandtab
+#     hook global WinSetOption filetype=(makefile|gas) noexpandtab
+#     hook global WinSetOption filetype=(c|cpp) smarttab
+# }
+
+plug "alexherbo2/prelude.kak" %{
+    require-module prelude
 }
 
 plug "alexherbo2/auto-pairs.kak" %{
+    require-module auto-pairs
     hook global WinCreate .* auto-pairs-enable
 }
 
 plug "alexherbo2/surround.kak" %{
-    map global user 's' ': surround<ret>' -docstring "surround selection"
+    require-module surround
+    map global user 's' ': enter-user-mode surround<ret>' -docstring "surround selection"
     set-option global surround_begin auto-pairs-disable
     set-option global surround_end auto-pairs-enable
 }
@@ -203,28 +209,29 @@ plug "alexherbo2/replace.kak" config %{
     map global user r -docstring 'Replace mode' ':enter_replace_mode<ret>'
 }
 
-if %[ -n "${PATH##*termux*}" ] %{
-    plug "andreyorst/tagbar.kak" domain gitlab.com defer tagbar %{
-        set-option global tagbar_sort false
-        set-option global tagbar_size 40
-        set-option global tagbar_display_anon false
-        set-option global tagbar_powerline_format ""
-    } config %{
-        hook global WinSetOption filetype=tagbar %{
-            remove-highlighter buffer/numbers
-            remove-highlighter buffer/matching
-            remove-highlighter buffer/wrap
-            remove-highlighter buffer/show-whitespaces
-        }
-    }
-}
+# if %[ -n "${PATH##*termux*}" ] %{
+#     plug "andreyorst/tagbar.kak" domain gitlab.com defer tagbar %{
+#         set-option global tagbar_sort false
+#         set-option global tagbar_size 40
+#         set-option global tagbar_display_anon false
+#         set-option global tagbar_powerline_format ""
+#     } config %{
+#         hook global WinSetOption filetype=tagbar %{
+#             remove-highlighter buffer/numbers
+#             remove-highlighter buffer/matching
+#             remove-highlighter buffer/wrap
+#             remove-highlighter buffer/show-whitespaces
+#         }
+#     }
+# }
 
-plug "alexherbo2/word-select.kak" config %{
-    map global normal w     ': word-select-next-word<ret>'
-    map global normal <a-w> ': word-select-next-big-word<ret>'
-    map global normal b     ': word-select-previous-word<ret>'
-    map global normal <a-b> ': word-select-previous-big-word<ret>'
-}
+# plug "alexherbo2/word-select.kak" config %{
+#     require-module word-select
+#     map global normal w     ': word-select-next-word<ret>'
+#     map global normal <a-w> ': word-select-next-big-word<ret>'
+#     map global normal b     ': word-select-previous-word<ret>'
+#     map global normal <a-b> ': word-select-previous-big-word<ret>'
+# }
 
 plug "alexherbo2/split-object.kak" config %{
     map -docstring "split object" global normal '<a-I>' ': enter-user-mode split-object<ret>'
@@ -235,35 +242,35 @@ plug "screwtapello/kakoune-inc-dec" domain gitlab.com config %{
     map -docstring "increment selection" global normal '<C-a>' ': inc-dec-modify-numbers + %val{count}<ret>'
 }
 
-plug "andreyorst/langmap.kak" domain gitlab.com defer langmap %{
-    set-option global langmap %opt{langmap_ru_jcuken}
-    map -docstring "toggle layout (C-\)" global normal '' ':      toggle-langmap<ret>'
-    map -docstring "toggle layout (C-\)" global insert '' '<a-;>: toggle-langmap<ret>'
-    map -docstring "toggle layout (C-\)" global prompt '' '<a-;>: toggle-langmap prompt<ret>'
-}
+# plug "andreyorst/langmap.kak" domain gitlab.com defer langmap %{
+#     set-option global langmap %opt{langmap_ru_jcuken}
+#     map -docstring "toggle layout (C-\)" global normal '' ':      toggle-langmap<ret>'
+#     map -docstring "toggle layout (C-\)" global insert '' '<a-;>: toggle-langmap<ret>'
+#     map -docstring "toggle layout (C-\)" global prompt '' '<a-;>: toggle-langmap prompt<ret>'
+# }
 
-plug "andreyorst/kaktree" domain gitlab.com defer kaktree %{
-    map global user 'f' ": kaktree-toggle<ret>" -docstring "toggle filetree panel"
-    set-option global kaktree_show_help false
-    if %[ -n "${PATH##*termux*}" ] %{
-        set-option global kaktree_double_click_duration '0.5'
-        set-option global kaktree_indentation 1
-        set-option global kaktree_dir_icon_open  '▾ 🗁 '
-        set-option global kaktree_dir_icon_close '▸ 🗀 '
-        set-option global kaktree_file_icon      '⠀⠀🖺'
-    } else %{
-        set-option global kaktree_split vertical
-        set-option global kaktree_size 30%
-    }
-} config %{
-    hook global WinSetOption filetype=kaktree %{
-        remove-highlighter buffer/numbers
-        remove-highlighter buffer/matching
-        remove-highlighter buffer/wrap
-        remove-highlighter buffer/show-whitespaces
-    }
-    kaktree-enable
-}
+# plug "andreyorst/kaktree" domain gitlab.com defer kaktree %{
+#     map global user 'f' ": kaktree-toggle<ret>" -docstring "toggle filetree panel"
+#     set-option global kaktree_show_help false
+#     if %[ -n "${PATH##*termux*}" ] %{
+#         set-option global kaktree_double_click_duration '0.5'
+#         set-option global kaktree_indentation 1
+#         set-option global kaktree_dir_icon_open  '▾ 🗁 '
+#         set-option global kaktree_dir_icon_close '▸ 🗀 '
+#         set-option global kaktree_file_icon      '⠀⠀🖺'
+#     } else %{
+#         set-option global kaktree_split vertical
+#         set-option global kaktree_size 30%
+#     }
+# } config %{
+#     hook global WinSetOption filetype=kaktree %{
+#         remove-highlighter buffer/numbers
+#         remove-highlighter buffer/matching
+#         remove-highlighter buffer/wrap
+#         remove-highlighter buffer/show-whitespaces
+#     }
+#     kaktree-enable
+# }
 
 plug "listentolist/kakoune-table" domain "gitlab.com" config %{
     # suggested mappings
