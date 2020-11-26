@@ -5,7 +5,4 @@ update_info=okular.upd:sep_settings,okular.upd:annotation-toolbar,okular.upd:bui
 UseKTTSD=false
 
 [Main View]
-SplitterSizes=275,1558
-
-[PageView]
-MouseMode=TextSelect
+SplitterSizes=276,1643

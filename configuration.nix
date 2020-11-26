@@ -658,15 +658,15 @@
   systemd.user.services.pulseaudio.enable = true;
 
   virtualisation.docker.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  #virtualisation.virtualbox.host.enableExtensionPack = true;
-  #virtualisation.virtualbox.guest.enable = true;
-  users.extraGroups.vboxusers.members = [ "geier" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.guest.enable = true;
+  # users.extraGroups.vboxusers.members = [ "geier" ];
 
   fonts = {
     enableDefaultFonts = true;
     enableGhostscriptFonts = false;
-    enableFontDir = true;
+    fontDir.enable = true;
     fonts = with pkgs; [
       corefonts
       dejavu_fonts

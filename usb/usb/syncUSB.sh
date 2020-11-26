@@ -1,4 +1,5 @@
-set -e
+#!/bin/sh
+#set -e
 
 # rsync -rtuP ...
 # rsync -avW --delete-after ...
@@ -10,8 +11,6 @@ gpg --export-secret-keys Philipp@geier.me> /media/usb/philippgeier-secret-gpg.as
 rsync -avrP  --exclude-from 'exclude_sync.txt' /home/geier/Documents /media/usb/ 
 rsync -avrP  --exclude-from 'exclude_sync.txt' /home/geier/Pictures /media/usb/
 
-rsync -avrP --exclude-from 'exclude_sync.txt' /home/geier/.config /media/usb/
-
 rsync -avrP --exclude-from 'exclude_sync.txt' /home/geier/.gnupg /media/usb/
 rsync -avrP --exclude-from 'exclude_sync.txt' /home/geier/.ssh /media/usb/
 
@@ -19,3 +18,6 @@ rsync -avrP --exclude-from 'exclude_sync.txt' /home/geier/.ssh /media/usb/
 
 rsync -avrP --copy-links --exclude-from 'exclude_sync.txt' /home/geier/usb /media/usb/
 #rsync -avrP --exclude-from 'exclude_sync.txt' /home/geier/davis /media/usb/
+#
+rsync -avrP --exclude-from 'exclude_sync.txt' /home/geier/.config /media/usb/
+

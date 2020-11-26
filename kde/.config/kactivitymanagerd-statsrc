@@ -46,6 +46,12 @@ ordering=preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolp
 [Favorites-org.kde.plasma.kickoff.favorites.instance-2642-global]
 ordering=preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,ktp-contactlist.desktop,org.kde.kate.desktop,org.kde.discover.desktop
 
+[Favorites-org.kde.plasma.kickoff.favorites.instance-2667-6102bc9f-de33-4a40-a514-54e223ce7fa2]
+ordering=preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,ktp-contactlist.desktop,org.kde.kate.desktop,org.kde.discover.desktop
+
+[Favorites-org.kde.plasma.kickoff.favorites.instance-2667-global]
+ordering=preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,ktp-contactlist.desktop,org.kde.kate.desktop,org.kde.discover.desktop
+
 [Favorites-org.kde.plasma.kickoff.favorites.instance-3-6102bc9f-de33-4a40-a514-54e223ce7fa2]
 ordering=preferred://browser,kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,ktp-contactlist.desktop,org.kde.kate.desktop,org.kde.discover.desktop
 

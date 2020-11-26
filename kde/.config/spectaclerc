@@ -4,8 +4,7 @@ update_info=spectacle_newConfig.upd:spectacle-new-config
 [GuiConfig]
 captureDelay=1
 captureMode=5
-cropRegion=834,527,666,447
-window-position=651,209
+window-position=648,101
 
 [KFileDialog Settings]
 Recent Files[$e]=file:$HOME/Downloads/Screenshot_20200405_235049.png,file:$HOME/Downloads/Screenshot_20200416_151217.png,file:$HOME/Downloads/Screenshot_20200413_184652.png,file:$HOME/Downloads/Screenshot_20200413_184624.png,file:$HOME/Downloads/Screenshot_20200413_164850.png,file:$HOME/Downloads/Screenshot_20200411_210013.png,file:$HOME/Downloads/Screenshot_20200411_205034.png,file:$HOME/Downloads/Screenshot_20200411_200702.png,file:$HOME/Downloads/Screenshot_20200411_173712.png,file:$HOME/Downloads/Screenshot_20200411_105418.png,file:$HOME/Downloads/Screenshot_20200410_233305.png,file:$HOME/Downloads/Screenshot_20200410_233126.png,file:$HOME/Downloads/Screenshot_20200410_233107.png,file:$HOME/Downloads/Screenshot_20200409_145921.png

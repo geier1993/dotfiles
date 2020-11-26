@@ -66,14 +66,35 @@ thickness=36
 [PlasmaViews][Panel 2641][Defaults]
 thickness=24
 
+[PlasmaViews][Panel 2641][Horizontal1360]
+thickness=24
+
 [PlasmaViews][Panel 2641][Horizontal1920]
 thickness=24
 
+[PlasmaViews][Panel 2666][Defaults]
+thickness=44
+
+[PlasmaViews][Panel 2666][Horizontal1920]
+thickness=44
+
+[PlasmaViews][Panel 2684][Defaults]
+thickness=33
+
+[PlasmaViews][Panel 2684][Horizontal1920]
+thickness=33
+
+[PlasmaViews][Panel 2686][Defaults]
+thickness=22
+
+[PlasmaViews][Panel 2686][Horizontal1920]
+thickness=22
+
 [ScreenConnectors]
-0=HDMI3
+0=eDP1
 1=HDMI-2
 2=HDMI2
-3=eDP1
+3=HDMI3
 4=:0.0
 5=HDMI-0
 

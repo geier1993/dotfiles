@@ -11,7 +11,7 @@ detailViewIconSize=0
 [MainWindow]
 Height 1080=1056
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAB4AAAAPYAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAP6AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIBAAAETf////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 Width 1920=1920
 Window-Maximized 1080x1920=true
@@ -21,23 +21,23 @@ Height 1080=500
 Width 1920=600
 
 [Recent Files]
-File1[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_VVG-Infopaket.pdf
-File10[$e]=$HOME/Documents/ProjectTogether/direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
-File2[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-File3[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Hinterbliebenenerklärung.pdf.pdf
-File4[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
-File5[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Antrag_Deckungskapitalübertragung.pdf
-File6[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
-File7[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-File8[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
-File9[$e]=$HOME/Documents/Rechnungen/2020/Reisekosten/wochenticket_berlin_Invoice-20200623002816.pdf
-Name1[$e]=Geier_Philipp_2020-01-21_115,00_VVG-Infopaket.pdf
-Name10[$e]=direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
-Name2[$e]=Geier_Philipp_2020-01-21_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-Name3[$e]=Geier_Philipp_2020-01-21_115,00_Hinterbliebenenerklärung.pdf.pdf
-Name4[$e]=Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
-Name5[$e]=Antrag_Deckungskapitalübertragung.pdf
-Name6[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
-Name7[$e]=Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-Name8[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
-Name9[$e]=wochenticket_berlin_Invoice-20200623002816.pdf
+File1[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
+File10[$e]=$HOME/Documents/WingTsun/Waldbrunn/Formular/Schulungsvertrag.pdf
+File2[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Antrag_Deckungskapitalübertragung.pdf
+File3[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
+File4[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+File5[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
+File6[$e]=$HOME/Documents/Rechnungen/2020/Reisekosten/wochenticket_berlin_Invoice-20200623002816.pdf
+File7[$e]=$HOME/Documents/ProjectTogether/direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
+File8[$e]=$HOME/Documents/Buecher/mathe/CategoryTheory/Steve_Awodey_Category_Theory.pdf
+File9[$e]=$HOME/Documents/ProjectTogether/direktversicherung/Entgeldumwandlungsvereinbarung_Philipp_Geier.pdf
+Name1[$e]=Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
+Name10[$e]=Schulungsvertrag.pdf
+Name2[$e]=Antrag_Deckungskapitalübertragung.pdf
+Name3[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
+Name4[$e]=Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+Name5[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
+Name6[$e]=wochenticket_berlin_Invoice-20200623002816.pdf
+Name7[$e]=direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
+Name8[$e]=Steve_Awodey_Category_Theory.pdf
+Name9[$e]=Entgeldumwandlungsvereinbarung_Philipp_Geier.pdf
