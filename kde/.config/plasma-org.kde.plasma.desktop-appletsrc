@@ -1,5 +1,5 @@
 [ActionPlugins][0]
-MidButton;NoModifier=org.kde.paste
+MiddleButton;NoModifier=org.kde.paste
 RightButton;NoModifier=org.kde.contextmenu
 wheel:Vertical;NoModifier=org.kde.switchdesktop
 
@@ -41,8 +41,8 @@ plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
 [Containments][2574][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
+DialogHeight=1015
+DialogWidth=1920
 
 [Containments][2574][Configuration]
 PreloadWeight=0
@@ -53,7 +53,8 @@ ToolBoxButtonX=1448
 ToolBoxButtonY=24
 
 [Containments][2574][Wallpaper][org.kde.image][General]
-Image=file:///nix/store/3rhj3q1ihslhzmvrdzgwabfd5rf8cprv-breeze-qt5-5.18.5-bin/share/wallpapers/Next/contents/images/1920x1080.jpg
+Image=file:///nix/store/6c9zb2l3i68vq15jr5xb65vxrzazb39f-breeze-qt5-5.21.3-bin/share/wallpapers/Next/contents/images/1920x1080.png
+SlidePaths=/nix/store/ixc58dd5wny9dx864h6cd5lh7jfp52x2-breeze-qt5-5.20.5-bin/share/wallpapers,/run/current-system/sw/share/wallpapers
 
 [Containments][2575]
 activityId=
@@ -84,7 +85,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2575][Applets][2579][Configuration]
-PreloadWeight=84
+PreloadWeight=0
 SystrayContainmentId=2580
 immutability=1
 
@@ -135,8 +136,8 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2575][Applets][2603][Configuration][General]
-groupingAppIdBlacklist=org.pwmt.zathura.desktop,chromium-browser.desktop,us.zoom.Zoom.desktop,firefox.desktop,thunderbird.desktop,,kitty.desktop
-groupingLauncherUrlBlacklist=file:///nix/store/1idw467wnkrhipvn96lldj6k43hi384h-thunderbird-68.9.0/bin/thunderbird,applications:thunderbird.desktop,applications:org.pwmt.zathura.desktop,applications:chromium-browser.desktop,applications:kitty.desktop,applications:firefox.desktop,applications:us.zoom.Zoom.desktop
+groupingAppIdBlacklist=org.pwmt.zathura.desktop,chromium-browser.desktop,kitty.desktop,,thunderbird.desktop,us.zoom.Zoom.desktop,firefox.desktop
+groupingLauncherUrlBlacklist=applications:chromium-browser.desktop,applications:org.pwmt.zathura.desktop,applications:firefox.desktop,applications:us.zoom.Zoom.desktop,file:///nix/store/1idw467wnkrhipvn96lldj6k43hi384h-thunderbird-68.9.0/bin/thunderbird,applications:thunderbird.desktop,applications:kitty.desktop
 highlightWindows=true
 middleClickAction=ToggleGrouping
 showOnlyCurrentScreen=true
@@ -172,7 +173,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][2580][Applets][2582][Configuration]
-PreloadWeight=51
+PreloadWeight=0
 
 [Containments][2580][Applets][2582][Configuration][ConfigDialog]
 DialogHeight=540
@@ -190,7 +191,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][2580][Applets][2584][Configuration]
-PreloadWeight=29
+PreloadWeight=0
 
 [Containments][2580][Applets][2585]
 immutability=1
@@ -225,7 +226,7 @@ immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][2580][Applets][2589][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2580][Applets][2590]
 immutability=1
@@ -252,8 +253,8 @@ PreloadWeight=0
 PreloadWeight=0
 
 [Containments][2580][General]
-extraItems=org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.nightcolorcontrol
-knownItems=org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.nightcolorcontrol
+extraItems=org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.nightcolorcontrol,org.kde.plasma.keyboardlayout
+knownItems=org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.notifications,org.kde.plasma.mediacontroller,org.kde.plasma.battery,org.kde.plasma.printmanager,org.kde.plasma.networkmanagement,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.nightcolorcontrol,org.kde.plasma.keyboardlayout
 
 [Containments][2605]
 activityId=6102bc9f-de33-4a40-a514-54e223ce7fa2
@@ -287,7 +288,7 @@ DialogWidth=720
 PreloadWeight=0
 
 [Containments][2606][Wallpaper][org.kde.image][General]
-Image=file:///nix/store/49fln2dmvdw361n2mz114wrjsldcvqn4-breeze-qt5-5.18.5-bin/share/wallpapers/Next/contents/images/1920x1080.jpg
+Image=file:///nix/store/3rhj3q1ihslhzmvrdzgwabfd5rf8cprv-breeze-qt5-5.18.5-bin/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [Containments][2641]
 activityId=
@@ -343,6 +344,8 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2641][Applets][2658][Configuration][General]
+groupingAppIdBlacklist=thunderbird.desktop,chromium-browser.desktop,kitty.desktop
+groupingLauncherUrlBlacklist=applications:kitty.desktop,applications:chromium-browser.desktop,applications:thunderbird.desktop
 highlightWindows=true
 showOnlyCurrentScreen=true
 
@@ -402,7 +405,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][2646][Applets][2651][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2646][Applets][2652]
 immutability=1
@@ -464,8 +467,8 @@ PreloadWeight=0
 PreloadWeight=0
 
 [Containments][2646][General]
-extraItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.nightcolorcontrol
-knownItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.nightcolorcontrol
+extraItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.nightcolorcontrol,org.kde.plasma.keyboardlayout
+knownItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.nightcolorcontrol,org.kde.plasma.keyboardlayout
 
 [Containments][2665]
 activityId=6102bc9f-de33-4a40-a514-54e223ce7fa2
@@ -476,6 +479,10 @@ location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
 
+[Containments][2665][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
+
 [Containments][2665][Configuration]
 PreloadWeight=0
 
@@ -485,7 +492,8 @@ ToolBoxButtonX=724
 ToolBoxButtonY=22
 
 [Containments][2665][Wallpaper][org.kde.image][General]
-Image=file:///nix/store/wwis8c0q5hkql0r51ydlfn7jppgiick9-breeze-qt5-5.18.5-bin/share/wallpapers/Next/contents/images/1920x1080.jpg
+Image=file:///nix/store/6c9zb2l3i68vq15jr5xb65vxrzazb39f-breeze-qt5-5.21.3-bin/share/wallpapers/Next/contents/images/1920x1080.png
+SlidePaths=/nix/store/ixc58dd5wny9dx864h6cd5lh7jfp52x2-breeze-qt5-5.20.5-bin/share/wallpapers,/run/current-system/sw/share/wallpapers
 
 [Containments][2686]
 activityId=
@@ -501,47 +509,47 @@ immutability=1
 plugin=org.kde.kscreen
 
 [Containments][2686][Applets][2687][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2686][Applets][2688]
 immutability=1
 plugin=org.kde.plasma.pager
 
 [Containments][2686][Applets][2688][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2686][Applets][2689]
 immutability=1
 plugin=org.kde.plasma.icontasks
 
 [Containments][2686][Applets][2689][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2686][Applets][2689][Configuration][General]
-groupingAppIdBlacklist=chromium-browser.desktop,thunderbird.desktop
-groupingLauncherUrlBlacklist=applications:chromium-browser.desktop,applications:thunderbird.desktop
+groupingAppIdBlacklist=chromium-browser.desktop,thunderbird.desktop,kitty.desktop
+groupingLauncherUrlBlacklist=applications:thunderbird.desktop,applications:kitty.desktop,applications:chromium-browser.desktop
 
 [Containments][2686][Applets][2691]
 immutability=1
 plugin=org.kde.plasma.appmenu
 
 [Containments][2686][Applets][2691][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2686][Applets][2692]
 immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2686][Applets][2692][Configuration]
-PreloadWeight=65
+PreloadWeight=0
 SystrayContainmentId=2693
 
 [Containments][2686][ConfigDialog]
-DialogHeight=89
+DialogHeight=90
 DialogWidth=1920
 
 [Containments][2686][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2686][General]
 AppletOrder=2687;2688;2689;2691;2692
@@ -560,84 +568,88 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][2693][Applets][2694][Configuration]
-PreloadWeight=62
+PreloadWeight=0
+
+[Containments][2693][Applets][2694][Configuration][ConfigDialog]
+DialogHeight=660
+DialogWidth=880
 
 [Containments][2693][Applets][2695]
 immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][2693][Applets][2695][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][2693][Applets][2696]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][2693][Applets][2696][Configuration]
-PreloadWeight=47
+PreloadWeight=0
 
 [Containments][2693][Applets][2697]
 immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
 [Containments][2693][Applets][2697][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][2693][Applets][2698]
 immutability=1
 plugin=org.kde.plasma.nightcolorcontrol
 
 [Containments][2693][Applets][2698][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][2693][Applets][2699]
 immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][2693][Applets][2699][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][2693][Applets][2700]
 immutability=1
 plugin=org.kde.plasma.printmanager
 
 [Containments][2693][Applets][2700][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][2693][Applets][2701]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][2693][Applets][2701][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][2693][Applets][2702]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][2693][Applets][2702][Configuration]
-PreloadWeight=39
+PreloadWeight=0
 
 [Containments][2693][Applets][2703]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][2693][Applets][2703][Configuration]
-PreloadWeight=82
+PreloadWeight=0
 
 [Containments][2693][Applets][2704]
 immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][2693][Applets][2704][Configuration]
-PreloadWeight=44
+PreloadWeight=0
 
 [Containments][2693][Configuration]
-PreloadWeight=10
+PreloadWeight=0
 
 [Containments][2693][General]
-extraItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.nightcolorcontrol,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager
-knownItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.nightcolorcontrol,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager
+extraItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.nightcolorcontrol,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.keyboardlayout
+knownItems=org.kde.plasma.notifications,org.kde.plasma.battery,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.nightcolorcontrol,org.kde.plasma.bluetooth,org.kde.plasma.volume,org.kde.plasma.keyboardindicator,org.kde.plasma.networkmanagement,org.kde.plasma.printmanager,org.kde.plasma.keyboardlayout
 
 [Containments][7][Applets][10][Configuration]
 PreloadWeight=42

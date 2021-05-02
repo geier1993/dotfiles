@@ -473,11 +473,11 @@
     };
 
     privoxy.enable = true;
+    privoxy.enableTor = true;
     tor = {
       enable = true;
       client = {
         enable = true;
-        privoxy.enable = true;
       };
       tsocks.enable = true;
     };
@@ -645,7 +645,7 @@
       enable = true;
       powerOnBoot = false;
       # powerOnBoot = true;
-      config = {
+      settings = {
         General = {
             Disable = "Headset";
             Enable = "Source,Sink,Media,Socket";

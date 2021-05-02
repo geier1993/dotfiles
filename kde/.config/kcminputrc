@@ -1,5 +1,8 @@
+[$Version]
+update_info=delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize,kcminputrc_fix_botched_5_21_0.upd:kcminputrc_fix_botched_5_21_0_pre,kcminputrc_fix_botched_5_21_0.upd:kcminputrc_fix_botched_5_21_0,kcminputrc_repeat.upd:kcminputrc_migrate_key_repeat
+
 [Keyboard]
-KeyboardRepeating=0
+KeyRepeat=repeat
 NumLock=2
 RepeatDelay=150
 RepeatRate=50
@@ -7,5 +10,7 @@ RepeatRate=50
 [Mouse]
 XLbInptAccelProfileFlat=true
 XLbInptPointerAcceleration=-0.2
-cursorSize=0
 cursorTheme=breeze_cursors
+
+[Tmp]
+update_info=delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize

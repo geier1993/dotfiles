@@ -6,7 +6,7 @@ switch-to-activity-6102bc9f-de33-4a40-a514-54e223ce7fa2=none,none,Switch to acti
 Switch keyboard layout to English (Dvorak)=none,none,Switch keyboard layout to English (Dvorak)
 Switch keyboard layout to German=none,none,Switch keyboard layout to German
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Switch to Next Keyboard Layout
-_k_friendly_name=KDE Daemon
+_k_friendly_name=Keyboard Layout Switcher
 
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
@@ -16,7 +16,7 @@ _k_friendly_name=Accessibility
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
 Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
-_k_friendly_name=KDE Daemon
+_k_friendly_name=Touchpad
 
 [kded5]
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Show System Activity
@@ -24,7 +24,7 @@ _k_friendly_name=KDE Daemon
 display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
-_k_friendly_name=KDE Daemon
+_k_friendly_name=Custom Shortcuts Service
 {05164835-e929-4b60-b46a-0a1825acd62c}=Meta+N,none,Run Konsole3
 {17894b5c-1f47-4312-a9ea-bb823f6b17ae}=Meta+Return,none,Run Konsole
 {2dbec317-d44e-4da1-8c82-84c46ef5295f}=Meta+Shift+Return,none,Run Konsole2
@@ -57,12 +57,12 @@ _k_friendly_name=KRunner
 _launch=\t\t,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [ksmserver]
-Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,none,Halt Without Confirmation
+Halt Without Confirmation=Ctrl+Alt+Shift+PgDown,Ctrl+Alt+Shift+PgDown,Halt Without Confirmation
 Lock Session=Ctrl+Alt+L\tScreensaver,Meta+L\tCtrl+Alt+L\tScreensaver,Lock Session
-Log Out=Ctrl+Alt+Del,none,Log Out
-Log Out Without Confirmation=Ctrl+Alt+Shift+Del,none,Log Out Without Confirmation
-Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,none,Reboot Without Confirmation
-_k_friendly_name=ksmserver
+Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Log Out
+Log Out Without Confirmation=Ctrl+Alt+Shift+Del,Ctrl+Alt+Shift+Del,Log Out Without Confirmation
+Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp,Ctrl+Alt+Shift+PgUp,Reboot Without Confirmation
+_k_friendly_name=Session Management
 
 [kwin]
 Activate Window Demanding Attention=Ctrl+Alt+A,Ctrl+Alt+A,Activate Window Demanding Attention
@@ -184,10 +184,10 @@ Window Minimize=Meta+PgDown,Meta+PgDown,Minimize Window
 Window Move=none,none,Move Window
 Window No Border=none,none,Hide Window Border
 Window On All Desktops=Meta+Shift+S,none,Keep Window on All Desktops
-Window One Desktop Down=none,none,Window One Desktop Down
-Window One Desktop Up=none,none,Window One Desktop Up
-Window One Desktop to the Left=none,none,Window One Desktop to the Left
-Window One Desktop to the Right=none,none,Window One Desktop to the Right
+Window One Desktop Down=none,Meta+Ctrl+Shift+Down,Window One Desktop Down
+Window One Desktop Up=none,Meta+Ctrl+Shift+Up,Window One Desktop Up
+Window One Desktop to the Left=none,Meta+Ctrl+Shift+Left,Window One Desktop to the Left
+Window One Desktop to the Right=none,Meta+Ctrl+Shift+Right,Window One Desktop to the Right
 Window Operations Menu=Alt+F3,Alt+F3,Window Operations Menu
 Window Pack Down=none,none,Pack Window Down
 Window Pack Left=none,none,Pack Window to the Left
@@ -227,9 +227,9 @@ Window to Desktop 7=Meta+&,none,Window to Desktop 7
 Window to Desktop 8=Meta+*,none,Window to Desktop 8
 Window to Desktop 9=Meta+(,none,Window to Desktop 9
 Window to Next Desktop=none,none,Window to Next Desktop
-Window to Next Screen=none,none,Window to Next Screen
+Window to Next Screen=none,Meta+Shift+Right,Window to Next Screen
 Window to Previous Desktop=none,none,Window to Previous Desktop
-Window to Previous Screen=none,none,Window to Previous Screen
+Window to Previous Screen=none,Meta+Shift+Left,Window to Previous Screen
 Window to Screen 0=Ctrl+Shift+F1\tMeta+Alt+!,none,Window to Screen 0
 Window to Screen 1=Ctrl+Shift+F2\tMeta+Alt+@,none,Window to Screen 1
 Window to Screen 2=Ctrl+Shift+F3\tMeta+Alt+#,none,Window to Screen 2
@@ -248,6 +248,8 @@ _k_friendly_name=Media Controller
 mediavolumedown=none,none,Media volume down
 mediavolumeup=none,none,Media volume up
 nextmedia=Media Next,Media Next,Media playback next
+pausemedia=Media Pause,Media Pause,Pause media playback
+playmedia=none,none,Play media playback
 playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
@@ -274,6 +276,7 @@ Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Decre
 Hibernate=Hibernate,Hibernate,Hibernate
 Increase Keyboard Brightness=Keyboard Brightness Up,Keyboard Brightness Up,Increase Keyboard Brightness
 Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Increase Screen Brightness
+PowerDown=Power Down,Power Down,Power Down
 PowerOff=Power Off,Power Off,Power Off
 Sleep=Sleep,Sleep,Suspend
 Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Toggle Keyboard Backlight
@@ -298,7 +301,7 @@ clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Enable Clipboard Actions
 cycleNextAction=none,none,Next History Item
 cyclePrevAction=none,none,Previous History Item
 edit_clipboard=none,none,Edit Contents...
-manage activities=,Meta+Q,Activities...
+manage activities=,Meta+Q,Show Activity Switcher
 next activity=Meta+Tab,none,Walk through activities
 previous activity=Meta+Shift+Tab,none,Walk through activities (Reverse)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Manually Invoke Action on Current Clipboard
@@ -309,3 +312,7 @@ stop current activity=Ctrl+Alt+S,Meta+S,Stop Current Activity
 switch to next activity=none,none,Switch to Next Activity
 switch to previous activity=none,none,Switch to Previous Activity
 toggle do not disturb=none,none,Toggle do not disturb
+
+[systemsettings.desktop]
+_k_friendly_name=System Settings
+_launch=Tools,Tools,System Settings

@@ -1,5 +1,5 @@
 [$Version]
-update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,kwin.upd:animation-speed,icons_remove_effects.upd:IconsRemoveEffects,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
 
 [ColorEffects:Disabled]
 Color=56,56,56
@@ -22,93 +22,121 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=77,77,77
-BackgroundNormal=49,54,59
+BackgroundAlternate=163,212,250
+BackgroundNormal=247,247,247
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
-ForegroundInactive=189,195,199
+ForegroundInactive=112,125,138
 ForegroundLink=41,128,185
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=239,240,241
+ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
-ForegroundVisited=127,140,141
+ForegroundVisited=155,89,182
 
 [Colors:Complementary]
-BackgroundAlternate=59,64,69
-BackgroundNormal=49,54,59
-DecorationFocus=30,146,255
-DecorationHover=61,174,230
-ForegroundActive=246,116,0
-ForegroundInactive=175,176,179
-ForegroundLink=61,174,230
-ForegroundNegative=237,21,21
-ForegroundNeutral=201,206,59
-ForegroundNormal=239,240,241
-ForegroundPositive=17,209,22
-ForegroundVisited=61,174,230
+BackgroundAlternate=27,30,32
+BackgroundNormal=42,46,50
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=161,169,177
+ForegroundLink=29,153,243
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
+
+[Colors:Header]
+BackgroundAlternate=239,240,241
+BackgroundNormal=222,224,226
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=112,125,138
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=35,38,41
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
+
+[Colors:Header][Inactive]
+BackgroundAlternate=227,229,231
+BackgroundNormal=239,240,241
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
+ForegroundActive=61,174,233
+ForegroundInactive=112,125,138
+ForegroundLink=41,128,185
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=35,38,41
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=29,153,243
+BackgroundAlternate=163,212,250
 BackgroundNormal=61,174,233
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
-ForegroundActive=252,252,252
-ForegroundInactive=239,240,241
-ForegroundLink=253,188,75
+ForegroundActive=61,174,233
+ForegroundInactive=112,125,138
+ForegroundLink=41,128,185
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=239,240,241
+ForegroundNormal=255,255,255
 ForegroundPositive=39,174,96
-ForegroundVisited=189,195,199
+ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
-BackgroundAlternate=77,77,77
-BackgroundNormal=49,54,59
+BackgroundAlternate=239,240,241
+BackgroundNormal=247,247,247
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
-ForegroundInactive=189,195,199
+ForegroundInactive=112,125,138
 ForegroundLink=41,128,185
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=239,240,241
+ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
-ForegroundVisited=127,140,141
+ForegroundVisited=155,89,182
 
 [Colors:View]
-BackgroundAlternate=49,54,59
-BackgroundNormal=35,38,41
+BackgroundAlternate=247,247,247
+BackgroundNormal=255,255,255
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
-ForegroundInactive=189,195,199
+ForegroundInactive=112,125,138
 ForegroundLink=41,128,185
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=239,240,241
+ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
-ForegroundVisited=127,140,141
+ForegroundVisited=155,89,182
 
 [Colors:Window]
-BackgroundAlternate=77,77,77
-BackgroundNormal=49,54,59
+BackgroundAlternate=227,229,231
+BackgroundNormal=239,240,241
 DecorationFocus=61,174,233
 DecorationHover=61,174,233
 ForegroundActive=61,174,233
-ForegroundInactive=189,195,199
+ForegroundInactive=112,125,138
 ForegroundLink=41,128,185
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=239,240,241
+ForegroundNormal=35,38,41
 ForegroundPositive=39,174,96
-ForegroundVisited=127,140,141
+ForegroundVisited=155,89,182
 
 [General]
 BrowserApplication=chromium-browser.desktop
-ColorScheme=BreezeDark
-Name=Breeze Dark
+ColorScheme=BreezeLight
+Name=Breeze Light
 XftHintStyle=
 dbfile=/home/geier/.mozilla/firefox/q9betmwx.default-1462251222157-1547631973358/places.sqlite
 fixed=Monospace,10,-1,5,50,0,0,0,0,0
@@ -119,12 +147,12 @@ smallestReadableFont=Sans Serif,8,-1,5,50,0,0,0,0,0
 toolBarFont=Sans Serif,10,-1,5,50,0,0,0,0,0
 
 [Icons]
-Theme=candy-icons
+Theme=breeze
 
 [KDE]
-LookAndFeelPackage=Sweet
+LookAndFeelPackage=org.kde.breezetwilight.desktop
 contrast=4
-widgetStyle=kvantum
+widgetStyle=Breeze
 
 [KFileDialog Settings]
 Allow Expansion=false
@@ -146,10 +174,10 @@ Speedbar Width=305
 View Style=DetailTree
 
 [WM]
-activeBackground=49,54,59
-activeBlend=255,255,255
+activeBackground=227,229,231
+activeBlend=227,229,231
 activeFont=Noto Sans,12,-1,5,50,0,0,0,0,0,Bold
-activeForeground=239,240,241
-inactiveBackground=49,54,59
-inactiveBlend=75,71,67
-inactiveForeground=127,140,141
+activeForeground=35,38,41
+inactiveBackground=239,240,241
+inactiveBlend=239,240,241
+inactiveForeground=112,125,138

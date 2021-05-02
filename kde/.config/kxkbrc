@@ -1,6 +1,9 @@
+[$Version]
+update_info=kxkb_variants.upd:split-variants
+
 [Layout]
 DisplayNames=,
-LayoutList=us(dvorak),de
+LayoutList=us,de
 LayoutLoopCount=-1
 Model=
 ResetOldOptions=false
@@ -10,3 +13,4 @@ ShowLayoutIndicator=true
 ShowSingle=false
 SwitchMode=Global
 Use=true
+VariantList=dvorak,

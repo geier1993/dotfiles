@@ -11,33 +11,41 @@ detailViewIconSize=0
 [MainWindow]
 Height 1080=1056
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAB4AAAAP6AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIBAAAETf////8AAAAAAAAAAA==
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAP4AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIBAAAETf////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 Width 1920=1920
 Window-Maximized 1080x1920=true
+eDP1 HDMI3 Height 1080=1058
+eDP1 HDMI3 Width 1920=1920
+eDP1 HDMI3 Window-Maximized 1080x1920=true
+eDP1 HDMI3 XPosition=0
+eDP1 HDMI3 YPosition=22
+eDP1 Window-Maximized 1920x1080=true
+eDP1 XPosition=0
+eDP1 YPosition=24
 
 [Print Preview]
 Height 1080=500
 Width 1920=600
 
 [Recent Files]
-File1[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
-File10[$e]=$HOME/Documents/WingTsun/Waldbrunn/Formular/Schulungsvertrag.pdf
-File2[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Antrag_Deckungskapitalübertragung.pdf
-File3[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
-File4[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-File5[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
-File6[$e]=$HOME/Documents/Rechnungen/2020/Reisekosten/wochenticket_berlin_Invoice-20200623002816.pdf
-File7[$e]=$HOME/Documents/ProjectTogether/direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
-File8[$e]=$HOME/Documents/Buecher/mathe/CategoryTheory/Steve_Awodey_Category_Theory.pdf
-File9[$e]=$HOME/Documents/ProjectTogether/direktversicherung/Entgeldumwandlungsvereinbarung_Philipp_Geier.pdf
-Name1[$e]=Geier_Philipp_2020-01-21_115,00_Versicherungsbedingungen.pdf
-Name10[$e]=Schulungsvertrag.pdf
-Name2[$e]=Antrag_Deckungskapitalübertragung.pdf
-Name3[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
-Name4[$e]=Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
-Name5[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
-Name6[$e]=wochenticket_berlin_Invoice-20200623002816.pdf
-Name7[$e]=direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
-Name8[$e]=Steve_Awodey_Category_Theory.pdf
-Name9[$e]=Entgeldumwandlungsvereinbarung_Philipp_Geier.pdf
+File1[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV/Antrag_Deckungskapitalübertragung.pdf
+File10[$e]=$HOME/Documents/ProjectTogether/kuendigungprojecttogether.pdf
+File2[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
+File3[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+File4[$e]=$HOME/Documents/SchwarzIT/ArbeitnehmerfinanzierteAV2/Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
+File5[$e]=$HOME/Documents/Rechnungen/2020/Reisekosten/wochenticket_berlin_Invoice-20200623002816.pdf
+File6[$e]=$HOME/Documents/ProjectTogether/direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
+File7[$e]=$HOME/Documents/Buecher/mathe/CategoryTheory/Steve_Awodey_Category_Theory.pdf
+File8[$e]=$HOME/Documents/ProjectTogether/direktversicherung/Entgeldumwandlungsvereinbarung_Philipp_Geier.pdf
+File9[$e]=$HOME/Documents/WingTsun/Waldbrunn/Formular/Schulungsvertrag.pdf
+Name1[$e]=Antrag_Deckungskapitalübertragung.pdf
+Name10[$e]=kuendigungprojecttogether.pdf
+Name2[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsdokumente.pdf
+Name3[$e]=Geier_Philipp_2020-02-17_115,00_Entgeltumwandlungsvereinbarung-Merkblatt_ArbR_v1.14.pdf.pdf
+Name4[$e]=Geier_Philipp_2020-02-17_115,00_Beratungsprotokoll_2020.pdf.pdf
+Name5[$e]=wochenticket_berlin_Invoice-20200623002816.pdf
+Name6[$e]=direktversicherung_allianz_dak_mitgliedsbescheinigung.pdf
+Name7[$e]=Steve_Awodey_Category_Theory.pdf
+Name8[$e]=Entgeldumwandlungsvereinbarung_Philipp_Geier.pdf
+Name9[$e]=Schulungsvertrag.pdf
