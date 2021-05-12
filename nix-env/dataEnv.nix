@@ -7,11 +7,11 @@ stdenv.mkDerivation rec {
 
   buildInputs = with pkgs; [
       python3
-      python37Packages.pyyaml
-      python37Packages.pandas
-      python37Packages.numpy
-      python37Packages.scipy
-      python37Packages.matplotlib
+      python38Packages.pyyaml
+      python38Packages.pandas
+      python38Packages.numpy
+      python38Packages.scipy
+      python38Packages.matplotlib
       jre
       jdk
       scala

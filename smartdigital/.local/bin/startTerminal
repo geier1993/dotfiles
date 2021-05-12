@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -z "$1" ]
+then
+      sessionName="Default"
+else
+      sessionName=$1
+fi
+kitty fish -C "tmux new-session -t $sessionName"

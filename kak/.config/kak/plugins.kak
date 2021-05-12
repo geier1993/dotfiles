@@ -164,7 +164,7 @@ if %[ -n "${PATH##*termux*}" ] %{
     }
 }
 
-plug "jdugan6240/powerline.kak" defer powerline %{
+plug "andreyorst/powerline.kak" defer powerline %{
     set-option global powerline_ignore_warnings true
     set-option global powerline_format 'git bufname langmap smarttab mode_info filetype client session line_column position'
     set-option global powerline_shorten_bufname 'short'
@@ -290,4 +290,18 @@ plug 'delapouite/kakoune-buffers' %{
 
     map global user b ':enter-buffers-mode<ret>'              -docstring 'buffers…'
     map global user B ':enter-user-mode -lock buffers<ret>'   -docstring 'buffers (lock)…'
+}
+
+plug "schemar/kak-jsts" config %{
+    hook global WinSetOption filetype=(javascript|typescript) %{
+        map window user l -docstring 'lint' ': lint<ret>'
+        map window user f -docstring 'format' ': format-prettier<ret>'
+        
+        # If you want to format before every write, you could do s.th. like this:
+        # hook window BufWritePre .* %{
+        #     evaluate-commands -no-hooks %{
+        #         format-prettier
+        #     }
+        # }
+    }
 }

@@ -3,14 +3,14 @@
 TARGET=~/
 
 stow -t $TARGET bin
-stow -t $TARGET emacs
+#stow -t $TARGET emacs
 stow -t $TARGET fish
 stow -t $TARGET zsh
 stow -t $TARGET direnv
-stow -t $TARGET bash
-stow -t $TARGET x
-stow -t $TARGET terminator
-stow -t $TARGET termite
+# stow -t $TARGET bash
+#stow -t $TARGET x
+#stow -t $TARGET terminator
+#stow -t $TARGET termite
 stow -t $TARGET kitty
 stow -t $TARGET tmux
 #stow -t $TARGET stack
@@ -18,22 +18,23 @@ stow -t $TARGET tmux
 stow -t $TARGET zathura
 stow -t $TARGET ranger
 stow -t $TARGET readline
-stow -t $TARGET dunst
+#stow -t $TARGET dunst
 stow -t $TARGET nixpkgs
-stow -t $TARGET conky
+#stow -t $TARGET conky
 stow -t $TARGET vim
-stow -t $TARGET gnupg
+# stow -t $TARGET gnupg
 stow -t $TARGET kak
 stow -t $TARGET pycodestyle
 stow -t $TARGET fzf
-stow -t $TARGET vimb
+#stow -t $TARGET vimb
 stow -t $TARGET networkmanager-dmenu
 stow -t $TARGET rofi
-stow -t $TARGET systemd
-stow -t $TARGET ssh
-stow -t $TARGET usb
+#stow -t $TARGET systemd
+#stow -t $TARGET ssh
+#stow -t $TARGET usb
 stow -t $TARGET Code
-stow -t $TARGET kde
+stow -t $TARGET kde_sd
+stow -t $TARGET smartdigital
 
 case `uname` in
   Darwin)

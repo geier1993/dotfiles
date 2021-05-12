@@ -3,6 +3,8 @@
 
   permittedInsecurePackages = [
     "webkitgtk-2.4.11"
+    "python2.7-Pillow-6.2.2"
+    "openssl-1.0.2u"
   ];
 
 
@@ -12,6 +14,9 @@
     };
     nur_nixify = import (builtins.fetchTarball "https://github.com/kalbasit/nur-packages/archive/master.tar.gz") {
       inherit pkgs;
+    };
+    keepass-with-plugins = pkgs.keepass.override {
+        plugins = [ pkgs.keepass-keepassrpc ];
     };
   };
 

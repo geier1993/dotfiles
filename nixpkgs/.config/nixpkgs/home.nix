@@ -4,6 +4,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # programs.fish.enable = true;
  
   #programs.git = {
   #  enable = true;
@@ -29,9 +30,9 @@
    #     }}/home-manager-module.nix"
    # ];
 
-   services.vsliveshare = {
-       enable = true;
-       enableWritableWorkaround = true;
-       enableDiagnosticsWorkaround = true; 
-   };
+   # services.vsliveshare = {
+   #     enable = true;
+   #     enableWritableWorkaround = true;
+   #     enableDiagnosticsWorkaround = true; 
+   # };
 }
