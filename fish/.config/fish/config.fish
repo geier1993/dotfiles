@@ -7,8 +7,9 @@ if not functions -q fisher
 end
 
 set -x PYTHONPATH (python -c "import site; print(site.USER_SITE)"):$PYTHONPATH
-set -x TERMINAL urxvtc
-set -x TERM rxvt
+# set -x TERMINAL urxvtc
+# set -x TERM rxvt
+set -x TERM xterm-256color
 set -x EDITOR skk
 set -x VISUAL skk
 set -x PAGER less
@@ -37,6 +38,10 @@ alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias r='ranger'
+
+alias jqt="jupyter qtconsole"
+alias dbw="databricks workspace"
+
 
 
 function k

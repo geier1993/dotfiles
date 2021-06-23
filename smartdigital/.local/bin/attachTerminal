@@ -5,4 +5,5 @@ then
 else
       sessionName=$1
 fi
-kitty fish -C "tmux new-session -A -s 0 -t $sessionName"
+# kitty fish -C "tmux new-session -A -s 0 -t $sessionName"
+konsole -e fish -C "tmux new-session -A -s 0 -t $sessionName"

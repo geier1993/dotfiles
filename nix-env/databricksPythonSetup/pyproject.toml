@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "anomaly-signals"
+version = "0.1.0"
+description = "Methods used in databricks notebooks wrapped up in an library"
+authors = ["Philipp  Geier  <philipp.geier@smart-digital.de>, Shaiori Saha <shaiori.saha@smart-digital.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.20.3"
+matplotlib = "^3.4.2"
+sklearn = "^0.0"
+azure-storage-blob = "^12.8.1"
+pandas = "^1.2.4"
+azure-storage-file = "^2.1.0"
+databricks-cli = "^0.14.3"
+databricks-connect = "7.3.*"
+
+[tool.poetry.dev-dependencies]
+black = "^21.5b1"
+ipython = "^7.23.1"
+pyarrow = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

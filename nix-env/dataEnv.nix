@@ -1,28 +1,39 @@
-with import <nixpkgs> {};
+let
+    pkgs = import <nixpkgs> {};
+    stable = import <stable> {};
+in
 
 #stdenvNoCC.mkDerivation rec {
-stdenv.mkDerivation rec {
+pkgs.stdenv.mkDerivation rec {
   name = "dataEnv";
-  env = buildEnv { name = name; paths = buildInputs; };
+  env = pkgs.buildEnv { name = name; paths = buildInputs; };
 
-  buildInputs = with pkgs; [
-      python3
-      python38Packages.pyyaml
-      python38Packages.pandas
-      python38Packages.numpy
-      python38Packages.scipy
-      python38Packages.matplotlib
-      jre
-      jdk
-      scala
-      spark
-      hadoop
-      maven
-      pipenv
-      which
-      gcc
-      binutils  
-      readline
+  buildInputs = [
+      pkgs.python3
+      pkgs.python38Packages.black
+      pkgs.python38Packages.poetry
+      pkgs.python38Packages.pyyaml
+      pkgs.python38Packages.pandas
+      pkgs.python38Packages.numpy
+      pkgs.python38Packages.scipy
+      pkgs.python38Packages.matplotlib
+      # pkgs.python38Packages.pymc3
+      pkgs.python38Packages.scikitlearn
+      pkgs.python38Packages.databricks-cli
+      pkgs.python38Packages.databricks-connect
+      pkgs.jre
+      pkgs.jdk
+      pkgs.scala
+      pkgs.spark
+      # pkgs.hadoop
+      pkgs.maven
+      pkgs.pipenv
+      pkgs.which
+      pkgs.gcc
+      pkgs.binutils  
+      pkgs.readline
+
+      stable.azure-cli
 ];
 
   shellHook = ''

@@ -4,11 +4,11 @@ update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-
 [Compositing]
 Backend=OpenGL
 Enabled=false
-GLCore=true
+GLCore=false
 GLPreferBufferSwap=a
 GLTextureFilter=1
 HiddenPreviews=5
-OpenGLIsUnsafe=true
+OpenGLIsUnsafe=false
 WindowsBlockCompositing=true
 XRenderSmoothScale=false
 
@@ -17,11 +17,12 @@ Id_1=188121ee-e261-4880-98ab-94031bf3b36a
 Id_2=35a5eb89-184f-44fc-8fa6-b770fa463f61
 Id_3=3eb4247c-a0d3-4dd7-9da9-fdeb250d07cf
 Id_4=e6323eae-0712-44b2-af94-cc98aa1f7d45
+Id_5=d846ba28-9c5c-4fdf-9597-cdfb8cdaf8d3
 Name_1=D1
 Name_2=D2
 Name_3=D3
 Name_4=D4
-Number=4
+Number=5
 Rows=1
 
 [Effect-Cube]
