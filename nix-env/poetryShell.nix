@@ -8,6 +8,12 @@ stdenv.mkDerivation rec {
   buildInputs = [
       python3
       python38Packages.poetry
+
+      python38Packages.python-language-server
+      python38Packages.pyls-black
+      python38Packages.pyls-mypy
+      python38Packages.pyls-isort
+
 ];
 
   shellHook = ''

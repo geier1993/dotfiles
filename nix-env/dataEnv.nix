@@ -33,6 +33,12 @@ pkgs.stdenv.mkDerivation rec {
       pkgs.binutils  
       pkgs.readline
 
+      pkgs.python38Packages.python-language-server
+      pkgs.python38Packages.pyls-black
+      pkgs.python38Packages.pyls-mypy
+      pkgs.python38Packages.pyls-isort
+
+
       stable.azure-cli
 ];
 

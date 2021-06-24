@@ -1,3 +1,10 @@
+/home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/ad_actions.py
+/home/philipp.geier@SD-DO01.local/dotfiles/nix-env/dataEnv.nix
+/home/philipp.geier@SD-DO01.local/dotfiles/nix-env/poetryShell.nix
+/home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/shell.nix
+/home/philipp.geier@SD-DO01.local/dotfiles/kak/.config/kak/plugins.kak
+/home/philipp.geier@SD-DO01.local/dotfiles/kak/.config/kak/kakrc
+/home/philipp.geier@SD-DO01.local/Projects/res_monitoring.md
 /home/philipp.geier@SD-DO01.local/dotfiles/kak/.config/kak-lsp/kak-lsp.toml
 /home/philipp.geier@SD-DO01.local/Projects/lakehouse/src/main/scala/com/smartdigital/datalakehouse/core/DataTransformation.scala
 /home/philipp.geier@SD-DO01.local/Projects/lakehouse/src/main/scala/com/smartdigital/datalakehouse/bronze/impl/AbGroup.scala
@@ -8,18 +15,14 @@
 /home/philipp.geier@SD-DO01.local/Projects/lakehouse/src/main/scala/com/smartdigital/datalakehouse/core/DataPath.scala
 /home/philipp.geier@SD-DO01.local/Projects/lakehouse/src/main/scala/com/smartdigital/datalakehouse/bronze/BronzeDataSet.scala
 /home/philipp.geier@SD-DO01.local/dotfiles/nix-env/scalaShell.nix
-/home/philipp.geier@SD-DO01.local/dotfiles/kak/.config/kak/plugins.kak
 /home/philipp.geier@SD-DO01.local/Projects/lakehouse/src/main/scala/com/smartdigital/datalakehouse/bronze/impl/Collection.scala
 /home/philipp.geier@SD-DO01.local/dotfiles/kak/.config/kak/languages.kak
-/home/philipp.geier@SD-DO01.local/dotfiles/kak/.config/kak/kakrc
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/run_ad.py
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/ad_affinities.py
 /home/philipp.geier@SD-DO01.local/dotfiles/nix-env/databricksPythonSetup/shell.nix
-/home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/shell.nix
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-detection/AnomalyDetectionAAD/Misc/FTPUtility.cs
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-detection/AnomalyDetectionAAD/Pages/Yesterday.cshtml.cs
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-detection/AnomalyDetectionAAD/Pages/Yesterday.cshtml
-/home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/ad_actions.py
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/utils.py
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/ad_leads.py
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/ad_conversions.py
@@ -40,6 +43,3 @@
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-detection/shell.nix
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/env_prod.py
 /home/philipp.geier@SD-DO01.local/Projects/anomaly-signals/notebooks/env_dev.py
-/home/philipp.geier@SD-DO01.local/Projects/anomaly-detection/AnomalyDetectionAAD/Properties/launchSettings.json
-/home/philipp.geier@SD-DO01.local/Projects/1to1-doc/meeting_20210610.txt
-/home/philipp.geier@SD-DO01.local/Projects/anomaly-detection/docker-compose.yml

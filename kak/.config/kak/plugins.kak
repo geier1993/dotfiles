@@ -144,6 +144,7 @@ if %[ -n "${PATH##*termux*}" ] %{
             #set-option global lsp_server_configuration pyls.configurationSources=["flake8"]
             # set-option global lsp_server_configuration pyls.plugins.pydocstyle.enabled=true
             set-option global lsp_server_configuration pyls.plugins.pyls_mypy.enabled=true
+            set-option global lsp_server_configuration pyls.plugins.pyls_black.enabled=true
             set-option global lsp_server_configuration pyls.plugins.pyls_mypy.live_mode=true
         }
     }
