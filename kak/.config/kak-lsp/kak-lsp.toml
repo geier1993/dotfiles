@@ -251,3 +251,22 @@ command = "zls"
 filetypes = ["scala"]
 roots = ["build.sbt"]
 command = "metals"
+
+# [language.scala.initialization_options]
+# compilerOptions.snippetAutoIndent = 0
+# debuggingProvider = 1
+# decorationProvider = 1
+# didFocusProvider = 1
+# doctorProvider = "json"
+# executeClientCommandProvider = 1
+# globSyntax = "uri"
+# icons = "unicode"
+# inputBoxProvider = 1
+# isExitOnShutdown = 1
+# isHttpEnabled = 1
+# openFilesOnRenameProvider = 1
+# quickPickProvider = 1
+# slowTaskProvider = 1
+# statusBarProvider = "show-message"
+# treeViewProvider = 1
+# openNewWindowProvider = 1
