@@ -10,10 +10,11 @@ pkgs.stdenv.mkDerivation rec {
 
   buildInputs = [
       stable.azure-cli
-      pkgs.sbt
-      pkgs.scala
-      pkgs.scalafmt
-      pkgs.metals
+      (pkgs.sbt.override { jre = pkgs.jdk11; })
+      (pkgs.scala.override { jre = pkgs.jdk11; })
+      (pkgs.scalafmt.override { jre = pkgs.jdk11; })
+      (pkgs.metals.override { jre = pkgs.jdk11; })
+      (pkgs.ammonite.override { jre = pkgs.jdk11; })
 
       # Required for pyspark
       pkgs.jdk11
