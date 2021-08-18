@@ -136,8 +136,8 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][2575][Applets][2603][Configuration][General]
-groupingAppIdBlacklist=org.pwmt.zathura.desktop,chromium-browser.desktop,kitty.desktop,,thunderbird.desktop,us.zoom.Zoom.desktop,firefox.desktop
-groupingLauncherUrlBlacklist=applications:chromium-browser.desktop,applications:org.pwmt.zathura.desktop,applications:firefox.desktop,applications:us.zoom.Zoom.desktop,file:///nix/store/1idw467wnkrhipvn96lldj6k43hi384h-thunderbird-68.9.0/bin/thunderbird,applications:thunderbird.desktop,applications:kitty.desktop
+groupingAppIdBlacklist=,kitty.desktop,us.zoom.Zoom.desktop,thunderbird.desktop,firefox.desktop,org.pwmt.zathura.desktop,chromium-browser.desktop
+groupingLauncherUrlBlacklist=applications:us.zoom.Zoom.desktop,applications:kitty.desktop,applications:chromium-browser.desktop,applications:org.pwmt.zathura.desktop,applications:firefox.desktop,applications:thunderbird.desktop,file:///nix/store/1idw467wnkrhipvn96lldj6k43hi384h-thunderbird-68.9.0/bin/thunderbird
 highlightWindows=true
 middleClickAction=ToggleGrouping
 showOnlyCurrentScreen=true
@@ -526,8 +526,8 @@ plugin=org.kde.plasma.icontasks
 PreloadWeight=0
 
 [Containments][2686][Applets][2689][Configuration][General]
-groupingAppIdBlacklist=chromium-browser.desktop,thunderbird.desktop,kitty.desktop
-groupingLauncherUrlBlacklist=applications:thunderbird.desktop,applications:kitty.desktop,applications:chromium-browser.desktop
+groupingAppIdBlacklist=thunderbird.desktop,chromium-browser.desktop,kitty.desktop
+groupingLauncherUrlBlacklist=applications:thunderbird.desktop,applications:chromium-browser.desktop,applications:kitty.desktop
 
 [Containments][2686][Applets][2691]
 immutability=1

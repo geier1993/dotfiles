@@ -40,6 +40,9 @@ minLength=1920
 offset=0
 thickness=24
 
+[PlasmaViews][Panel 2575][Horizontal1360]
+thickness=24
+
 [PlasmaViews][Panel 2575][Horizontal1920]
 alignment=1
 maxLength=1920

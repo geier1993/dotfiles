@@ -6,3 +6,6 @@ UseKTTSD=false
 
 [Main View]
 SplitterSizes=276,1643
+
+[PageView]
+MouseMode=TextSelect
