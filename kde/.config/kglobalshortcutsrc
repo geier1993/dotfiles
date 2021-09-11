@@ -4,6 +4,7 @@ switch-to-activity-6102bc9f-de33-4a40-a514-54e223ce7fa2=none,none,Switch to acti
 
 [KDE Keyboard Layout Switcher]
 Switch keyboard layout to English (Dvorak)=none,none,Switch keyboard layout to English (Dvorak)
+Switch keyboard layout to English (US)=none,none,Switch keyboard layout to English (US)
 Switch keyboard layout to German=none,none,Switch keyboard layout to German
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Switch to Next Keyboard Layout
 _k_friendly_name=Keyboard Layout Switcher

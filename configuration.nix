@@ -373,7 +373,7 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
     autoUpgrade.enable = true;
-    stateVersion = "20.03";
+    stateVersion = "21.05";
   };
 
   systemd.services.kbdrate = {
@@ -680,7 +680,7 @@
       ubuntu_font_family
       liberation_ttf
       inconsolata
-      vistafonts
+      # vistafonts
       unifont
       cm_unicode
       ipafont

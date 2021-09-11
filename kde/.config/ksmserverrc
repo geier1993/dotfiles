@@ -8,7 +8,7 @@ screenCount=1
 count=0
 
 [Session: saved at previous logout]
-clientId1=10e3696d6d000162568353000000020070007
+clientId1=10e3696d6d000163136350500000019750007
 clientId2=10e3696d6d000161349646400000021740023
 clientId3=10e3696d6d000161484361700000021300011
 count=3
@@ -16,8 +16,8 @@ program1=pulseaudio
 program2=/nix/store/9rbkpk0krwrjxlkf75c05jv2255qgnkq-xdg-desktop-portal-kde-5.20.5/libexec/xdg-desktop-portal-kde
 program3=/nix/store/79y9w9qd6d1g75ibha0iawv89cxrhhbi-plasma-workspace-5.20.5/libexec/baloorunner
 restartCommand1=
-restartCommand2=/nix/store/9rbkpk0krwrjxlkf75c05jv2255qgnkq-xdg-desktop-portal-kde-5.20.5/libexec/xdg-desktop-portal-kde,-session,10e3696d6d000161349646400000021740023_1625767707_322824,-name,xdg-desktop-portal-kde
-restartCommand3=/nix/store/79y9w9qd6d1g75ibha0iawv89cxrhhbi-plasma-workspace-5.20.5/libexec/baloorunner,-session,10e3696d6d000161484361700000021300011_1625767707_322872,-name,baloorunner
+restartCommand2=/nix/store/9rbkpk0krwrjxlkf75c05jv2255qgnkq-xdg-desktop-portal-kde-5.20.5/libexec/xdg-desktop-portal-kde,-session,10e3696d6d000161349646400000021740023_1631364565_317343,-name,xdg-desktop-portal-kde
+restartCommand3=/nix/store/79y9w9qd6d1g75ibha0iawv89cxrhhbi-plasma-workspace-5.20.5/libexec/baloorunner,-session,10e3696d6d000161484361700000021300011_1631364565_326225,-name,baloorunner
 restartStyleHint1=0
 restartStyleHint2=0
 restartStyleHint3=0
