@@ -328,10 +328,6 @@
           # first import environment variables from the login manager
           systemctl --user import-environment
 
-          # https://github.com/swaywm/sway/wiki/Systemd-integration
-          # From sway wiki to start sway-session
-          exec systemctl --user start sway-session.target
-
           # then start the service
           exec systemctl --user start sway.service
         '';
@@ -460,17 +456,17 @@
       ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
     '';
 
-    kmscon = {
-      enable = false; # disabled - as login with sway
-      extraConfig = ''
-        xkb-layout=us,de
-          xkb-variant=dvorak,
-          xkb-options=grp:switch,grp:menu_toggle
-          xkb-repeat-delay=150
-          xkb-repeat-rate=50
-        '';
-      hwRender = true;
-    };
+    # kmscon = {
+    #   enable = false; # disabled - as login with sway
+    #   extraConfig = ''
+    #     xkb-layout=us,de
+    #       xkb-variant=dvorak,
+    #       xkb-options=grp:switch,grp:menu_toggle
+    #       xkb-repeat-delay=150
+    #       xkb-repeat-rate=50
+    #     '';
+    #   hwRender = true;
+    # };
 
     acpid = {
       enable = true;
