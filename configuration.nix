@@ -482,12 +482,14 @@
       tsocks.enable = true;
     };
 
-    redshift = {
+    #redshift = {
+    gammastep = {
           enable = true;
-          #location = {
-          #  latitude = "49.398750";
-          #  longitude = "8.672434";
-          #};
+          location = {
+            latitude = "49.398750";
+            longitude = "8.672434";
+          };
+          #package = pkgs.redshift-wlr;
     };
 
     tlp = {
@@ -572,15 +574,148 @@
     Option "AutoRepeat" "150 50"
         ''];
       # Enable the KDE Desktop Environment.
-      displayManager = {
-        sddm.enable = true;
-      };
-      desktopManager = {
-        plasma5.enable = true;
-      };
-
+      # displayManager = {
+      #   sddm.enable = true;
+      # };
+      # desktopManager = {
+      #   plasma5.enable = true;
+      # };
     };
   };
+
+  programs.sway = {
+      enable = true;
+      wrapperFeatures.gtk = true; # so that gtk works properly
+      extraPackages = with pkgs; [
+        swaylock
+        swayidle
+        xwayland # for legacy apps
+        waybar # statusbar
+        pactl
+        wl-clipboard
+        clipman
+        mako # notification daemon
+        # alacritty # Alacritty is the default terminal in the config
+        foot
+        wofi
+        # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
+        kanshi # autorandr
+        # brightnessctl
+        light
+
+        # Theming
+        gtk-engine-murrine
+        gtk_engines
+        gsettings-desktop-schemas
+        lxappearance
+
+        # More
+        autotiling
+        flashfocus
+        gammastep
+        wf-recorder
+      ];
+    };
+  environment = {
+    etc = {
+      # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
+      "sway/config".source = ./dotfiles/sway/.config/sway/config;
+      "xdg/waybar/config".source = ./dotfiles/waybar/.config/waybar/config;
+      "xdg/waybar/style.css".source = ./dotfiles/waybar/.config/waybar/style.css;
+    };
+  };
+  # Here we but a shell script into path, which lets us start sway.service (after importing the environment of the login shell).
+  environment.systemPackages = with pkgs; [
+    (
+      pkgs.writeTextFile {
+        name = "startsway";
+        destination = "/bin/startsway";
+        executable = true;
+        text = ''
+          #! ${pkgs.bash}/bin/bash
+
+          # first import environment variables from the login manager
+          systemctl --user import-environment
+
+          # https://github.com/swaywm/sway/wiki/Systemd-integration
+          # From sway wiki to start sway-session
+          exec systemctl --user start sway-session.target
+
+          # then start the service
+          exec systemctl --user start sway.service
+        '';
+      }
+    )
+  ];
+  programs.qt5ct.enable = true;
+  programs.waybar.enable = true;
+  systemd.user.targets.sway-session = {
+    description = "Sway compositor session";
+    documentation = [ "man:systemd.special(7)" ];
+    bindsTo = [ "graphical-session.target" ];
+    wants = [ "graphical-session-pre.target" ];
+    after = [ "graphical-session-pre.target" ];
+  };
+  systemd.user.services.sway = {
+    description = "Sway - Wayland window manager";
+    documentation = [ "man:sway(5)" ];
+    bindsTo = [ "graphical-session.target" ];
+    wants = [ "graphical-session-pre.target" ];
+    after = [ "graphical-session-pre.target" ];
+    # We explicitly unset PATH here, as we want it to be set by
+    # systemctl --user import-environment in startsway
+    environment.PATH = lib.mkForce null;
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''
+        ${pkgs.dbus}/bin/dbus-run-session ${pkgs.sway}/bin/sway --debug
+      '';
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+  systemd.user.services.kanshi = {
+    description = "Kanshi output autoconfig ";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      # kanshi doesn't have an option to specifiy config file yet, so it looks
+      # at .config/kanshi/config
+      ExecStart = ''
+        ${pkgs.kanshi}/bin/kanshi
+      '';
+      RestartSec = 5;
+      Restart = "always";
+    };
+  };
+  systemd.user.services.swayidle = {
+    description = "Idle Manager for Wayland";
+    documentation = [ "man:swayidle(1)" ];
+    wantedBy = [ "sway-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    path = [ pkgs.bash ];
+    serviceConfig = {
+      ExecStart = '' ${pkgs.swayidle}/bin/swayidle -w -d \
+        timeout 300 '${pkgs.sway}/bin/swaymsg "output * dpms off"' \
+        resume '${pkgs.sway}/bin/swaymsg "output * dpms on"'
+      '';
+    };
+  };
+  systemd.user.services.waybar = {
+    description = "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
+    documentation = [ https://github.com/Alexays/Waybar/wiki/ ];
+    wantedBy = [ "sway-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    path = [ pkgs.bash ];
+    serviceConfig = {
+      ExecStart = '' ${pkgs.waybar}/bin/waybar '';
+    };
+  };
+  # end sway
+
+
+
 
   hardware = {
     #brightnessctl.enable = true;
