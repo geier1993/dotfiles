@@ -62,13 +62,14 @@ output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 input * {
     xkb_layout "us,de"
     xkb_variant "dvorak,"
-    xkb_options "grp:win_space_toggle"
-    # xkb_options "grp:win_space_toggle,grp:switch,grp:menu_toggle"
+    # xkb_options "grp:win_space_toggle"
+    xkb_options "grp:switch,grp:menu_toggle"
+
+    repeat_delay 150
+    repeat_rate 50
 }
 
 # input <identifier> xkb_model "pc101"
-input <identifier> repeat_delay 150
-input <identifier> repeat_rate 50
 
 input type:touchpad {
     tap enabled
@@ -251,4 +252,5 @@ bar {
 
 include @sysconfdir@/sway/config.d/*
 
+exec "systemctl --user import-environment; systemctl --user start sway-session.target"
 exec_always --no-startup-id flashfocus

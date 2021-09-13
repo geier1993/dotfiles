@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 # let
 #   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
@@ -314,6 +314,29 @@
     #winetricks
     #protontricks
     #steam-run
+    
+    # pactl
+    # Here we but a shell script into path, which lets us start sway.service (after importing the environment of the login shell).
+    (
+      pkgs.writeTextFile {
+        name = "startsway";
+        destination = "/bin/startsway";
+        executable = true;
+        text = ''
+          #! ${pkgs.bash}/bin/bash
+
+          # first import environment variables from the login manager
+          systemctl --user import-environment
+
+          # https://github.com/swaywm/sway/wiki/Systemd-integration
+          # From sway wiki to start sway-session
+          exec systemctl --user start sway-session.target
+
+          # then start the service
+          exec systemctl --user start sway.service
+        '';
+      }
+    )
   ];
 
 
@@ -482,15 +505,14 @@
       tsocks.enable = true;
     };
 
-    #redshift = {
-    gammastep = {
-          enable = true;
-          location = {
-            latitude = "49.398750";
-            longitude = "8.672434";
-          };
-          #package = pkgs.redshift-wlr;
-    };
+    # gammastep = {
+    #       enable = true;
+    #       location = {
+    #         latitude = "49.398750";
+    #         longitude = "8.672434";
+    #       };
+    #       #package = pkgs.redshift-wlr;
+    # };
 
     tlp = {
         enable = true;
@@ -511,8 +533,8 @@
      };
 
     xserver = {
-      #enable = false;
-      enable = true;
+      enable = false;
+      #enable = true;
       #autorun = false;
       exportConfiguration = true;
       autoRepeatDelay = 150;
@@ -591,7 +613,7 @@
         swayidle
         xwayland # for legacy apps
         waybar # statusbar
-        pactl
+        # pactl
         wl-clipboard
         clipman
         mako # notification daemon
@@ -616,37 +638,14 @@
         wf-recorder
       ];
     };
-  environment = {
-    etc = {
-      # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
-      "sway/config".source = ./dotfiles/sway/.config/sway/config;
-      "xdg/waybar/config".source = ./dotfiles/waybar/.config/waybar/config;
-      "xdg/waybar/style.css".source = ./dotfiles/waybar/.config/waybar/style.css;
-    };
-  };
-  # Here we but a shell script into path, which lets us start sway.service (after importing the environment of the login shell).
-  environment.systemPackages = with pkgs; [
-    (
-      pkgs.writeTextFile {
-        name = "startsway";
-        destination = "/bin/startsway";
-        executable = true;
-        text = ''
-          #! ${pkgs.bash}/bin/bash
-
-          # first import environment variables from the login manager
-          systemctl --user import-environment
-
-          # https://github.com/swaywm/sway/wiki/Systemd-integration
-          # From sway wiki to start sway-session
-          exec systemctl --user start sway-session.target
-
-          # then start the service
-          exec systemctl --user start sway.service
-        '';
-      }
-    )
-  ];
+  # environment = {
+  #   etc = {
+  #     # Put config files in /etc. Note that you also can put these in ~/.config, but then you can't manage them with NixOS anymore!
+  #     "sway/config".source = /home/geier/dotfiles/sway/.config/sway/config;
+  #     "xdg/waybar/config".source = /home/geier/dotfiles/waybar/.config/waybar/config;
+  #     "xdg/waybar/style.css".source = /home/geier/dotfiles/waybar/.config/waybar/style.css;
+  #   };
+  # };
   programs.qt5ct.enable = true;
   programs.waybar.enable = true;
   systemd.user.targets.sway-session = {
@@ -702,16 +701,16 @@
       '';
     };
   };
-  systemd.user.services.waybar = {
-    description = "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
-    documentation = [ https://github.com/Alexays/Waybar/wiki/ ];
-    wantedBy = [ "sway-session.target" ];
-    partOf = [ "graphical-session.target" ];
-    path = [ pkgs.bash ];
-    serviceConfig = {
-      ExecStart = '' ${pkgs.waybar}/bin/waybar '';
-    };
-  };
+  # systemd.user.services.waybar = {
+  #   description = "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
+  #   documentation = [ https://github.com/Alexays/Waybar/wiki/ ];
+  #   wantedBy = [ "sway-session.target" ];
+  #   partOf = [ "graphical-session.target" ];
+  #   path = [ pkgs.bash ];
+  #   serviceConfig = {
+  #     ExecStart = '' ${pkgs.waybar}/bin/waybar '';
+  #   };
+  # };
   # end sway
 
 
