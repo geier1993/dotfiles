@@ -8,5 +8,6 @@ then
       xsel --input --clipboard <&0
     fi
 else
-    wl-copy <&0
+    # wl-copy <&0
+    clipman store <&0
 fi
