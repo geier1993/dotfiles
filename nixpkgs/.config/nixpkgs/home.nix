@@ -42,6 +42,28 @@
     pasystray
 
     font-awesome
+
+    kakoune
+    ranger
+    fasd
+    keepass
+    fzf
+    silver-searcher
+    direnv
+
+    fish
+    tmux
+    vim
+    vscode
+    zathura
+    git
+    diff-so-fancy
+    editorconfig-checker
+
+    spotify
+    gimp
+
+    glibcLocales
   ];
 
   # programs.fish.enable = true;
