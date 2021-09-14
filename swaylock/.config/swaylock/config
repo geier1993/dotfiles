@@ -1,0 +1,22 @@
+# font=Droid Sans Mono Slashed for Powerline
+indicator-radius=100
+indicator-thickness=20
+
+key-hl-color=81a1c1
+bs-hl-color=000
+separator-color=3b4252
+
+layout-border-color=5e81ac
+layout-bg-color=5e81ac
+line-color=5e81ac
+
+inside-clear-color=5e81ac
+inside-ver-color=81a1c1
+inside-wrong-color=bf616a
+
+ring-color=5e81ac
+ring-clear-color=5e81ac
+ring-ver-color=81a1c1
+ring-wrong-color=bf616a
+
+line-uses-inside

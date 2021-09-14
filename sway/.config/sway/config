@@ -19,12 +19,12 @@ set $term foot
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi -show run | xargs swaymsg exec --
+set $menu wofi --show=run | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+# output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
@@ -36,10 +36,10 @@ output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -73,7 +73,7 @@ input * {
 
 input type:touchpad {
     tap enabled
-    natural_scroll enabled
+    # natural_scroll enabled
 }
 
 ### Key bindings
@@ -131,6 +131,8 @@ input type:touchpad {
 #
 # Workspaces:
 #
+    workspace_auto_back_and_forth yes
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -193,20 +195,20 @@ input type:touchpad {
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
-    # bindsym XF86AudioRaiseVolume exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') 0 && pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1` 
-    # bindsym XF86AudioLowerVolume exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') 0 && pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`
-    # #bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && volnoti-show -m
-    # #bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && eval $(if [ $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/') -eq 1 ]; then volnoti-show -m; else volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`; fi)
-    # #bindsym XF86AudioMute exec volnoti-show $(if [ $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/') -eq 1 ]; then echo "-m"; else echo "`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`"; fi)
-    # bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle &&  volnoti-show $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/-m/' | sed -e 's/^.*: no$/'`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`'/')
-    bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
-    bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
-    bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') 0 && pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1` 
+    bindsym XF86AudioLowerVolume exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') 0 && pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5% && volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`
+    # bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && volnoti-show -m
+    # bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle && eval $(if [ $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/') -eq 1 ]; then volnoti-show -m; else volnoti-show `ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`; fi)
+    # bindsym XF86AudioMute exec volnoti-show $(if [ $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/1/' | sed -e 's/^.*: no$/0/') -eq 1 ]; then echo "-m"; else echo "`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`"; fi)
+    bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle &&  volnoti-show $(pacmd list-sinks | sed -e 's/^\(.*index:.*\)/\f\1/' | awk 'BEGIN { RS="\f" } /* index/ {print}' | grep 'muted' | sed -e 's/^.*: yes$/-m/' | sed -e 's/^.*: no$/'`ponymix 2>&1 | egrep -o '[0-9]+%' -m 1`'/')
+    #bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
+    #bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
+    #bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
-    #bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-    #bindsym XF86MonBrightnessUp exec brightnessctl s +5%
-    bindsym XF86MonBrightnessDown exec light -U 5
-    bindsym XF86MonBrightnessUp exec light -A 5
+    bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+    bindsym XF86MonBrightnessUp exec brightnessctl s +5%
+    # bindsym XF86MonBrightnessDown exec light -U 5
+    # bindsym XF86MonBrightnessUp exec light -A 5
 #
 # Resizing containers:
 #
@@ -236,21 +238,30 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
+# bar {
+#     position top
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+#     colors {
+#         statusline #ffffff
+#         background #323232
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
+bar { 
+     swaybar_command waybar
 }
 
 include @sysconfdir@/sway/config.d/*
 
 exec "systemctl --user import-environment; systemctl --user start sway-session.target"
+exec nm_applet
+# exec_always --no_startup-id pasystray
+exec_always --no-startup-id mako
 exec_always --no-startup-id flashfocus
+exec_always --no-startup-id autotiling
+exec --no-startup-id /usr/share/libpam-kwallet-common/pam_kwallet_init
+

@@ -3,6 +3,46 @@
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  fonts.fontconfig.enable = true;
+
+  # wayland.windowManager.sway = {
+  #   enable = true;
+  #   wrapperFeatures.gtk = true ;
+  #   xwayland = true ;
+  # };
+  home.packages = with pkgs; [
+    # sway
+    # swaylock
+    swayidle
+    wl-clipboard
+    clipman
+    xwayland
+    waybar
+    mako # notification daemon
+    # alacritty # Alacritty is the default terminal in the config
+    foot
+    # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
+    wofi
+    kanshi
+    light
+    brightnessctl
+
+    gtk-engine-murrine
+    gtk_engines
+    gsettings-desktop-schemas
+    lxappearance
+
+    autotiling
+    flashfocus
+    gammastep
+    wf-recorder
+
+    volnoti
+    ponymix
+    pasystray
+
+    font-awesome
+  ];
 
   # programs.fish.enable = true;
  
