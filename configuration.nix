@@ -626,6 +626,7 @@
         gtk_engines
         gsettings-desktop-schemas
         lxappearance
+        #lxqt-policykit
 
         # More
         autotiling
