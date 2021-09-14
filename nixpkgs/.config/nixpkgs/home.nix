@@ -63,7 +63,7 @@
     spotify
     gimp
 
-    glibcLocales
+    # glibcLocales # install with nix-env
   ];
 
   # programs.fish.enable = true;

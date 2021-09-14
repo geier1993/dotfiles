@@ -132,7 +132,12 @@ if %[ -n "${PATH##*termux*}" ] %{
             lsp-enable-window
             hook -always global KakEnd .* lsp-exit
             lsp-auto-hover-enable
-            lsp-auto-hover-insert-mode-disable
+            # lsp-auto-hover-insert-mode-disable
+            lsp-auto-hover-insert-mode-enable
+            lsp-stop-on-exit-enable
+            # lsp-diagnostic-lines-enable shared
+            # lsp-inline-diagnostics-enable shared
+            # lsp-inlay-diagnostics-enable shared
             #set-option window lsp_hover_anchor true
             set-face window DiagnosticError default+u
             set-face window DiagnosticWarning default+u
@@ -206,9 +211,9 @@ plug "alexherbo2/surround.kak" %{
     set-option global surround_end auto-pairs-enable
 }
 
-plug "alexherbo2/replace.kak" config %{
-    map global user r -docstring 'Replace mode' ':enter_replace_mode<ret>'
-}
+# plug "alexherbo2/replace.kak" config %{
+#     map global user r -docstring 'Replace mode' ':enter_replace_mode<ret>'
+# }
 
 # if %[ -n "${PATH##*termux*}" ] %{
 #     plug "andreyorst/tagbar.kak" domain gitlab.com defer tagbar %{
