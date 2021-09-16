@@ -1,0 +1,13 @@
+[Unit]
+Description=Dynamic output configuration for Wayland compositors
+Documentation=https://github.com/emersion/kanshi
+BindsTo=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/home/philipp.geier@SD-DO01.local/.nix-profile/bin/kanshi
+
+[Install]
+WantedBy=sway-session.target
+
+

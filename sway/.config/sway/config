@@ -257,11 +257,13 @@ bar {
 
 include @sysconfdir@/sway/config.d/*
 
-exec "systemctl --user import-environment; systemctl --user start sway-session.target"
-exec nm_applet
+exec_always --no-startup-id "systemctl --user import-environment; systemctl --user start sway-session.target"
 # exec_always --no_startup-id pasystray
+exec_always --no-startup-id volnoti
 exec_always --no-startup-id mako
 exec_always --no-startup-id flashfocus
 exec_always --no-startup-id autotiling
-exec --no-startup-id /usr/share/libpam-kwallet-common/pam_kwallet_init
+exec_always --no-startup-id lxqt-policykit-agent
+exec_always --no-startup-id nm_applet
+# exec --no-startup-id /usr/share/libpam-kwallet-common/pam_kwallet_init
 
