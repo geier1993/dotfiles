@@ -1,7 +1,7 @@
 #!/bin/sh
 ###!/bin/bash
 
-export $(dbus-launch)
+# export $(dbus-launch)
 # export MESA_LOADER_DRIVER_OVERRIDE=i965
 # exec systemctl --user import-environment
 
