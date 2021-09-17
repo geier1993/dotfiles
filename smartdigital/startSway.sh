@@ -23,8 +23,8 @@
 
 # sway -d 2> ~/sway.log
 #exec ck-launch-session dbus-launch --sh-syntax --exit-with-session sway
-exec dbus-launch --sh-syntax --exit-with-session $(which sway) -d 2> ~/sway.log
+#exec dbus-launch --sh-syntax --exit-with-session /usr/bin/sway -d 2> ~/sway.log
 # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 # lxqt-policykit-agent &
-# exec /usr/bin/ssh-agent /usr/bin/im-launch /usr/bin/sway --my-next-gpu-wont-be-nvidia
+exec /usr/bin/ssh-agent /usr/bin/im-launch /usr/bin/sway --my-next-gpu-wont-be-nvidia
 # exec /usr/bin/ssh-agent /usr/bin/im-launch /usr/bin/sway 

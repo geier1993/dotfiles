@@ -23,7 +23,7 @@
     allowUnfree = true;
     #allowBroken = true;
     firefox = {
-      enablePepperFlash = true;
+     enablePepperFlash = true;
     };
 
     # Explicit pulseaudio support in applications
@@ -160,9 +160,10 @@
     # pamixer
     # ponymix
     # pasystray
-    pavucontrol
+    # pavucontrol
     # volnoti
     kakoune
+    peek
     vscodium
     #kak-lsp
     cargo
@@ -174,7 +175,8 @@
     tmux
     dmenu
     rofi
-    firefox
+    # firefox
+    firefox-wayland
     chromium
     thunderbird
     #vivaldi
@@ -339,6 +341,7 @@
   networking = {
     hostName = "jimmy"; # Define your hostname.
     networkmanager.enable = true;
+    networkmanager.wifi.backend = "iwd"; # or "wpa_supplicant"
     wireless.enable = false;  # Enables wireless support via wpa_supplicant.
     wireless.userControlled.enable = true;
     wireless.userControlled.group = "network";
@@ -362,6 +365,7 @@
       enable = true;
       allowPing = true;
     };
+
   };
 
 
@@ -528,84 +532,86 @@
       nssmdns = true;
      };
 
-    xserver = {
-      enable = false;
-      #enable = true;
-      #autorun = false;
-      exportConfiguration = true;
-      autoRepeatDelay = 150;
-      autoRepeatInterval = 50;
+    # xserver = {
+    #   enable = false;
+    #   #enable = true;
+    #   #autorun = false;
+    #   exportConfiguration = true;
+    #   autoRepeatDelay = 150;
+    #   autoRepeatInterval = 50;
 
-      modules = with pkgs; [
-              xorg.xf86inputsynaptics # xf86-input-synaptics
-              xorg.xf86videointel # xf86-video-intel
-              xorg.xf86inputevdev # xf86-input-evdev
-              xorg.xf86inputkeyboard
-              xorg.xf86inputlibinput
-              #libinput
-              xorg.xrdb
-              xorg.xinit
-              xorg.xorgserver
-              xorg.setxkbmap
-              xorg.xrandr
-              xorg.xauth
-          ];
+    #   modules = with pkgs; [
+    #           xorg.xf86inputsynaptics # xf86-input-synaptics
+    #           xorg.xf86videointel # xf86-video-intel
+    #           xorg.xf86inputevdev # xf86-input-evdev
+    #           xorg.xf86inputkeyboard
+    #           xorg.xf86inputlibinput
+    #           #libinput
+    #           xorg.xrdb
+    #           xorg.xinit
+    #           xorg.xorgserver
+    #           xorg.setxkbmap
+    #           xorg.xrandr
+    #           xorg.xauth
+    #       ];
 
-      # libinput.enable = true;
-      # videoDrivers = ["intel" "mesa-noglu" "modesetting" "nvidia"];
-      # videoDrivers = ["intel" "modesetting" "nvidia"];
-      videoDrivers = ["intel" "nvidia"];
-      # videoDrivers = ["intel" "mesa-noglu" ];
-      # videoDrivers = ["modesetting" "nvidia"];
-      # videoDrivers = ["nvidia"];
+    #   # libinput.enable = true;
+    #   # videoDrivers = ["intel" "mesa-noglu" "modesetting" "nvidia"];
+    #   # videoDrivers = ["intel" "modesetting" "nvidia"];
+    #   videoDrivers = ["intel" "nvidia"];
+    #   # videoDrivers = ["intel" "mesa-noglu" ];
+    #   # videoDrivers = ["modesetting" "nvidia"];
+    #   # videoDrivers = ["nvidia"];
 
-      layout = "us,de";
-      xkbVariant = "dvorak,";
-      xkbOptions = "grp:switch,grp:menu_toggle";
+    #   layout = "us,de";
+    #   xkbVariant = "dvorak,";
+    #   xkbOptions = "grp:switch,grp:menu_toggle";
 
-      inputClassSections = [''
-              Identifier "touchpad"
-              Driver "synaptics"
-              MatchIsTouchpad "on"
-                  Option "TapButton1" "1"
-                  Option "TapButton2" "2"
-                  Option "TapButton3" "3"
-                  Option "VertEdgeScroll" "on"
-                  Option "VertTwoFingerScroll" "on"
-                  Option "HorizEdgeScroll" "on"
-                  Option "HorizTwoFingerScroll" "on"
-                  Option "CircularScrolling" "on"
-                  Option "CircScrollTrigger" "2"
-                  #Option "EmulateTwoFingerMinZ" "40"
-                  #Option "EmulateTwoFingerMinW" "8"
-                  #Option "CoastingSpeed" "0"
-                  #Option "FingerLow" "30"
-                  #Option "FingerHigh" "50"
-                  #Option "MaxTapTime" "125"
-        ''
-        ''
-          Identifier "keyboard"
-          MatchIsKeyboard "yes"
-          Option "XkbLayout" "us,de"
-          Option "XkbVariant" "dvorak,"
-          Option "XkbOptions" "grp:switch,grp:menu_toggle"
-    Option "AutoRepeat" "150 50"
-        ''];
-      # Enable the KDE Desktop Environment.
-      # displayManager = {
-      #   sddm.enable = true;
-      # };
-      # desktopManager = {
-      #   plasma5.enable = true;
-      # };
-    };
+    #   inputClassSections = [''
+    #           Identifier "touchpad"
+    #           Driver "synaptics"
+    #           MatchIsTouchpad "on"
+    #               Option "TapButton1" "1"
+    #               Option "TapButton2" "2"
+    #               Option "TapButton3" "3"
+    #               Option "VertEdgeScroll" "on"
+    #               Option "VertTwoFingerScroll" "on"
+    #               Option "HorizEdgeScroll" "on"
+    #               Option "HorizTwoFingerScroll" "on"
+    #               Option "CircularScrolling" "on"
+    #               Option "CircScrollTrigger" "2"
+    #               #Option "EmulateTwoFingerMinZ" "40"
+    #               #Option "EmulateTwoFingerMinW" "8"
+    #               #Option "CoastingSpeed" "0"
+    #               #Option "FingerLow" "30"
+    #               #Option "FingerHigh" "50"
+    #               #Option "MaxTapTime" "125"
+    #     ''
+    #     ''
+    #       Identifier "keyboard"
+    #       MatchIsKeyboard "yes"
+    #       Option "XkbLayout" "us,de"
+    #       Option "XkbVariant" "dvorak,"
+    #       Option "XkbOptions" "grp:switch,grp:menu_toggle"
+    # Option "AutoRepeat" "150 50"
+    #     ''];
+    #   # Enable the KDE Desktop Environment.
+    #   # displayManager = {
+    #   #   sddm.enable = true;
+    #   # };
+    #   # desktopManager = {
+    #   #   plasma5.enable = true;
+    #   # };
+    # };
   };
 
   programs.sway = {
       enable = true;
       wrapperFeatures.gtk = true; # so that gtk works properly
       extraPackages = with pkgs; [
-        swaylock
+        # swaylock
+        swaylock-effects
+        swaybg
         swayidle
         xwayland # for legacy apps
         waybar # statusbar
@@ -618,7 +624,7 @@
         wofi
         # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
         kanshi # autorandr
-        # brightnessctl
+        brightnessctl
         light
 
         # Theming
@@ -626,13 +632,20 @@
         gtk_engines
         gsettings-desktop-schemas
         lxappearance
-        #lxqt-policykit
+        lxqt.lxqt-policykit
 
         # More
         autotiling
         flashfocus
         gammastep
+        geoclue2 # for gammastep
         wf-recorder
+
+        pavucontrol
+        volnoti
+        pasystray
+        ponymix
+        networkmanagerapplet
       ];
     };
   # environment = {
@@ -645,6 +658,9 @@
   # };
   programs.qt5ct.enable = true;
   programs.waybar.enable = true;
+  programs.nm-applet.enable = true;
+  programs.nm-applet.indicator = true;
+  programs.gnupg.agent.pinentryFlavor = "qt";
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";
     documentation = [ "man:systemd.special(7)" ];
@@ -698,6 +714,7 @@
       '';
     };
   };
+  security.polkit.enable = true;
   # systemd.user.services.waybar = {
   #   description = "Highly customizable Wayland bar for Sway and Wlroots based compositors.";
   #   documentation = [ https://github.com/Alexays/Waybar/wiki/ ];
@@ -710,6 +727,96 @@
   # };
   # end sway
 
+  # Pipewire
+  # sound.enable = true;
+  # pulseaudio = {
+  #   enable = true;
+  #   support32Bit = true;
+  #   # systemWide = true;
+  #   package = pkgs.pulseaudioFull;
+  #   extraModules = [ pkgs.pulseaudio-modules-bt ];
+  #   extraConfig = "
+  #       load-module module-switch-on-connect
+  #       load-module module-bluetooth-policy auto_switch=2
+  #   ";
+  #   # configFile = pkgs.writeText "default.pa" ''
+  #   #     load-module module-bluetooth-policy
+  #   #     load-module module-bluetooth-discover
+  #   #     ## module fails to load with 
+  #   #     ##   module-bluez5-device.c: Failed to get device path from module arguments
+  #   #     ##   module.c: Failed to load module "module-bluez5-device" (argument: ""): initialization failed.
+  #   #     # load-module module-bluez5-device
+  #   #     # load-module module-bluez5-discover
+  #   #   '';
+  # };
+
+  environment.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = "1";
+    XDG_CURRENT_DESKTOP = "sway";
+  };
+
+
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    media-session.enable = true;
+
+    media-session.config.bluez-monitor.rules = [
+      {
+        # Matches all cards
+        matches = [ { "device.name" = "~bluez_card.*"; } ];
+        actions = {
+          "update-props" = {
+            "bluez5.reconnect-profiles" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
+            # mSBC is not expected to work on all headset + adapter combinations.
+            "bluez5.msbc-support" = true;
+            # SBC-XQ is not expected to work on all headset + adapter combinations.
+            "bluez5.sbc-xq-support" = true;
+          };
+        };
+      }
+      {
+        matches = [
+          # Matches all sources
+          { "node.name" = "~bluez_input.*"; }
+          # Matches all outputs
+          { "node.name" = "~bluez_output.*"; }
+        ];
+        actions = {
+          "node.pause-on-idle" = false;
+        };
+      }
+    ];
+  #   config.pipewire = {
+  #     "context.properties" = {
+  #       #"link.max-buffers" = 64;
+  #       "link.max-buffers" = 16; # version < 3 clients can't handle more than this
+  #       "log.level" = 2; # https://docs.pipewire.org/#Logging
+  #       #"default.clock.rate" = 48000;
+  #       #"default.clock.quantum" = 1024;
+  #       #"default.clock.min-quantum" = 32;
+  #       #"default.clock.max-quantum" = 8192;
+  #     };
+  #   };
+  };
+  xdg = {
+      portal = {
+        enable = true;
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-wlr
+          xdg-desktop-portal-gtk
+        ];
+        gtkUsePortal = true;
+      };
+    };
 
 
 
@@ -746,26 +853,6 @@
 
     enableAllFirmware = true;
 
-    pulseaudio = {
-      enable = true;
-      support32Bit = true;
-      # systemWide = true;
-      package = pkgs.pulseaudioFull;
-      extraModules = [ pkgs.pulseaudio-modules-bt ];
-      extraConfig = "
-          load-module module-switch-on-connect
-          load-module module-bluetooth-policy auto_switch=2
-      ";
-      # configFile = pkgs.writeText "default.pa" ''
-      #     load-module module-bluetooth-policy
-      #     load-module module-bluetooth-discover
-      #     ## module fails to load with 
-      #     ##   module-bluez5-device.c: Failed to get device path from module arguments
-      #     ##   module.c: Failed to load module "module-bluez5-device" (argument: ""): initialization failed.
-      #     # load-module module-bluez5-device
-      #     # load-module module-bluez5-discover
-      #   '';
-    };
 
     sane = {
       enable = true;
@@ -807,8 +894,8 @@
       terminus_font_ttf
       symbola
       font-awesome
-      font-awesome-ttf
-      libertine
+      # font-awesome-ttf
+      # libertine
       ubuntu_font_family
       liberation_ttf
       inconsolata
@@ -868,7 +955,6 @@
   };
 
 
-  sound.enable = true;
 
   powerManagement = {
     enable = true;

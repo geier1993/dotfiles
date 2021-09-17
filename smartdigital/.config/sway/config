@@ -41,7 +41,6 @@ exec swayidle -w \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'playerctl pause' \
          before-sleep 'swaylock -f -c 000000'
-
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -106,9 +105,6 @@ input type:touchpad {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-
-    bindsym $mod+Shift+p exec swaynag -t green -m '' -Z 'Lock' 'swaylock' -Z 'Reboot' 'systemctl reboot' -Z 'Poweroff' 'systemctl poweroff' -Z 'Halt' 'systemctl Halt' -Z 'Hybernate' 'systemctl hybernate' -Z 'Suspend' 'systemctl suspend' -Z 'Hybrid sleep' 'systemctl hybrid-sleep'
-    bindsym $mod+Shift+g exec swaylock
 #
 # Moving around:
 #
@@ -259,9 +255,9 @@ bindsym $mod+r mode "resize"
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
-# bar { 
-#      swaybar_command waybar
-# }
+bar { 
+     swaybar_command waybar
+}
 
 include @sysconfdir@/sway/config.d/*
 
@@ -273,7 +269,6 @@ exec_always --no-startup-id mako
 exec_always --no-startup-id flashfocus
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id lxqt-policykit-agent
-exec_always --no-startup-id gammastep
 exec wl-paste -t text --watch clipman store
 # exec_always --no-startup-id nm_applet
 # exec --no-startup-id /usr/share/libpam-kwallet-common/pam_kwallet_init

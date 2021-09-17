@@ -59,6 +59,8 @@ case `uname` in
     stow -t $TARGET mako
     stow -t $TARGET waybar
     stow -t $TARGET foot
+    stow -t $TARGET flashfocus
+    stow -t $TARGET swaynag
     # stow -t $TARGET i3
   ;;
   FreeBSD)
