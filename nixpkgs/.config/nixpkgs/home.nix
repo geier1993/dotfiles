@@ -3,6 +3,89 @@
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  fonts.fontconfig.enable = true;
+
+  # wayland.windowManager.sway = {
+  #   enable = true;
+  #   wrapperFeatures.gtk = true ;
+  #   xwayland = true ;
+  # };
+  home.packages = with pkgs; [
+    # sway
+    # swaylock
+    swayidle
+    wl-clipboard
+    clipman
+    xwayland
+    waybar
+    mako # notification daemon
+    # alacritty # Alacritty is the default terminal in the config
+    foot
+    # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
+    wofi
+    kanshi
+    light
+    brightnessctl
+
+    gtk-engine-murrine
+    gtk_engines
+    gsettings-desktop-schemas
+    lxappearance
+
+    autotiling
+    flashfocus
+    gammastep
+    wf-recorder
+
+    volnoti
+    ponymix
+    pasystray
+
+    font-awesome
+
+    kakoune
+    ranger
+    fasd
+    keepass
+    fzf
+    silver-searcher
+    direnv
+
+    fish
+    tmux
+    vim
+    vscode
+    zathura
+    git
+    diff-so-fancy
+    editorconfig-checker
+
+    spotify
+    gimp
+
+    firefox-wayland
+
+    # glibcLocales # install with nix-env
+  ];
+
+  # Home Manager setup
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+    XDG_CURRENT_DESKTOP = "sway"; 
+  };
+
+  # programs.firefox = {
+  #     enable = true;
+  #     package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+  #       forceWayland = true;
+  #       extraPolicies = {
+  #         ExtensionSettings = {};
+  #       };
+  #     };
+  #   };
+
+
+
 
   # programs.fish.enable = true;
  

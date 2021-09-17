@@ -626,6 +626,7 @@
         gtk_engines
         gsettings-desktop-schemas
         lxappearance
+        #lxqt-policykit
 
         # More
         autotiling
@@ -805,6 +806,7 @@
       terminus_font
       terminus_font_ttf
       symbola
+      font-awesome
       font-awesome-ttf
       libertine
       ubuntu_font_family

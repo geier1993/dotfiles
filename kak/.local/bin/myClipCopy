@@ -1,8 +1,13 @@
 #!/bin/sh
-
-if [[ $(uname) == "Darwin" ]];
+if [ -z  "$WAYLAND_DISPLAY" ];
 then
-  pbcopy <&0
+    if [[ $(uname) == "Darwin" ]];
+    then
+      pbcopy <&0
+    else
+      xsel --input --clipboard <&0
+    fi
 else
-  xsel --input --clipboard <&0
+    # wl-copy <&0
+    clipman store <&0
 fi

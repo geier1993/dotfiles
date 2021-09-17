@@ -1,17 +1,20 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+CURRENTSHELL=$0
 
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
+if [ -e /home/philipp.geier@SD-DO01.local/.nix-profile/etc/profile.d/nix.sh ]; then . /home/philipp.geier@SD-DO01.local/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 
 export TERM=xterm-256color
 export LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive"
 
-if [ -x `which fish` ] && [ -z "$IN_FISH" ]; then
+if [ -x `which fish` ] && ([ -z "$IN_FISH" ] || [ $CURRENTSHELL == "-bash" ]); then
   # export SHELL=/bin/zsh #edit: this is probably not what you want, see the comment.
   export IN_FISH=1
   exec fish

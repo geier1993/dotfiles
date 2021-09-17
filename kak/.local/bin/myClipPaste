@@ -1,8 +1,13 @@
 #!/bin/sh
 
-if [[ $(uname) == "Darwin" ]];
+if [ -z "$WAYLAND_DISPLAY" ];
 then
-  pbpaste
+    if [[ $(uname) == "Darwin" ]];
+    then
+      pbpaste
+    else
+      xsel --output --clipboard
+    fi
 else
-  xsel --output --clipboard
+    wl-paste
 fi

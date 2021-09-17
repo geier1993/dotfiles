@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+# share-screen
+# This script starts or restarts `xdg-desktop-portal` and
+# `xdg-desktop-portal-wlr`. While doing so the currently focused output (read
+# screen) is passed to `xdg-desktop-portal-wlr`. This makes the respective
+# screen available for sharing in apps and websites that can do so.
+
+export XDG_CURRENT_DESKTOP=sway
+
+output=$(swaymsg -pt get_outputs | grep focused | awk '{print $2}')
+/usr/lib/xdg-desktop-portal -r & /usr/lib/xdg-desktop-portal-wlr -r -o $output &

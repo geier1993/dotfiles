@@ -36,6 +36,7 @@ stow -t $TARGET Code
 stow -t $TARGET kde_sd
 stow -t $TARGET smartdigital
 
+
 case `uname` in
   Darwin)
     # commands for OS X go here
@@ -52,7 +53,12 @@ case `uname` in
   ;;
   Linux)
     # commands for Linux go here
-    # stow -t $TARGET sway
+    stow -t $TARGET sway
+    stow -t $TARGET swaylock
+    stow -t $TARGET kanshi
+    stow -t $TARGET mako
+    stow -t $TARGET waybar
+    stow -t $TARGET foot
     # stow -t $TARGET i3
   ;;
   FreeBSD)
