@@ -65,6 +65,9 @@
 
     firefox-wayland
 
+    # numix-solarized-gtk-theme
+    # zafiro-icons
+
     # glibcLocales # install with nix-env
   ];
 
