@@ -632,6 +632,7 @@
         gtk-engine-murrine
         gtk_engines
         gsettings-desktop-schemas
+        # qt5.qtbase.gtk
         # gsettings-qt
         glib
         lxappearance
@@ -643,9 +644,25 @@
         # material-icons
         # gruvbox-dark-icons-gtk
         numix-solarized-gtk-theme
+        numix-gtk-theme
+        numix-sx-gtk-theme
+        numix-icon-theme
+        numix-cursor-theme
+        numix-icon-theme-square
+        numix-icon-theme-circle
+        # papirus-icon-theme
+        # papirus-maia-icon-theme
+        # luna-icons
+        # flat-remix-icon-theme
+        # flat-remix-gtk
         # elementary-xfce-icon-theme
         zafiro-icons
         # sweet
+        # adementary-theme
+        # elementary-xfce-icon-theme
+        # yaru-theme
+        libsForQt5.grantleetheme
+        adwaita-qt
 
 
         # More
@@ -674,11 +691,17 @@
   #     "xdg/waybar/style.css".source = /home/geier/dotfiles/waybar/.config/waybar/style.css;
   #   };
   # };
-  programs.qt5ct.enable = true;
+  # programs.qt5ct.enable = true;
+  qt5 = {
+    enable = true;
+    platformTheme = "gtk2";
+    style = "gtk2";
+  };
+
   programs.waybar.enable = true;
   programs.nm-applet.enable = true;
   programs.nm-applet.indicator = true;
-  programs.gnupg.agent.pinentryFlavor = "qt";
+  programs.gnupg.agent.pinentryFlavor = "gtk2";
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";
     documentation = [ "man:systemd.special(7)" ];
@@ -932,6 +955,8 @@
       fira
       fira-code
       fira-mono
+      roboto
+      roboto-mono
       hasklig
       noto-fonts
       google-fonts
@@ -944,9 +969,12 @@
          # monospace = [ "DejaVu Sans Serif" ];
          # sansSerif = [ "DejaVu Sans Serif" ];
          # serif     = [ "DejaVu Sans Serif" ];
-         monospace = [ "Fira Mono" ];
-         sansSerif = [ "Fira Mono" ];
-         serif     = [ "Fira Mono" ];
+         # monospace = [ "Fira Mono" ];
+         # sansSerif = [ "Fira Mono" ];
+         # serif     = [ "Fira Mono" ];
+         monospace = [ "Fira Code Light" ];
+         sansSerif = [ "Fira Code Light" ];
+         serif     = [ "Fira Code Light" ];
       };
     };
   };
