@@ -615,6 +615,7 @@
         swayidle
         xwayland # for legacy apps
         waybar # statusbar
+        nwg-launchers
         # pactl
         wl-clipboard
         clipman
@@ -631,8 +632,21 @@
         gtk-engine-murrine
         gtk_engines
         gsettings-desktop-schemas
+        # gsettings-qt
+        glib
         lxappearance
+        lxappearance-gtk2
         lxqt.lxqt-policykit
+        # lxqt.lxqt-themes
+        # materia-theme
+        # material-design-icons
+        # material-icons
+        # gruvbox-dark-icons-gtk
+        numix-solarized-gtk-theme
+        # elementary-xfce-icon-theme
+        zafiro-icons
+        # sweet
+
 
         # More
         autotiling
@@ -646,6 +660,10 @@
         pasystray
         ponymix
         networkmanagerapplet
+        playerctl
+
+        # gtk3
+        # gtk4
       ];
     };
   # environment = {

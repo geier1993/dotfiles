@@ -19,7 +19,11 @@ set $term foot
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu wofi --show=run | xargs swaymsg exec --
+# set $menu wofi --show=run | xargs swaymsg exec --
+set $menu nwgdmenu | xargs swaymsg exec --
+set $menu nwgdmenu | xargs swaymsg exec --
+
+set $grid nwggrid | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -93,6 +97,7 @@ input type:touchpad {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+Shift+d exec $grid
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -107,7 +112,8 @@ input type:touchpad {
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
-    bindsym $mod+Shift+p exec swaynag -t green -m '' -Z 'Lock' 'swaylock' -Z 'Reboot' 'systemctl reboot' -Z 'Poweroff' 'systemctl poweroff' -Z 'Halt' 'systemctl Halt' -Z 'Hybernate' 'systemctl hybernate' -Z 'Suspend' 'systemctl suspend' -Z 'Hybrid sleep' 'systemctl hybrid-sleep'
+    # bindsym $mod+Shift+p exec swaynag -t green -m '' -Z 'Lock' 'swaylock' -Z 'Reboot' 'systemctl reboot' -Z 'Poweroff' 'systemctl poweroff' -Z 'Halt' 'systemctl Halt' -Z 'Hybernate' 'systemctl hybernate' -Z 'Suspend' 'systemctl suspend' -Z 'Hybrid sleep' 'systemctl hybrid-sleep'
+    bindsym $mod+Shift+p exec nwgbar
     bindsym $mod+Shift+g exec swaylock
 #
 # Moving around:
@@ -274,6 +280,7 @@ exec_always --no-startup-id flashfocus
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id lxqt-policykit-agent
 exec_always --no-startup-id gammastep
+exec_always import-gsettings
 exec wl-paste -t text --watch clipman store
 # exec_always --no-startup-id nm_applet
 # exec --no-startup-id /usr/share/libpam-kwallet-common/pam_kwallet_init

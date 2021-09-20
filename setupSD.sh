@@ -61,6 +61,7 @@ case `uname` in
     stow -t $TARGET foot
     stow -t $TARGET flashfocus
     stow -t $TARGET swaynag
+    stow -t $TARGET nwg-launchers
     # stow -t $TARGET i3
   ;;
   FreeBSD)
