@@ -64,6 +64,10 @@
     gimp
 
     firefox-wayland
+    chromium
+    pavucontrol
+    pcmanfm
+    nemo
 
     # numix-solarized-gtk-theme
     # zafiro-icons
