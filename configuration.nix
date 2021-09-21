@@ -639,10 +639,10 @@
         lxappearance-gtk2
         lxqt.lxqt-policykit
         # lxqt.lxqt-themes
-        # materia-theme
-        # material-design-icons
-        # material-icons
-        # gruvbox-dark-icons-gtk
+        materia-theme
+        material-design-icons
+        material-icons
+        gruvbox-dark-icons-gtk
         numix-solarized-gtk-theme
         numix-gtk-theme
         numix-sx-gtk-theme
@@ -650,12 +650,12 @@
         numix-cursor-theme
         numix-icon-theme-square
         numix-icon-theme-circle
-        # papirus-icon-theme
-        # papirus-maia-icon-theme
-        # luna-icons
-        # flat-remix-icon-theme
-        # flat-remix-gtk
-        # elementary-xfce-icon-theme
+        papirus-icon-theme
+        papirus-maia-icon-theme
+        luna-icons
+        flat-remix-icon-theme
+        flat-remix-gtk
+        elementary-xfce-icon-theme
         zafiro-icons
         # sweet
         # adementary-theme
@@ -678,6 +678,11 @@
         ponymix
         networkmanagerapplet
         playerctl
+
+        pcmanfm
+        cinnamon.nemo
+
+        
 
         # gtk3
         # gtk4
