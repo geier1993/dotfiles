@@ -46,7 +46,7 @@ layout-text-color=fdf6e3
 # layout-bg-color=586e75
 layout-border-color=586e75
 layout-bg-color=073642
-grace=2
+grace=5
 grace-no-mouse
 grace-no-touch
 fade-in=0.2

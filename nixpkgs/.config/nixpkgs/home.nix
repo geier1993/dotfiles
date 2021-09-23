@@ -41,10 +41,16 @@
     ponymix
     pasystray
 
+    grim
+    slurp
+    swappy
+
     font-awesome
 
     kakoune
     ranger
+    w3m
+    lsix
     fasd
     keepass
     fzf
@@ -53,6 +59,9 @@
 
     fish
     tmux
+    mtm
+    zellij
+    notcurses
     vim
     vscode
     zathura
@@ -62,12 +71,13 @@
 
     spotify
     gimp
+    okular
 
     firefox-wayland
     chromium
     pavucontrol
     pcmanfm
-    nemo
+    cinnamon.nemo
 
     # numix-solarized-gtk-theme
     # zafiro-icons

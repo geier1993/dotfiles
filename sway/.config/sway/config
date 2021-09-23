@@ -91,6 +91,10 @@ input type:touchpad {
     bindsym $mod+Shift+Return exec $term tmux new-session -t Default
     bindsym $mod+n exec $term tmux new-session -A -s 1 -t G1
     bindsym $mod+Shift+n exec $term tmux new-session -t G1
+    # bindsym $mod+Return exec $term zellij-setup-or-attach Default
+    # bindsym $mod+Shift+Return exec $term zellij
+    # bindsym $mod+n exec $term zellij-setup-or-attach G1
+    # # bindsym $mod+Shift+n exec $term zellij-setup-or-attach G1
 
     # Kill focused window
     bindsym $mod+Shift+q kill
@@ -113,8 +117,10 @@ input type:touchpad {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
     # bindsym $mod+Shift+p exec swaynag -t green -m '' -Z 'Lock' 'swaylock' -Z 'Reboot' 'systemctl reboot' -Z 'Poweroff' 'systemctl poweroff' -Z 'Halt' 'systemctl Halt' -Z 'Hybernate' 'systemctl hybernate' -Z 'Suspend' 'systemctl suspend' -Z 'Hybrid sleep' 'systemctl hybrid-sleep'
-    bindsym $mod+Shift+p exec nwgbar
+    bindsym $mod+Shift+r exec nwgbar
     bindsym $mod+Shift+g exec swaylock
+    bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
+    bindsym $mod+Shift+a exec grim - | swappy -f -
 #
 # Moving around:
 #

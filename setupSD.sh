@@ -13,6 +13,7 @@ stow -t $TARGET direnv
 #stow -t $TARGET termite
 stow -t $TARGET kitty
 stow -t $TARGET tmux
+stow -t $TARGET zellij
 #stow -t $TARGET stack
 #stow -t $TARGET i3blocks
 stow -t $TARGET zathura

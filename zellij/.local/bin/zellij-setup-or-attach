@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ ! -z "$1" ]
+then
+    exists=$(zellij list-sessions | egrep -o "^$1$")
+    if [ ! -z "$exists" ]
+    then
+        zellij attach $1 --force
+    else
+        zellij -s $1 setup
+    fi
+else
+    zellij
+fi

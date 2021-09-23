@@ -173,6 +173,9 @@
     elmPackages.elm-format
     elmPackages.elm-language-server
     tmux
+    zellij
+    mtm
+    notcurses
     dmenu
     rofi
     # firefox
@@ -233,6 +236,7 @@
     p7zip
     w3m
     ranger
+    lsix
     tree
     vim
     thermald
@@ -671,6 +675,9 @@
         gammastep
         geoclue2 # for gammastep
         wf-recorder
+        grim
+        slurp
+        swappy
 
         pavucontrol
         volnoti
