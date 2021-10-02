@@ -1,5 +1,5 @@
 profile {
-	output "Unknown HP S270n 6CM8320VX2" enable scale 1 position 1920,0 mode 3840x2160@60.000
+	output "Unknown HP S270n 6CM8320VX2" enable scale 1.5 position 1920,0 mode 3840x2160@60.000
 	# output "HDMI-A-1" enable scale 1 position 1920,0 mode 3840x2160@60.000
 	# output "HDMI-A-1" enable scale 1 position 1920,0 mode 3840x2160@30.000
 	# output "HDMI-A-1" enable scale 0.75 position 1920,0 mode 1920x1080@60.000

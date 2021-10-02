@@ -21,6 +21,8 @@ map -docstring "behave as <a-x> if line not selected, select line up otherwise" 
 map -docstring "avoid escape key" global normal '<c-g>' ';<space>'
 map -docstring "avoid escape key" global prompt '<c-g>' '<esc>'
 map -docstring "avoid escape key" global insert '<c-g>' '<esc>'
+map -docstring "avoid escape key" global normal '<a-c>' ';<space>'
+map -docstring "avoid escape key" global prompt '<a-c>' '<esc>'
 map -docstring "avoid escape key" global insert '<a-c>' '<esc>'
 
 
