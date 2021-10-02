@@ -1,3 +1,0 @@
-#!/bin/sh
-zellij-setup-or-attach (zellij list-sessions | fzf --print-query | tail -
-n 1 | tr -dc '[:alnum:]\n\r')  
