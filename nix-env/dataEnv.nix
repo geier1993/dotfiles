@@ -38,12 +38,17 @@ pkgs.stdenv.mkDerivation rec {
       pkgs.python38Packages.pyls-mypy
       pkgs.python38Packages.pyls-isort
 
+      pkgs.python38Packages.pyodbc
+      pkgs.unixODBC
+      pkgs.unixODBCDrivers.msodbcsql17
+      # add more drivers if required...
 
       stable.azure-cli
 ];
 
   shellHook = ''
     export KAKSESSION="$KAKSESSION-nix-dataEnv"
+    export MSODBCSQL17=${pkgs.unixODBCDrivers.msodbcsql17}/lib/libmsodbcsql-17.7.so.1.1
   '';
 
 

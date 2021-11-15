@@ -60,6 +60,7 @@
     fish
     tmux
     mtm
+
     zellij
     notcurses
     vim
