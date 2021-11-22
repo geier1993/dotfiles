@@ -1,12 +1,13 @@
 #!/bin/sh
-if [ ! -z "$1" ]
+sname=$(echo "$1" | sed 's/[^\_0-9a-zA-Z\-]//g')
+if [ ! -z "$sname" ]
 then
-    exists=$(zellij list-sessions | egrep -o "^$1$")
+    exists=$(zellij list-sessions | egrep -o "^$sname$")
     if [ ! -z "$exists" ]
     then
-        zellij attach $1 --force
+        zellij attach $sname
     else
-        zellij -s $1 setup
+        zellij -s $sname setup
     fi
 else
     zellij

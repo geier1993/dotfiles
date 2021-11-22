@@ -2,3 +2,10 @@ simplified_ui: false
 no_pane_frames: true
 default_shell: fish
 
+# default_mode: locked
+keybinds:
+    scroll:
+        - action: [PageScrollDown,]
+          key: [Ctrl: 'f', PageDown,]
+        - action: [PageScrollUp,]
+          key: [Ctrl: 'b', PageUp,]

@@ -1,5 +1,7 @@
 #!/bin/sh
 # zellij-setup-or-attach (zellij list-sessions | fzf --print-query | tail -n 1 | tr -dc '[:alnum:]\n\r')
 # zellij-setup-or-attach $(zellij list-sessions | fzf --print-query | tail -n 1 | tr -dc '[:alnum:]\n\r')
-zellij-setup-or-attach $(zellij list-sessions | fzf --print-query | tail -n 1)
+zellij-setup-or-attach $(zellij list-sessions | grep -v "No active zellij sessions found." | fzf --print-query | tail -n 1| sed 's/[^\_0-9a-zA-Z\-]//g')
+
+
   

@@ -87,10 +87,16 @@ input type:touchpad {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term tmux new-session -A -s 0 -t Default
-    bindsym $mod+Shift+Return exec $term tmux new-session -t Default
-    bindsym $mod+n exec $term tmux new-session -A -s 1 -t G1
-    bindsym $mod+Shift+n exec $term tmux new-session -t G1
+    bindsym $mod+Return exec $term zellij-fzf
+    bindsym $mod+Shift+Return exec $term fish 
+    bindsym $mod+n exec $term tmux new-session -A -s 0 -t Default
+    bindsym $mod+Shift+n exec $term tmux new-session -t Default
+     
+    # bindsym $mod+Return exec $term tmux new-session -A -s 0 -t Default
+    # bindsym $mod+Shift+Return exec $term tmux new-session -t Default
+    # bindsym $mod+n exec $term tmux new-session -A -s 1 -t G1
+    # bindsym $mod+Shift+n exec $term tmux new-session -t G1
+
     # bindsym $mod+Return exec $term zellij-setup-or-attach Default
     # bindsym $mod+Shift+Return exec $term zellij
     # bindsym $mod+n exec $term zellij-setup-or-attach G1
