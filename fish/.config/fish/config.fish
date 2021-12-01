@@ -25,6 +25,8 @@ set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib $HOME/.local/lib $HOME/.n
 if test -z $KAKSESSION
     if not test -z $TMUX
       set -x KAKSESSION (tmux display-message -p "#{session_group}")
+    else if not test -z $ZELLIJ_SESSION_NAME
+      set -x KAKSESSION $ZELLIJ_SESSION_NAME
     end
 end
 
