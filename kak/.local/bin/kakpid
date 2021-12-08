@@ -3,10 +3,10 @@ if [ ! -z "$KAKSESSION" ];
 then
   case `uname` in
     Darwin)
-      KAKPID=$(ps -ex | grep -v "grep" | grep "kak -d -s $KAKSESSION" | head | grep -o '[0-9]\+' | head -1)
+      KAKPID=$(ps -ex | grep -v "grep" | grep "kak -d -s $KAKSESSION\$" | head | grep -o '[0-9]\+' | head -1)
     ;;
     Linux)
-      KAKPID=$(ps -ef | grep -v "grep" | grep "kak -d -s $KAKSESSION" | head | grep -o '[0-9]\+' | head -1)
+      KAKPID=$(ps -ef | grep -v "grep" | grep "kak -d -s $KAKSESSION\$" | head | grep -o '[0-9]\+' | head -1)
       # commands for Linux go here
     ;;
     FreeBSD)

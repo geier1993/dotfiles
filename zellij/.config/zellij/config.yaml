@@ -1,5 +1,5 @@
 simplified_ui: false
-no_pane_frames: true
+pane_frames: false
 default_shell: fish
 
 # default_mode: locked
