@@ -236,7 +236,7 @@
     p7zip
     w3m
     ranger
-    lsix
+    # lsix
     tree
     vim
     thermald
