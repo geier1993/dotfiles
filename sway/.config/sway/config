@@ -44,7 +44,7 @@ exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep 'playerctl pause' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -c 000000 --grace 0'
 
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -124,7 +124,7 @@ input type:touchpad {
 
     # bindsym $mod+Shift+p exec swaynag -t green -m '' -Z 'Lock' 'swaylock' -Z 'Reboot' 'systemctl reboot' -Z 'Poweroff' 'systemctl poweroff' -Z 'Halt' 'systemctl Halt' -Z 'Hybernate' 'systemctl hybernate' -Z 'Suspend' 'systemctl suspend' -Z 'Hybrid sleep' 'systemctl hybrid-sleep'
     bindsym $mod+Shift+r exec nwgbar
-    bindsym $mod+Shift+g exec swaylock
+    bindsym $mod+Shift+g exec swaylock --grace 0
     bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
     bindsym $mod+Shift+a exec grim - | swappy -f -
 #
