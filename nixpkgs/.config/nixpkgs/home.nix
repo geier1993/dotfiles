@@ -52,6 +52,7 @@
     w3m
     lsix
     fasd
+    jq
     keepass
     fzf
     silver-searcher
@@ -66,6 +67,7 @@
     vim
     vscode
     zathura
+    xournalpp
     git
     diff-so-fancy
     editorconfig-checker
@@ -79,11 +81,15 @@
     pavucontrol
     pcmanfm
     cinnamon.nemo
+    terraform
+    terraform-ls
+    azure-cli
 
     # numix-solarized-gtk-theme
     # zafiro-icons
 
     # glibcLocales # install with nix-env
+    # nixGL # Improtant to start wayland & opengl with some applications on non-nixos systems
   ];
 
   # Home Manager setup

@@ -174,6 +174,7 @@
     elmPackages.elm-language-server
     tmux
     zellij
+    jq
     mtm
     notcurses
     dmenu

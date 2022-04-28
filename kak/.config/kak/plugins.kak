@@ -124,7 +124,7 @@ if %[ -n "${PATH##*termux*}" ] %{
         set-option global lsp_completion_trigger "execute-keys 'h<a-h><a-k>\S[^\s,=;*(){}\[\]]\z<ret>'"
         set-option global lsp_diagnostic_line_error_sign "!"
         set-option global lsp_diagnostic_line_warning_sign "?"
-        hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|elm|scala) %{
+        hook global WinSetOption filetype=(rust|python|go|javascript|typescript|c|cpp|elm|scala|terraform) %{
             echo -debug "Loading kak-lsp"
             map window user "l" ": enter-user-mode lsp<ret>" -docstring "LSP mode"
             map window lsp "n" "<esc>: lsp-find-error --include-warnings<ret>" -docstring "find next error or warning"
@@ -199,17 +199,17 @@ plug "alexherbo2/prelude.kak" %{
     require-module prelude
 }
 
-plug "alexherbo2/auto-pairs.kak" %{
-    require-module auto-pairs
-    hook global WinCreate .* auto-pairs-enable
-}
+# plug "alexherbo2/auto-pairs.kak" %{
+#     require-module auto-pairs
+#     hook global WinCreate .* auto-pairs-enable
+# }
 
-plug "alexherbo2/surround.kak" %{
-    require-module surround
-    map global user 's' ': enter-user-mode surround<ret>' -docstring "surround selection"
-    set-option global surround_begin auto-pairs-disable
-    set-option global surround_end auto-pairs-enable
-}
+# plug "alexherbo2/surround.kak" %{
+#     require-module surround
+#     map global user 's' ': enter-user-mode surround<ret>' -docstring "surround selection"
+#     set-option global surround_begin auto-pairs-disable
+#     set-option global surround_end auto-pairs-enable
+# }
 
 # plug "alexherbo2/replace.kak" config %{
 #     map global user r -docstring 'Replace mode' ':enter_replace_mode<ret>'

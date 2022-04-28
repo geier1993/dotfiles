@@ -41,6 +41,10 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias r='ranger'
 
+alias g='git'
+
+alias gs='git status'
+
 alias jqt="jupyter qtconsole"
 alias dbw="databricks workspace"
 

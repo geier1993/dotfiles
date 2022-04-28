@@ -9,18 +9,18 @@ pkgs.stdenv.mkDerivation rec {
   env = pkgs.buildEnv { name = name; paths = buildInputs; };
 
   buildInputs = [
-      pkgs.python3
-      pkgs.python38Packages.black
-      pkgs.python38Packages.poetry
-      pkgs.python38Packages.pyyaml
-      pkgs.python38Packages.pandas
-      pkgs.python38Packages.numpy
-      pkgs.python38Packages.scipy
-      pkgs.python38Packages.matplotlib
-      # pkgs.python38Packages.pymc3
-      pkgs.python38Packages.scikitlearn
-      pkgs.python38Packages.databricks-cli
-      pkgs.python38Packages.databricks-connect
+      stable.python3
+      stable.python38Packages.black
+      stable.python38Packages.poetry
+      stable.python38Packages.pyyaml
+      stable.python38Packages.pandas
+      stable.python38Packages.numpy
+      stable.python38Packages.scipy
+      stable.python38Packages.matplotlib
+      # stable.python38Packages.pymc3
+      stable.python38Packages.scikitlearn
+      stable.python38Packages.databricks-cli
+      stable.python38Packages.databricks-connect
       pkgs.jre
       pkgs.jdk
       pkgs.scala
@@ -33,14 +33,14 @@ pkgs.stdenv.mkDerivation rec {
       pkgs.binutils  
       pkgs.readline
 
-      pkgs.python38Packages.python-language-server
-      pkgs.python38Packages.pyls-black
-      pkgs.python38Packages.pyls-mypy
-      pkgs.python38Packages.pyls-isort
+      stable.python38Packages.python-language-server
+      stable.python38Packages.pyls-black
+      stable.python38Packages.pyls-mypy
+      stable.python38Packages.pyls-isort
 
-      pkgs.python38Packages.pyodbc
-      pkgs.unixODBC
-      pkgs.unixODBCDrivers.msodbcsql17
+      stable.python38Packages.pyodbc
+      stable.unixODBC
+      stable.unixODBCDrivers.msodbcsql17
       # add more drivers if required...
 
       stable.azure-cli
