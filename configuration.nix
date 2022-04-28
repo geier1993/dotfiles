@@ -266,6 +266,7 @@
     libreoffice-fresh
     catdoc
     hunspell
+    # hunspellDicts.de_DE
     aspell
     aspellDicts.de
     aspellDicts.en
