@@ -189,6 +189,9 @@
     # xfce.thunar
     # gnome3.nautilus
     gimp
+    krita
+    xournalpp
+    openboard
     darktable
     enblend-enfuse # panorama images
     hugin # panorama images
