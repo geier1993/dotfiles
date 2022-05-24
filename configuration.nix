@@ -267,6 +267,7 @@
     lm_sensors
     linuxHeaders
     libreoffice-fresh
+    xournalpp
     catdoc
     hunspell
     # hunspellDicts.de_DE
@@ -946,6 +947,9 @@
     };
 
     cpu.intel.updateMicrocode = true;
+
+    # Enable OpenTabletDriver
+    # opentabletdriver.enable = true;
   };
   systemd.user.services.pulseaudio.enable = true;
 
