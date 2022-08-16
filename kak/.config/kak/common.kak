@@ -38,11 +38,24 @@ set-option global jumpclient client0
 set-face global delimiter rgb:af3a03,default
 
 hook global WinCreate .* %{ try %{
-    add-highlighter buffer/numbers          number-lines -relative -hlcursor -separator ' '
+    # add-highlighter buffer/numbers          number-lines -relative -hlcursor -separator ' '
     add-highlighter buffer/matching         show-matching
     #add-highlighter buffer/wrap             wrap -word -indent -marker '↪'
     add-highlighter buffer/show-whitespaces show-whitespaces -lf ' ' -spc ' ' -nbsp '⋅'
 }}
+
+# ### Switch line numbers by pressing 0
+# def switch-number-line -params .. %{
+#     try %{ remove-highlighter window/number_lines }
+#     add-highlighter window/number_lines number-lines %arg{@}
+# }
+# 
+# # 0 will switch to relative
+# hook global NormalKey 0 'switch-number-line -relative'
+# # Any other key press will return to normal line number
+# hook global NormalKey \D.* 'switch-number-line'
+# ###
+
 
 # Editorconfig
 hook global BufOpenFile .* editorconfig-load

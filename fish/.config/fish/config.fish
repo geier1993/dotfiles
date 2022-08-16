@@ -18,7 +18,7 @@ set -x GEM_HOME (ruby -e 'print Gem.user_dir')
 set -x npm_config_prefix ~/.node_modules
 
 set -x PKG_CONFIG_PATH $PKG_CONFIG_PATH $HOME/.local/lib/pkgconfig
-set -x PATH $PATH $GOPATH/bin $HOME/.local/bin $HOME/.cabal/bin $HOME/misc/dotfiles/bin $HOME/.gem/ruby/2.5.0/bin $HOME/.node_modules/bin $HOME/.cargo/bin $PATH
+set -x PATH $GOPATH/bin $HOME/.local/bin $HOME/.cabal/bin $HOME/misc/dotfiles/bin $HOME/.gem/ruby/2.5.0/bin $HOME/.node_modules/bin $HOME/.cargo/bin $PATH
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib $HOME/.local/lib $HOME/.nix-profile/lib
 
 
@@ -78,9 +78,13 @@ function onMac
         end
     end
 
-    function ls
-        command grc --colour=auto ls $argv
-    end
+    set -x PATH /opt/homebrew/opt/util-linux/bin $PATH
+    set -x PATH /opt/homebrew/opt/util-linux/sbin $PATH
+    set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+
+    # function ls
+    #     command grc --colour=auto ls $argv
+    # end
 end
 
 function onOther

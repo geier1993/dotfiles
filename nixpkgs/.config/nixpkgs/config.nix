@@ -1,7 +1,8 @@
 {
   allowUnfree = true;
-  allowBroken = true; 
+  allowBroken = true;
 
+  experimental-features = nix-command flakes
 
   permittedInsecurePackages = [
     "webkitgtk-2.4.11"

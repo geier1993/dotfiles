@@ -14,10 +14,13 @@ command = "bash-language-server"
 args = ["start"]
 
 [language.c_cpp]
-filetypes = ["c", "cpp"]
-roots = ["compile_commands.json", ".clangd"]
-command = "clangd"
-offset_encoding = "utf-8"
+filetypes = ["c", "cpp", "h", "hpp"]
+# roots = ["compile_commands.json", ".clangd"]
+# command = "clangd"
+# offset_encoding = "utf-8"
+roots = [".ccls-root", ".ccls", "compile_commands.json"]
+# ensure `ccls` is in a PATH directory, see https://github.com/MaskRay/ccls/wiki/Install#shell-script-wrapper
+command = "ccls"
 
 [language.crystal]
 filetypes = ["crystal"]
