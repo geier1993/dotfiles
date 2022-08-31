@@ -15,11 +15,13 @@
       pkgs.ranger
       pkgs.fzf
       pkgs.silver-searcher
+      pkgs.ripgrep
       pkgs.direnv
       pkgs.tmux
       pkgs.kitty
       pkgs.alacritty
       pkgs.nix-index
+      pkgs.editorconfig-checker
 
       # pkgs.spotify
       pkgs.zathura
@@ -33,6 +35,8 @@
       # Python
       pkgs.micromamba
       # pkgs.conda
+      pkgs.python
+      pkgs.python3
     ];
 
   # Use a custom configuration.nix location.

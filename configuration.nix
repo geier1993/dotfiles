@@ -215,6 +215,7 @@
     bluez-tools
     silver-searcher
     platinum-searcher
+    ripgrep
     #zsh
     #zsh-autosuggestions
     #zsh-completions

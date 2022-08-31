@@ -124,7 +124,7 @@ if %[ -n "${PATH##*termux*}" ] %{
         set-option global lsp_completion_trigger "execute-keys 'h<a-h><a-k>\S[^\s,=;*(){}\[\]]\z<ret>'"
         set-option global lsp_diagnostic_line_error_sign "!"
         set-option global lsp_diagnostic_line_warning_sign "?"
-        hook global WinSetOption filetype=(rust|python|go|javascript|typescript|h|hpp|c|cpp|elm|scala|terraform|sh) %{
+        hook global WinSetOption filetype=(rust|python|go|javascript|typescript|h|hpp|c|cpp|elm|scala|terraform|sh|fortran) %{
             echo -debug "Loading kak-lsp"
             map window user "l" ": enter-user-mode lsp<ret>" -docstring "LSP mode"
             map window lsp "n" "<esc>: lsp-find-error --include-warnings<ret>" -docstring "find next error or warning"

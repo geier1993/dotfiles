@@ -79,6 +79,13 @@ elmPath = "elm"
 elmFormatPath = "elm-format"
 elmTestPath = "elm-test"
 
+[language.fortran]
+# filetypes = ["f", "f77", "for", "fpp", "f90", "f95", "f03", "f08", "F", "F77", "FOR", "FPP", "F90", "F95", "F03", "F08"]
+filetypes = ["fortran"]
+command = "fortls"
+roots = [".fortls", ".git"]
+# args = ["--stdio"]
+
 [language.go]
 filetypes = ["go"]
 roots = ["Gopkg.toml", "go.mod", ".git", ".hg"]
