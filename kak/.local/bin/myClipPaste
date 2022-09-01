@@ -6,7 +6,12 @@ then
     then
       pbpaste
     else
-      xsel --output --clipboard
+        if ! command -v xsel &> /dev/null
+        then
+          cat ~/.clip.tmp
+        else
+          xsel --output --clipboard
+        fi
     fi
 else
     wl-paste

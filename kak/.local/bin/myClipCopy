@@ -5,7 +5,17 @@ then
     then
       pbcopy <&0
     else
-      xsel --input --clipboard <&0
+        if ! command -v xsel &> /dev/null
+        then
+          exec > ~/.clip.tmp
+          while IFS= read -r line; do
+              printf '%s\n' "$line"
+           done
+          
+        else
+          xsel --input --clipboard <&0
+        fi
+
     fi
 else
     # wl-copy <&0
