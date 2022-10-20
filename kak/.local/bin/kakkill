@@ -4,7 +4,7 @@ then
   KAKPID=$(kakpid)
   if [ ! -z "$KAKPID" ];
   then
-    kill $KAKPID
+    kill -9 $KAKPID
   fi
   kak -clear
 fi
