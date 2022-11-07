@@ -21,6 +21,9 @@ set -x PKG_CONFIG_PATH $PKG_CONFIG_PATH $HOME/.local/lib/pkgconfig
 set -x PATH $GOPATH/bin $HOME/.local/bin $HOME/.cabal/bin $HOME/misc/dotfiles/bin $HOME/.gem/ruby/2.5.0/bin $HOME/.node_modules/bin $HOME/.cargo/bin $PATH
 set -x LD_LIBRARY_PATH $LD_LIBRARY_PATH /usr/local/lib $HOME/.local/lib $HOME/.nix-profile/lib
 
+set -x NNN_PLUG p:preview-tui
+set -x USE_PISTOL 1
+
 
 if test -z $KAKSESSION
     if not test -z $TMUX
@@ -123,3 +126,59 @@ function gbr --description "Git browse commits"
             --bind "ctrl-x:execute:$git_checkout" \
             --bind "ctrl-o:execute:$github_open"
 end
+
+
+function rga-fzf
+    set RG_PREFIX 'rga --files-with-matches'
+    if test (count $argv) -gt 1
+        set RG_PREFIX "$RG_PREFIX $argv[1..-2]"
+    end
+    
+    set -l open_cmd "skk"
+    # set -l open_cmd "open"
+
+    # if test (uname) = Linux
+    #     set open_cmd "xdg-open"
+    # end
+    
+    set -l file $file
+    set file (
+        FZF_DEFAULT_COMMAND="$RG_PREFIX '$argv[-1]'" \
+        fzf --sort \
+            --preview='test ! -z {} && \
+                rga --pretty --context 5 {q} {}' \
+            --phony -q "$argv[-1]" \
+            --bind "change:reload:$RG_PREFIX {q}" \
+            --preview-window='50%:wrap'
+    ) && \
+    echo "opening $file" && \
+    $open_cmd "$file"
+end
+
+function rg-fzf
+    set RG_PREFIX 'rga --files-with-matches'
+    if test (count $argv) -gt 1
+        set RG_PREFIX "$RG_PREFIX $argv[1..-2]"
+    end
+    
+    set -l open_cmd "skk"
+    # set -l open_cmd "open"
+
+    # if test (uname) = Linux
+    #     set open_cmd "xdg-open"
+    # end
+    
+    set -l file $file
+    set file (
+        FZF_DEFAULT_COMMAND="$RG_PREFIX '$argv[-1]'" \
+        fzf --sort \
+            --preview='test ! -z {} && \
+                rga --pretty --context 5 {q} {}' \
+            --phony -q "$argv[-1]" \
+            --bind "change:reload:$RG_PREFIX {q}" \
+            --preview-window='50%:wrap'
+    ) && \
+    echo "opening $file" && \
+    $open_cmd "$file"
+end
+

@@ -16,12 +16,18 @@
       pkgs.fzf
       pkgs.silver-searcher
       pkgs.ripgrep
+      pkgs.ripgrep-all
       pkgs.direnv
       pkgs.tmux
       pkgs.kitty
       pkgs.alacritty
       pkgs.nix-index
       pkgs.editorconfig-checker
+      
+      pkgs.mosh
+      pkgs.bat
+      pkgs.nnn
+      pkgs.pistol
 
       # pkgs.spotify
       pkgs.zathura
