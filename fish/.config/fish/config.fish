@@ -53,9 +53,9 @@ alias dbw="databricks workspace"
 
 
 
-function k
-    command skk (fasd -f $argv)
-end
+# function k
+#     command skk (fasd -f $argv)
+# end
 
 function onLinux
     function withPython
@@ -102,6 +102,10 @@ switch (uname)
         onOther
 end
 
+function rp
+    command ranger  --selectfile=$argv (dirname $argv)
+end
+
 # https://gist.github.com/gabesoft/b6e5e959c4cb11ed257d41edb07d47cb
 # Fish function for browsing the git commit using fzf and diff-so-fancy 
 function gbr --description "Git browse commits"
@@ -134,7 +138,7 @@ function rga-fzf
         set RG_PREFIX "$RG_PREFIX $argv[1..-2]"
     end
     
-    set -l open_cmd "skk"
+    set -l open_cmd "rp"
     # set -l open_cmd "open"
 
     # if test (uname) = Linux
@@ -161,7 +165,7 @@ function rg-fzf
         set RG_PREFIX "$RG_PREFIX $argv[1..-2]"
     end
     
-    set -l open_cmd "skk"
+    set -l open_cmd "rp"
     # set -l open_cmd "open"
 
     # if test (uname) = Linux
@@ -182,3 +186,5 @@ function rg-fzf
     $open_cmd "$file"
 end
 
+alias rf=rg-fzf
+alias rfa=rga-fzf
