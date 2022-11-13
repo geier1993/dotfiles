@@ -6,7 +6,8 @@ profile {
 	# output "HDMI-A-1" enable scale 1 position 1920,0 mode 2560x1440@59.951
 	# output "eDP-1" enable scale 1 position 0,0 mode 1920x1080@60.049
 
-	output "Unknown HP S270n 6CM8320VX2" enable scale 1.5 position 0,0 mode 3840x2160@60.000
+	# output "Unknown HP S270n 6CM8320VX2" enable scale 1.5 position 0,0 mode 3840x2160@60.000
+	output "Unknown HP S270n 6CM8320VX2" enable scale 1.0 position 0,0 mode 3840x2160@30.000
 	output "eDP-1" enable scale 1 position 2560,0 mode 1920x1080@60.049
 }
 profile {

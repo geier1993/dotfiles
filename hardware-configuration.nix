@@ -8,34 +8,37 @@
     [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot = {
-    initrd = {
-      availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
-    };
-    kernelModules = [ "kvm-intel" "fuse" "coretemp" ]; # ++ ["cpufreq_powersafe" "cpufreq_performance"];
-    extraModulePackages = [ ];
-  };
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/6f172a81-461f-48bd-9074-085e68a644ce";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/25cb015b-7fe5-496a-b6d8-434a254b7310";
+    { device = "/dev/disk/by-uuid/4a26e5b1-eb6a-4515-89a6-03149685d61c";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5A9A-132C";
+    { device = "/dev/disk/by-uuid/FE22-414B";
       fsType = "vfat";
     };
 
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/84333808-d6dc-49a7-9391-6c68ba708e88";
+      fsType = "ext4";
+    };
+
+  fileSystems."/media/share" =
+    { device = "/dev/disk/by-label/storage";
+      fsType = "ntfs";
+      options = [ "rw" "uid=1000" ];
+    };
+
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/32cad05a-7281-4588-9bf9-23313b8068e4"; }
+    [ { device = "/dev/disk/by-uuid/63cdf8a9-a2aa-45cb-bbf9-03380729bcbb"; }
     ];
 
-  nix.maxJobs = lib.mkDefault 8;
-  # in configuraion
-  # powerManagement.cpuFreqGovernor = "ondemand"; # tlp does it
+  nix.maxJobs = lib.mkDefault 6;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }

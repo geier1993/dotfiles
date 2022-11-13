@@ -31,8 +31,41 @@
   };
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+      systemd-boot = {
+          enable = true;
+          configurationLimit = 42;
+      };
+      efi = {
+          # canTouchEfiVariables = true;
+          efiSysMountPoint = "/boot";
+      };
+
+      # grub = {
+      #     # despite what the configuration.nix manpage seems to indicate,
+      #     # as of release 17.09, setting device to "nodev" will still call
+      #     # `grub-install` if efiSupport is true
+      #     # (the devices list is not used by the EFI grub install,
+      #     # but must be set to some value in order to pass an assert in grub.nix)
+      #     devices = [ "nodev" ];
+      #     efiSupport = true;
+      #     enable = true;
+      #     # set $FS_UUID to the UUID of the EFI partition
+      #     extraEntries = ''
+      #       menuentry "Windows" {
+      #         insmod part_gpt
+      #         insmod fat
+      #         insmod search_fs_uuid
+      #         insmod chain
+      #         search --fs-uuid --set=root $FS_UUID
+      #         chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+      #       }
+      #     '';
+      #     version = 2;
+      #     configurationLimit = 42;
+      #   };
+    };
+
 
   # boot.kernelPatches = [ {
   #    name = "thunderbolt";
@@ -60,6 +93,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
+  time.hardwareClockInLocalTime = true; # For windows iop
 
   # environment.shells = with pkgs; [bashInteractive zsh];
   environment.shells = with pkgs; [bashInteractive fish];
@@ -120,7 +154,8 @@
     acpi
     acpid
     acpitool
-    pmtools
+    # pmtools
+    acpica-tools
     usbutils
     wget
     bash
@@ -282,7 +317,7 @@
     ncurses
     gnupg pinentry
     #gpicview
-    geeqie
+    # geeqie
     clutter clutter-gtk
     gpicview
     #gliv
@@ -469,6 +504,11 @@
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chgrp input /sys/class/leds/%k/brightness"
       ACTION=="add", SUBSYSTEM=="leds", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/leds/%k/brightness"
       ACTION=="add", SUBSYSTEM=="thunderbolt", ATTR{authorized}=="0", ATTR{authorized}="1"
+
+      #Flipper Zero serial port
+      ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", ATTRS{manufacturer}=="Flipper Devices Inc.", TAG+="uaccess"
+      #Flipper Zero DFU
+      ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", ATTRS{manufacturer}=="STMicroelectronics", TAG+="uaccess"
     '';
 
     # kmscon = {
@@ -506,15 +546,15 @@
       servers = [ "127.0.0.1#43" ];
     };
 
-    privoxy.enable = true;
-    privoxy.enableTor = true;
-    tor = {
-      enable = true;
-      client = {
-        enable = true;
-      };
-      tsocks.enable = true;
-    };
+    # privoxy.enable = true;
+    # privoxy.enableTor = true;
+    # tor = {
+    #   enable = true;
+    #   client = {
+    #     enable = true;
+    #   };
+    #   tsocks.enable = true;
+    # };
 
     # gammastep = {
     #       enable = true;
@@ -843,34 +883,35 @@
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
-    media-session.enable = true;
-
-    media-session.config.bluez-monitor.rules = [
-      {
-        # Matches all cards
-        matches = [ { "device.name" = "~bluez_card.*"; } ];
-        actions = {
-          "update-props" = {
-            "bluez5.reconnect-profiles" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
-            # mSBC is not expected to work on all headset + adapter combinations.
-            "bluez5.msbc-support" = true;
-            # SBC-XQ is not expected to work on all headset + adapter combinations.
-            "bluez5.sbc-xq-support" = true;
-          };
-        };
-      }
-      {
-        matches = [
-          # Matches all sources
-          { "node.name" = "~bluez_input.*"; }
-          # Matches all outputs
-          { "node.name" = "~bluez_output.*"; }
-        ];
-        actions = {
-          "node.pause-on-idle" = false;
-        };
-      }
-    ];
+    wireplumber.enable = true;
+    # media-session.enable = true;
+    # media-session.config.bluez-monitor.rules = [
+    #   {
+    #     # Matches all cards
+    #     matches = [ { "device.name" = "~bluez_card.*"; } ];
+    #     actions = {
+    #       "update-props" = {
+    #         "bluez5.reconnect-profiles" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
+    #         # mSBC is not expected to work on all headset + adapter combinations.
+    #         "bluez5.msbc-support" = true;
+    #         # SBC-XQ is not expected to work on all headset + adapter combinations.
+    #         "bluez5.sbc-xq-support" = true;
+    #       };
+    #     };
+    #   }
+    #   {
+    #     matches = [
+    #       # Matches all sources
+    #       { "node.name" = "~bluez_input.*"; }
+    #       # Matches all outputs
+    #       { "node.name" = "~bluez_output.*"; }
+    #     ];
+    #     actions = {
+    #       "node.pause-on-idle" = false;
+    #     };
+    #   }
+    # ];
+    
   #   config.pipewire = {
   #     "context.properties" = {
   #       #"link.max-buffers" = 64;
@@ -883,6 +924,17 @@
   #     };
   #   };
   };
+  environment.etc = {
+      "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+          bluez_monitor.properties = {
+              ["bluez5.enable-sbc-xq"] = true,
+              ["bluez5.enable-msbc"] = true,
+              ["bluez5.enable-hw-volume"] = true,
+              ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+          }
+      '';
+  };
+
   xdg = {
       portal = {
         enable = true;
