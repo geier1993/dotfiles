@@ -22,22 +22,26 @@
   nixpkgs.config = {
     allowUnfree = true;
     #allowBroken = true;
-    firefox = {
-     enablePepperFlash = true;
-    };
+    # firefox = {
+    #  enablePepperFlash = true;
+    # };
 
     # Explicit pulseaudio support in applications
     pulseaudio = true;
+    
+    # permittedInsecurePackages = [
+    #   "qtwebkit-5.212.0-alpha4"
+    # ];
   };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
       systemd-boot = {
           enable = true;
-          configurationLimit = 42;
+          # configurationLimit = 42;
       };
       efi = {
-          # canTouchEfiVariables = true;
+          canTouchEfiVariables = true;
           efiSysMountPoint = "/boot";
       };
 
@@ -226,14 +230,14 @@
     gimp
     krita
     xournalpp
-    openboard
-    darktable
-    enblend-enfuse # panorama images
-    hugin # panorama images
+    # openboard
+    # darktable
+    # enblend-enfuse # panorama images
+    # hugin # panorama images
     rxvt_unicode-with-plugins
     #st # terminal
     urxvt_perls
-    terminator termite
+    # terminator termite
     kitty
     zathura
     pdfgrep
@@ -303,7 +307,6 @@
     lm_sensors
     linuxHeaders
     libreoffice-fresh
-    xournalpp
     catdoc
     hunspell
     # hunspellDicts.de_DE
@@ -318,8 +321,8 @@
     gnupg pinentry
     #gpicview
     # geeqie
-    clutter clutter-gtk
-    gpicview
+    # clutter clutter-gtk
+    # gpicview
     #gliv
     fasd
     fzf
@@ -331,7 +334,7 @@
     dbus
     busybox
     cryptsetup
-    clamav
+    # clamav
     cmake
     #linuxPackages.cpupower
     # cpufrequtils
@@ -356,7 +359,7 @@
     lua
     perl
     spotify
-    slack
+    # slack
     # xlibsWrapper
     #wine
     #winetricks
@@ -442,7 +445,7 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
     autoUpgrade.enable = true;
-    stateVersion = "21.05";
+    stateVersion = "22.11";
   };
 
   systemd.services.kbdrate = {
@@ -658,7 +661,7 @@
 
   programs.sway = {
       enable = true;
-      wrapperFeatures.gtk = true; # so that gtk works properly
+      # wrapperFeatures.gtk = true; # so that gtk works properly
       extraPackages = with pkgs; [
         # swaylock
         swaylock-effects
@@ -705,20 +708,19 @@
         papirus-maia-icon-theme
         luna-icons
         flat-remix-icon-theme
-        flat-remix-gtk
+        # flat-remix-gtk
         elementary-xfce-icon-theme
         zafiro-icons
         # sweet
         # adementary-theme
         # elementary-xfce-icon-theme
         # yaru-theme
-        libsForQt5.grantleetheme
-        adwaita-qt
-
+        # libsForQt5.grantleetheme
+        # adwaita-qt
 
         # More
         autotiling
-        flashfocus
+        # flashfocus
         gammastep
         geoclue2 # for gammastep
         wf-recorder
@@ -736,10 +738,8 @@
         pcmanfm
         cinnamon.nemo
 
-        
-
-        # gtk3
-        # gtk4
+        gtk3
+        gtk4
       ];
     };
   # environment = {
@@ -755,12 +755,14 @@
     enable = true;
     platformTheme = "gtk2";
     style = "gtk2";
+    # platformTheme = "gnome"; # gtk2, gnome, lxqt, qt5ct, kde
+    # style = "adwaita";
   };
 
   programs.waybar.enable = true;
   programs.nm-applet.enable = true;
   programs.nm-applet.indicator = true;
-  programs.gnupg.agent.pinentryFlavor = "gtk2";
+  # programs.gnupg.agent.pinentryFlavor = "gtk2";
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";
     documentation = [ "man:systemd.special(7)" ];
@@ -940,9 +942,9 @@
         enable = true;
         extraPortals = with pkgs; [
           xdg-desktop-portal-wlr
-          xdg-desktop-portal-gtk
+          # xdg-desktop-portal-gtk
         ];
-        gtkUsePortal = true;
+        # gtkUsePortal = true;
       };
     };
 

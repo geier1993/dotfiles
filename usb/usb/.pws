@@ -1,0 +1,772 @@
+skype:
+    - context: 'mypasswords'
+    - service: 'skype:'
+    - email: 'philippgeier93@hotmail.de, '
+    - user: 'geeeier'
+    - password: 'guruguru-.-Tonga'
+
+paydirekt:
+    - context: 'mypasswords'
+    - service: 'paydirekt.de:'
+    - email: 'philippgeier93@hotmail.de, '
+    - user: 'geier1993'
+    - password: '$p4y_d!r3kt'
+
+volsbank:
+    - context: 'mypasswords'
+    - service: ':'
+    - email: 'philippgeier93@hotmail.de, '
+    - user: 'geier1993'
+    - password: '5391337'
+    - secure_go_password: '$P4y_d!r3kt'
+
+volsbank:
+    - context: 'mypasswords'
+    - service: ':'
+    - email: 'philippgeier93@hotmail.de, '
+    - user: 'geier1993'
+    - password: '5391337'
+    - secure_go_password: '$P4y_d!r3kt'
+
+dkbKontowechsel:
+    - context: 'mypasswords'
+    - service: 'https://dkb.kontenwechsel.de/overview'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+dkb:
+    - context: 'mypasswords'
+    - service: ':'
+    - user: '1036673240_p'
+    - password: 'x5390'
+    - pin: 5323 V
+    - pin: 2736 G
+    
+
+dkb_c:
+    - context: 'mypasswords'
+    - service: ':'
+    - user: '1036673240_c'
+    - password: 'b1337'
+
+dkb_verwalterportal:
+    - context: 'mypasswords'
+    - service: ':'
+    - user: '182985'
+    - password: '-WFwFxz6'
+
+daad:
+    - context: 'mypasswords'
+    - service: 'daad'
+    - email: 'philippgeier93@hotmail.de'
+    - url: 'Portal.daad.de'
+    - password: 'dabdada~!'
+
+amazon:
+    - context: 'mypasswords'
+    - service: 'amazon'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'amahama_schnitzelpanade'
+
+paypal:
+    - context: 'mypasswords'
+    - service: 'paypal'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'parallel_dump#stuff'
+
+hotmail:
+    - context: 'mypasswords'
+    - service: 'hotmail'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'bananacreamcake()'
+
+google:
+    - context: 'mypasswords'
+    - service: 'google'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'vargosnano#pew'
+
+samsung:
+    - context: 'mypasswords'
+    - service: 'google'
+    - email: 'philippgeier93@googlemail.com'
+    - password: '*r4Zn4Z*'
+
+facebook:
+    - context: 'mypasswords'
+    - service: 'facebook'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'fadelookchestpress'
+
+github:
+    - context: 'mypasswords'
+    - service: 'github'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'getupfap1337times'
+
+ebaykleinanzeigen:
+    - context: 'mypasswords'
+    - service: 'ebaykleinanzeigen'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'ebaydiggahebay'
+
+ebay:
+    - context: 'mypasswords'
+    - service: 'ebay'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '_Pipapo!'
+
+ello:
+    - context: 'mypasswords'
+    - service: 'ello'
+    - email: 'philippgeier93@hotmail.de'
+    - user: 'geierp'
+    - password: 'ello0hampelbaer0mann'
+
+eventim:
+    - context: 'mypasswords'
+    - service: 'eventim'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'evensteven!_holla_die_waldfee'
+
+thomann:
+    - context: 'mypasswords'
+    - service: 'thomann'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'tom&berry'
+
+fitmart:
+    - context: 'mypasswords'
+    - service: 'fitmart'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'eigelbhopfenmix'
+
+dropbox:
+    - context: 'mypasswords'
+    - service: 'dropbox'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'dropthatlollypop'
+
+entega:
+    - context: 'mypasswords'
+    - service: 'entega'
+    - email: 'philippgeier93@hotmail.de'
+    - konto: '2002509322'
+    - password: '*r4Zn4Z*'
+
+enbw:
+    - context: 'mypasswords'
+    - service: 'enbw'
+    - email: 'philippgeier93@hotmail.de'
+    - user: 'geier1993'
+    - kundennummer: '3103858985'
+    - telefonpin: '28585'
+    - password: '*r4Zn4Z*'
+
+kabelbw/unitymedia:
+    - context: 'mypasswords'
+    - service: 'kabelbw'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'cabalBW3'
+
+unitymedia_wifihotspot:
+    - context: 'mypasswords'
+    - service: 'wifihotspot'
+    - email: 'unitymedia/philippgeier93@hotmail.de'
+    - password: 'B4nanenspot'
+
+
+complexityexlorer:
+    - context: 'mypasswords'
+    - service: 'complexityexlorer'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'totalwingcrunch_??'
+
+gradeview:
+    - context: 'mypasswords'
+    - service: 'gradeview'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'gr4d3ssuck'
+
+intel:
+    - context: 'mypasswords'
+    - service: 'intel'
+    - user: 'geier1993'
+    - MKLSerial: '2JXL-B5RVKXPD'
+    - password: 'sk8&scale'
+
+
+greedparrotseeds:
+    - context: 'mypasswords'
+    - service: 'greedparrotseeds'
+    - email: 'philippgeier93@hotmail.de'
+    - url: 'greedparrotseeds.com'
+    - password: 'justfordidadolly'
+
+condor:
+    - context: 'mypasswords'
+    - service: 'condor'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'geht~~nicht!!'
+
+battle.net:
+    - context: 'mypasswords'
+    - service: 'battle.net'
+    - email: 'PhilippGeier93@hotmail.de'
+    - url: 'battle.net'
+    - password: 'butterfly_chaos63'
+
+pacmanrom:
+    - context: 'mypasswords'
+    - service: 'pacmanrom'
+    - user: 'geier1993'
+    - password: 'palimpalum'
+
+projecteuler.net:
+    - context: 'mypasswords'
+    - service: 'projecteuler.net'
+    - user: 'geier1993'
+    - url: 'projecteuler.net'
+    - password: 'lagunaeuler'
+
+wggesucht:
+    - context: 'mypasswords'
+    - service: 'wggesucht'
+    - email: 'PhilippGeier93@hotmail.de'
+    - password: 'wgagabo77a'
+
+sensiseeds.com:
+    - context: 'mypasswords'
+    - service: 'sensiseeds.com'
+    - email: 'PhilippGeier93@hotmail.de'
+    - url: 'sensiseeds.com'
+    - password: 'sesamstra55e'
+
+dhl:
+    - context: 'mypasswords'
+    - service: 'dhl'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'pr0nC4rd!'
+
+bitcoin.de:
+    - context: 'mypasswords'
+    - service: 'bitcoin.de'
+    - email: 'philippgeier93@hotmail.de'
+    - url: 'bitcoin.de'
+    - user: 'gr0x539'
+    - password: '_karl0z_y4m4'
+
+threema:
+    - context: 'mypasswords'
+    - service: 'threema'
+    - password: 'jelly0x1a4joker'
+    - code: 'XKLL-3UKU-PPIA-VFXE-6UUB-LOO7-JHFM-DYHU-FJ6R-FI4J-JSJM-ZXQB-Z6CX-F2AL-WRRV-QAP7-UDHS-4FGU-3QQC-WQSQ'
+
+deutsche bahn:
+    - email: 'philippgeier93@hotmail.de'
+    - user: 'geier1993'
+    - password: '*r4Zn4Z*'
+
+gpg_keygen:
+    - context: 'mypasswords'
+    - service: 'gpg_keygen'
+    - password: 'm0r4l355_jerk'
+
+appleid:
+    - context: 'mypasswords'
+    - service: 'appleid'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'Eisbaer420'
+
+x11remote:
+    - context: 'mypasswords'
+    - service: 'x11remote'
+    - password: 'banause'
+
+pentaminoappleid:
+    - context: 'mypasswords'
+    - service: 'pentaminoappleid'
+    - email: 'pg@pentamino.de'
+    - password: 'Phlpp2013'
+
+rnv-online.de:
+    - context: 'mypasswords'
+    - service: 'rnv-online.de'
+    - email: 'philippgeier93@hotmail.de'
+    - url: 'rnv-online.de'
+    - password: '*r4Zn4Z*'
+
+prezi:
+    - context: 'mypasswords'
+    - service: 'prezi'
+    - email: 'philippgeier93@hotmail.de'
+    - user: 'Philipp Geier'
+    - password: 'bananenbrot'
+
+firefox:
+    - context: 'mypasswords'
+    - service: 'firefox'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'plasma*frog'
+
+freeoffice:
+    - context: 'mypasswords'
+    - service: 'freeoffice'
+    - code: '360336000862'
+
+soundoftheforest:
+    - context: 'mypasswords'
+    - service: 'soundoftheforest'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'salimbabim'
+
+winsim:
+    - context: 'mypasswords'
+    - service: 'winsim'
+    - email: 'philippgeier93@hotmail.de'
+    - number: '017634969685'
+    - user: 'Philippgeier931'
+    - password: 'w1nt1mb4'
+
+
+flinc:
+    - context: 'mypasswords'
+    - service: 'flinc'
+    - url: 'flinc.org'
+    - email: 'philippgeier93@hotmail.de' 
+    - password: 'tr4m_0q'
+
+
+kobo:
+    - context: 'mypasswords'
+    - service: 'kobo'
+    - email: 'philippgeier93@hotmail.de' 
+    - password: 'plasma*frog'
+
+hansemerkur:
+    - context: 'mypasswords'
+    - service: 'hansemerkur'
+    - email: 'philippgeier93@hotmail.de' 
+    - password: '*r4Zn4Z*'
+
+mendeley:
+    - context: 'mypasswords'
+    - service: 'mendeley'
+    - email: 'philippgeier93@hotmail.de' 
+    - password: '*r4Zn4Z*'
+
+hvv.de (schallplatte):
+    - context: 'mypasswords'
+    - service: 'hvv.de'
+    - email: 'philippgeier93@hotmail.de'
+    - url: 'hvv.de'
+    - password: '*r4Zn4Z*'
+
+alumni.state.gov:
+    - context: 'mypasswords'
+    - service: 'alumni.state.gov'
+    - email: 'p.geier@stud.uni-heidelberg.de'
+    - url: 'alumni.state.gov'
+    - password: '*r4Zn4Z*'
+
+
+reddit:
+    - context: 'mypasswords'
+    - service: 'reddit.com'
+    - email: 'philippgeier93@hotmail.de'
+    - url: 'reddit.com'
+    - user: 'ginnmilk'
+    - password: 'reddit#on#top:)'
+
+duolingo:
+    - context: 'mypasswords'
+    - service: 'duolingo'
+    - email: 'philippgeier93@hotmail.de'
+    - url: 'duolingo.com'
+    - password: '*r4Zn4Z*:)'
+
+blackberry:
+    - context: 'mypasswords'
+    - service: 'blackberry'
+    - email: 'philippgeier93@hotmail.de'
+    - password: 'b1utz3wu'
+    - kennwort: '53913370'
+
+evernote:
+    - context: 'mypasswords'
+    - service: 'evernote'
+    - email: 'philippgeier93@googlemail.com'
+    - password: 'vargosnano#pew'
+    - 6820-1775-5148-4005
+    - 0501-0833-9851-2189
+    - 2729-3471-4452-6178
+    - 1753-1518-6093-4396
+
+spotify:
+    - context: 'mypasswords'
+    - service: 'spotify'
+    - email: 'philippgeier93@googlemail.com'
+    - password: 'fadelookchestpress'
+    - user: 'geier1993'
+
+charlestyrwhitt:
+    - context: 'mypasswords'
+    - service: 'charestyrwhitt'
+    - url: 'www.ctshirts.com/de'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+epetitionen.bundestag:
+    - context: 'mypasswords'
+    - service: 'epetitionen bundestag'
+    - url: 'https://epetitionen.bundestag.de/'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+skygo:
+    - context: 'mypasswords'
+    - service: 'skygo'
+    - url: 'skygo'
+    - user: 'ludgergeier@aol.com'
+    - email: 'ludgergeier@aol.com'
+    - password: '1804'
+
+linkedin:
+    - context: 'mypasswords'
+    - service: 'linkedin'
+    - url: 'linkedin.com'
+    - user: 'PhilippGeier93@hotmail.de'
+    - email: 'Philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+
+xing:
+    - context: 'mypasswords'
+    - service: 'linkedin'
+    - url: 'xing.com'
+    - user: 'PhilippGeier93@hotmail.de'
+    - email: 'Philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+lehmanns:
+    - context: 'mypasswords'
+    - service: 'lehmanns'
+    - url: 'www.lehmanns.de'
+    - user: '40018332'
+    - email: 'Philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+meganz:
+    - context: 'mypasswords'
+    - service: 'mega'
+    - url: 'mega.nz'
+    - user: 'philippgeier@hotmail.de'
+    - email: 'philippgeier@hotmail.de'
+    - recoverykeys: [fi540Gq1B-TXaTmqNrU1Yw]
+    - password: '*r4Zn4Z*'
+
+myStipendium:
+    - context: 'mypasswords'
+    - service: 'mystipendium'
+    - url: 'mystipendium.de'
+    - user: 'geier1993'
+    - email: 'philippgeier@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+lesz.slack:
+    - context: 'mypasswords'
+    - service: 'lesz.slack.com'
+    - url: 'lesz.slack.de'
+    - user: 'philippgeier@googlemail.com'
+    - email: 'philippgeier@googlemail.com'
+    - password: '*r4Zn4Z*'
+
+projecttogether-team.slack.com:
+    - context: 'mypasswords'
+    - service: 'projecttogether-team.slack.com'
+    - url: 'projecttogether-team.slack.com'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+weltbild:
+    - context: 'mypasswords'
+    - service: 'weltbild'
+    - url: 'weltbild.de'
+    - user: 'philippgeier@hotmail.de'
+    - email: 'philippgeier@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+
+strato:
+    - context: 'mypasswords'
+    - service: 'strato'
+    - url: 'strato.de'
+    - user: 'philipp@geier.me'
+    - email: 'philipp@geier.me'
+    - password: '*r4Zn4Z*'
+
+strato_kroesselbach_gastronomie:
+    - context: 'mypasswords'
+    - service: 'strato'
+    - url: 'strato.de'
+    - user: '76141384'
+    - email: 'jonathan.schliessler@gmx.de'
+    - password: 'Goamensch87'
+
+vegandelight_strato:
+    - context: 'mypasswords'
+    - service: 'vegandelight_strato'
+    - url: 'strato.de'
+    - user: '75164978'
+    - user: 'geier1993'
+    - email: 'philipp@geier.me'
+    - password: 'v3g4nl1ght'
+
+netlify:
+      context: 'mypasswords'
+      service: 'netlify.com'
+      url: 'netlify.com''
+      email: 'philippgeier93@hotmail.de'
+      password: "v3g4nl1ght"
+
+wtwaldbrunn_mail:
+    - context: 'mypasswords'
+    - service: 'infowtwaldbrunnmail'
+    - url: 'strato.de'
+    - email: 'info@wt-waldbrunn.de'
+    - password: 'v3g4nl1ght'
+
+bundestag.de:
+    - context: 'mypasswords'
+    - service: 'bundestag.de'
+    - url: 'bundestag.de'
+    - user: '75164978'
+    - user: 'geier1993'
+    - email: 'philipp@geier.me'
+    - password: 'B4dt4Gd3'
+
+wire.com:
+    - context: 'mypasswords'
+    - service: 'wire.com'
+    - url: 'wire.com'
+    - user: 'philippgeier93@hotmail.de'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+unihdalumni:
+    - context: 'mypasswords'
+    - service: 'unihdalumni'
+    - url: 'unihdalumni'
+    - user: 'philipp.geier'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+ruby-forum.com:
+    - context: 'mypasswords'
+    - service: 'ruby-forum.com'
+    - url: 'ruby-forum.com'
+    - user: 'geier1993'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*ruby'
+
+stackoverflow.com:
+    - context: 'mypasswords'
+    - service: 'stackoverflow.com'
+    - url: 'stackoverflow.com'
+    - user: 'geier1993'
+    - email: 'philipp@geier.me'
+    - password: '*r4Zn4Z*'
+
+iqs.com:
+    - context: 'mypasswords'
+    - service: 'iqos.com'
+    - url: 'iqos.com'
+    - email: 'philippgeier93@hotmail.de'
+    - password: '*r4Zn4Z*'
+
+appear.in:
+      context: 'mypasswords'
+      service: 'appear.in'
+      url: 'appear.in'
+      email: 'philipp@geier.me'
+      password: 'geier@vegan-delight.de'
+
+rebuy:
+      context: 'mypasswords'
+      service: 'rebuy.de'
+      url: 'rebuy.de'
+      email: 'philippgeier93@hotmail.de'
+      password: "*r4Zn4Z*"
+
+bosch:
+      context: 'mypasswords'
+      service: 'bosch.com'
+      url: 'bosch.com'
+      email: 'philipp@geier.de'
+      password: "*r4Zn4Z*_10"
+
+pennymobil:
+      context: 'mypasswords'
+      service: 'https://pennymobil.de'
+      url: 'https://pennymobil.de'
+      number: '017634969685'
+      email: 'philippgeier93@hotmail.de'
+      kundennummer: '2210733219'
+      vertragsnummer: '318738426'
+      user: 'philippgeier93@hotmail.de'
+      password: "*r4Zn4Z*"
+      alphacommuser: 'philippgeier93@hotmail.de'
+      alphacommpassword: "*r4Zn4Z*"
+
+allianz:
+      context: 'mypasswords'
+      service: 'myAllianz'
+      number: '017634969685'
+      email: 'philipp@geier.me'
+      user: 'geier1993'
+      password: "*r4Zn4Z*"
+
+arag:
+      context: 'mypasswords'
+      service: 'www.meinearag.de'
+      email: 'philipp@geier.me'
+      password: "*r4Zn4Z*_!"
+
+vhv:
+      context: 'mypasswords'
+      service: 'vhv'
+      email: 'philippgeier93@hotmail.de'
+      password: "*r4Zn4Z*"
+
+horbach:
+      context: 'mypasswords'
+      service: 'https://www.horbach-kundenportal.de'
+      url: 'https://www.horbach-kundenportal.de'
+      number: '017634969685'
+      email: 'philipp@geier.me'
+      user: 'geier1993'
+      password: "*r4Zn4Z*_!"
+      pin: 061993
+
+nikkaluokta:
+      context: 'mypasswords'
+      service: 'nikkaluoktaexpressen'
+      number: '017634969685'
+      email: 'philipp@geier.me'
+      user: 'geier1993'
+      password: "*r4Zn4Z*"
+
+trainline:
+      context: 'mypasswords'
+      service: 'trainline'
+      number: '017634969685'
+      email: 'philippgeier93@hotmail.de'
+      user: 'philippgeier93@hotmail.de'
+      password: "*r4Zn4Z*"
+
+bestware:
+      context: 'mypasswords'
+      service: 'bestware'
+      email: 'philippgeier93@hotmail.de'
+      user: 'philippgeier93@hotmail.de'
+      password: "*r4Zn4Z*"
+
+projecttogether:
+      context: 'mypasswords'
+      service: 'projecttogether.org'
+      email: 'pgeier@projecttogether.org'
+      user: 'pgeier'
+      password: "!L+&T[~v>_6Qa6kr"
+
+expensify_pt:
+      context: 'mypasswords'
+      service: 'expensify.com'
+      email: 'pgeier@projecttogether.org'
+      user: 'pgeier@projecttogether.org'
+      password: "G~H9zs-*uR9MEv[A"
+
+contentful:
+      context: 'mypasswords'
+      service: 'contentful.com'
+      email: 'philippgeier93@googlemail.com'
+      user: 'philippgeier93@googlemail.com'
+
+contentful_pt:
+      context: 'mypasswords'
+      service: 'contentful.com'
+      email: 'pgeier@projecttogether.org'
+      user: 'pgeier@projecttogether.org'
+      password: "5M+I&b7<Q=s{v/mA"
+
+favro:
+      context: 'mypasswords'
+      service: 'favro'
+      email: 'pgeier@projecttogether.org'
+      user: 'pgeier@projecttogether.org'
+      password: "fHdk1/>1K$6B[6$H"
+
+1password:
+      context: 'mypasswords'
+      service: '1password emergency kit'
+      url: 'https://projecttogethergug.1password.com'
+      email: 'sysadmin@projecttogether.org'
+      secretkey: 'A3-DHM6QL-MTGZDV-JRA7K-6JMG5-CTEKK-JAFMB'
+      password: "d!gitaLinkubator1"
+
+dataguard-academy:
+      context: 'mypasswords'
+      service: 'www.dataguard-academy.de'
+      url: 'www.dataguard-academy.de'
+      email: 'pgeier@projecttogether.org'
+      password: "(RfP?GKIi@6+A<mX"
+
+miro:
+      context: 'mypasswords'
+      service: 'miro.com'
+      url: 'miro.com'
+      email: 'pgeier@projecttogether.org'
+      password: "5gN=vF|%I;E4&[M&"
+
+sas:
+      context: 'mypasswords'
+      service: 'flysas.com'
+      url: 'flysas.com'
+      email: 'philippgeier93@hotmail.de'
+      password: "#r4Zn4Z#""
+      appcode: '8121'
+
+telekom:
+      context: 'mypasswords'
+      service: 'telekom.de'
+      url: 'telekom.com'
+      email: 'philippgeier93@hotmail.de'
+      password: "#r4Zn4Z#""
+      tele: '062749283028'
+
+smartdigital_adp:
+      password: "#r4Zn4Z#""
+      firmen-id: omx
+      benutzername: phigeier
+      e-mail: philipp.geier@smart-digital.de
+      url: https://urldefense.com/v3/__https://www.adpworld.de__;!!ErBqwq1W9xk!skdbVLvgRZOlmFl-Mna_cUwPJSuCGROOS99nypmdsbznQkx3M3BvQex3bTBoy5n0z_NYixvnqsI$
+
+
+cigna:
+      password: "#r4Zn4Z#_!"
+      reference_number: 068/84090 
+      e-mail: philipp@geier.me
+      firmen-id: omx
+      benutzername: phigeier
+      e-mail: philipp.geier@smart-digital.de
+      url: https://urldefense.com/v3/__https://www.adpworld.de__;!!ErBqwq1W9xk!skdbVLvgRZOlmFl-Mna_cUwPJSuCGROOS99nypmdsbznQkx3M3BvQex3bTBoy5n0z_NYixvnqsI$
+
+
+ebase:
+      email: philippgeier93@hotmail.de
+      pin: x5390#hope
+      zugangs_id: Z621677210
+      url: https://portal.ebase.com/eo
+      ktonr: 4787225401
+      Kontoinhaber: Philipp Geier
+      IBAN: DE04700130004787225401
+      BIC: EBSGDEMXXXX

@@ -77,7 +77,7 @@ plug 'delapouite/kakoune-mirror' %{
 #     }
 # }
 
-# plug "andreyorst/fzf.kak" domain gitlab.com config %{
+# plug "andreyorst/fzf.kak" domain github.com config %{
 #     map -docstring 'fzf mode' global normal '<c-p>' ': fzf-mode<ret>'
 # } defer fzf %{
 #     set-option global fzf_preview_width '65%'
