@@ -1,38 +1,38 @@
 keybinds {
     normal {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     locked {
-        bind "Ctrl f" { SwitchToMode "normal"; }
+        bind "Ctrl l" { SwitchToMode "normal"; }
     }
     pane {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     tab {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     resize {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     move {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     scroll {
-        bind "Ctrl f" "PageDown" { PageScrollDown; }
+        bind "Ctrl l" "PageDown" { PageScrollDown; }
         bind "Ctrl b" "PageUp" { PageScrollUp; }
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     session {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     search {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     RenameTab {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
     RenamePane {
-        bind "Ctrl f" { SwitchToMode "locked"; }
+        bind "Ctrl l" { SwitchToMode "locked"; }
     }
 }
 
