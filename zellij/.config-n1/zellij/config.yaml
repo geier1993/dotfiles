@@ -1,44 +1,43 @@
 simplified_ui: false
 pane_frames: false
-mouse_mode: false # disable in nested mode to copy things natively
 # default_shell: fish
 
 # default_mode: locked
 keybinds:
     locked:
         - action: [SwitchToMode: Normal,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     scroll:
         - action: [PageScrollDown,]
-          key: [Ctrl: 'l', PageDown,]
+          key: [Ctrl: 'f', PageDown,]
         - action: [PageScrollUp,]
           key: [Ctrl: 'b', PageUp,]
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     normal:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]    
+          key: [Ctrl: 'f',]    
     pane:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     tab:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     resize:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     move:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     search:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     session:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     renametab:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]
     renamepane:
         - action: [SwitchToMode: Locked,]
-          key: [Ctrl: 'l',]
+          key: [Ctrl: 'f',]

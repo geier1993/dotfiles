@@ -7,7 +7,7 @@ ln -s $PERM/.fzf.bash $HOME/.fzf.bash || true
 mkdir -p $HOME/.config/zellij
 mkdir -p $HOME/.local/bin
 
-ln -s $PERM/dotfiles/zellij/.config-n1/zellij/config.yaml $HOME/.config/zellij/config.yaml || true
+ln -s $PERM/dotfiles/zellij-n1/.config/zellij/config.kdl $HOME/.config/zellij/config.kdl || true
 
 FROM="$PERM/dotfiles/zellij/.local/bin"
 TO="$HOME/.local/bin"
