@@ -33,6 +33,8 @@
     #   "qtwebkit-5.212.0-alpha4"
     # ];
   };
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader = {
@@ -390,7 +392,7 @@
   networking = {
     hostName = "jimmy"; # Define your hostname.
     networkmanager.enable = true;
-    networkmanager.wifi.backend = "iwd"; # or "wpa_supplicant"
+    # networkmanager.wifi.backend = "iwd"; # or "wpa_supplicant"
     wireless.enable = false;  # Enables wireless support via wpa_supplicant.
     wireless.userControlled.enable = true;
     wireless.userControlled.group = "network";
@@ -881,7 +883,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    jack.enable = true;
+    # jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -914,17 +916,100 @@
     #   }
     # ];
     
-  #   config.pipewire = {
-  #     "context.properties" = {
-  #       #"link.max-buffers" = 64;
-  #       "link.max-buffers" = 16; # version < 3 clients can't handle more than this
-  #       "log.level" = 2; # https://docs.pipewire.org/#Logging
-  #       #"default.clock.rate" = 48000;
-  #       #"default.clock.quantum" = 1024;
-  #       #"default.clock.min-quantum" = 32;
-  #       #"default.clock.max-quantum" = 8192;
-  #     };
-  #   };
+    # config.pipewire = {
+    #   "context.properties" = {
+    #     default.clock.allowed-rates = [ 44100 48000 96000 ];
+    #     #"link.max-buffers" = 64;
+    #     "link.max-buffers" = 16; # version < 3 clients can't handle more than this
+    #     "log.level" = 2; # https://docs.pipewire.org/#Logging
+    #     #"default.clock.rate" = 48000;
+    #     #"default.clock.quantum" = 1024;
+    #     #"default.clock.min-quantum" = 32;
+    #     #"default.clock.max-quantum" = 8192;
+    #   };
+    # };
+      # Lowlatency setup according to nixos
+  config.pipewire = {
+      "context.properties" = {
+        default.clock.allowed-rates = [ 44100 48000 96000 ];
+        "link.max-buffers" = 16;
+        "log.level" = 2;
+        "default.clock.rate" = 48000;
+        # "default.clock.quantum" = 32;
+        "default.clock.quantum" = 1024;
+        "default.clock.min-quantum" = 32;
+        # "default.clock.max-quantum" = 32;
+        "default.clock.max-quantum" = 8192;
+        "core.daemon" = true;
+        "core.name" = "pipewire-0";
+      };
+      "context.modules" = [
+        {
+          name = "libpipewire-module-rtkit";
+          args = {
+            "nice.level" = -15;
+            "rt.prio" = 88;
+            "rt.time.soft" = 200000;
+            "rt.time.hard" = 200000;
+          };
+          flags = [ "ifexists" "nofail" ];
+        }
+        { name = "libpipewire-module-protocol-native"; }
+        { name = "libpipewire-module-profiler"; }
+        { name = "libpipewire-module-metadata"; }
+        { name = "libpipewire-module-spa-device-factory"; }
+        { name = "libpipewire-module-spa-node-factory"; }
+        { name = "libpipewire-module-client-node"; }
+        { name = "libpipewire-module-client-device"; }
+        {
+          name = "libpipewire-module-portal";
+          flags = [ "ifexists" "nofail" ];
+        }
+        {
+          name = "libpipewire-module-access";
+          args = {};
+        }
+        { name = "libpipewire-module-adapter"; }
+        { name = "libpipewire-module-link-factory"; }
+        { name = "libpipewire-module-session-manager"; }
+      ];
+    };
+    config.pipewire-pulse = {
+        "context.properties" = {
+          "log.level" = 2;
+        };
+        "context.modules" = [
+          {
+            name = "libpipewire-module-rtkit";
+            args = {
+              "nice.level" = -15;
+              "rt.prio" = 88;
+              "rt.time.soft" = 200000;
+              "rt.time.hard" = 200000;
+            };
+            flags = [ "ifexists" "nofail" ];
+          }
+          { name = "libpipewire-module-protocol-native"; }
+          { name = "libpipewire-module-client-node"; }
+          { name = "libpipewire-module-adapter"; }
+          { name = "libpipewire-module-metadata"; }
+          {
+            name = "libpipewire-module-protocol-pulse";
+            args = {
+              "pulse.min.req" = "32/48000";
+              "pulse.default.req" = "32/48000";
+              "pulse.max.req" = "32/48000";
+              "pulse.min.quantum" = "32/48000";
+              "pulse.max.quantum" = "32/48000";
+              "server.address" = [ "unix:native" ];
+            };
+          }
+        ];
+        "stream.properties" = {
+          "node.latency" = "32/48000";
+          "resample.quality" = 1;
+        };
+      };
   };
   environment.etc = {
       "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
@@ -936,6 +1021,8 @@
           }
       '';
   };
+
+  services.flatpak.enable = true;
 
   xdg = {
       portal = {
@@ -991,8 +1078,8 @@
 
     bluetooth = {
       enable = true;
-      powerOnBoot = false;
-      # powerOnBoot = true;
+      # powerOnBoot = false;
+      powerOnBoot = true;
       settings = {
         General = {
             Disable = "Headset";

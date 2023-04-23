@@ -34,6 +34,10 @@ keybinds {
     RenamePane {
         bind "Ctrl g" { SwitchToMode "locked"; }
     }
+    scroll {
+        bind "Ctrl f" "PageDown" { PageScrollDown; }
+        bind "Ctrl b" "PageUp" { PageScrollUp; }
+    }
 }
 
 // Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
@@ -55,6 +59,7 @@ simplified_ui false
 // Default: $SHELL
 //
 // default_shell "fish"
+default_shell "fish"
 
 // Toggle between having pane frames around the panes
 // Options:
@@ -86,6 +91,7 @@ pane_frames false
 //   - false
 //
 mouse_mode true
+// mouse_mode false
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
