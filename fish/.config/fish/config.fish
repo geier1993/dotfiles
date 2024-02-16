@@ -46,7 +46,7 @@ alias r='ranger'
 
 alias g='git'
 
-alias gs='git status'
+# alias gs='git status'
 
 alias jqt="jupyter qtconsole"
 alias dbw="databricks workspace"

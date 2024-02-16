@@ -2,7 +2,8 @@
 sname=$(echo "$1" | sed 's/[^\_0-9a-zA-Z\-]//g')
 if [ ! -z "$sname" ]
 then
-    exists=$(zellij list-sessions | egrep -o "^$sname$")
+    # exists=$(zellij list-sessions | egrep -o "^$sname$")
+    exists=$(zellij list-sessions | egrep -o "$sname")
     if [ ! -z "$exists" ]
     then
         zellij attach $sname

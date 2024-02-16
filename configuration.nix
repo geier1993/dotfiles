@@ -138,7 +138,7 @@
     autoconf
     ninja
     libtool
-    pkgconfig
+    pkg-config
     clang
     gcc
     gdb rr linuxPackages.perf
@@ -176,7 +176,7 @@
     # i3-gaps # required for sway configuration until everything is dropped
     # i3lock
     xautolock
-    compton
+    # compton
     # i3status
     # i3blocks-gaps
     # i3blocks
@@ -286,7 +286,7 @@
     tree
     vim
     thermald
-    pygmentex
+    texlive.bin.pygmentex
     texlive.combined.scheme-full
     lmodern
     rsync
@@ -295,10 +295,10 @@
     #despotify
     #python27
     ruby bundix
-    python38Full
-    python38
-    python38Packages.pip
-    python38Packages.ipython
+    python3Full
+    python3
+    python3Packages.pip
+    python3Packages.ipython
     # python38Packages.numpy
     # python38Packages.scipy
     # python38Packages.matplotlib
@@ -447,7 +447,7 @@
   # The NixOS release to be compatible with for stateful data such as databases.
   system = {
     autoUpgrade.enable = true;
-    stateVersion = "22.11";
+    stateVersion = "23.11";
   };
 
   systemd.services.kbdrate = {
@@ -497,7 +497,7 @@
       enable = true;
       interval = "hourly";
       localuser = null;
-      locate = pkgs.mlocate;
+      package = pkgs.mlocate;
       extraFlags = [ "-n '.git .backups .Trash .mail .cache vendor'" ];
     };
 
@@ -537,7 +537,7 @@
 
     # Enable the OpenSSH daemon.
     openssh = {
-      permitRootLogin = "no";
+      settings.permitRootLogin = "no";
       enable = true;
     };
 
@@ -548,7 +548,7 @@
     };
     dnsmasq = {
       enable = true;
-      servers = [ "127.0.0.1#43" ];
+      settings.servers = [ "127.0.0.1#43" ];
     };
 
     # privoxy.enable = true;
@@ -753,7 +753,7 @@
   #   };
   # };
   # programs.qt5ct.enable = true;
-  qt5 = {
+  qt = {
     enable = true;
     platformTheme = "gtk2";
     style = "gtk2";
@@ -929,87 +929,87 @@
     #   };
     # };
       # Lowlatency setup according to nixos
-  config.pipewire = {
-      "context.properties" = {
-        default.clock.allowed-rates = [ 44100 48000 96000 ];
-        "link.max-buffers" = 16;
-        "log.level" = 2;
-        "default.clock.rate" = 48000;
-        # "default.clock.quantum" = 32;
-        "default.clock.quantum" = 1024;
-        "default.clock.min-quantum" = 32;
-        # "default.clock.max-quantum" = 32;
-        "default.clock.max-quantum" = 8192;
-        "core.daemon" = true;
-        "core.name" = "pipewire-0";
-      };
-      "context.modules" = [
-        {
-          name = "libpipewire-module-rtkit";
-          args = {
-            "nice.level" = -15;
-            "rt.prio" = 88;
-            "rt.time.soft" = 200000;
-            "rt.time.hard" = 200000;
-          };
-          flags = [ "ifexists" "nofail" ];
-        }
-        { name = "libpipewire-module-protocol-native"; }
-        { name = "libpipewire-module-profiler"; }
-        { name = "libpipewire-module-metadata"; }
-        { name = "libpipewire-module-spa-device-factory"; }
-        { name = "libpipewire-module-spa-node-factory"; }
-        { name = "libpipewire-module-client-node"; }
-        { name = "libpipewire-module-client-device"; }
-        {
-          name = "libpipewire-module-portal";
-          flags = [ "ifexists" "nofail" ];
-        }
-        {
-          name = "libpipewire-module-access";
-          args = {};
-        }
-        { name = "libpipewire-module-adapter"; }
-        { name = "libpipewire-module-link-factory"; }
-        { name = "libpipewire-module-session-manager"; }
-      ];
-    };
-    config.pipewire-pulse = {
-        "context.properties" = {
-          "log.level" = 2;
-        };
-        "context.modules" = [
-          {
-            name = "libpipewire-module-rtkit";
-            args = {
-              "nice.level" = -15;
-              "rt.prio" = 88;
-              "rt.time.soft" = 200000;
-              "rt.time.hard" = 200000;
-            };
-            flags = [ "ifexists" "nofail" ];
-          }
-          { name = "libpipewire-module-protocol-native"; }
-          { name = "libpipewire-module-client-node"; }
-          { name = "libpipewire-module-adapter"; }
-          { name = "libpipewire-module-metadata"; }
-          {
-            name = "libpipewire-module-protocol-pulse";
-            args = {
-              "pulse.min.req" = "32/48000";
-              "pulse.default.req" = "32/48000";
-              "pulse.max.req" = "32/48000";
-              "pulse.min.quantum" = "32/48000";
-              "pulse.max.quantum" = "32/48000";
-              "server.address" = [ "unix:native" ];
-            };
-          }
-        ];
-        "stream.properties" = {
-          "node.latency" = "32/48000";
-          "resample.quality" = 1;
-        };
-      };
+#  config.pipewire = {
+#      "context.properties" = {
+#        default.clock.allowed-rates = [ 44100 48000 96000 ];
+#        "link.max-buffers" = 16;
+#        "log.level" = 2;
+#        "default.clock.rate" = 48000;
+#        # "default.clock.quantum" = 32;
+#        "default.clock.quantum" = 1024;
+#        "default.clock.min-quantum" = 32;
+#        # "default.clock.max-quantum" = 32;
+#        "default.clock.max-quantum" = 8192;
+#        "core.daemon" = true;
+#        "core.name" = "pipewire-0";
+#      };
+#      "context.modules" = [
+#        {
+#          name = "libpipewire-module-rtkit";
+#          args = {
+#            "nice.level" = -15;
+#            "rt.prio" = 88;
+#            "rt.time.soft" = 200000;
+#            "rt.time.hard" = 200000;
+#          };
+#          flags = [ "ifexists" "nofail" ];
+#        }
+#        { name = "libpipewire-module-protocol-native"; }
+#        { name = "libpipewire-module-profiler"; }
+#        { name = "libpipewire-module-metadata"; }
+#        { name = "libpipewire-module-spa-device-factory"; }
+#        { name = "libpipewire-module-spa-node-factory"; }
+#        { name = "libpipewire-module-client-node"; }
+#        { name = "libpipewire-module-client-device"; }
+#        {
+#          name = "libpipewire-module-portal";
+#          flags = [ "ifexists" "nofail" ];
+#        }
+#        {
+#          name = "libpipewire-module-access";
+#          args = {};
+#        }
+#        { name = "libpipewire-module-adapter"; }
+#        { name = "libpipewire-module-link-factory"; }
+#        { name = "libpipewire-module-session-manager"; }
+#      ];
+#    };
+#    config.pipewire-pulse = {
+#        "context.properties" = {
+#          "log.level" = 2;
+#        };
+#        "context.modules" = [
+#          {
+#            name = "libpipewire-module-rtkit";
+#            args = {
+#              "nice.level" = -15;
+#              "rt.prio" = 88;
+#              "rt.time.soft" = 200000;
+#              "rt.time.hard" = 200000;
+#            };
+#            flags = [ "ifexists" "nofail" ];
+#          }
+#          { name = "libpipewire-module-protocol-native"; }
+#          { name = "libpipewire-module-client-node"; }
+#          { name = "libpipewire-module-adapter"; }
+#          { name = "libpipewire-module-metadata"; }
+#          {
+#            name = "libpipewire-module-protocol-pulse";
+#            args = {
+#              "pulse.min.req" = "32/48000";
+#              "pulse.default.req" = "32/48000";
+#              "pulse.max.req" = "32/48000";
+#              "pulse.min.quantum" = "32/48000";
+#              "pulse.max.quantum" = "32/48000";
+#              "server.address" = [ "unix:native" ];
+#            };
+#          }
+#        ];
+#        "stream.properties" = {
+#          "node.latency" = "32/48000";
+#          "resample.quality" = 1;
+#        };
+#      };
   };
   environment.etc = {
       "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
@@ -1102,10 +1102,10 @@
   # users.extraGroups.vboxusers.members = [ "geier" ];
 
   fonts = {
-    enableDefaultFonts = true;
+    enableDefaultPackages = true;
     enableGhostscriptFonts = false;
     fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       corefonts
       dejavu_fonts
       freefont_ttf
