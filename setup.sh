@@ -4,7 +4,7 @@ TARGET=~/
 
 stow -t $TARGET bin
 stow -t $TARGET emacs
-# stow -t $TARGET fish
+stow -t $TARGET fish
 stow -t $TARGET zsh
 stow -t $TARGET direnv
 stow -t $TARGET bash

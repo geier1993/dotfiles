@@ -321,6 +321,7 @@
     htop
     ncurses
     gnupg pinentry
+    pinentry-curses
     #gpicview
     # geeqie
     # clutter clutter-gtk
@@ -537,7 +538,7 @@
 
     # Enable the OpenSSH daemon.
     openssh = {
-      settings.permitRootLogin = "no";
+      settings.PermitRootLogin = "no";
       enable = true;
     };
 
@@ -764,7 +765,6 @@
   programs.waybar.enable = true;
   programs.nm-applet.enable = true;
   programs.nm-applet.indicator = true;
-  # programs.gnupg.agent.pinentryFlavor = "gtk2";
   systemd.user.targets.sway-session = {
     description = "Sway compositor session";
     documentation = [ "man:systemd.special(7)" ];
@@ -1177,6 +1177,8 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+    pinentryFlavor = "curses";
+    # pinentryFlavor = "gtk2";
   };
 
 
