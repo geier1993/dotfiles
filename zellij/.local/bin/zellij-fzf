@@ -1,8 +1,4 @@
 #!/bin/sh
-# zellij-setup-or-attach (zellij list-sessions | fzf --print-query | tail -n 1 | tr -dc '[:alnum:]\n\r')
-# zellij-setup-or-attach $(zellij list-sessions | fzf --print-query | tail -n 1 | tr -dc '[:alnum:]\n\r')
-# zellij-setup-or-attach $(zellij list-sessions | sed -e 's/\x1b\[[0-9;]*m//g' | grep -Eo "^\S+" | grep -v "No active zellij sessions found." | fzf --print-query | tail -n 1| sed 's/[^\_0-9a-zA-Z\-]//g')
-zellij-setup-or-attach $(zellij list-sessions | sed -e 's/\x1b\[[0-9;]*m//g' | grep -v "No active zellij sessions found." | fzf --print-query | tail -n 1| grep -Eo "^\S+" )
-
-
-  
+# zellij-setup-or-attach $(zellij list-sessions | sed -e 's/\x1b\[[0-9;]*m//g' | grep -v "No active zellij sessions found." | fzf --print-query | tail -n 1| grep -Eo "^\S+" )
+zellij-setup-or-attach $(zellij list-sessions | grep -v "No active zellij sessions found." | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2};?)?)?[mGK]//g" | fzf --print-query | tail -n 1 | cut -d " " -f1)
+ 

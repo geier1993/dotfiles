@@ -39,7 +39,7 @@
       pkgs.gnused
 
       # Python
-      pkgs.micromamba
+      # pkgs.micromamba
       # pkgs.conda
       pkgs.python
       pkgs.python3

@@ -1,5 +1,5 @@
 # open terminal
-cmd - return : /Users/mapg/Applications/Nix\ Apps/Kitty.app/Contents/MacOS/kitty bash
+cmd - return : /Users/mapg/Applications/Nix\ Apps/kitty.app/Contents/MacOS/kitty bash
 # cmd - return : /Users/mapg/Applications/Nix\ Apps/Alacritty.app/Contents/MacOS/alacritty
 #cmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 # cmd - return : myTerm

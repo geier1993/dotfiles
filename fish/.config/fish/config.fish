@@ -84,6 +84,8 @@ function onMac
     set -x PATH /opt/homebrew/opt/util-linux/bin $PATH
     set -x PATH /opt/homebrew/opt/util-linux/sbin $PATH
     set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+    
+    set -x PATH /opt/podman/bin $PATH
 
     # function ls
     #     command grc --colour=auto ls $argv

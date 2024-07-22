@@ -8,6 +8,7 @@
     "webkitgtk-2.4.11"
     "python2.7-Pillow-6.2.2"
     "openssl-1.0.2u"
+    "python-2.7.18.6"
   ];
 
 
