@@ -15,13 +15,3 @@ fi
 
 # User specific environment and startup programs
 
-export KAKSESSION=default
-
-export PATH=$PATH:$HOME/bin
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$PERM/.local/bin
-
-. "/perm/mapg/.cargo/env"
-
-alias fz="zellij-fzf"
-alias r="joshuto"
