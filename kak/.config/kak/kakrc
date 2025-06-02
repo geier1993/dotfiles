@@ -16,6 +16,7 @@ evaluate-commands %sh{
         languages.kak
         recentf.kak
         mnemonic-user-mode.kak
+        tree-sitter.kak
         plugins.kak
     "
 

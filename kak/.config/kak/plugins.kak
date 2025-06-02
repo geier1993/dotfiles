@@ -32,6 +32,22 @@ plug "andreyorst/plug.kak" branch "dev" domain github.com noload config %{
     }
 }
 
+# plug 'jordan-yee/kakoune-git-mode' config %{
+#    # Set structured commit message options here
+#    # set-option global git_mode_use_structured_quick_commit true
+#    # set-option git_mode_commit_prefixes 'feat::fix::docs::refactor::build::test::style::BREAKING CHANGE::'
+#    # set-option git_mode_branch_label_regex 'SCRUM-[0-9]+'
+#
+#    # Declare git mode with default set of mappings
+#    declare-git-mode
+#
+#    # Suggested user mode mapping
+#    map global user g ': enter-user-mode git<ret>' -docstring "git mode"
+#
+#    # I find this quite nice to open the lazygit client.
+#    map global git o ': tmux-terminal-window lazygit<ret>' -docstring "open lazygit in new window"
+#}
+
 plug "delapouite/kakoune-text-objects"
 plug "occivink/kakoune-phantom-selection" config %{
     map global normal f     ": phantom-selection-add-selection<ret>"
@@ -116,16 +132,16 @@ plug 'delapouite/kakoune-mirror' %{
 # }
 
 if %[ -n "${PATH##*termux*}" ] %{
-    plug "ul/kak-lsp" do %{
+    plug "kakoune-lsp/kakoune-lsp" do %{
         cargo install --force --path . --locked
         cargo clean
     } config %{
-        define-command lsp-restart %{ lsp-stop; lsp-start }
+        # define-command lsp-restart %{ lsp-stop; lsp-start }
         set-option global lsp_completion_trigger "execute-keys 'h<a-h><a-k>\S[^\s,=;*(){}\[\]]\z<ret>'"
         set-option global lsp_diagnostic_line_error_sign "!"
         set-option global lsp_diagnostic_line_warning_sign "?"
         hook global WinSetOption filetype=(rust|python|go|javascript|typescript|h|hpp|c|cpp|elm|scala|terraform|sh|fortran) %{
-            echo -debug "Loading kak-lsp"
+            echo -debug "Loading kakoune-lsp"
             map window user "l" ": enter-user-mode lsp<ret>" -docstring "LSP mode"
             map window lsp "n" "<esc>: lsp-find-error --include-warnings<ret>" -docstring "find next error or warning"
             map window lsp "p" "<esc>: lsp-find-error --previous --include-warnings<ret>" -docstring "find previous error or warning"
@@ -315,3 +331,5 @@ plug "schemar/kak-jsts" config %{
 plug "evanrelf/number-toggle.kak" config %{
   require-module "number-toggle"
 }
+
+

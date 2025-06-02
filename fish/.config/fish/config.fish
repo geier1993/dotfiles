@@ -14,8 +14,13 @@ set -x EDITOR skk
 set -x VISUAL skk
 set -x PAGER less
 set -x GOPATH ~/go
+
+
+set -x PATH /opt/homebrew/opt/ruby/bin $PATH
 set -x GEM_HOME (ruby -e 'print Gem.user_dir')
+set -x PATH $GEM_HOME/bin $PATH
 set -x npm_config_prefix ~/.node_modules
+        
 
 set -x PKG_CONFIG_PATH $PKG_CONFIG_PATH $HOME/.local/lib/pkgconfig
 set -x PATH $GOPATH/bin $HOME/.local/bin $HOME/.cabal/bin $HOME/misc/dotfiles/bin $HOME/.gem/ruby/2.5.0/bin $HOME/.node_modules/bin $HOME/.cargo/bin $PATH
