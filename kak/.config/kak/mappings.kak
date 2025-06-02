@@ -34,6 +34,10 @@ map -docstring "avoid escape key" global insert '<a-c>' '<esc>'
 map -docstring "convert leading spaces to tabs" global user '<a-t>' ': leading-spaces-to-tabs<ret>'
 map -docstring "convert leading tabs to spaces" global user '<a-T>' ': leading-tabs-to-spaces<ret>'
 
+map -docstring "Format buffer" global user 'f' ': format<ret>'
+map -docstring "Format selections" global user '<a-f>' ': format-selections<ret>'
+
+
 # System clipboard mappings
 if %[ -n "$(command -v myClipCopy && command -v myClipPaste)" ] %{
     echo -debug "Using myClipCopy & myClipPaste for clipboard integration"

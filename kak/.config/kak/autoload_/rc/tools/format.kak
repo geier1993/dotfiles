@@ -34,3 +34,5 @@ define-command format-selections -docstring "Format the selections individually"
 }
 
 alias global format format-buffer
+
+
